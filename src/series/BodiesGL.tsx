@@ -9,16 +9,14 @@ const MAX = 3;
 
 const VERT = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }`;
 
-/**
- * Every body is an analytic sphere shaded per pixel, so it is exact at any
- * radius — from a 3 px dot to a limb hundreds of thousands of pixels wide.
- */
-const FRAG = `
+/** Surface detail is computed at this fraction of the frame size, then sampled at full size. */
+const SURFACE_SCALE = 0.5;
+
+const COMMON = `
 precision highp float;
 uniform vec2 uRes; uniform float uTime; uniform float uU;
 uniform vec4 uA[${MAX}]; // x, y, radius, kind (0 star, 1 earth, 2 bands, 3 plain, <0 none)
 uniform vec4 uC[${MAX}]; // star: temp, seed, 0, 0   planet: r, g, b, seed
-
 float hash(vec3 p){ p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float noise(vec3 x){
   vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -27,88 +25,100 @@ float noise(vec3 x){
 }
 float fbm(vec3 p){ float a = 0.5, s = 0.0; for (int i = 0; i < 5; i++){ s += a * noise(p); p = p * 2.03 + vec3(1.7, 9.2, 3.1); a *= 0.5; } return s; }
 vec3 rotY(vec3 v, float a){ float c = cos(a), s = sin(a); return vec3(c * v.x + s * v.z, v.y, -s * v.x + c * v.z); }
-
 vec3 starBase(float temp){
   vec3 cold = vec3(1.0, 0.30, 0.07), mid = vec3(1.0, 0.80, 0.42), hot = vec3(0.60, 0.76, 1.0);
   return temp < 0.5 ? mix(cold, mid, temp * 2.0) : mix(mid, hot, (temp - 0.5) * 2.0);
 }
-
 const vec3 L = vec3(-0.52, 0.56, 0.64); // light from the upper left, towards the viewer
+`;
 
+/**
+ * Pass 1 (half size): the fully shaded surface of whichever body is on top at
+ * each pixel. Surfaces are smooth, so half resolution loses nothing visible.
+ * Every body is an analytic sphere, exact at any radius.
+ */
+const FRAG_SURFACE = COMMON + `
+uniform float uScale;
+void main(){
+  vec2 frag = vec2(gl_FragCoord.x / uScale, uRes.y - gl_FragCoord.y / uScale);
+  vec3 col = vec3(0.0);
+  for (int i = 0; i < ${MAX}; i++){
+    float kind = uA[i].w; if (kind < -0.5) continue;
+    vec2 d2 = frag - uA[i].xy; float r = uA[i].z;
+    if (length(d2) > r + 4.0) continue; // slightly past the edge so edge pixels sample valid colour
+    vec2 p = d2 / r; float pl = length(p); if (pl > 1.0) p /= pl;
+    float z = sqrt(max(0.0, 1.0 - dot(p, p)));
+    vec3 n = vec3(p.x, -p.y, z);
+    if (kind < 0.5) {
+      float temp = uC[i].x, seed = uC[i].y;
+      vec3 base = starBase(temp);
+      float big = fbm(n * 3.0 + vec3(seed, uTime * 0.07, uTime * 0.05));
+      float cells = fbm(n * 11.0 + vec3(uTime * 0.16, seed * 3.0, -uTime * 0.11));
+      float heat = 0.45 + 0.75 * big + 0.35 * cells;
+      float limb = mix(0.30, 1.0, pow(z, 0.55));
+      vec3 s = base * heat * 1.35 * limb + vec3(1.0, 0.95, 0.85) * pow(max(heat - 0.55, 0.0), 2.0) * 1.6 * limb;
+      col = mix(s, s * vec3(1.0, 0.72, 0.55), (1.0 - z) * 0.6); // redder towards the edge
+    } else {
+      vec3 pc = uC[i].rgb; float seed = uC[i].a;
+      vec3 nr = rotY(n, uTime * 0.12 + seed);
+      float diff = clamp(dot(n, L), 0.0, 1.0);
+      vec3 s;
+      if (kind < 1.5) {
+        float land = fbm(nr * 2.3 + seed);
+        float isLand = smoothstep(0.50, 0.535, land);
+        vec3 ocean = mix(vec3(0.02, 0.10, 0.32), vec3(0.05, 0.30, 0.58), smoothstep(0.30, 0.50, land));
+        vec3 ground = mix(vec3(0.12, 0.36, 0.13), vec3(0.52, 0.42, 0.24), smoothstep(0.35, 0.65, fbm(nr * 7.0 + 3.0)));
+        s = mix(ocean, ground, isLand);
+        s = mix(s, vec3(0.95), smoothstep(0.80, 0.90, abs(nr.y) + 0.08 * land));
+        float cloud = smoothstep(0.52, 0.72, fbm(rotY(n, uTime * 0.17 + seed) * 3.6 + 11.0));
+        s = mix(s, vec3(1.0), cloud * 0.85);
+        vec3 h = normalize(L + vec3(0.0, 0.0, 1.0));
+        s = s * (0.03 + 1.15 * diff) + vec3(1.0) * pow(max(dot(n, h), 0.0), 60.0) * (1.0 - isLand) * (1.0 - cloud) * 0.6;
+        s += vec3(0.30, 0.55, 1.0) * pow(1.0 - z, 3.0) * (0.25 + diff);
+      } else if (kind < 2.5) {
+        float turb = fbm(vec3(nr.x * 3.0, nr.y * 9.0, nr.z * 3.0) + seed);
+        float band = 0.5 + 0.5 * sin((nr.y * 8.5 + turb * 0.75) * 3.14159);
+        s = mix(pc * vec3(0.55, 0.42, 0.34), pc * 1.18, smoothstep(0.2, 0.8, band));
+        s = mix(s, pc * vec3(1.15, 1.1, 1.0), 0.25 * fbm(nr * vec3(6.0, 30.0, 6.0)));
+        float lon = atan(nr.x, nr.z);
+        float spot = length(vec2((lon - 0.4) * 1.0, (nr.y + 0.36) * 2.6));
+        s = mix(vec3(0.72, 0.26, 0.14), s, smoothstep(0.10, 0.19, spot));
+        s *= 0.04 + 1.12 * diff;
+      } else {
+        s = pc * (0.8 + 0.4 * fbm(nr * 5.0 + seed)) * (0.04 + 1.12 * diff);
+      }
+      col = s;
+    }
+  }
+  gl_FragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
+}`;
+
+/** Pass 2 (full size): crisp anti-aliased edges, glow and atmosphere; surfaces come from pass 1. */
+const FRAG_FINAL = COMMON + `
+uniform sampler2D uSurface;
 void main(){
   vec2 frag = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);
+  vec3 surface = texture2D(uSurface, gl_FragCoord.xy / uRes).rgb;
   vec3 col = vec3(0.0); float alpha = 0.0;
   for (int i = 0; i < ${MAX}; i++){
     float kind = uA[i].w; if (kind < -0.5) continue;
-    vec2 c = uA[i].xy; float r = uA[i].z;
-    vec2 d2 = frag - c; float dist = length(d2);
+    vec2 d2 = frag - uA[i].xy; float r = uA[i].z; float dist = length(d2);
     float edge = clamp(r - dist + 0.5, 0.0, 1.0);
+    float dpx = max(dist - r, 0.0);
     if (kind < 0.5) {
-      // ------------------------------------------------ star
-      float temp = uC[i].x, seed = uC[i].y;
-      vec3 base = starBase(temp);
-      float dpx = dist - r;
+      vec3 base = starBase(uC[i].x);
       float Lg = min(r * 0.45, 520.0 * uU) + 6.0 * uU; // glow length in pixels, capped for giants
-      if (dpx < Lg * 5.0) {
-        float ang = atan(d2.y, d2.x);
-        float streak = 0.55 + 0.45 * noise(vec3(ang * 5.0, uTime * 0.25 + seed, dpx / Lg * 0.7));
-        float glow = exp(-max(dpx, 0.0) / Lg * 2.6) * streak * 0.75 + exp(-max(dpx, 0.0) / Lg * 0.9) * 0.22;
-        vec3 g = base * glow * (1.0 - edge);
-        col += g; alpha = max(alpha, clamp(glow, 0.0, 1.0) * (1.0 - edge));
+      if (dpx < Lg * 5.0 && edge < 1.0) {
+        float streak = 0.55 + 0.45 * noise(vec3(atan(d2.y, d2.x) * 5.0, uTime * 0.25 + uC[i].y, dpx / Lg * 0.7));
+        float glow = exp(-dpx / Lg * 2.6) * streak * 0.75 + exp(-dpx / Lg * 0.9) * 0.22;
+        col += base * glow * (1.0 - edge); alpha = max(alpha, clamp(glow, 0.0, 1.0) * (1.0 - edge));
       }
-      if (edge > 0.0) {
-        vec2 p = d2 / r; float z = sqrt(max(0.0, 1.0 - dot(p, p)));
-        vec3 n = vec3(p.x, -p.y, z);
-        float big = fbm(n * 3.0 + vec3(seed, uTime * 0.07, uTime * 0.05));
-        float cells = fbm(n * 11.0 + vec3(uTime * 0.16, seed * 3.0, -uTime * 0.11));
-        float heat = 0.45 + 0.75 * big + 0.35 * cells;
-        float limb = mix(0.30, 1.0, pow(z, 0.55));
-        vec3 s = base * heat * 1.35 * limb + vec3(1.0, 0.95, 0.85) * pow(max(heat - 0.55, 0.0), 2.0) * 1.6 * limb;
-        s = mix(s, s * vec3(1.0, 0.72, 0.55), (1.0 - z) * 0.6); // redder towards the edge
-        col = mix(col, s, edge); alpha = max(alpha, edge);
-      }
-    } else {
-      // ------------------------------------------------ planet
-      vec3 pc = uC[i].rgb; float seed = uC[i].a;
-      if (kind < 1.5) { // thin atmosphere outside the disc
-        float dpx = dist - r;
-        float atm = exp(-max(dpx, 0.0) / (r * 0.05 + 1.0)) * 0.55 * (1.0 - edge);
-        float lit = clamp(dot(normalize(vec3(d2.x, -d2.y, 0.0)), L) * 0.9 + 0.55, 0.0, 1.0);
-        col += vec3(0.35, 0.6, 1.0) * atm * lit; alpha = max(alpha, atm * lit);
-      }
-      if (edge > 0.0) {
-        vec2 p = d2 / r; float z = sqrt(max(0.0, 1.0 - dot(p, p)));
-        vec3 n = vec3(p.x, -p.y, z);
-        vec3 nr = rotY(n, uTime * 0.12 + seed);
-        float diff = clamp(dot(n, L), 0.0, 1.0);
-        vec3 s;
-        if (kind < 1.5) {
-          float land = fbm(nr * 2.3 + seed);
-          float isLand = smoothstep(0.50, 0.535, land);
-          vec3 ocean = mix(vec3(0.02, 0.10, 0.32), vec3(0.05, 0.30, 0.58), smoothstep(0.30, 0.50, land));
-          vec3 ground = mix(vec3(0.12, 0.36, 0.13), vec3(0.52, 0.42, 0.24), smoothstep(0.35, 0.65, fbm(nr * 7.0 + 3.0)));
-          s = mix(ocean, ground, isLand);
-          s = mix(s, vec3(0.95), smoothstep(0.80, 0.90, abs(nr.y) + 0.08 * land));
-          float cloud = smoothstep(0.52, 0.72, fbm(rotY(n, uTime * 0.17 + seed) * 3.6 + 11.0));
-          s = mix(s, vec3(1.0), cloud * 0.85);
-          vec3 h = normalize(L + vec3(0.0, 0.0, 1.0));
-          s = s * (0.03 + 1.15 * diff) + vec3(1.0) * pow(max(dot(n, h), 0.0), 60.0) * (1.0 - isLand) * (1.0 - cloud) * 0.6;
-          s += vec3(0.30, 0.55, 1.0) * pow(1.0 - z, 3.0) * (0.25 + diff);
-        } else if (kind < 2.5) {
-          float turb = fbm(vec3(nr.x * 3.0, nr.y * 9.0, nr.z * 3.0) + seed);
-          float band = 0.5 + 0.5 * sin((nr.y * 8.5 + turb * 0.75) * 3.14159);
-          s = mix(pc * vec3(0.55, 0.42, 0.34), pc * 1.18, smoothstep(0.2, 0.8, band));
-          s = mix(s, pc * vec3(1.15, 1.1, 1.0), 0.25 * fbm(nr * vec3(6.0, 30.0, 6.0)));
-          float lon = atan(nr.x, nr.z);
-          float spot = length(vec2((lon - 0.4) * 1.0, (nr.y + 0.36) * 2.6));
-          s = mix(vec3(0.72, 0.26, 0.14), s, smoothstep(0.10, 0.19, spot));
-          s *= 0.04 + 1.12 * diff;
-        } else {
-          s = pc * (0.8 + 0.4 * fbm(nr * 5.0 + seed)) * (0.04 + 1.12 * diff);
-        }
-        col = mix(col, s, edge); alpha = max(alpha, edge);
-      }
+    } else if (kind < 1.5 && edge < 1.0) { // thin atmosphere outside the disc
+      float atm = exp(-dpx / (r * 0.05 + 1.0)) * 0.55 * (1.0 - edge);
+      float lit = clamp(dot(normalize(vec3(d2.x, -d2.y, 0.0)), L) * 0.9 + 0.55, 0.0, 1.0);
+      col += vec3(0.35, 0.6, 1.0) * atm * lit; alpha = max(alpha, atm * lit);
     }
+    if (edge > 0.0) { col = mix(col, surface, edge); alpha = max(alpha, edge); }
   }
   gl_FragColor = vec4(col, alpha);
 }`;
@@ -119,7 +129,8 @@ function hexToRgb(hex: string): [number, number, number] {
 }
 const seedOf = (name: string) => [...name].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) % 997, 7) / 37;
 
-interface GLState { gl: WebGLRenderingContext; prog: WebGLProgram; loc: Record<string, WebGLUniformLocation | null> }
+interface Program { prog: WebGLProgram; loc: Record<string, WebGLUniformLocation | null> }
+interface GLState { gl: WebGLRenderingContext; surface: Program; final: Program; fbo: WebGLFramebuffer; tex: WebGLTexture; sw: number; sh: number }
 
 function init(canvas: HTMLCanvasElement): GLState {
   const gl = canvas.getContext("webgl", { premultipliedAlpha: true, preserveDrawingBuffer: true, antialias: false, alpha: true });
@@ -130,19 +141,31 @@ function init(canvas: HTMLCanvasElement): GLState {
     if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error("Shader error: " + gl.getShaderInfoLog(s));
     return s;
   };
-  const prog = gl.createProgram()!;
-  gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
-  gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
-  gl.linkProgram(prog);
-  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error("Link error: " + gl.getProgramInfoLog(prog));
-  gl.useProgram(prog);
+  const vs = compile(gl.VERTEX_SHADER, VERT);
+  const program = (frag: string): Program => {
+    const prog = gl.createProgram()!;
+    gl.attachShader(prog, vs); gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, frag));
+    gl.bindAttribLocation(prog, 0, "p");
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error("Link error: " + gl.getProgramInfoLog(prog));
+    const loc: Program["loc"] = {};
+    for (const n of ["uRes", "uTime", "uU", "uA", "uC", "uScale", "uSurface"]) loc[n] = gl.getUniformLocation(prog, n);
+    return { prog, loc };
+  };
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-  const a = gl.getAttribLocation(prog, "p");
-  gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
-  const loc: GLState["loc"] = {};
-  for (const n of ["uRes", "uTime", "uU", "uA", "uC"]) loc[n] = gl.getUniformLocation(prog, n);
-  return { gl, prog, loc };
+  gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+  const sw = Math.ceil(canvas.width * SURFACE_SCALE), sh = Math.ceil(canvas.height * SURFACE_SCALE);
+  const tex = gl.createTexture()!;
+  gl.bindTexture(gl.TEXTURE_2D, tex);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, sw, sh, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  const fbo = gl.createFramebuffer()!;
+  gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
+  gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+  gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+  return { gl, surface: program(FRAG_SURFACE), final: program(FRAG_FINAL), fbo, tex, sw, sh };
 }
 
 /** WebGL layer that draws the frame's bodies. `place` must be a pure function of time. */
@@ -154,7 +177,7 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
   useLayoutEffect(() => {
     if (!ref.current) return;
     state.current ??= init(ref.current);
-    const { gl, loc } = state.current;
+    const { gl, surface, final, fbo, tex, sw, sh } = state.current;
     const t = frame / fps, u = Math.min(width, height) / 1080;
     const bodies = place(t, width, height, u).slice(-MAX);
     const A = new Float32Array(MAX * 4).fill(-1), C = new Float32Array(MAX * 4);
@@ -164,10 +187,22 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
       if (kind === 0) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), 0, 0], i * 4);
       else C.set([...hexToRgb(b.body.color ?? "#8899aa"), seedOf(b.body.name)], i * 4);
     });
+    const use = (p: Program) => {
+      gl.useProgram(p.prog);
+      gl.uniform2f(p.loc.uRes, width, height); gl.uniform1f(p.loc.uTime, t); gl.uniform1f(p.loc.uU, u);
+      gl.uniform4fv(p.loc.uA, A); gl.uniform4fv(p.loc.uC, C);
+    };
+    // pass 1: shaded surfaces at half size
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
+    gl.viewport(0, 0, sw, sh);
+    use(surface); gl.uniform1f(surface.loc.uScale, SURFACE_SCALE);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    // pass 2: edges, glow and compositing at full size
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.viewport(0, 0, width, height);
     gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.uniform2f(loc.uRes, width, height); gl.uniform1f(loc.uTime, t); gl.uniform1f(loc.uU, u);
-    gl.uniform4fv(loc.uA, A); gl.uniform4fv(loc.uC, C);
+    use(final);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex); gl.uniform1i(final.loc.uSurface, 0);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     gl.finish();
   }, [frame, fps, width, height, place]);
