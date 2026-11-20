@@ -31,10 +31,10 @@ describe("anim helpers", () => {
 });
 
 describe("manifest", () => {
-  it("has unique ids and 30–60 s Shorts-length timelines", () => {
+  it("has unique ids and sensible short-form lengths", () => {
     const ids = MANIFEST.map((m) => m.id);
     expect(new Set(ids).size).toBe(ids.length);
-    for (const m of MANIFEST) expect(m.durationSec).toBeGreaterThanOrEqual(30);
+    for (const m of MANIFEST) expect(m.durationSec).toBeGreaterThanOrEqual(20);
   });
 });
 

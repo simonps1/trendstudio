@@ -56,8 +56,6 @@ export interface EpisodeSpec {
   emphasis?: string[];
 }
 
-/** Fraction of a compare beat at which the zoom lands and the new body is named. */
-export const REVEAL = 0.7;
 /** Radius (design px at 1080) a featured body is shown at. */
 export const FIT = 300;
 /** Seconds between orbit reveals (shared by visuals and soundtrack). */

@@ -7,7 +7,8 @@ import { KaraokeCaptions } from "../core/components/KaraokeCaptions";
 import { ensureFonts, FONT_BODY } from "../core/fonts";
 import type { NarrationTrack } from "../voice/types";
 import { layoutEpisode } from "./layout";
-import { drawEpisode } from "./scenes";
+import { BodiesGL } from "./BodiesGL";
+import { drawBackground, drawOverlay, placeBodies } from "./scenes";
 import type { EpisodeSpec, Variant } from "./types";
 
 ensureFonts();
@@ -30,10 +31,14 @@ const SeriesTag: React.FC<{ spec: EpisodeSpec; duration: number }> = ({ spec, du
 /** Generic player for any series episode. */
 export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track: NarrationTrack | null; videoId: string }> = ({ spec, variant, track, videoId }) => {
   const layout = useMemo(() => layoutEpisode(spec, variant, track), [spec, variant, track]);
-  const draw = useCallback((d: DrawContext) => drawEpisode(d, layout), [layout]);
+  const background = useCallback((d: DrawContext) => drawBackground(d, layout), [layout]);
+  const overlay = useCallback((d: DrawContext) => drawOverlay(d, layout), [layout]);
+  const place = useCallback((t: number, w: number, h: number, u: number) => placeBodies(layout, t, w, h, u), [layout]);
   return (
     <AbsoluteFill style={{ backgroundColor: "#03040b" }}>
-      <CanvasLayer draw={draw} />
+      <CanvasLayer draw={background} />
+      <BodiesGL place={place} />
+      <CanvasLayer draw={overlay} />
       <SeriesTag spec={spec} duration={layout.duration} />
       <KaraokeCaptions words={layout.words} emphasis={spec.emphasis ?? []} y={0.215} />
       <FilmFinish />
