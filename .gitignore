@@ -10,3 +10,5 @@ Thumbs.db
 # generated soundtracks are rebuilt from source by `npm run audio`
 public/audio/*.wav
 public/audio/*.raw.wav
+trendstudio-source.zip
+trendstudio.bundle
