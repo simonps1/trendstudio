@@ -19,7 +19,7 @@ const SeriesTag: React.FC<{ spec: EpisodeSpec; duration: number }> = ({ spec, du
   const a = progress(t, 0.2, 0.7) * (1 - progress(t, duration - 0.6, duration - 0.2));
   return (
     <div style={{
-      position: "absolute", top: (height > width ? 150 : 44) * u, left: 0, right: 0, textAlign: "center", opacity: a * 0.85,
+      position: "absolute", top: (height > width ? 250 : 44) * u, left: 0, right: 0, textAlign: "center", opacity: a * 0.85,
       fontFamily: FONT_BODY, fontWeight: 800, fontSize: 24 * u, letterSpacing: 7 * u, color: "#cfe0ff",
     }}>
       {spec.series.toUpperCase()} · EP {spec.episode}
@@ -35,7 +35,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
     <AbsoluteFill style={{ backgroundColor: "#03040b" }}>
       <CanvasLayer draw={draw} />
       <SeriesTag spec={spec} duration={layout.duration} />
-      <KaraokeCaptions words={layout.words} emphasis={spec.emphasis ?? []} y={0.25} />
+      <KaraokeCaptions words={layout.words} emphasis={spec.emphasis ?? []} y={0.215} />
       <FilmFinish />
       <Audio src={staticFile(`audio/${videoId}.wav`)} />
     </AbsoluteFill>

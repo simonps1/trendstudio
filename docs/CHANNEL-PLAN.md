@@ -83,3 +83,9 @@ Change one thing per episode so you can tell what helped.
 - **Accuracy:** a wrong number in a science video gets called out in comments and hurts the channel. Fact-check every script.
 - **AI disclosure:** the voice is synthetic. Platforms mostly require labels for realistic synthetic media; a stylised animation with an AI narrator generally does not need one, but check the current policy and label if in doubt.
 - **Reused content:** everything here is original (drawn and synthesized by code), which keeps the channel clear of reuse claims.
+
+## Safe areas (vertical)
+
+Apps draw their own buttons and text over the video. Approximate guide (check each app's current
+guidance): keep anything that must be read between about 12% and 75% of the height, and away from
+the right-hand 12%. Captions, name labels and counters in this project are placed inside that band.

@@ -12,7 +12,7 @@ import { FIT, orbitStagger, REVEAL, type Body, type Visual } from "./types";
 
 type Ctx = CanvasRenderingContext2D;
 
-export const centre = (w: number, h: number) => [w / 2, h > w ? h * 0.57 : h * 0.56] as const;
+export const centre = (w: number, h: number) => [w / 2, h > w ? h * 0.545 : h * 0.56] as const;
 
 // ------------------------------------------------------------ bodies
 

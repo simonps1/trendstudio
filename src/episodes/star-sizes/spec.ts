@@ -7,7 +7,7 @@ const jupiter: Body = { name: "Jupiter", kind: "planet", radius: 11.2, color: "#
 const sun: Body = { name: "The Sun", kind: "star", radius: SUN, temp: 0.55, note: "109 Earths wide" };
 const sirius: Body = { name: "Sirius", kind: "star", radius: 1.71 * SUN, temp: 0.95, note: "1.7 Suns wide" };
 const rigel: Body = { name: "Rigel", kind: "star", radius: 78 * SUN, temp: 1, note: "≈ 78 Suns wide" };
-const betelgeuse: Body = { name: "Betelgeuse", kind: "star", radius: 764 * SUN, temp: 0.08, note: "≈ 760 Suns wide" };
+const betelgeuse: Body = { name: "Betelgeuse", kind: "star", radius: 700 * SUN, temp: 0.08, note: "≈ 700 Suns wide (estimates vary)" };
 const s218: Body = { name: "Stephenson 2-18", kind: "star", radius: 2150 * SUN, temp: 0, note: "≈ 2,150 Suns wide (best estimate)" };
 
 export const STAR_SIZES: EpisodeSpec = {
@@ -25,8 +25,8 @@ export const STAR_SIZES: EpisodeSpec = {
     { id: "sunmass", only: "long", say: "It holds ninety-nine percent of all the mass in our solar system.", visual: { type: "body", body: sun } },
     { id: "sirius", only: "long", say: "Sirius, the brightest star in our night sky, is nearly twice as wide.", visual: { type: "compare", from: sun, to: sirius } },
     { id: "rigel", only: "long", say: "Rigel, a blue supergiant, is almost eighty Suns across.", visual: { type: "compare", from: sirius, to: rigel } },
-    { id: "betel-s", only: "short", say: "Betelgeuse is over seven hundred Suns wide.", visual: { type: "compare", from: sun, to: betelgeuse } },
-    { id: "betel-l", only: "long", say: "Betelgeuse, a red supergiant, is over seven hundred Suns wide.", visual: { type: "compare", from: rigel, to: betelgeuse } },
+    { id: "betel-s", only: "short", say: "Betelgeuse is about seven hundred Suns wide.", visual: { type: "compare", from: sun, to: betelgeuse } },
+    { id: "betel-l", only: "long", say: "Betelgeuse, a red supergiant, is about seven hundred Suns wide.", visual: { type: "compare", from: rigel, to: betelgeuse } },
     { id: "betelmars", only: "long", say: "In our solar system, its surface would reach past Mars.", visual: { type: "body", body: betelgeuse } },
     { id: "s218", say: "And this is Stephenson two eighteen. About two thousand Suns across.", visual: { type: "compare", from: betelgeuse, to: s218, big: true }, hold: 0.3 },
     { id: "volume", only: "long", say: "You could fit nearly ten billion Suns inside it.", visual: { type: "body", body: s218 } },

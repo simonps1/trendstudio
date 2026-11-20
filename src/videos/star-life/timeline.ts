@@ -25,8 +25,8 @@ export const T = {
 /** Fallback caption script (used when no narration has been generated). *word* = accent colour. */
 /** Big title cards shown on the visual hits (on top of narration captions). */
 export const TITLES = [
-  { start: 10.05, end: 11.1, text: "*Ignition*", y: 0.27, size: 150 },
-  { start: 28.5, end: 29.4, text: "*Supernova*", y: 0.25, size: 170 },
+  { start: 10.05, end: 11.1, text: "*Ignition*", y: 0.3, size: 150 },
+  { start: 28.5, end: 29.4, text: "*Supernova*", y: 0.3, size: 170 },
 ];
 
 export const CAPTIONS = [
@@ -34,14 +34,14 @@ export const CAPTIONS = [
   { start: 1.85, end: 3.5, text: "and die in *under one second*", y: 0.25 },
   { start: 4.2, end: 7.4, text: "It starts as a cold cloud of gas", y: 0.27, variant: "body" as const, size: 64 },
   { start: 7.6, end: 9.8, text: "Gravity pulls it *tighter*", y: 0.27, variant: "body" as const, size: 64 },
-  { start: 10.05, end: 11.7, text: "*Ignition*", y: 0.27, size: 150 },
+  { start: 10.05, end: 11.7, text: "*Ignition*", y: 0.3, size: 150 },
   { start: 11.9, end: 13.4, text: "20× the mass of our Sun", y: 0.27, variant: "body" as const, size: 64 },
   { start: 13.7, end: 16.4, text: "That tiny dot? *That's the Sun*", y: 0.27, variant: "body" as const, size: 64 },
   { start: 16.6, end: 19.0, text: "It burns hydrogen for millions of years", y: 0.27, variant: "body" as const, size: 64 },
   { start: 19.5, end: 22.6, text: "Then it swells into a *red supergiant*", y: 0.27, variant: "body" as const, size: 64 },
   { start: 22.8, end: 26.0, text: "Big enough to swallow *Jupiter's orbit*", y: 0.27, variant: "body" as const, size: 64 },
   { start: 26.4, end: 28.3, text: "The core runs out of fuel…", y: 0.25, variant: "body" as const, size: 68 },
-  { start: 28.5, end: 31.6, text: "*Supernova*", y: 0.25, size: 170 },
+  { start: 28.5, end: 31.6, text: "*Supernova*", y: 0.3, size: 170 },
   { start: 32.4, end: 35.9, text: "What's left is a *black hole*", y: 0.27, variant: "body" as const, size: 66 },
   { start: 36.4, end: 39.7, text: "And its dust? *It became you.*", y: 0.27, variant: "body" as const, size: 68 },
 ];

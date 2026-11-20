@@ -180,10 +180,10 @@
     },
     {
       "id": "betel-s",
-      "text": "Betelgeuse is over seven hundred Suns wide.",
-      "file": "public/voice/star-sizes/betel-s.922b593f8ac7.wav",
+      "text": "Betelgeuse is about seven hundred Suns wide.",
+      "file": "public/voice/star-sizes/betel-s.b3ae0e7112b5.wav",
       "start": 10.29,
-      "duration": 2.705,
+      "duration": 2.73,
       "speed": 1,
       "words": [
         {
@@ -197,29 +197,29 @@
           "end": 11.05
         },
         {
-          "word": "over",
-          "start": 11.28,
-          "end": 11.49
+          "word": "about",
+          "start": 11.17,
+          "end": 11.52
         },
         {
           "word": "seven",
-          "start": 11.49,
-          "end": 11.86
+          "start": 11.52,
+          "end": 11.89
         },
         {
           "word": "hundred",
-          "start": 11.86,
-          "end": 12.22
+          "start": 11.89,
+          "end": 12.24
         },
         {
           "word": "Suns",
-          "start": 12.22,
-          "end": 12.54
+          "start": 12.24,
+          "end": 12.57
         },
         {
           "word": "wide.",
-          "start": 12.54,
-          "end": 12.98
+          "start": 12.57,
+          "end": 13.01
         }
       ]
     },
@@ -227,64 +227,64 @@
       "id": "s218",
       "text": "And this is Stephenson two eighteen. About two thousand Suns across.",
       "file": "public/voice/star-sizes/s218.2593f56dbe28.wav",
-      "start": 13.675,
+      "start": 13.7,
       "duration": 3.975,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 13.675,
-          "end": 13.845
+          "start": 13.7,
+          "end": 13.87
         },
         {
           "word": "this",
-          "start": 13.845,
-          "end": 14.075
+          "start": 13.87,
+          "end": 14.1
         },
         {
           "word": "is",
-          "start": 14.075,
-          "end": 14.195
+          "start": 14.1,
+          "end": 14.22
         },
         {
           "word": "Stephenson",
-          "start": 14.195,
-          "end": 14.845
+          "start": 14.22,
+          "end": 14.87
         },
         {
           "word": "two",
-          "start": 14.845,
-          "end": 15.085
+          "start": 14.87,
+          "end": 15.11
         },
         {
           "word": "eighteen.",
-          "start": 15.085,
-          "end": 15.575
+          "start": 15.11,
+          "end": 15.6
         },
         {
           "word": "About",
-          "start": 15.965,
-          "end": 16.215
+          "start": 15.99,
+          "end": 16.24
         },
         {
           "word": "two",
-          "start": 16.215,
-          "end": 16.435
+          "start": 16.24,
+          "end": 16.46
         },
         {
           "word": "thousand",
-          "start": 16.435,
-          "end": 16.865
+          "start": 16.46,
+          "end": 16.89
         },
         {
           "word": "Suns",
-          "start": 16.865,
-          "end": 17.135
+          "start": 16.89,
+          "end": 17.16
         },
         {
           "word": "across.",
-          "start": 17.135,
-          "end": 17.635
+          "start": 17.16,
+          "end": 17.66
         }
       ]
     },
@@ -292,79 +292,79 @@
       "id": "orbits",
       "text": "Put it where our Sun is, and it swallows everything out to Saturn's orbit.",
       "file": "public/voice/star-sizes/orbits.c82f478ef26d.wav",
-      "start": 18.33,
+      "start": 18.355,
       "duration": 3.845,
       "speed": 1,
       "words": [
         {
           "word": "Put",
-          "start": 18.33,
-          "end": 18.47
+          "start": 18.355,
+          "end": 18.495
         },
         {
           "word": "it",
-          "start": 18.47,
-          "end": 18.56
+          "start": 18.495,
+          "end": 18.585
         },
         {
           "word": "where",
-          "start": 18.56,
-          "end": 18.73
+          "start": 18.585,
+          "end": 18.755
         },
         {
           "word": "our",
-          "start": 18.73,
-          "end": 18.81
+          "start": 18.755,
+          "end": 18.835
         },
         {
           "word": "Sun",
-          "start": 18.81,
-          "end": 19.09
+          "start": 18.835,
+          "end": 19.115
         },
         {
           "word": "is,",
-          "start": 19.09,
-          "end": 19.44
+          "start": 19.115,
+          "end": 19.465
         },
         {
           "word": "and",
-          "start": 19.7,
-          "end": 19.83
+          "start": 19.725,
+          "end": 19.855
         },
         {
           "word": "it",
-          "start": 19.83,
-          "end": 19.9
+          "start": 19.855,
+          "end": 19.925
         },
         {
           "word": "swallows",
-          "start": 19.9,
-          "end": 20.48
+          "start": 19.925,
+          "end": 20.505
         },
         {
           "word": "everything",
-          "start": 20.48,
-          "end": 20.95
+          "start": 20.505,
+          "end": 20.975
         },
         {
           "word": "out",
-          "start": 20.95,
-          "end": 21.15
+          "start": 20.975,
+          "end": 21.175
         },
         {
           "word": "to",
-          "start": 21.15,
-          "end": 21.25
+          "start": 21.175,
+          "end": 21.275
         },
         {
           "word": "Saturn's",
-          "start": 21.25,
-          "end": 21.76
+          "start": 21.275,
+          "end": 21.785
         },
         {
           "word": "orbit.",
-          "start": 21.76,
-          "end": 22.16
+          "start": 21.785,
+          "end": 22.185
         }
       ]
     },
@@ -372,44 +372,44 @@
       "id": "lap1",
       "text": "Light circles Earth seven times a second.",
       "file": "public/voice/star-sizes/lap1.301b8e589e14.wav",
-      "start": 22.555,
+      "start": 22.58,
       "duration": 2.41,
       "speed": 1,
       "words": [
         {
           "word": "Light",
-          "start": 22.555,
-          "end": 22.845
+          "start": 22.58,
+          "end": 22.87
         },
         {
           "word": "circles",
-          "start": 22.845,
-          "end": 23.275
+          "start": 22.87,
+          "end": 23.3
         },
         {
           "word": "Earth",
-          "start": 23.275,
-          "end": 23.695
+          "start": 23.3,
+          "end": 23.72
         },
         {
           "word": "seven",
-          "start": 23.695,
-          "end": 24.105
+          "start": 23.72,
+          "end": 24.13
         },
         {
           "word": "times",
-          "start": 24.105,
-          "end": 24.455
+          "start": 24.13,
+          "end": 24.48
         },
         {
           "word": "a",
-          "start": 24.455,
-          "end": 24.505
+          "start": 24.48,
+          "end": 24.53
         },
         {
           "word": "second.",
-          "start": 24.485,
-          "end": 24.955
+          "start": 24.51,
+          "end": 24.98
         }
       ]
     },
@@ -417,59 +417,59 @@
       "id": "lap2",
       "text": "To circle this star once, it needs almost nine hours.",
       "file": "public/voice/star-sizes/lap2.f3ddf3e231c1.wav",
-      "start": 25.345,
+      "start": 25.37,
       "duration": 3.115,
       "speed": 1,
       "words": [
         {
           "word": "To",
-          "start": 25.345,
-          "end": 25.445
+          "start": 25.37,
+          "end": 25.47
         },
         {
           "word": "circle",
-          "start": 25.445,
-          "end": 25.835
+          "start": 25.47,
+          "end": 25.86
         },
         {
           "word": "this",
-          "start": 25.835,
-          "end": 26.005
+          "start": 25.86,
+          "end": 26.03
         },
         {
           "word": "star",
-          "start": 26.005,
-          "end": 26.315
+          "start": 26.03,
+          "end": 26.34
         },
         {
           "word": "once,",
-          "start": 26.315,
-          "end": 26.725
+          "start": 26.34,
+          "end": 26.75
         },
         {
           "word": "it",
-          "start": 26.945,
-          "end": 27.035
+          "start": 26.97,
+          "end": 27.06
         },
         {
           "word": "needs",
-          "start": 27.035,
-          "end": 27.255
+          "start": 27.06,
+          "end": 27.28
         },
         {
           "word": "almost",
-          "start": 27.255,
-          "end": 27.625
+          "start": 27.28,
+          "end": 27.65
         },
         {
           "word": "nine",
-          "start": 27.625,
-          "end": 27.945
+          "start": 27.65,
+          "end": 27.97
         },
         {
           "word": "hours.",
-          "start": 27.945,
-          "end": 28.445
+          "start": 27.97,
+          "end": 28.47
         }
       ]
     },
@@ -477,64 +477,64 @@
       "id": "end",
       "text": "And it's still just one star, in a galaxy of billions.",
       "file": "public/voice/star-sizes/end.dbc5ecf103ba.wav",
-      "start": 29.34,
+      "start": 29.365,
       "duration": 3.075,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 29.34,
-          "end": 29.47
+          "start": 29.365,
+          "end": 29.495
         },
         {
           "word": "it's",
-          "start": 29.47,
-          "end": 29.6
+          "start": 29.495,
+          "end": 29.625
         },
         {
           "word": "still",
-          "start": 29.6,
-          "end": 29.86
+          "start": 29.625,
+          "end": 29.885
         },
         {
           "word": "just",
-          "start": 29.86,
-          "end": 30.15
+          "start": 29.885,
+          "end": 30.175
         },
         {
           "word": "one",
-          "start": 30.15,
-          "end": 30.38
+          "start": 30.175,
+          "end": 30.405
         },
         {
           "word": "star,",
-          "start": 30.38,
-          "end": 30.83
+          "start": 30.405,
+          "end": 30.855
         },
         {
           "word": "in",
-          "start": 31.04,
-          "end": 31.15
+          "start": 31.065,
+          "end": 31.175
         },
         {
           "word": "a",
-          "start": 31.15,
-          "end": 31.2
+          "start": 31.175,
+          "end": 31.225
         },
         {
           "word": "galaxy",
-          "start": 31.2,
-          "end": 31.74
+          "start": 31.225,
+          "end": 31.765
         },
         {
           "word": "of",
-          "start": 31.74,
-          "end": 31.81
+          "start": 31.765,
+          "end": 31.835
         },
         {
           "word": "billions.",
-          "start": 31.81,
-          "end": 32.4
+          "start": 31.835,
+          "end": 32.425
         }
       ]
     }

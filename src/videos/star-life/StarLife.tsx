@@ -26,7 +26,7 @@ export const StarLife: React.FC = () => (
     <Hud />
     {WORDS.length > 0 ? (
       <>
-        <KaraokeCaptions words={WORDS} emphasis={EMPHASIS} />
+        <KaraokeCaptions words={WORDS} emphasis={EMPHASIS} y={0.3} />
         {TITLES.map((c, i) => <Caption key={i} {...c} />)}
       </>
     ) : (

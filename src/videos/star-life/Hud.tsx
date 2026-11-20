@@ -27,7 +27,7 @@ export const Hud: React.FC = () => {
   return (
     <AbsoluteFill style={{ opacity: vis, pointerEvents: "none" }}>
       <div style={{
-        position: "absolute", top: (portrait ? 92 : 48) * u, left: 0, right: 0, textAlign: "center",
+        position: "absolute", top: (portrait ? 215 : 48) * u, left: 0, right: 0, textAlign: "center",
         fontFamily: FONT_BODY, color: "rgba(255,255,255,0.92)",
       }}>
         <div style={{ opacity: counterA }}>
