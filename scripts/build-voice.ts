@@ -11,9 +11,11 @@
  *   TTS_MODEL      default onnx-community/Kokoro-82M-v1.0-ONNX
  *   ALIGN_MODEL    default onnx-community/whisper-base.en
  *   MODELS_DIR     use pre-downloaded models from this folder (offline)
+ *   KOKORO_VOCAB   with MODELS_DIR: phoneme vocab JSON, when the model folder has no tokenizer files
  *
  * Output: public/voice/<id>/<line>.wav (48 kHz) and src/videos/<id>/narration.json
  */
+import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -43,7 +45,19 @@ async function loadTts(): Promise<Tts> {
   const { KokoroTTS } = await import("kokoro-js");
   console.log(`[voice] loading ${TTS_MODEL} (${DTYPE})…`);
   try {
-    tts = (await KokoroTTS.from_pretrained(TTS_MODEL, { dtype: DTYPE, device: "cpu" })) as unknown as Tts;
+    if (process.env.KOKORO_VOCAB) {
+      // Offline mode: local ONNX under MODELS_DIR + a phoneme vocab JSON ({"vocab": {symbol: id}}).
+      const { StyleTextToSpeech2Model, Tensor } = await import("@huggingface/transformers");
+      const vocab: Record<string, number> = JSON.parse(readFileSync(process.env.KOKORO_VOCAB, "utf8")).vocab;
+      const model = await StyleTextToSpeech2Model.from_pretrained(TTS_MODEL, { dtype: DTYPE, device: "cpu" });
+      const tokenizer = (phonemes: string) => {
+        const ids = [0, ...[...phonemes].map((c) => vocab[c]).filter((v) => v !== undefined).slice(0, 510), 0];
+        return { input_ids: new Tensor("int64", BigInt64Array.from(ids.map(BigInt)), [1, ids.length]) };
+      };
+      tts = new (KokoroTTS as unknown as new (m: unknown, t: unknown) => Tts)(model, tokenizer);
+    } else {
+      tts = (await KokoroTTS.from_pretrained(TTS_MODEL, { dtype: DTYPE, device: "cpu" })) as unknown as Tts;
+    }
   } catch (e) {
     throw new Error(`Could not load the voice model ${TTS_MODEL}. It downloads once from huggingface.co — ` +
       `check your internet connection, or set MODELS_DIR to a folder with the model. (${(e as Error).message.split("\n")[0]})`);
@@ -67,10 +81,35 @@ async function loadAsr(): Promise<Asr | null> {
   return asr;
 }
 
-/** Recognise words with timestamps (16 kHz mono input). */
-export async function transcribeWords(pcm16k: Float32Array): Promise<WordTiming[] | null> {
+/** Which engine produced the last transcription. */
+export let lastAsrEngine: "whisper" | "pocketsphinx" | "none" = "none";
+
+/** Fallback: PocketSphinx via Python (forced alignment when `text` is given). */
+function pocketsphinx(pcm16k: Float32Array, text = ""): WordTiming[] | null {
+  const pcm = Buffer.alloc(pcm16k.length * 2);
+  for (let i = 0; i < pcm16k.length; i++) pcm.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(pcm16k[i] * 32767))), i * 2);
+  const clean = text.toLowerCase().replace(/[-—…]/g, " ").replace(/[^a-z' ]/g, "").replace(/\s+/g, " ").trim();
+  for (const py of [process.env.PYTHON, "python3", "python"].filter(Boolean) as string[]) {
+    const r = spawnSync(py, ["-I", join("scripts", "align_pocketsphinx.py"), clean], { input: pcm, maxBuffer: 1 << 26 });
+    if (r.status === 0) {
+      try { const w = JSON.parse(r.stdout.toString()); return w.length ? w : null; } catch { return null; }
+    }
+  }
+  return null;
+}
+
+/**
+ * Recognise words with timestamps (16 kHz mono input). Whisper when available,
+ * otherwise PocketSphinx (force-aligned to `text` if given).
+ */
+export async function transcribeWords(pcm16k: Float32Array, text = ""): Promise<WordTiming[] | null> {
   const model = await loadAsr();
-  if (!model) return null;
+  if (!model) {
+    const w = pocketsphinx(pcm16k, text);
+    lastAsrEngine = w ? "pocketsphinx" : "none";
+    return w;
+  }
+  lastAsrEngine = "whisper";
   const r = await model(pcm16k, { return_timestamps: "word", chunk_length_s: 30 });
   return (r.chunks ?? []).map((c) => ({ word: c.text.trim(), start: c.timestamp[0], end: c.timestamp[1] ?? c.timestamp[0] + 0.2 }));
 }
@@ -162,8 +201,9 @@ export async function buildVoice(videoId: string, opts: { force?: boolean; align
     const d = durations[line.id];
     let words: WordTiming[] = estimateWordTimings(line.text, d);
     if (doAlign) {
-      const rec = await transcribeWords(readPcm(files[line.id], 16000));
-      if (rec && rec.length) { words = alignToScript(line.text, rec, d); alignment = "whisper"; }
+      const rec = await transcribeWords(readPcm(files[line.id], 16000), line.text);
+      if (rec && rec.length) { words = alignToScript(line.text, rec, d); alignment = lastAsrEngine === "whisper" ? "whisper" : "pocketsphinx"; }
+      else console.warn(`[voice] ${line.id}: no alignment, using estimated word timings`);
     }
     out.lines.push({ id: line.id, text: line.text, file: files[line.id], start: +s.start.toFixed(3), duration: +d.toFixed(3), speed: speeds[line.id],
       words: words.map((w) => ({ word: w.word, start: +(s.start + w.start).toFixed(3), end: +(s.start + w.end).toFixed(3) })) });

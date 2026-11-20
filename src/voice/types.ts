@@ -22,6 +22,6 @@ export interface NarrationTrack {
   voice: string;
   model: string;
   /** "whisper" when word times come from speech recognition, "estimate" otherwise. */
-  alignment: "whisper" | "estimate" | "none";
+  alignment: "whisper" | "pocketsphinx" | "estimate" | "none";
   lines: { id: string; text: string; file: string; start: number; duration: number; speed: number; words: WordTiming[] }[];
 }

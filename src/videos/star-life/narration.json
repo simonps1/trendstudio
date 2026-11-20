@@ -1,1 +1,657 @@
-{ "voice": "", "model": "", "alignment": "none", "lines": [] }
+{
+  "voice": "af_heart",
+  "model": "onnx-community/Kokoro-82M-v1.0-ONNX:fp32",
+  "alignment": "pocketsphinx",
+  "lines": [
+    {
+      "id": "hook1",
+      "text": "This star will live ten million years.",
+      "file": "public/voice/star-life/hook1.b8180d101263.wav",
+      "start": 0.05,
+      "duration": 1.895,
+      "speed": 1.05,
+      "words": [
+        {
+          "word": "This",
+          "start": 0.05,
+          "end": 0.23
+        },
+        {
+          "word": "star",
+          "start": 0.23,
+          "end": 0.56
+        },
+        {
+          "word": "will",
+          "start": 0.56,
+          "end": 0.68
+        },
+        {
+          "word": "live",
+          "start": 0.68,
+          "end": 0.89
+        },
+        {
+          "word": "ten",
+          "start": 0.89,
+          "end": 1.16
+        },
+        {
+          "word": "million",
+          "start": 1.16,
+          "end": 1.53
+        },
+        {
+          "word": "years.",
+          "start": 1.53,
+          "end": 1.93
+        }
+      ]
+    },
+    {
+      "id": "hook2",
+      "text": "And die in a second.",
+      "file": "public/voice/star-life/hook2.6673cb785d60.wav",
+      "start": 2.095,
+      "duration": 1.085,
+      "speed": 1.05,
+      "words": [
+        {
+          "word": "And",
+          "start": 2.095,
+          "end": 2.265
+        },
+        {
+          "word": "die",
+          "start": 2.265,
+          "end": 2.535
+        },
+        {
+          "word": "in",
+          "start": 2.535,
+          "end": 2.655
+        },
+        {
+          "word": "a",
+          "start": 2.655,
+          "end": 2.705
+        },
+        {
+          "word": "second.",
+          "start": 2.685,
+          "end": 3.175
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "text": "It begins as a cold, dark cloud of gas.",
+      "file": "public/voice/star-life/cloud.94b1c4f99837.wav",
+      "start": 3.85,
+      "duration": 2.47,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 3.85,
+          "end": 3.96
+        },
+        {
+          "word": "begins",
+          "start": 3.96,
+          "end": 4.41
+        },
+        {
+          "word": "as",
+          "start": 4.41,
+          "end": 4.55
+        },
+        {
+          "word": "a",
+          "start": 4.55,
+          "end": 4.6
+        },
+        {
+          "word": "cold,",
+          "start": 4.58,
+          "end": 5.19
+        },
+        {
+          "word": "dark",
+          "start": 5.19,
+          "end": 5.45
+        },
+        {
+          "word": "cloud",
+          "start": 5.45,
+          "end": 5.77
+        },
+        {
+          "word": "of",
+          "start": 5.77,
+          "end": 5.86
+        },
+        {
+          "word": "gas.",
+          "start": 5.86,
+          "end": 6.31
+        }
+      ]
+    },
+    {
+      "id": "gravity",
+      "text": "Gravity pulls it tighter… and tighter…",
+      "file": "public/voice/star-life/gravity.0f514d27ebbd.wav",
+      "start": 6.67,
+      "duration": 1.9,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Gravity",
+          "start": 6.67,
+          "end": 7.07
+        },
+        {
+          "word": "pulls",
+          "start": 7.07,
+          "end": 7.33
+        },
+        {
+          "word": "it",
+          "start": 7.33,
+          "end": 7.42
+        },
+        {
+          "word": "tighter…",
+          "start": 7.42,
+          "end": 7.97
+        },
+        {
+          "word": "and",
+          "start": 7.97,
+          "end": 8.12
+        },
+        {
+          "word": "tighter…",
+          "start": 8.12,
+          "end": 8.56
+        }
+      ]
+    },
+    {
+      "id": "mass",
+      "text": "Twenty times heavier than our Sun.",
+      "file": "public/voice/star-life/mass.43945db3acbc.wav",
+      "start": 11.1,
+      "duration": 1.71,
+      "speed": 1.05,
+      "words": [
+        {
+          "word": "Twenty",
+          "start": 11.1,
+          "end": 11.37
+        },
+        {
+          "word": "times",
+          "start": 11.37,
+          "end": 11.79
+        },
+        {
+          "word": "heavier",
+          "start": 11.79,
+          "end": 12.2
+        },
+        {
+          "word": "than",
+          "start": 12.2,
+          "end": 12.34
+        },
+        {
+          "word": "our",
+          "start": 12.34,
+          "end": 12.44
+        },
+        {
+          "word": "Sun.",
+          "start": 12.44,
+          "end": 12.8
+        }
+      ]
+    },
+    {
+      "id": "dot",
+      "text": "See that tiny dot? That's the Sun.",
+      "file": "public/voice/star-life/dot.bc387678b77e.wav",
+      "start": 13.65,
+      "duration": 1.975,
+      "speed": 1,
+      "words": [
+        {
+          "word": "See",
+          "start": 13.65,
+          "end": 13.85
+        },
+        {
+          "word": "that",
+          "start": 13.85,
+          "end": 14.03
+        },
+        {
+          "word": "tiny",
+          "start": 14.03,
+          "end": 14.37
+        },
+        {
+          "word": "dot?",
+          "start": 14.37,
+          "end": 14.86
+        },
+        {
+          "word": "That's",
+          "start": 14.86,
+          "end": 15.13
+        },
+        {
+          "word": "the",
+          "start": 15.13,
+          "end": 15.21
+        },
+        {
+          "word": "Sun.",
+          "start": 15.21,
+          "end": 15.61
+        }
+      ]
+    },
+    {
+      "id": "burn",
+      "text": "It burns blue-hot… and it burns fast.",
+      "file": "public/voice/star-life/burn.b9dd021e411c.wav",
+      "start": 15.975,
+      "duration": 2.185,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 15.975,
+          "end": 16.105
+        },
+        {
+          "word": "burns",
+          "start": 16.105,
+          "end": 16.425
+        },
+        {
+          "word": "blue-hot…",
+          "start": 16.615,
+          "end": 17.105
+        },
+        {
+          "word": "and",
+          "start": 17.105,
+          "end": 17.245
+        },
+        {
+          "word": "it",
+          "start": 17.245,
+          "end": 17.335
+        },
+        {
+          "word": "burns",
+          "start": 17.335,
+          "end": 17.665
+        },
+        {
+          "word": "fast.",
+          "start": 17.665,
+          "end": 18.145
+        }
+      ]
+    },
+    {
+      "id": "swell",
+      "text": "It swells into a red supergiant…",
+      "file": "public/voice/star-life/swell.cacba7e0deaf.wav",
+      "start": 19.25,
+      "duration": 1.98,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 19.25,
+          "end": 19.4
+        },
+        {
+          "word": "swells",
+          "start": 19.4,
+          "end": 19.83
+        },
+        {
+          "word": "into",
+          "start": 19.83,
+          "end": 20.06
+        },
+        {
+          "word": "a",
+          "start": 20.06,
+          "end": 20.11
+        },
+        {
+          "word": "red",
+          "start": 20.11,
+          "end": 20.41
+        },
+        {
+          "word": "supergiant…",
+          "start": 20.41,
+          "end": 21.22
+        }
+      ]
+    },
+    {
+      "id": "mercury",
+      "text": "Mercury.",
+      "file": "public/voice/star-life/mercury.03d762c5f6be.wav",
+      "start": 21.75,
+      "duration": 0.63,
+      "speed": 1.1,
+      "words": [
+        {
+          "word": "Mercury.",
+          "start": 21.75,
+          "end": 22.34
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "text": "Venus.",
+      "file": "public/voice/star-life/venus.f01694315121.wav",
+      "start": 22.6,
+      "duration": 0.605,
+      "speed": 1.1,
+      "words": [
+        {
+          "word": "Venus.",
+          "start": 22.64,
+          "end": 23.125
+        }
+      ]
+    },
+    {
+      "id": "earth",
+      "text": "Earth.",
+      "file": "public/voice/star-life/earth.ce0dc1998e1c.wav",
+      "start": 23.3,
+      "duration": 0.455,
+      "speed": 1.1,
+      "words": [
+        {
+          "word": "Earth.",
+          "start": 23.3,
+          "end": 23.71
+        }
+      ]
+    },
+    {
+      "id": "mars",
+      "text": "Mars.",
+      "file": "public/voice/star-life/mars.0818dd507cce.wav",
+      "start": 24,
+      "duration": 0.56,
+      "speed": 1.1,
+      "words": [
+        {
+          "word": "Mars.",
+          "start": 24,
+          "end": 24.45
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "text": "Even Jupiter.",
+      "file": "public/voice/star-life/jupiter.1a239dcba7d6.wav",
+      "start": 24.925,
+      "duration": 0.925,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Even",
+          "start": 24.925,
+          "end": 25.265
+        },
+        {
+          "word": "Jupiter.",
+          "start": 25.265,
+          "end": 25.845
+        }
+      ]
+    },
+    {
+      "id": "fuel",
+      "text": "Then the core runs out of fuel.",
+      "file": "public/voice/star-life/fuel.fa12bdc4ea38.wav",
+      "start": 26.35,
+      "duration": 1.54,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Then",
+          "start": 26.35,
+          "end": 26.53
+        },
+        {
+          "word": "the",
+          "start": 26.53,
+          "end": 26.6
+        },
+        {
+          "word": "core",
+          "start": 26.6,
+          "end": 26.97
+        },
+        {
+          "word": "runs",
+          "start": 26.97,
+          "end": 27.32
+        },
+        {
+          "word": "out",
+          "start": 27.32,
+          "end": 27.42
+        },
+        {
+          "word": "of",
+          "start": 27.42,
+          "end": 27.48
+        },
+        {
+          "word": "fuel.",
+          "start": 27.48,
+          "end": 27.89
+        }
+      ]
+    },
+    {
+      "id": "galaxy",
+      "text": "Brighter than a whole galaxy.",
+      "file": "public/voice/star-life/galaxy.b9d05a691308.wav",
+      "start": 29.45,
+      "duration": 1.545,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Brighter",
+          "start": 29.45,
+          "end": 29.86
+        },
+        {
+          "word": "than",
+          "start": 29.86,
+          "end": 30.02
+        },
+        {
+          "word": "a",
+          "start": 30.02,
+          "end": 30.07
+        },
+        {
+          "word": "whole",
+          "start": 30.05,
+          "end": 30.36
+        },
+        {
+          "word": "galaxy.",
+          "start": 30.36,
+          "end": 30.99
+        }
+      ]
+    },
+    {
+      "id": "dense",
+      "text": "What's left is so dense, not even light escapes.",
+      "file": "public/voice/star-life/dense.8b5ddb5e94f2.wav",
+      "start": 32.25,
+      "duration": 2.55,
+      "speed": 1.08,
+      "words": [
+        {
+          "word": "What's",
+          "start": 32.25,
+          "end": 32.49
+        },
+        {
+          "word": "left",
+          "start": 32.49,
+          "end": 32.75
+        },
+        {
+          "word": "is",
+          "start": 32.75,
+          "end": 32.81
+        },
+        {
+          "word": "so",
+          "start": 32.81,
+          "end": 33
+        },
+        {
+          "word": "dense,",
+          "start": 33,
+          "end": 33.43
+        },
+        {
+          "word": "not",
+          "start": 33.59,
+          "end": 33.79
+        },
+        {
+          "word": "even",
+          "start": 33.79,
+          "end": 33.99
+        },
+        {
+          "word": "light",
+          "start": 33.99,
+          "end": 34.18
+        },
+        {
+          "word": "escapes.",
+          "start": 34.18,
+          "end": 34.79
+        }
+      ]
+    },
+    {
+      "id": "bh",
+      "text": "A black hole.",
+      "file": "public/voice/star-life/bh.4c24e19747b6.wav",
+      "start": 35,
+      "duration": 0.81,
+      "speed": 1,
+      "words": [
+        {
+          "word": "A",
+          "start": 35,
+          "end": 35.1
+        },
+        {
+          "word": "black",
+          "start": 35.1,
+          "end": 35.44
+        },
+        {
+          "word": "hole.",
+          "start": 35.44,
+          "end": 35.81
+        }
+      ]
+    },
+    {
+      "id": "dust",
+      "text": "And its dust? It became new stars…",
+      "file": "public/voice/star-life/dust.3ee7cf2b72c3.wav",
+      "start": 36.35,
+      "duration": 2.05,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 36.35,
+          "end": 36.51
+        },
+        {
+          "word": "its",
+          "start": 36.51,
+          "end": 36.68
+        },
+        {
+          "word": "dust?",
+          "start": 36.68,
+          "end": 37.14
+        },
+        {
+          "word": "It",
+          "start": 37.27,
+          "end": 37.37
+        },
+        {
+          "word": "became",
+          "start": 37.37,
+          "end": 37.66
+        },
+        {
+          "word": "new",
+          "start": 37.66,
+          "end": 37.82
+        },
+        {
+          "word": "stars…",
+          "start": 37.82,
+          "end": 38.39
+        }
+      ]
+    },
+    {
+      "id": "you",
+      "text": "and you.",
+      "file": "public/voice/star-life/you.babde2fb61a2.wav",
+      "start": 38.7,
+      "duration": 0.625,
+      "speed": 1,
+      "words": [
+        {
+          "word": "and",
+          "start": 38.7,
+          "end": 38.89
+        },
+        {
+          "word": "you.",
+          "start": 38.89,
+          "end": 39.32
+        }
+      ]
+    }
+  ]
+}
