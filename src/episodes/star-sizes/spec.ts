@@ -15,7 +15,7 @@ export const STAR_SIZES: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 1,
   title: "How big is the biggest star?",
-  voice: "af_heart",
+  voice: "am_fenrir",
   emphasis: ["planet", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn", "hours", "billions", "disappear"],
   beats: [
     { id: "hook", say: "Everything you've ever known is on this planet. Now watch it disappear.", visual: { type: "body", body: earth }, speed: 1.08 },

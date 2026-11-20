@@ -9,7 +9,7 @@ import { PLANETS, T } from "./timeline";
 
 const engulf = (name: string) => PLANETS.find((p) => p.name === name)!.engulf;
 
-export const VOICE = "af_heart"; // Kokoro's top-graded voice (A). Try: af_bella, am_fenrir, am_michael, bf_emma
+export const VOICE = "am_fenrir"; // the channel narrator: clearest male voice in our recognizer test
 
 export const NARRATION: NarrationLine[] = [
   // hook

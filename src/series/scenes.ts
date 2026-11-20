@@ -12,6 +12,7 @@ import type { DrawContext } from "../core/components/CanvasLayer";
 import { blob, drawStarfield, softSprite } from "../videos/star-life/cosmos";
 import type { PlacedBody } from "./BodiesGL";
 import { zoomTime, type EpisodeLayout, type LaidOutBeat } from "./layout";
+import { drawHost, hostAppear, hostSpot, talkLevel } from "./host";
 import { FIT, orbitStagger, type Body, type Visual } from "./types";
 
 type Ctx = CanvasRenderingContext2D;
@@ -192,6 +193,13 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   }
 
   if (v.type === "shrink") nameplate(d, v.body, cx, cy, 1 - progress(lt, 0, 0.3));
+
+  // the host: talks with the narration, throws an arm up when a reveal lands
+  const spot = hostSpot(w, h, u, cy0);
+  let excite = 0;
+  if (v.type === "compare") { const since = lt - zoomTime(v); if (since >= 0) excite = Math.exp(-since * (v.big ? 1.6 : 3)); }
+  const leaving = 1 - progress(t, layout.duration - 0.5, layout.duration - 0.15);
+  drawHost(ctx, spot.x + fx.shake[0], spot.y + fx.shake[1], spot.size, t, { talk: talkLevel(layout.words, t), excite, appear: hostAppear(t) * leaving });
 
   if (fx.flash > 0.004) { ctx.fillStyle = `rgba(255,244,225,${fx.flash})`; ctx.fillRect(0, 0, w, h); }
   // loop: fade to the bare starfield in the last moments
