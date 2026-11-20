@@ -7,7 +7,14 @@ import { ensureFonts } from "../../core/fonts";
 import { BlackHole } from "./BlackHole";
 import { drawBack, drawFront } from "./cosmos";
 import { Hud } from "./Hud";
-import { CAPTIONS } from "./timeline";
+import { KaraokeCaptions } from "../../core/components/KaraokeCaptions";
+import type { NarrationTrack } from "../../voice/types";
+import narrationJson from "./narration.json";
+import { CAPTIONS, TITLES } from "./timeline";
+
+const narration = narrationJson as NarrationTrack;
+const WORDS = narration.lines.flatMap((l) => l.words);
+const EMPHASIS = ["million", "second", "sun", "supergiant", "jupiter", "galaxy", "light", "black", "hole", "you"];
 
 ensureFonts();
 
@@ -17,7 +24,14 @@ export const StarLife: React.FC = () => (
     <BlackHole />
     <CanvasLayer draw={drawFront} />
     <Hud />
-    {CAPTIONS.map((c, i) => <Caption key={i} {...c} />)}
+    {WORDS.length > 0 ? (
+      <>
+        <KaraokeCaptions words={WORDS} emphasis={EMPHASIS} />
+        {TITLES.map((c, i) => <Caption key={i} {...c} />)}
+      </>
+    ) : (
+      CAPTIONS.map((c, i) => <Caption key={i} {...c} />)
+    )}
     <FilmFinish />
     <Audio src={staticFile("audio/star-life.wav")} />
   </AbsoluteFill>

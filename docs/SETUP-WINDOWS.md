@@ -19,6 +19,17 @@ npm test
 Remotion downloads its own headless Chrome on the first render — no
 `REMOTION_BROWSER_EXECUTABLE` needed (that variable was only for the cloud sandbox).
 
+## Narration
+
+```powershell
+npm run voice:samples              # optional: hear 8 voices in out\voice-samples\
+npm run voice -- star-life         # first run downloads Kokoro (~330 MB) + Whisper (~300 MB)
+npm run render -- star-life vertical
+```
+
+Models are cached after the first download. For the fastest generation use `$env:TTS_DTYPE = "q8"`
+(slightly lower quality); the default `fp32` gives the best voice.
+
 ## Rendering with the GPU
 
 The 2D canvas layers render on the CPU; the Three.js black hole uses WebGL.

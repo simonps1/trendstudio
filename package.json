@@ -7,6 +7,8 @@
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "audio": "tsx scripts/build-audio.ts",
+    "voice": "tsx scripts/build-voice.ts",
+    "voice:samples": "tsx scripts/build-voice.ts --samples",
     "render": "tsx scripts/render.ts",
     "verify": "tsx scripts/verify.ts",
     "list": "tsx scripts/render.ts --list",
@@ -26,6 +28,7 @@
     "@remotion/fonts": "4.0.545",
     "@remotion/renderer": "4.0.545",
     "@remotion/three": "4.0.545",
+    "kokoro-js": "1.2.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "remotion": "4.0.545",

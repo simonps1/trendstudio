@@ -123,22 +123,33 @@ export function mix(...sigs: [Float32Array, number][]): Float32Array {
 
 // ---------------------------------------------------------------- mixer
 
+export type Bus = "music" | "fx" | "voice";
+
+export interface MasterOptions {
+  peakDb?: number;
+  /** Max gain reduction (dB) applied to music while the voice speaks. */
+  duckMusicDb?: number;
+  /** Max gain reduction (dB) applied to sound effects while the voice speaks. */
+  duckFxDb?: number;
+}
+
 export class Mixer {
-  readonly dry: StereoBuffer;
+  readonly buses: Record<Bus, StereoBuffer>;
   readonly send: StereoBuffer; // reverb bus
   constructor(public readonly durationSec: number) {
     const len = n(durationSec);
-    this.dry = { sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) };
-    this.send = { sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) };
+    const mk = (): StereoBuffer => ({ sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) });
+    this.buses = { music: mk(), fx: mk(), voice: mk() };
+    this.send = mk();
   }
 
   /**
    * Place a mono signal at `time` seconds. `pan` is -1..1 (or a curve over the
    * signal's own local time). `reverb` is the send amount 0..1.
    */
-  add(sig: Float32Array, time: number, gain = 1, pan: Curve = 0, reverb = 0) {
+  add(sig: Float32Array, time: number, gain = 1, pan: Curve = 0, reverb = 0, bus: Bus = "fx") {
     const start = Math.round(time * SAMPLE_RATE);
-    const { left, right } = this.dry;
+    const { left, right } = this.buses[bus];
     for (let i = 0; i < sig.length; i++) {
       const j = start + i;
       if (j < 0) continue;
@@ -151,20 +162,66 @@ export class Mixer {
     }
   }
 
-  /** Reverb the send bus, sum, soft-limit and normalise to `peakDb`. */
-  master(peakDb = -1): StereoBuffer {
+  /** Voice envelope (0..1) with fast attack / slow release, used for ducking. */
+  voiceEnvelope(): Float32Array {
+    const v = this.buses.voice;
+    const env = new Float32Array(v.left.length);
+    const att = Math.exp(-1 / (0.015 * SAMPLE_RATE)), rel = Math.exp(-1 / (0.35 * SAMPLE_RATE));
+    let e = 0;
+    for (let i = 0; i < env.length; i++) {
+      const x = Math.min(1, (Math.abs(v.left[i]) + Math.abs(v.right[i])) * 4);
+      e = x > e ? att * e + (1 - att) * x : rel * e + (1 - rel) * x;
+      env[i] = e;
+    }
+    // hold: look-ahead so music dips just *before* the first syllable
+    const ahead = Math.round(0.08 * SAMPLE_RATE);
+    for (let i = 0; i < env.length - ahead; i++) env[i] = Math.max(env[i], env[i + ahead]);
+    return env;
+  }
+
+  /** Reverb, duck music/fx under the voice, sum, soft-limit and normalise. */
+  master(opts: MasterOptions | number = {}): StereoBuffer {
+    const o: MasterOptions = typeof opts === "number" ? { peakDb: opts } : opts;
+    const peakDb = o.peakDb ?? -1;
+    const duckM = 1 - Math.pow(10, -(o.duckMusicDb ?? 9) / 20);
+    const duckF = 1 - Math.pow(10, -(o.duckFxDb ?? 4) / 20);
+    const env = this.voiceEnvelope();
     const wetL = reverb(this.send.left, 0), wetR = reverb(this.send.right, 23);
-    const out: StereoBuffer = { sampleRate: SAMPLE_RATE, left: new Float32Array(this.dry.left.length), right: new Float32Array(this.dry.left.length) };
+    const { music, fx, voice } = this.buses;
+    const len = music.left.length;
+    const out: StereoBuffer = { sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) };
     let peak = 1e-9;
-    for (let i = 0; i < out.left.length; i++) {
-      out.left[i] = Math.tanh((this.dry.left[i] + wetL[i]) * 0.9);
-      out.right[i] = Math.tanh((this.dry.right[i] + wetR[i]) * 0.9);
+    for (let i = 0; i < len; i++) {
+      const d = Math.min(1, env[i] * 3);
+      const gm = 1 - duckM * d, gf = 1 - duckF * d;
+      const l = music.left[i] * gm + (fx.left[i] + wetL[i]) * gf + voice.left[i];
+      const r = music.right[i] * gm + (fx.right[i] + wetR[i]) * gf + voice.right[i];
+      out.left[i] = Math.tanh(l * 0.9);
+      out.right[i] = Math.tanh(r * 0.9);
       peak = Math.max(peak, Math.abs(out.left[i]), Math.abs(out.right[i]));
     }
     const g = Math.pow(10, peakDb / 20) / peak;
-    for (let i = 0; i < out.left.length; i++) { out.left[i] *= g; out.right[i] *= g; }
+    for (let i = 0; i < len; i++) { out.left[i] *= g; out.right[i] *= g; }
     return out;
   }
+}
+
+/** Gentle voice chain: high-pass rumble, light compression, presence lift. */
+export function voiceChain(sig: Float32Array): Float32Array {
+  const hp = biquad(sig, "highpass", 85, 0.7);
+  const presence = biquad(hp, "bandpass", 3500, 0.8);
+  const out = new Float32Array(hp.length);
+  let env = 0;
+  const att = Math.exp(-1 / (0.005 * SAMPLE_RATE)), rel = Math.exp(-1 / (0.12 * SAMPLE_RATE));
+  for (let i = 0; i < hp.length; i++) {
+    const x = hp[i] + presence[i] * 0.35;
+    const a = Math.abs(x);
+    env = a > env ? att * env + (1 - att) * a : rel * env + (1 - rel) * a;
+    const over = Math.max(0, env - 0.25);
+    const gain = env > 0.25 ? (0.25 + over / 3) / env : 1; // 3:1 above threshold
+    out[i] = x * gain;
+  }
+  return out;
 }
 
 /** Schroeder/Freeverb-style mono reverb; `spread` detunes delay lines per channel. */

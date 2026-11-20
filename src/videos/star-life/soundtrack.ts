@@ -3,24 +3,25 @@
  * timed from the same timeline the visuals use.
  */
 import {
-  biquad, brown, chime, fades, impact, Mixer, pad, pop, riser, shape, shimmer, sizzle, thump, whoosh,
+  biquad, brown, chime, fades, impact, Mixer, pad, pop, riser, shape, shimmer, sizzle, thump, voiceChain, whoosh,
 } from "../../audio/synth";
+import type { SoundtrackContext } from "../../core/types";
 import { CAPTIONS, DURATION, engulfTimes, T } from "./timeline";
 
 const hz = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
 
-export function buildSoundtrack() {
+export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   const m = new Mixer(DURATION);
 
   // --- music beds -------------------------------------------------------
   // A minor-ish space pad -> darker as the star ages -> silence before the blast
-  m.add(pad(T.ignition + 0.5, [hz(45), hz(52), hz(57), hz(60)], 1, 0.8), 0, 0.5, 0, 0.5);
-  m.add(pad(T.giant - T.ignition + 1, [hz(45), hz(52), hz(57), hz(64), hz(69)], 2, 1.3), T.ignition, 0.45, 0, 0.5);
-  m.add(pad(T.collapse - T.giant + 0.5, [hz(41), hz(48), hz(53), hz(56)], 3, 0.9), T.giant - 0.5, 0.5, 0, 0.5);
-  m.add(pad(T.end - T.blackHole + 0.5, [hz(38), hz(45), hz(50), hz(57), hz(62)], 4, 0.7), T.blackHole - 0.5, 0.55, 0, 0.6);
+  m.add(pad(T.ignition + 0.5, [hz(45), hz(52), hz(57), hz(60)], 1, 0.8), 0, 0.5, 0, 0.5, "music");
+  m.add(pad(T.giant - T.ignition + 1, [hz(45), hz(52), hz(57), hz(64), hz(69)], 2, 1.3), T.ignition, 0.45, 0, 0.5, "music");
+  m.add(pad(T.collapse - T.giant + 0.5, [hz(41), hz(48), hz(53), hz(56)], 3, 0.9), T.giant - 0.5, 0.5, 0, 0.5, "music");
+  m.add(pad(T.end - T.blackHole + 0.5, [hz(38), hz(45), hz(50), hz(57), hz(62)], 4, 0.7), T.blackHole - 0.5, 0.55, 0, 0.6, "music");
   // low rumble under the nebula and the black hole
-  m.add(shape(biquad(brown(T.ignition - T.nebula, 31), "lowpass", 180), fades(T.ignition - T.nebula, 1.5, 0.2)), T.nebula, 0.6);
-  m.add(shape(biquad(brown(T.end - T.blackHole, 32), "lowpass", 120), fades(T.end - T.blackHole, 1.0, 2.5)), T.blackHole, 0.7);
+  m.add(shape(biquad(brown(T.ignition - T.nebula, 31), "lowpass", 180), fades(T.ignition - T.nebula, 1.5, 0.2)), T.nebula, 0.6, 0, 0, "music");
+  m.add(shape(biquad(brown(T.end - T.blackHole, 32), "lowpass", 120), fades(T.end - T.blackHole, 1.0, 2.5)), T.blackHole, 0.7, 0, 0, "music");
 
   // --- hook --------------------------------------------------------------
   for (const c of CAPTIONS.slice(0, 2)) m.add(whoosh(0.6, Math.round(c.start * 10)), c.start - 0.15, 0.35, (t) => -0.6 + t * 2, 0.3);
@@ -58,5 +59,9 @@ export function buildSoundtrack() {
   m.add(chime(hz(84), 3.5), T.dust + 1.8, 0.13, 0, 0.7);
   m.add(shimmer(3, 81), T.dust + 0.3, 0.25, 0, 0.8);
 
-  return m.master(-1);
+  // --- narration -------------------------------------------------------
+  for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 1.0, 0, 0.06, "voice");
+
+  // with a voice present, music dips ~9 dB and effects ~4 dB under speech
+  return m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 4 });
 }

@@ -18,6 +18,7 @@ import { join, resolve } from "node:path";
 import { compositionId, FORMATS, type FormatId } from "../src/core/formats";
 import { MANIFEST } from "../src/core/manifest";
 import { buildAudio } from "./build-audio";
+import { verifySpeech } from "./verify-speech";
 import { verify } from "./verify";
 
 const args = process.argv.slice(2);
@@ -44,7 +45,7 @@ if (process.env.REMOTION_GL) chromiumOptions.gl = process.env.REMOTION_GL as Chr
 const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || null;
 const concurrency = flag("concurrency") ? Number(flag("concurrency")) : null;
 
-if (video.soundtrack) await buildAudio(video.id);
+if (video.soundtrack && flag("still") === undefined) await buildAudio(video.id);
 
 console.log("[bundle] bundling…");
 const serveUrl = await bundle({ entryPoint: resolve("src/index.ts"), publicDir: resolve("public") });
@@ -85,5 +86,10 @@ for (const format of formats) {
     const expectedFrames = frames ? frames[1] - frames[0] + 1 : composition.durationInFrames;
     const ok = verify(output, { width: composition.width, height: composition.height, fps: composition.fps, frames: expectedFrames });
     if (!ok) process.exitCode = 1;
+    const narr = join("src", "videos", video.id, "narration.json");
+    if (existsSync(narr) && !frames) {
+      const sp = await verifySpeech(output, narr);
+      if (sp.status === "FAIL") process.exitCode = 1;
+    }
   }
 }

@@ -26,10 +26,11 @@ manifest.ts ──► build-audio.ts ──► public/audio/<id>.wav  (synth →
 
 1. Create `src/videos/<id>/timeline.ts` with scene times (seconds), captions and any physics/state functions.
 2. Write the visuals as React components / `CanvasLayer` draw functions / `ThreeCanvas` scenes reading `t`.
-3. Write `soundtrack.ts` using the kit in `src/audio/synth.ts` (`whoosh`, `riser`, `impact`, `shimmer`,
+3. Write `narration.ts` (voice lines pinned to timeline beats), run `npm run voice -- <id>`.
+4. Write `soundtrack.ts` using the kit in `src/audio/synth.ts` (`whoosh`, `riser`, `impact`, `shimmer`,
    `pop`, `sizzle`, `chime`, `thump`, `pad`) placed at timeline times.
-4. Register it in `src/core/manifest.ts` (metadata) and `src/core/registry.ts` (component).
-5. `npm run studio`, then `npm run render -- <id> vertical`.
+5. Register it in `src/core/manifest.ts` (metadata) and `src/core/registry.ts` (component).
+6. `npm run studio`, then `npm run render -- <id> vertical`.
 
 ## Roadmap (designed-for, not yet built)
 
@@ -39,7 +40,7 @@ manifest.ts ──► build-audio.ts ──► public/audio/<id>.wav  (synth →
 | Creative direction (idea → timeline) | `src/director/` | Claude generates a typed `VideoSpec` (scenes, captions, cues) validated by schema, rendered by generic scene templates |
 | Scene template library | `src/templates/` | Reusable parametric formats: explainer, countdown, physics sim, data race, 3D reveal |
 | Simulation formats | `src/sim/` | Deterministic physics (fixed-step, seeded) precomputed per frame |
-| Narration | `src/audio/tts/` | Local TTS (e.g. Piper/Kokoro) → word timings drive captions |
+| Narration | `src/voice/`, `scripts/build-voice.ts` | **Done:** Kokoro TTS, Whisper word alignment, karaoke captions, ducking, intelligibility QC |
 | Audiovisual QC with vision | `scripts/verify.ts` + `scripts/review.ts` | Contact sheets + audio summary reviewed by Claude; checks text legibility/safe areas |
 | Batch production | `scripts/batch.ts` | Queue of specs → renders → reports |
 | Personal UI | Remotion Studio + small local page | No accounts, no cloud |

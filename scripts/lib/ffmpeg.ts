@@ -32,3 +32,11 @@ export function run(name: "ffmpeg" | "ffprobe", args: string[], opts: { allowFai
   }
   return r;
 }
+
+/** Run and return raw stdout bytes (for PCM output). */
+export function runBinary(name: "ffmpeg" | "ffprobe", args: string[]): Buffer {
+  const [cmd, ...pre] = tool(name);
+  const r = spawnSync(cmd, [...pre, ...args], { shell: isWin, maxBuffer: 1024 * 1024 * 1024 });
+  if (r.status !== 0) throw new Error(`${name} ${args.join(" ")} failed:\n${r.stderr?.toString().slice(-2000)}`);
+  return r.stdout as Buffer;
+}

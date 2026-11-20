@@ -8,3 +8,5 @@
 - Never claim a render passed without the `verify` output showing OK. Report WARN lines honestly.
 - Cloud sandbox only: `export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell REMOTION_GL=swangle` (remotion.media is blocked there).
 - Run `npm run typecheck && npm test` before committing.
+- Narration lines live in `src/videos/<id>/narration.ts`, pinned to timeline beats; `npm run voice` regenerates WAVs + `narration.json` (both committed). Keep lines short: the realism test in `tests/voice.test.ts` must pass.
+- huggingface.co must be reachable for the first `npm run voice` (model download). In a restricted sandbox, allow it in the environment's network settings.

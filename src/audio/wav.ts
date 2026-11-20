@@ -22,3 +22,33 @@ export function encodeWav(buf: StereoBuffer): Uint8Array {
   }
   return out;
 }
+
+/** Decode a PCM 16-bit or float32 WAV (mono or stereo) into a stereo buffer. */
+export function decodeWav(bytes: Uint8Array): StereoBuffer {
+  const v = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const tag = (o: number) => String.fromCharCode(...bytes.slice(o, o + 4));
+  if (tag(0) !== "RIFF" || tag(8) !== "WAVE") throw new Error("Not a WAV file");
+  let o = 12, fmt = 1, channels = 2, rate = 48000, bits = 16;
+  while (o + 8 <= bytes.length) {
+    const id = tag(o), size = v.getUint32(o + 4, true);
+    if (id === "fmt ") {
+      fmt = v.getUint16(o + 8, true); channels = v.getUint16(o + 10, true);
+      rate = v.getUint32(o + 12, true); bits = v.getUint16(o + 22, true);
+      if (fmt === 0xfffe) fmt = bits === 32 ? 3 : 1;
+    } else if (id === "data") {
+      const bps = bits / 8, frames = Math.floor(size / (bps * channels));
+      const left = new Float32Array(frames), right = new Float32Array(frames);
+      for (let i = 0; i < frames; i++) {
+        for (let c = 0; c < Math.min(channels, 2); c++) {
+          const p = o + 8 + (i * channels + c) * bps;
+          const x = fmt === 3 ? v.getFloat32(p, true) : v.getInt16(p, true) / 32768;
+          (c === 0 ? left : right)[i] = x;
+        }
+        if (channels === 1) right[i] = left[i];
+      }
+      return { sampleRate: rate, left, right };
+    }
+    o += 8 + size + (size % 2);
+  }
+  throw new Error("WAV has no data chunk");
+}

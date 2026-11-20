@@ -1,5 +1,6 @@
 import type { StereoBuffer } from "../audio/synth";
 import type { FormatId } from "./formats";
+import type { NarrationLine } from "../voice/types";
 
 /** Node-safe description of a video project (no React imports). */
 export interface VideoMeta {
@@ -11,5 +12,11 @@ export interface VideoMeta {
   /** Formats this video is designed for. */
   formats: FormatId[];
   /** Builds the soundtrack (runs in Node via `npm run audio`). */
-  soundtrack?: () => Promise<StereoBuffer>;
+  soundtrack?: (ctx: SoundtrackContext) => Promise<StereoBuffer>;
+  /** Voice-over script (built into WAVs + word timings via `npm run voice`). */
+  narration?: () => Promise<{ voice: string; lines: NarrationLine[] }>;
 }
+
+/** A rendered narration line handed to the soundtrack builder (mono, 48 kHz). */
+export interface VoiceClip { id: string; start: number; audio: Float32Array }
+export interface SoundtrackContext { voice: VoiceClip[] }

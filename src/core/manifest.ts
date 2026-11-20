@@ -11,7 +11,11 @@ export const MANIFEST: VideoMeta[] = [
     title: "Born to Explode — the life of a massive star",
     durationSec: STAR_LIFE_DURATION,
     formats: ["vertical", "horizontal", "vertical4k", "horizontal4k"],
-    soundtrack: async () => (await import("../videos/star-life/soundtrack")).buildSoundtrack(),
+    soundtrack: async (ctx) => (await import("../videos/star-life/soundtrack")).buildSoundtrack(ctx),
+    narration: async () => {
+      const m = await import("../videos/star-life/narration");
+      return { voice: m.VOICE, lines: m.NARRATION };
+    },
   },
 ];
 

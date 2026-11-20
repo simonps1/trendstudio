@@ -11,6 +11,7 @@ Built on **Remotion 4 + React 19 + TypeScript**, **Three.js** for 3D and
 
 ```bash
 npm install
+npm run voice -- star-life              # generate narration (first run downloads the voice model, ~330 MB)
 npm run studio                          # live preview/editor in the browser
 npm run render -- star-life vertical    # 1080x1920 @60 → out/star-life--vertical.mp4 (+ QC report)
 npm run render -- star-life horizontal  # 1920x1080 @60
@@ -27,10 +28,29 @@ Useful options:
 | `npm run render -- star-life vertical --still 600,1700` | PNG stills → `out/stills/` |
 | `npm run render -- star-life vertical --concurrency 8` | more parallel browser tabs |
 | `npm run audio -- star-life` | rebuild only the soundtrack |
+| `npm run voice -- star-life` | (re)generate narration; unchanged lines are cached |
+| `npm run voice:samples` | render the hook in 8 voices → `out/voice-samples/` to pick a favourite |
 | `npm run verify -- out/x.mp4 --width 1080 --height 1920 --fps 60` | QC any MP4 |
 
 Format presets (`src/core/formats.ts`): `vertical` 1080×1920, `horizontal`
 1920×1080, `vertical4k` 2160×3840, `horizontal4k` 3840×2160 — all native 60 FPS.
+
+## Voice-over
+
+- **Engine:** [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0) via the official
+  `kokoro-js` package — runs locally on CPU, free, commercial use allowed. Default voice `af_heart`
+  (Kokoro's top-graded voice); change `VOICE` in `src/videos/<id>/narration.ts`.
+- **Script:** `src/videos/<id>/narration.ts`. Every line is pinned to the visual timeline
+  (`at` / `after` / `endAt`, plus an `until` deadline). Lines that run long are sped up
+  (max 1.25×); anything that still doesn't fit fails the build with a clear message.
+- **Word timing:** Whisper (`whisper-base.en`, MIT) transcribes each line for exact word timestamps,
+  which drive the karaoke captions. Falls back to syllable-based estimates if unavailable.
+- **Mix:** voice chain (high-pass, 3:1 compression, presence); music ducks ~9 dB and effects ~4 dB
+  under speech; whole mix normalised to −14 LUFS.
+- **QC:** after rendering, Whisper transcribes the *final mix* and the word error rate vs. the script
+  is reported (PASS ≤ 12%).
+- Generated voice WAVs (`public/voice/`) and `narration.json` are committed, so every device renders
+  the identical take without re-generating.
 
 ## What the QC checks (`scripts/verify.ts`)
 
@@ -62,7 +82,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how to add a new video and 
 
 ## Licensing of assets
 
-- All sound is synthesized from code in `src/audio/synth.ts` — original, no third-party samples.
+- All music/SFX is synthesized from code in `src/audio/synth.ts` — original, no third-party samples.
+- Narration: Kokoro-82M (Apache-2.0) and Whisper (MIT) model weights, run locally.
 - Fonts: Anton and Inter, SIL Open Font License (`public/fonts/LICENSE.md`).
 - Remotion is free for individuals and companies with ≤3 employees; check
   [remotion.dev/license](https://www.remotion.dev/license) if that changes.
