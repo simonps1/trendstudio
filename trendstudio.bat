@@ -7,7 +7,9 @@ rem    2. download the latest TRENDSTUDIO from GitHub
 rem    3. install the project's packages
 rem    4. render a video (1080x1920, 60 fps)
 rem    5. open the folder with the finished video
-rem  Run it again any time to update and render again.
+rem  Run it again any time to render again.
+rem  (If this file sits inside the unzipped project, it uses those files
+rem   instead of downloading.)
 rem  To render a different video:  trendstudio.bat star-sizes-long
 rem ============================================================
 setlocal
@@ -38,12 +40,19 @@ echo       Installing FFmpeg...
 winget install -e --id Gyan.FFmpeg --accept-source-agreements --accept-package-agreements
 :have_ffmpeg
 
+rem Inside an unzipped copy of the project? Then use these files and skip the download.
+if exist "%~dp0package.json" set "TARGET=%~dp0."
+if exist "%~dp0package.json" echo.
+if exist "%~dp0package.json" echo [2/5] Using the project files in this folder.
+if exist "%~dp0package.json" goto have_files
+
 echo.
 echo [2/5] Downloading the latest TRENDSTUDIO...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$ErrorActionPreference='Stop'; $ProgressPreference='SilentlyContinue'; Invoke-WebRequest -Uri 'https://github.com/simonps1/trendstudio/archive/refs/heads/main.zip' -OutFile $env:ZIP; if (Test-Path $env:TMPX) { Remove-Item -Recurse -Force $env:TMPX }; Expand-Archive -Path $env:ZIP -DestinationPath $env:TMPX -Force"
 if errorlevel 1 goto download_failed
 robocopy "%TMPX%\trendstudio-main" "%TARGET%" /E /NFL /NDL /NJH /NJS /NP >nul
 if errorlevel 8 goto copy_failed
+:have_files
 
 echo.
 echo [3/5] Installing packages (first time: about 1.3 GB, a few minutes)...
