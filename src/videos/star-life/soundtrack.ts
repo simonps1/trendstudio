@@ -3,8 +3,9 @@
  * timed from the same timeline the visuals use.
  */
 import {
-  biquad, brown, chime, fades, impact, Mixer, pad, pop, riser, shape, shimmer, sizzle, thump, voiceChain, whoosh,
+  biquad, brown, chime, fades, impact, Mixer, pop, riser, shape, shimmer, sizzle, voiceChain, whoosh,
 } from "../../audio/synth";
+import { addBeatTrack } from "../../audio/beat";
 import type { SoundtrackContext } from "../../core/types";
 import { CAPTIONS, DURATION, engulfTimes, T } from "./timeline";
 
@@ -13,15 +14,14 @@ const hz = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
 export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   const m = new Mixer(DURATION);
 
-  // --- music beds -------------------------------------------------------
-  // A minor-ish space pad -> darker as the star ages -> silence before the blast
-  m.add(pad(T.ignition + 0.5, [hz(45), hz(52), hz(57), hz(60)], 1, 0.8), 0, 0.5, 0, 0.5, "music");
-  m.add(pad(T.giant - T.ignition + 1, [hz(45), hz(52), hz(57), hz(64), hz(69)], 2, 1.3), T.ignition, 0.45, 0, 0.5, "music");
-  m.add(pad(T.collapse - T.giant + 0.5, [hz(41), hz(48), hz(53), hz(56)], 3, 0.9), T.giant - 0.5, 0.5, 0, 0.5, "music");
-  m.add(pad(T.end - T.blackHole + 0.5, [hz(38), hz(45), hz(50), hz(57), hz(62)], 4, 0.7), T.blackHole - 0.5, 0.55, 0, 0.6, "music");
-  // low rumble under the nebula and the black hole
-  m.add(shape(biquad(brown(T.ignition - T.nebula, 31), "lowpass", 180), fades(T.ignition - T.nebula, 1.5, 0.2)), T.nebula, 0.6, 0, 0, "music");
-  m.add(shape(biquad(brown(T.end - T.blackHole, 32), "lowpass", 120), fades(T.end - T.blackHole, 1.0, 2.5)), T.blackHole, 0.7, 0, 0, "music");
+  // --- music: 120 BPM track that follows the star's life -----------------
+  // quiet arpeggio for the cloud, full beat once the star ignites, harder as it swells,
+  // everything drops for the collapse and the supernova, half-time for the black hole.
+  const level = (t: number) => (t < T.ignition ? 0 : t < T.giant ? 2 : t < T.collapse ? 3 : t < T.blackHole ? 0 : 1);
+  const isQuiet = (t: number) => (t >= T.collapse && t < T.blackHole) || t >= T.dust;
+  addBeatTrack(m, DURATION, level, isQuiet);
+  m.add(shape(biquad(brown(T.ignition - T.nebula, 31), "lowpass", 180), fades(T.ignition - T.nebula, 1.5, 0.2)), T.nebula, 0.5, 0, 0, "music");
+  m.add(shape(biquad(brown(T.end - T.blackHole, 32), "lowpass", 120), fades(T.end - T.blackHole, 1.0, 2.5)), T.blackHole, 0.6, 0, 0, "music");
 
   // --- hook --------------------------------------------------------------
   for (const c of CAPTIONS.slice(0, 2)) m.add(whoosh(0.6, Math.round(c.start * 10)), c.start - 0.15, 0.35, (t) => -0.6 + t * 2, 0.3);
@@ -33,10 +33,7 @@ export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   m.add(shimmer(2.8, 43), T.ignition + 0.05, 0.5, (t) => Math.sin(t * 3) * 0.6, 0.7);
   m.add(whoosh(1.0, 44, 0.6), T.ignition, 0.4, 0, 0.3);
 
-  // --- main sequence: star "heartbeat" synced to its 1 Hz visual pulse
-  for (let t = T.main + 0.5; t < T.giant - 0.5; t += 1) {
-    m.add(thump(52), t - 0.02, 0.45, 0, 0.1);
-  }
+  // --- main sequence (the kick drum is the star's heartbeat now)
   m.add(pop(780, 51), T.sunCompare, 0.35, 0.4, 0.4);
 
   // --- red supergiant: each planet vaporised as the surface reaches it
@@ -63,7 +60,7 @@ export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 2.1, 0, 0.05, "voice");
 
   // with a voice present, music and effects dip ~9 dB under speech
-  const out = m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 9 });
+  const out = m.master({ peakDb: -1, duckMusicDb: 8.5, duckFxDb: 9 });
   ctx.onMixer?.(m);
   return out;
 }

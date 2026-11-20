@@ -4,6 +4,7 @@
  */
 import { clamp, ease, hash, lerp, noise1, progress, rng } from "../../core/anim";
 import type { DrawContext } from "../../core/components/CanvasLayer";
+import type { PlacedBody } from "../../series/BodiesGL";
 import { engulfTimes, giantRadiusAU, PLANETS, T } from "./timeline";
 
 type Ctx = CanvasRenderingContext2D;
@@ -249,7 +250,7 @@ export function drawBack({ ctx, t, width: w, height: h, u }: DrawContext) {
   }
 
   // --- main sequence star
-  if (t >= T.ignition && t < T.giant + 0.1) {
+  if (t >= T.ignition && t < T.giant) {
     const born = ease.outElastic(progress(t, T.ignition, T.ignition + 1.1));
     const pulse = 1 + 0.025 * Math.pow(Math.max(0, Math.sin(Math.PI * (t - T.main))), 8); // 1 Hz "heartbeat"
     const r = 110 * u * born * pulse;
@@ -265,14 +266,11 @@ export function drawBack({ ctx, t, width: w, height: h, u }: DrawContext) {
     }
     ctx.globalAlpha = 1;
     ctx.globalCompositeOperation = "source-over";
-    drawStar(ctx, cx, cy, r, t, 1, 0.35, 1);
 
-    // the Sun for scale
+    // the Sun for scale (the discs themselves are drawn by the WebGL layer, see placeStarLife)
     const sunA = progress(t, T.sunCompare, T.sunCompare + 0.25) * (1 - progress(t, 17.6, 18.3));
     if (sunA > 0) {
-      const pop = ease.outBack(progress(t, T.sunCompare, T.sunCompare + 0.4));
       const sxp = cx + 230 * u, syp = cy + 150 * u;
-      drawStar(ctx, sxp, syp, 13 * u * pop, t, 0.62, 0.3, sunA);
       ctx.globalAlpha = sunA;
       ctx.strokeStyle = "rgba(255,255,255,0.75)"; ctx.lineWidth = 2 * u;
       ctx.beginPath(); ctx.moveTo(sxp + 20 * u, syp + 20 * u); ctx.lineTo(sxp + 70 * u, syp + 70 * u); ctx.lineTo(sxp + 150 * u, syp + 70 * u); ctx.stroke();
@@ -282,56 +280,85 @@ export function drawBack({ ctx, t, width: w, height: h, u }: DrawContext) {
     }
   }
 
-  // --- red supergiant swallowing the solar system
-  if (t >= T.giant && t < T.supernova) {
-    const p = progress(t, T.giant, T.collapse - 0.3);
-    const starPx = lerp(110, 465, ease.inOutCubic(p)) * u;
-    const pxPerAU = starPx / giantRadiusAU(t);
-    const temp = 1 - ease.inOutCubic(progress(t, T.giant, T.giant + 2.2));
-    const collapse = ease.inExpo(progress(t, T.collapse, T.supernova - 0.05));
-    const orbitA = progress(t, T.giant + 0.1, T.giant + 0.8) * (1 - progress(t, T.collapse, T.collapse + 0.5));
-    const tilt = 0.32;
-    const planetPos = PLANETS.map((pl, i) => {
-      const ang = (t - T.giant) * (0.9 / Math.pow(pl.au, 1.5)) * 0.6 + i * 1.7;
-      return { pl, ang, x: cx + Math.cos(ang) * pl.au * pxPerAU, y: cy + Math.sin(ang) * pl.au * pxPerAU * tilt };
-    });
-    const swallowed = (au: number) => giantRadiusAU(t) >= au;
-    // orbits
+  drawGiantPhase(ctx, t, cx, cy, u, "back");
+}
+
+/** Star geometry of the supergiant phase (shared by 2D layers and the WebGL star). */
+function giantStar(t: number, u: number) {
+  const p = progress(t, T.giant, T.collapse - 0.3);
+  const starPx = lerp(110, 465, ease.inOutCubic(p)) * u;
+  const temp = 1 - ease.inOutCubic(progress(t, T.giant, T.giant + 2.2));
+  const collapse = ease.inExpo(progress(t, T.collapse, T.supernova - 0.05));
+  return { starPx, pxPerAU: starPx / giantRadiusAU(t), r: starPx * (1 - collapse * 0.97), temp: temp * (1 - collapse) + collapse };
+}
+
+/** Orbits and planets. "back" = behind the star, "front" = in front of it, plus vaporisation flashes. */
+function drawGiantPhase(ctx: Ctx, t: number, cx: number, cy: number, u: number, layer: "back" | "front") {
+  if (t < T.giant || t >= T.supernova) return;
+  const { pxPerAU } = giantStar(t, u);
+  const orbitA = progress(t, T.giant + 0.1, T.giant + 0.8) * (1 - progress(t, T.collapse, T.collapse + 0.5));
+  const tilt = 0.32;
+  const planetPos = PLANETS.map((pl, i) => {
+    const ang = (t - T.giant) * (0.9 / Math.pow(pl.au, 1.5)) * 0.6 + i * 1.7;
+    return { pl, ang, x: cx + Math.cos(ang) * pl.au * pxPerAU, y: cy + Math.sin(ang) * pl.au * pxPerAU * tilt };
+  });
+  const swallowed = (au: number) => giantRadiusAU(t) >= au;
+  const drawPlanet = (pp: (typeof planetPos)[number]) => {
+    if (swallowed(pp.pl.au) || orbitA <= 0) return;
+    const s = pp.pl.size * u;
+    ctx.globalAlpha = orbitA;
+    const g = ctx.createRadialGradient(pp.x - s * 0.4, pp.y - s * 0.4, 0, pp.x, pp.y, s);
+    g.addColorStop(0, "#fff"); g.addColorStop(0.35, pp.pl.color); g.addColorStop(1, "#111");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(pp.x, pp.y, s, 0, Math.PI * 2); ctx.fill();
+    ctx.font = `800 ${28 * u}px Inter`; ctx.textAlign = "center";
+    ctx.lineWidth = 5 * u; ctx.strokeStyle = "rgba(0,0,0,0.8)"; ctx.lineJoin = "round";
+    ctx.strokeText(pp.pl.name.toUpperCase(), pp.x, pp.y - s - 10 * u);
+    ctx.fillStyle = "#fff"; ctx.fillText(pp.pl.name.toUpperCase(), pp.x, pp.y - s - 10 * u);
+    ctx.globalAlpha = 1;
+  };
+  if (layer === "back") {
     ctx.lineWidth = 1.6 * u;
     for (const { pl } of planetPos) {
       const rx = pl.au * pxPerAU;
       ctx.strokeStyle = `rgba(255,255,255,${0.22 * orbitA * (swallowed(pl.au) ? 0.3 : 1)})`;
       ctx.beginPath(); ctx.ellipse(cx, cy, rx, rx * tilt, 0, 0, Math.PI * 2); ctx.stroke();
     }
-    const drawPlanet = (pp: (typeof planetPos)[number]) => {
-      if (swallowed(pp.pl.au) || orbitA <= 0) return;
-      const s = pp.pl.size * u;
-      ctx.globalAlpha = orbitA;
-      const g = ctx.createRadialGradient(pp.x - s * 0.4, pp.y - s * 0.4, 0, pp.x, pp.y, s);
-      g.addColorStop(0, "#fff"); g.addColorStop(0.35, pp.pl.color); g.addColorStop(1, "#111");
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(pp.x, pp.y, s, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = "rgba(255,255,255,0.85)"; ctx.font = `800 ${26 * u}px Inter`; ctx.textAlign = "center";
-      ctx.fillText(pp.pl.name.toUpperCase(), pp.x, pp.y - s - 10 * u);
-      ctx.globalAlpha = 1;
-    };
     planetPos.filter((p) => Math.sin(p.ang) < 0).forEach(drawPlanet);
-    const r = starPx * (1 - collapse * 0.97);
-    drawStar(ctx, cx, cy, r, t, temp * (1 - collapse) + collapse, 0.35 + 0.6 * (1 - temp), 1 + collapse * 2);
-    planetPos.filter((p) => Math.sin(p.ang) >= 0).forEach(drawPlanet);
-    // vaporisation flashes
-    ctx.globalCompositeOperation = "lighter";
-    for (const pp of planetPos) {
-      const te = engulfAt(pp.pl.name);
-      const k = progress(t, te, te + 0.7);
-      if (k > 0 && k < 1) {
-        const fr = (30 + 140 * ease.outCubic(k)) * u;
-        ctx.globalAlpha = 1 - k;
-        blob(ctx, softSprite([255, 230, 180]), pp.x, pp.y, fr);
-      }
-    }
-    ctx.globalAlpha = 1;
-    ctx.globalCompositeOperation = "source-over";
+    return;
   }
+  planetPos.filter((p) => Math.sin(p.ang) >= 0).forEach(drawPlanet);
+  ctx.globalCompositeOperation = "lighter";
+  for (const pp of planetPos) { // vaporisation flashes
+    const te = engulfAt(pp.pl.name);
+    const k = progress(t, te, te + 0.7);
+    if (k > 0 && k < 1) {
+      ctx.globalAlpha = 1 - k;
+      blob(ctx, softSprite([255, 230, 180]), pp.x, pp.y, (30 + 140 * ease.outCubic(k)) * u);
+    }
+  }
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = "source-over";
+}
+
+/** The star (and the Sun, for scale) as bodies for the WebGL sphere layer. */
+export function placeStarLife(t: number, w: number, h: number, u: number): PlacedBody[] {
+  const [sx, sy] = shake(t, u);
+  const [cx0, cy0] = center(w, h);
+  const cx = cx0 + sx, cy = cy0 + sy;
+  const star = (r: number, temp: number): PlacedBody => ({ body: { name: "Star", kind: "star", radius: 1, temp }, x: cx, y: cy, r });
+  if (t >= T.ignition && t < T.giant) {
+    const born = ease.outElastic(progress(t, T.ignition, T.ignition + 1.1));
+    const pulse = 1 + 0.03 * Math.pow(Math.max(0, Math.cos(Math.PI * (t - T.main) / 0.5) * 0.5 + 0.5), 6); // on the beat
+    const out: PlacedBody[] = [star(110 * u * born * pulse, 1)];
+    const sunR = 13 * u * ease.outBack(progress(t, T.sunCompare, T.sunCompare + 0.4)) * (1 - progress(t, 17.6, 18.3));
+    if (sunR > 0.5) out.push({ body: { name: "Sun", kind: "star", radius: 1, temp: 0.55 }, x: cx + 230 * u, y: cy + 150 * u, r: sunR });
+    return out;
+  }
+  if (t >= T.giant && t < T.supernova) {
+    const g = giantStar(t, u);
+    return [star(g.r, g.temp)];
+  }
+  return [];
 }
 
 const ENGULF = new Map(engulfTimes().map((e) => [e.name, e.t]));
@@ -345,6 +372,7 @@ export function drawFront({ ctx, t, width: w, height: h, u }: DrawContext) {
   const [sx, sy] = shake(t, u);
   ctx.translate(sx, sy);
   const [cx, cy] = center(w, h);
+  drawGiantPhase(ctx, t, cx, cy, u, "front");
   const diag = Math.hypot(w, h);
 
   // ignition flash + ring

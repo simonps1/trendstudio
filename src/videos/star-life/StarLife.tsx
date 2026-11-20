@@ -5,7 +5,8 @@ import { CanvasLayer } from "../../core/components/CanvasLayer";
 import { FilmFinish } from "../../core/components/FilmFinish";
 import { ensureFonts } from "../../core/fonts";
 import { BlackHole } from "./BlackHole";
-import { drawBack, drawFront } from "./cosmos";
+import { BodiesGL } from "../../series/BodiesGL";
+import { drawBack, drawFront, placeStarLife } from "./cosmos";
 import { Hud } from "./Hud";
 import { KaraokeCaptions } from "../../core/components/KaraokeCaptions";
 import type { NarrationTrack } from "../../voice/types";
@@ -21,6 +22,7 @@ ensureFonts();
 export const StarLife: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: "#03040b" }}>
     <CanvasLayer draw={drawBack} />
+    <BodiesGL place={placeStarLife} />
     <BlackHole />
     <CanvasLayer draw={drawFront} />
     <Hud />

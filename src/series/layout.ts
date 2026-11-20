@@ -1,13 +1,13 @@
 import { estimateWordTimings, syllables } from "../voice/align";
 import type { NarrationLine, NarrationTrack, WordTiming } from "../voice/types";
+import { BEAT, BPM } from "../audio/beat";
 import type { Beat, EpisodeSpec, Variant, Visual } from "./types";
 
 export interface LaidOutBeat { beat: Beat; start: number; end: number; voiceStart: number; voiceEnd: number }
 export interface EpisodeLayout { beats: LaidOutBeat[]; duration: number; words: WordTiming[]; voiced: boolean }
 
 /** Music tempo. Every cut and every reveal lands on this grid. */
-export const BPM = 120;
-export const BEAT = 60 / BPM;
+export { BEAT, BPM };
 /** The voice starts half a beat after the cut, so the picture leads the words. */
 const LEAD = BEAT / 2;
 

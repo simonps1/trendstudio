@@ -9,16 +9,16 @@ import { clamp, ease } from "../../core/anim";
 export const DURATION = 40;
 
 export const T = {
-  hookEnd: 3.6,
-  nebula: 3.6,
+  hookEnd: 3.5,
+  nebula: 3.5,
   ignition: 10.0, // flash frame
   main: 11.0,
-  sunCompare: 13.6,
-  giant: 19.2,
-  collapse: 26.2,
-  supernova: 28.4, // flash frame
+  sunCompare: 13.5,
+  giant: 19.0,
+  collapse: 26.0,
+  supernova: 28.5, // flash frame
   blackHole: 32.0,
-  dust: 36.2,
+  dust: 36.0,
   end: DURATION,
 } as const;
 
@@ -26,7 +26,7 @@ export const T = {
 /** Big title cards shown on the visual hits (on top of narration captions). */
 export const TITLES = [
   { start: 10.05, end: 11.1, text: "*Ignition*", y: 0.3, size: 150 },
-  { start: 28.5, end: 29.4, text: "*Supernova*", y: 0.3, size: 170 },
+  { start: 28.6, end: 29.5, text: "*Supernova*", y: 0.3, size: 170 },
 ];
 
 export const CAPTIONS = [
@@ -49,11 +49,11 @@ export const CAPTIONS = [
 // ------------------------------------------------------------ star physics (stylised)
 
 export const PLANETS = [
-  { name: "Mercury", au: 0.39, color: "#b9b2a8", size: 8, engulf: 21.8 },
-  { name: "Venus", au: 0.72, color: "#e8cf9a", size: 11, engulf: 22.65 },
-  { name: "Earth", au: 1.0, color: "#5aa9ff", size: 12, engulf: 23.35 },
-  { name: "Mars", au: 1.52, color: "#e0704a", size: 9, engulf: 24.05 },
-  { name: "Jupiter", au: 5.2, color: "#e2b98b", size: 20, engulf: 25.6 },
+  { name: "Mercury", au: 0.39, color: "#b9b2a8", size: 8, engulf: 21.5 },
+  { name: "Venus", au: 0.72, color: "#e8cf9a", size: 11, engulf: 22.5 },
+  { name: "Earth", au: 1.0, color: "#5aa9ff", size: 12, engulf: 23.5 },
+  { name: "Mars", au: 1.52, color: "#e0704a", size: 9, engulf: 24.0 },
+  { name: "Jupiter", au: 5.2, color: "#e2b98b", size: 20, engulf: 25.5 },
 ];
 
 /** (time, radius AU) keyframes: the star's surface reaches each orbit exactly at its engulf time. */
