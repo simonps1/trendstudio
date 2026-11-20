@@ -14,7 +14,7 @@ const mixRGB = (a: RGB, b: RGB, t: number): RGB => [lerp(a[0], b[0], t), lerp(a[
 // ------------------------------------------------------------ cached soft sprites
 
 const spriteCache = new Map<string, HTMLCanvasElement>();
-function softSprite(c: RGB, hardness = 0.0) {
+export function softSprite(c: RGB, hardness = 0.0) {
   const key = c.map((v) => Math.round(v / 8) * 8).join(",") + ":" + hardness;
   let s = spriteCache.get(key);
   if (s) return s;
@@ -30,7 +30,7 @@ function softSprite(c: RGB, hardness = 0.0) {
   spriteCache.set(key, s);
   return s;
 }
-const blob = (ctx: Ctx, img: HTMLCanvasElement, x: number, y: number, r: number) =>
+export const blob = (ctx: Ctx, img: HTMLCanvasElement, x: number, y: number, r: number) =>
   ctx.drawImage(img, x - r, y - r, r * 2, r * 2);
 
 // ------------------------------------------------------------ static seeded data
@@ -77,7 +77,7 @@ const center = (w: number, h: number) => [w / 2, h > w ? h * 0.53 : h / 2] as co
 
 // ------------------------------------------------------------ starfield
 
-function drawStarfield(ctx: Ctx, t: number, w: number, h: number, u: number, alpha = 1, pull = 0) {
+export function drawStarfield(ctx: Ctx, t: number, w: number, h: number, u: number, alpha = 1, pull = 0) {
   const [cx, cy] = center(w, h);
   const span = Math.max(w, h) * 1.15;
   ctx.globalCompositeOperation = "lighter";
@@ -111,12 +111,13 @@ function drawStarfield(ctx: Ctx, t: number, w: number, h: number, u: number, alp
 
 /** temp: 0 = red supergiant, 1 = blue-white O/B star. */
 function starPalette(temp: number) {
-  const red = { core: [255, 210, 150] as RGB, mid: [255, 110, 40] as RGB, limb: [150, 25, 10] as RGB, glow: [255, 70, 30] as RGB };
-  const blue = { core: [255, 255, 255] as RGB, mid: [170, 205, 255] as RGB, limb: [70, 110, 255] as RGB, glow: [110, 160, 255] as RGB };
-  return {
-    core: mixRGB(red.core, blue.core, temp), mid: mixRGB(red.mid, blue.mid, temp),
-    limb: mixRGB(red.limb, blue.limb, temp), glow: mixRGB(red.glow, blue.glow, temp),
-  };
+  type P = { core: RGB; mid: RGB; limb: RGB; glow: RGB };
+  const red: P = { core: [255, 210, 150], mid: [255, 110, 40], limb: [150, 25, 10], glow: [255, 70, 30] };
+  const yellow: P = { core: [255, 255, 235], mid: [255, 215, 110], limb: [235, 130, 30], glow: [255, 180, 70] };
+  const blue: P = { core: [255, 255, 255], mid: [170, 205, 255], limb: [70, 110, 255], glow: [110, 160, 255] };
+  // three stops (red → yellow-white → blue) so mid temperatures look like the Sun, not violet
+  const [a, b, k] = temp < 0.5 ? [red, yellow, temp / 0.5] : [yellow, blue, (temp - 0.5) / 0.5];
+  return { core: mixRGB(a.core, b.core, k), mid: mixRGB(a.mid, b.mid, k), limb: mixRGB(a.limb, b.limb, k), glow: mixRGB(a.glow, b.glow, k) };
 }
 
 export function drawStar(ctx: Ctx, x: number, y: number, r: number, t: number, temp: number, boil: number, bright = 1) {

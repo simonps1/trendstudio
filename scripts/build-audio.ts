@@ -9,7 +9,7 @@ import { biquad, SAMPLE_RATE } from "../src/audio/synth";
 import { decodeWav, encodeWav } from "../src/audio/wav";
 import type { VoiceClip } from "../src/core/types";
 import type { NarrationTrack } from "../src/voice/types";
-import { MANIFEST } from "../src/core/manifest";
+import { MANIFEST, narrationJsonPath } from "../src/core/manifest";
 import { run } from "./lib/ffmpeg";
 
 /** Narration should sit at least this far above the music + effects under it. */
@@ -17,8 +17,9 @@ export const MIN_CLARITY_DB = 10;
 
 /** Load generated narration (if any). Missing files are an error: run `npm run voice`. */
 export function loadVoiceClips(id: string): VoiceClip[] {
-  const json = join("src", "videos", id, "narration.json");
-  if (!existsSync(json)) return [];
+  const meta = MANIFEST.find((m) => m.id === id);
+  const json = meta ? narrationJsonPath(meta) : "";
+  if (!json || !existsSync(json)) return [];
   const track: NarrationTrack = JSON.parse(readFileSync(json, "utf8"));
   return track.lines.map((l) => {
     if (!existsSync(l.file)) throw new Error(`Voice file missing: ${l.file}. Run: npm run voice -- ${id}`);

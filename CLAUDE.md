@@ -10,3 +10,5 @@
 - Run `npm run typecheck && npm test` before committing.
 - Narration lines live in `src/videos/<id>/narration.ts`, pinned to timeline beats; `npm run voice` regenerates WAVs + `narration.json` (both committed). Keep lines short: the realism test in `tests/voice.test.ts` must pass.
 - huggingface.co must be reachable for the first `npm run voice` (model download). In a restricted sandbox, allow it in the environment's network settings.
+- Series episodes: `src/episodes/<id>/spec.ts` (beats = one line + one visual). Timing is voice-first via `src/series/layout.ts`; never hand-time episode beats. Short cut must stay < 59 s and long cut > 61 s (`tests/series.test.ts`). Every stated fact needs a checkable source; label uncertain values as estimates on screen.
+- Voice clarity: `npm run audio` prints voice-vs-bed dB per line (speech band); keep every line >= 10 dB.

@@ -35,6 +35,22 @@ Useful options:
 Format presets (`src/core/formats.ts`): `vertical` 1080×1920, `horizontal`
 1920×1080, `vertical4k` 2160×3840, `horizontal4k` 3840×2160 — all native 60 FPS.
 
+## Series episodes
+
+An episode is a script plus scene choices: `src/episodes/<id>/spec.ts`. Each beat is one spoken line
+and one visual (`body`, `compare`, `orbits`, `lap`, `shrink`, `stars`). Timing comes from the voice,
+so nothing is hand-timed. Every episode produces two videos: `<id>` (short cut, under 60 s) and
+`<id>-long` (over 60 s); beats marked `only: "long"` appear only in the long cut.
+
+```bash
+npm run voice -- star-sizes star-sizes-long     # generate narration for both cuts
+npm run render -- star-sizes vertical           # short cut
+npm run render -- star-sizes-long vertical      # long cut
+```
+
+To add an episode: copy `src/episodes/star-sizes`, edit `spec.ts`, add it to `src/episodes/index.ts`.
+Series scenes are composed for vertical video. See [docs/CHANNEL-PLAN.md](docs/CHANNEL-PLAN.md).
+
 ## Voice-over
 
 - **Engine:** [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0) via the official
@@ -69,6 +85,8 @@ are written next to the MP4:
 ```
 src/
   core/          formats, manifest (node-safe), registry (components), anim helpers, fonts
+  series/        episode format: types, voice-first layout, scene library, generic soundtrack
+  episodes/<id>/ one folder per series episode: spec.ts + generated narration
   core/components/  CanvasLayer, Caption, FilmFinish (grain + vignette)
   audio/         synth.ts (original sound design kit + mixer + reverb), wav.ts
   videos/<id>/   one folder per video: timeline.ts (single source of truth),

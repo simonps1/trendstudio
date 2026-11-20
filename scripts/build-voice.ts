@@ -22,7 +22,7 @@ import { join } from "node:path";
 import { alignToScript, estimateWordTimings } from "../src/voice/align";
 import { fitSpeed, scheduleLines } from "../src/voice/schedule";
 import type { NarrationLine, NarrationTrack, WordTiming } from "../src/voice/types";
-import { MANIFEST } from "../src/core/manifest";
+import { MANIFEST, narrationJsonPath } from "../src/core/manifest";
 import { run, runBinary } from "./lib/ffmpeg";
 
 const TTS_MODEL = process.env.TTS_MODEL ?? "onnx-community/Kokoro-82M-v1.0-ONNX";
@@ -163,7 +163,7 @@ export async function buildVoice(videoId: string, opts: { force?: boolean; align
   const { lines, voice } = await video.narration();
   const dir = join("public", "voice", videoId);
   mkdirSync(dir, { recursive: true });
-  const jsonPath = join("src", "videos", videoId, "narration.json");
+  const jsonPath = narrationJsonPath(video);
   const prev: NarrationTrack | null = existsSync(jsonPath) ? JSON.parse(readFileSync(jsonPath, "utf8")) : null;
 
   const durations: Record<string, number> = {};

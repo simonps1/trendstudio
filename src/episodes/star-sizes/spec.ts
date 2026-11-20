@@ -1,0 +1,46 @@
+import type { Body, EpisodeSpec } from "../../series/types";
+
+// Radii in Earth radii. Star sizes are published best estimates (the largest are uncertain).
+const SUN = 109.2;
+const earth: Body = { name: "Earth", kind: "planet", radius: 1, color: "#2a6fd6", surface: "earth", note: "12,742 km wide" };
+const jupiter: Body = { name: "Jupiter", kind: "planet", radius: 11.2, color: "#d9a877", surface: "bands", note: "11 Earths wide" };
+const sun: Body = { name: "The Sun", kind: "star", radius: SUN, temp: 0.55, note: "109 Earths wide" };
+const sirius: Body = { name: "Sirius", kind: "star", radius: 1.71 * SUN, temp: 0.95, note: "1.7 Suns wide" };
+const rigel: Body = { name: "Rigel", kind: "star", radius: 78 * SUN, temp: 1, note: "≈ 78 Suns wide" };
+const betelgeuse: Body = { name: "Betelgeuse", kind: "star", radius: 764 * SUN, temp: 0.08, note: "≈ 760 Suns wide" };
+const s218: Body = { name: "Stephenson 2-18", kind: "star", radius: 2150 * SUN, temp: 0, note: "≈ 2,150 Suns wide (best estimate)" };
+
+export const STAR_SIZES: EpisodeSpec = {
+  id: "star-sizes",
+  series: "Cosmic Scale",
+  episode: 1,
+  title: "How big is the biggest star?",
+  voice: "af_heart",
+  emphasis: ["biggest", "earth", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn's", "hours", "billions"],
+  beats: [
+    { id: "hook", say: "How big is the biggest star we've ever found?", visual: { type: "body", body: s218 }, speed: 1.05 },
+    { id: "earth", say: "Start small. This is Earth.", visual: { type: "body", body: earth } },
+    { id: "jupiter", say: "Jupiter is eleven times wider.", visual: { type: "compare", from: earth, to: jupiter } },
+    { id: "sun", say: "The Sun? One hundred and nine Earths across.", visual: { type: "compare", from: jupiter, to: sun } },
+    { id: "sunmass", only: "long", say: "It holds ninety-nine percent of all the mass in our solar system.", visual: { type: "body", body: sun } },
+    { id: "sirius", only: "long", say: "Sirius, the brightest star in our night sky, is nearly twice as wide.", visual: { type: "compare", from: sun, to: sirius } },
+    { id: "rigel", only: "long", say: "Rigel, a blue supergiant, is almost eighty Suns across.", visual: { type: "compare", from: sirius, to: rigel } },
+    { id: "betel-s", only: "short", say: "Betelgeuse is over seven hundred Suns wide.", visual: { type: "compare", from: sun, to: betelgeuse } },
+    { id: "betel-l", only: "long", say: "Betelgeuse, a red supergiant, is over seven hundred Suns wide.", visual: { type: "compare", from: rigel, to: betelgeuse } },
+    { id: "betelmars", only: "long", say: "In our solar system, its surface would reach past Mars.", visual: { type: "body", body: betelgeuse } },
+    { id: "s218", say: "And this is Stephenson two eighteen. About two thousand Suns across.", visual: { type: "compare", from: betelgeuse, to: s218, big: true }, hold: 0.3 },
+    { id: "volume", only: "long", say: "You could fit nearly ten billion Suns inside it.", visual: { type: "body", body: s218 } },
+    {
+      id: "orbits", say: "Put it where our Sun is, and it swallows everything out to Saturn's orbit.",
+      visual: { type: "orbits", body: s218, radiusAu: 10, orbits: [
+        { name: "Earth", au: 1 }, { name: "Mars", au: 1.52, label: false }, { name: "Jupiter", au: 5.2 }, { name: "Saturn", au: 9.58 },
+      ] },
+    },
+    { id: "lap1", say: "Light circles Earth seven times a second.", visual: { type: "body", body: earth } },
+    { id: "lap2", say: "To circle this star once, it needs almost nine hours.", visual: { type: "lap", body: s218, value: 8.7, unit: "hours" }, hold: 0.5 },
+    { id: "far", only: "long", say: "It's so far away that its light takes nearly twenty thousand years to reach us.", visual: { type: "body", body: s218 } },
+    { id: "unstable", only: "long", say: "Stars this big don't last. One day it will collapse, and explode.", visual: { type: "body", body: s218 } },
+    { id: "end", say: "And it's still just one star, in a galaxy of billions.", visual: { type: "shrink", body: s218 }, hold: 0.4 },
+    { id: "cta", only: "long", say: "Follow for more cosmic scale.", visual: { type: "stars" } },
+  ],
+};

@@ -11,6 +11,8 @@ export interface VideoMeta {
   durationSec: number;
   /** Formats this video is designed for. */
   formats: FormatId[];
+  /** Where the generated narration JSON lives (default src/videos/<id>/narration.json). */
+  narrationJson?: string;
   /** Builds the soundtrack (runs in Node via `npm run audio`). */
   soundtrack?: (ctx: SoundtrackContext) => Promise<StereoBuffer>;
   /** Voice-over script (built into WAVs + word timings via `npm run voice`). */

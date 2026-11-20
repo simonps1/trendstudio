@@ -16,7 +16,7 @@ import { renderMedia, renderStill, selectComposition, type ChromiumOptions } fro
 import { existsSync, mkdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { compositionId, FORMATS, type FormatId } from "../src/core/formats";
-import { MANIFEST } from "../src/core/manifest";
+import { MANIFEST, narrationJsonPath } from "../src/core/manifest";
 import { buildAudio } from "./build-audio";
 import { verifySpeech } from "./verify-speech";
 import { verify } from "./verify";
@@ -86,7 +86,7 @@ for (const format of formats) {
     const expectedFrames = frames ? frames[1] - frames[0] + 1 : composition.durationInFrames;
     const ok = verify(output, { width: composition.width, height: composition.height, fps: composition.fps, frames: expectedFrames });
     if (!ok) process.exitCode = 1;
-    const narr = join("src", "videos", video.id, "narration.json");
+    const narr = narrationJsonPath(video);
     if (existsSync(narr) && !frames) {
       const sp = await verifySpeech(output, narr);
       if (sp.status === "FAIL") process.exitCode = 1;
