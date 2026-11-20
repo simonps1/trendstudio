@@ -1,0 +1,42 @@
+{
+  "name": "trendstudio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal AI-assisted video/animation generator (Remotion + FFmpeg).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "audio": "tsx scripts/build-audio.ts",
+    "render": "tsx scripts/render.ts",
+    "verify": "tsx scripts/verify.ts",
+    "list": "tsx scripts/render.ts --list",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fontsource/anton": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "@react-three/fiber": "9.8.2",
+    "@remotion/bundler": "4.0.545",
+    "@remotion/cli": "4.0.545",
+    "@remotion/fonts": "4.0.545",
+    "@remotion/renderer": "4.0.545",
+    "@remotion/three": "4.0.545",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.545",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/three": "0.187.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}

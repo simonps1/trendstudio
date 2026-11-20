@@ -1,0 +1,12 @@
+node_modules/
+out/
+build/
+.remotion/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+# generated soundtracks are rebuilt from source by `npm run audio`
+public/audio/*.wav
+public/audio/*.raw.wav
