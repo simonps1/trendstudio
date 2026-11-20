@@ -477,34 +477,34 @@
       "id": "galaxy",
       "text": "Brighter than a whole galaxy.",
       "file": "public/voice/star-life/galaxy.b9d05a691308.wav",
-      "start": 29.45,
+      "start": 30,
       "duration": 1.545,
       "speed": 1,
       "words": [
         {
           "word": "Brighter",
-          "start": 29.45,
-          "end": 29.86
+          "start": 30,
+          "end": 30.41
         },
         {
           "word": "than",
-          "start": 29.86,
-          "end": 30.02
+          "start": 30.41,
+          "end": 30.57
         },
         {
           "word": "a",
-          "start": 30.02,
-          "end": 30.07
+          "start": 30.57,
+          "end": 30.62
         },
         {
           "word": "whole",
-          "start": 30.05,
-          "end": 30.36
+          "start": 30.6,
+          "end": 30.91
         },
         {
           "word": "galaxy.",
-          "start": 30.36,
-          "end": 30.99
+          "start": 30.91,
+          "end": 31.54
         }
       ]
     },

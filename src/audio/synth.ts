@@ -136,6 +136,8 @@ export interface MasterOptions {
 export class Mixer {
   readonly buses: Record<Bus, StereoBuffer>;
   readonly send: StereoBuffer; // reverb bus
+  /** Set by master(): the voice and the (ducked) background as mixed, for clarity QC. */
+  rendered: { voice: Float32Array; background: Float32Array } | null = null;
   constructor(public readonly durationSec: number) {
     const len = n(durationSec);
     const mk = (): StereoBuffer => ({ sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) });
@@ -191,11 +193,15 @@ export class Mixer {
     const len = music.left.length;
     const out: StereoBuffer = { sampleRate: SAMPLE_RATE, left: new Float32Array(len), right: new Float32Array(len) };
     let peak = 1e-9;
+    const rv = new Float32Array(len), rb = new Float32Array(len);
+    this.rendered = { voice: rv, background: rb };
     for (let i = 0; i < len; i++) {
       const d = Math.min(1, env[i] * 3);
       const gm = 1 - duckM * d, gf = 1 - duckF * d;
       const l = music.left[i] * gm + (fx.left[i] + wetL[i]) * gf + voice.left[i];
       const r = music.right[i] * gm + (fx.right[i] + wetR[i]) * gf + voice.right[i];
+      rv[i] = (voice.left[i] + voice.right[i]) / 2;
+      rb[i] = (l + r) / 2 - rv[i];
       out.left[i] = Math.tanh(l * 0.9);
       out.right[i] = Math.tanh(r * 0.9);
       peak = Math.max(peak, Math.abs(out.left[i]), Math.abs(out.right[i]));

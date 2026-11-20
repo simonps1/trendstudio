@@ -19,4 +19,8 @@ export interface VideoMeta {
 
 /** A rendered narration line handed to the soundtrack builder (mono, 48 kHz). */
 export interface VoiceClip { id: string; start: number; audio: Float32Array }
-export interface SoundtrackContext { voice: VoiceClip[] }
+export interface SoundtrackContext {
+  voice: VoiceClip[];
+  /** Receives the mixer after mastering (used for voice-clarity QC). */
+  onMixer?: (m: import("../audio/synth").Mixer) => void;
+}

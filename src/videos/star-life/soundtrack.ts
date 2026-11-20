@@ -47,21 +47,23 @@ export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
 
   // --- collapse & supernova -------------------------------------------
   m.add(riser(T.supernova - T.collapse, 70), T.collapse, 0.8, 0, 0.2);
-  m.add(impact(2.4, 71), T.supernova, 1.25, 0, 0.45);
-  m.add(whoosh(2.0, 72, 1.2), T.supernova + 0.05, 0.6, (t) => -1 + t, 0.6);
-  m.add(whoosh(2.0, 73, 1.2), T.supernova + 0.1, 0.6, (t) => 1 - t, 0.6);
-  m.add(shimmer(3.5, 74), T.supernova + 0.2, 0.4, 0, 0.8);
+  m.add(impact(1.7, 71), T.supernova, 1.4, 0, 0.4);
+  m.add(whoosh(1.5, 72, 1.2), T.supernova + 0.05, 0.55, (t) => -1 + t, 0.4);
+  m.add(whoosh(1.5, 73, 1.2), T.supernova + 0.1, 0.55, (t) => 1 - t, 0.4);
+  m.add(shimmer(2.2, 74), T.supernova + 0.2, 0.35, 0, 0.6);
 
   // --- black hole & ending --------------------------------------------
-  m.add(whoosh(1.6, 80, 0.5), T.blackHole - 0.8, 0.4, 0, 0.5);
+  m.add(whoosh(1.4, 80, 0.5), T.blackHole - 0.35, 0.35, 0, 0.4);
   m.add(chime(hz(76), 4), T.dust + 0.2, 0.18, -0.3, 0.7);
   m.add(chime(hz(81), 4), T.dust + 1.0, 0.15, 0.3, 0.7);
   m.add(chime(hz(84), 3.5), T.dust + 1.8, 0.13, 0, 0.7);
   m.add(shimmer(3, 81), T.dust + 0.3, 0.25, 0, 0.8);
 
   // --- narration -------------------------------------------------------
-  for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 1.0, 0, 0.06, "voice");
+  for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 2.1, 0, 0.05, "voice");
 
-  // with a voice present, music dips ~9 dB and effects ~4 dB under speech
-  return m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 4 });
+  // with a voice present, music and effects dip ~9 dB under speech
+  const out = m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 9 });
+  ctx.onMixer?.(m);
+  return out;
 }

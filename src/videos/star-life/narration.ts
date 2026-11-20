@@ -31,7 +31,7 @@ export const NARRATION: NarrationLine[] = [
   { id: "jupiter", text: "Even Jupiter.", endAt: engulf("Jupiter") + 0.25, until: T.collapse },
   // death
   { id: "fuel", text: "Then the core runs out of fuel.", at: T.collapse + 0.15, until: T.supernova - 0.25 },
-  { id: "galaxy", text: "Brighter than a whole galaxy.", at: T.supernova + 1.05, until: T.blackHole - 0.1 },
+  { id: "galaxy", text: "Brighter than a whole galaxy.", at: T.supernova + 1.6, until: T.blackHole - 0.1 },
   // remnant & payoff
   { id: "dense", text: "What's left is so dense, not even light escapes.", at: T.blackHole + 0.25, until: 35.25, speed: 1.08 },
   { id: "bh", text: "A black hole.", after: "dense", gap: 0.2, until: T.dust - 0.05 },

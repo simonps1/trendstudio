@@ -12,3 +12,4 @@ public/audio/*.wav
 public/audio/*.raw.wav
 trendstudio-source.zip
 trendstudio.bundle
+public/audio/*.clarity.json
