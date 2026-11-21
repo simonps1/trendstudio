@@ -212,20 +212,34 @@ export class Mixer {
   }
 }
 
-/** Gentle voice chain: high-pass rumble, light compression, presence lift. */
+/**
+ * Voice chain for a close, dry "studio" sound:
+ *  - high-pass rumble
+ *  - cut the boxy low-mids (the range that makes a voice sound like it is in a hollow room)
+ *  - lift presence and air so consonants are crisp
+ *  - downward expander: quiet tails between words are pulled down, removing residual room sound
+ *  - light 3:1 compression
+ */
 export function voiceChain(sig: Float32Array): Float32Array {
-  const hp = biquad(sig, "highpass", 85, 0.7);
-  const presence = biquad(hp, "bandpass", 3500, 0.8);
+  const hp = biquad(sig, "highpass", 95, 0.7);
+  const box = biquad(hp, "bandpass", 300, 0.8);   // subtracting a band-pass = a peaking cut
+  const mud = biquad(hp, "bandpass", 520, 1.2);
+  const presence = biquad(hp, "bandpass", 4200, 0.8);
+  const air = biquad(hp, "highpass", 7500, 0.7);
   const out = new Float32Array(hp.length);
-  let env = 0;
+  let env = 0, slow = 0;
   const att = Math.exp(-1 / (0.005 * SAMPLE_RATE)), rel = Math.exp(-1 / (0.12 * SAMPLE_RATE));
+  const sAtt = Math.exp(-1 / (0.003 * SAMPLE_RATE)), sRel = Math.exp(-1 / (0.06 * SAMPLE_RATE));
   for (let i = 0; i < hp.length; i++) {
-    const x = hp[i] + presence[i] * 0.35;
+    const x = hp[i] - 0.55 * box[i] - 0.22 * mud[i] + 0.55 * presence[i] + 0.35 * air[i];
     const a = Math.abs(x);
+    // expander: below about -36 dBFS the level is pushed down further (2:1), max 14 dB
+    slow = a > slow ? sAtt * slow + (1 - sAtt) * a : sRel * slow + (1 - sRel) * a;
+    const expand = slow < 0.016 ? Math.max(0.2, slow / 0.016) : 1;
     env = a > env ? att * env + (1 - att) * a : rel * env + (1 - rel) * a;
     const over = Math.max(0, env - 0.25);
-    const gain = env > 0.25 ? (0.25 + over / 3) / env : 1; // 3:1 above threshold
-    out[i] = x * gain;
+    const comp = env > 0.25 ? (0.25 + over / 3) / env : 1; // 3:1 above threshold
+    out[i] = x * comp * expand;
   }
   return out;
 }
