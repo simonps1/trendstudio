@@ -97,14 +97,29 @@ export function chunkWords(words: WordTiming[], maxWords = 3, maxChars = 18): Wo
   return chunks;
 }
 
-/** Word error rate of `hyp` against `ref` (0 = perfect). Number words are normalised. */
-export function wordErrorRate(ref: string, hyp: string) {
-  const NUM: Record<string, string> = { "10": "ten", "20": "twenty", "1": "one" };
-  const toks = (s: string) => s.toLowerCase().replace(/[-—…]/g, " ").split(/\s+/).map(norm).filter(Boolean).map((w) => NUM[w] ?? w);
-  const a = toks(ref), b = toks(hyp);
+const NUMBER_WORDS = new Set("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion".split(" "));
+
+function editDistance(a: string, b: string) {
   const dp = Array.from({ length: a.length + 1 }, (_, i) => Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
   for (let i = 1; i <= a.length; i++)
     for (let j = 1; j <= b.length; j++)
       dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return dp[a.length][b.length];
+}
+/** Same word, allowing spelling variants a recogniser produces for names ("Stevenson" / "Stephenson"). */
+const sameWord = (a: string, b: string) => a === b || (Math.max(a.length, b.length) >= 6 && editDistance(a, b) <= 0.35 * Math.max(a.length, b.length));
+
+/**
+ * Word error rate of `hyp` against `ref` (0 = perfect). Numbers are ignored on both
+ * sides, because a recogniser writes "109" where the script says "a hundred and nine".
+ */
+export function wordErrorRate(ref: string, hyp: string) {
+  const toks = (s: string) => s.toLowerCase().replace(/[-—…,]/g, " ").split(/\s+/).map(norm)
+    .filter((w) => w && !/^\d+$/.test(w) && !NUMBER_WORDS.has(w) && w !== "and" && w !== "a");
+  const a = toks(ref), b = toks(hyp);
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++)
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + (sameWord(a[i - 1], b[j - 1]) ? 0 : 1));
   return a.length ? dp[a.length][b.length] / a.length : 0;
 }

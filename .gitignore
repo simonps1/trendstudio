@@ -14,3 +14,4 @@ trendstudio-source.zip
 trendstudio.bundle
 public/audio/*.clarity.json
 trendstudio.zip
+.venv-tts/

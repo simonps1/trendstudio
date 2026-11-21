@@ -12,3 +12,5 @@
 - huggingface.co must be reachable for the first `npm run voice` (model download). In a restricted sandbox, allow it in the environment's network settings.
 - Series episodes: `src/episodes/<id>/spec.ts` (beats = one line + one visual). Timing is voice-first via `src/series/layout.ts`; never hand-time episode beats. Short cut must stay < 59 s and long cut > 61 s (`tests/series.test.ts`). Every stated fact needs a checkable source; label uncertain values as estimates on screen.
 - Voice clarity: `npm run audio` prints voice-vs-bed dB per line (speech band); keep every line >= 10 dB.
+- Narrator is Chatterbox (voice `"chatterbox"`, Python worker `scripts/tts_chatterbox.py`, venv `.venv-tts` or `CHATTERBOX_PYTHON`). Write narration as flowing sentences, not fragments. In the cloud sandbox also set `HF_HUB_DISABLE_XET=1 NODE_USE_ENV_PROXY=1`.
+- The channel host (astronaut) is `src/series/host.ts`; keep him identical across videos.

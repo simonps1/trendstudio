@@ -9,24 +9,24 @@
  * Env:
  *   TTS_DTYPE      fp32 (default, best quality) | fp16 | q8 (fastest)
  *   TTS_MODEL      default onnx-community/Kokoro-82M-v1.0-ONNX
- *   ALIGN_MODEL    default onnx-community/whisper-base.en
+ *   ALIGN_MODEL    default onnx-community/whisper-base.en_timestamped
  *   MODELS_DIR     use pre-downloaded models from this folder (offline)
  *   KOKORO_VOCAB   with MODELS_DIR: phoneme vocab JSON, when the model folder has no tokenizer files
  *
  * Output: public/voice/<id>/<line>.wav (48 kHz) and src/videos/<id>/narration.json
  */
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { alignToScript, estimateWordTimings } from "../src/voice/align";
+import { alignToScript, estimateWordTimings, wordErrorRate } from "../src/voice/align";
 import { fitSpeed, scheduleLines } from "../src/voice/schedule";
 import type { NarrationLine, NarrationTrack, WordTiming } from "../src/voice/types";
 import { MANIFEST, narrationJsonPath } from "../src/core/manifest";
 import { run, runBinary } from "./lib/ffmpeg";
 
 const TTS_MODEL = process.env.TTS_MODEL ?? "onnx-community/Kokoro-82M-v1.0-ONNX";
-const ALIGN_MODEL = process.env.ALIGN_MODEL ?? "onnx-community/whisper-base.en";
+const ALIGN_MODEL = process.env.ALIGN_MODEL ?? "onnx-community/whisper-base.en_timestamped"; // word timestamps need this variant
 const DTYPE = (process.env.TTS_DTYPE ?? "fp32") as "fp32" | "fp16" | "q8";
 
 async function configureModels() {
@@ -145,7 +145,80 @@ function readPcm(path: string, rate: number): Float32Array {
   return new Float32Array(b.buffer.slice(b.byteOffset, b.byteOffset + Math.floor(b.length / 4) * 4));
 }
 
+// ---------------------------------------------------------------- Chatterbox engine
+
+/** A voice named "chatterbox" (or "chatterbox:<anything>") is spoken by the Chatterbox model. */
+const isChatterbox = (voice: string) => voice.startsWith("chatterbox");
+
+interface Worker { send: (req: object) => Promise<{ ok?: boolean; seconds?: number; error?: string; ready?: boolean; device?: string }>; stop: () => void }
+let chatterbox: Promise<Worker> | null = null;
+
+/** Start the Python worker once and talk to it line by line (the model takes a while to load). */
+function chatterboxWorker(): Promise<Worker> {
+  if (chatterbox) return chatterbox;
+  chatterbox = new Promise((resolve, reject) => {
+    const py = process.env.CHATTERBOX_PYTHON ?? (existsSync(join(".venv-tts", "bin", "python")) ? join(".venv-tts", "bin", "python")
+      : existsSync(join(".venv-tts", "Scripts", "python.exe")) ? join(".venv-tts", "Scripts", "python.exe") : "python");
+    console.log(`[voice] starting Chatterbox (${py})…`);
+    const child = spawn(py, [join("scripts", "tts_chatterbox.py")], { stdio: ["pipe", "pipe", "ignore"] });
+    const waiting: ((v: never) => void)[] = [];
+    let buf = "";
+    child.stdout.on("data", (d: Buffer) => {
+      buf += d.toString();
+      let i: number;
+      while ((i = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
+        if (!line.startsWith("{")) continue;
+        waiting.shift()?.(JSON.parse(line) as never);
+      }
+    });
+    child.on("error", (e) => reject(new Error(`Could not start Chatterbox: ${e.message}. See the setup note in scripts/tts_chatterbox.py`)));
+    child.on("exit", (code) => { if (code) reject(new Error(`Chatterbox worker exited (${code}). See the setup note in scripts/tts_chatterbox.py`)); });
+    const send = (req: object) => new Promise<never>((res) => { waiting.push(res); if (Object.keys(req).length) child.stdin.write(JSON.stringify(req) + "\n"); });
+    send({}).then((hello: { device?: string }) => { console.log(`[voice] Chatterbox ready on ${hello.device}`); resolve({ send, stop: () => child.stdin.end() }); });
+  });
+  return chatterbox;
+}
+
+const seedOf = (text: string, attempt: number) => (parseInt(createHash("sha1").update(text).digest("hex").slice(0, 6), 16) % 100000) + attempt * 7919;
+
+/**
+ * Speak one line with Chatterbox. Every take is transcribed and compared with the
+ * script; a take with wrong words or an implausible length is regenerated with a
+ * new seed (up to 5 tries). `speed` is applied afterwards as a pitch-preserving tempo change.
+ */
+async function synthChatterbox(line: NarrationLine, speed: number, outWav: string) {
+  const w = await chatterboxWorker();
+  const raw = outWav.replace(/\.wav$/, ".raw.wav"), trimmed = outWav.replace(/\.wav$/, ".trim.wav");
+  const nWords = line.text.split(/\s+/).length;
+  let best: { wer: number; seconds: number } | null = null;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const r = await w.send({ text: line.text, out: raw, seed: seedOf(line.text, attempt) });
+    if (!r.ok) throw new Error(`Chatterbox failed on "${line.id}": ${r.error}`);
+    const pcm = trim(readPcm(raw, 24000), 24000);
+    // level every line to the same loudness (-18.3 dB RMS) so the mix treats all takes alike
+    let sq = 0, peak = 1e-9;
+    for (const x of pcm) { sq += x * x; peak = Math.max(peak, Math.abs(x)); }
+    const gain = Math.min(Math.pow(10, -18.3 / 20) / Math.sqrt(sq / pcm.length + 1e-12), 0.98 / peak);
+    for (let i = 0; i < pcm.length; i++) pcm[i] *= gain;
+    const seconds = pcm.length / 24000;
+    const heard = await transcribeWords(readPcm(raw, 16000));
+    const wer = heard ? wordErrorRate(line.text, heard.map((x) => x.word).join(" ")) : 0;
+    const tooLong = seconds > nWords * 0.75 + 1.2;
+    const okWords = nWords <= 2 ? wer === 0 : wer * nWords <= Math.max(1, 0.15 * nWords);
+    if (!best || wer < best.wer) { best = { wer, seconds }; writeMonoFloatWav(trimmed, pcm, 24000); }
+    if (okWords && !tooLong) { best = { wer, seconds }; writeMonoFloatWav(trimmed, pcm, 24000); break; }
+    console.log(`[voice] ${line.id}: take ${attempt + 1} rejected (${(wer * 100).toFixed(0)}% words wrong, ${seconds.toFixed(2)}s) — retrying`);
+  }
+  if (best!.wer * nWords > Math.max(1, 0.25 * nWords)) console.warn(`[voice] ! ${line.id}: best take still has ${(best!.wer * 100).toFixed(0)}% words wrong — listen to it`);
+  const tempo = speed !== 1 ? `atempo=${speed.toFixed(3)},` : "";
+  run("ffmpeg", ["-v", "error", "-y", "-i", trimmed, "-af", `${tempo}aresample=48000`, "-ac", "1", "-c:a", "pcm_s16le", outWav]);
+  rmSync(raw, { force: true }); rmSync(trimmed, { force: true });
+  return best!.seconds / speed;
+}
+
 async function synthLine(line: NarrationLine, voice: string, speed: number, outWav: string) {
+  if (isChatterbox(voice)) return synthChatterbox(line, speed, outWav);
   const model = await loadTts();
   const res = await model.generate(line.text, { voice, speed });
   const audio = trim(res.audio, res.sampling_rate);
@@ -195,7 +268,7 @@ export async function buildVoice(videoId: string, opts: { force?: boolean; align
   const { scheduled, problems } = scheduleLines(lines, durations);
   const doAlign = opts.align !== false;
   let alignment: NarrationTrack["alignment"] = "estimate";
-  const out: NarrationTrack = { voice, model: `${TTS_MODEL}:${DTYPE}`, alignment, lines: [] };
+  const out: NarrationTrack = { voice, model: isChatterbox(voice) ? "resemble-ai/chatterbox" : `${TTS_MODEL}:${DTYPE}`, alignment, lines: [] };
   for (const line of lines) {
     const s = scheduled.find((x) => x.id === line.id)!;
     const d = durations[line.id];
@@ -239,5 +312,7 @@ if (process.argv[1]?.replace(/\\/g, "/").endsWith("scripts/build-voice.ts")) {
     for (const id of ids.length ? ids : MANIFEST.map((m) => m.id)) {
       await buildVoice(id, { force: args.includes("--force"), align: !args.includes("--no-align") });
     }
+    const cb = chatterbox as Promise<Worker> | null;
+    if (cb) (await cb).stop();
   }
 }

@@ -5,6 +5,7 @@
  * All times in seconds.
  */
 import { clamp, ease } from "../../core/anim";
+import narration from "./narration.json";
 
 export const DURATION = 40;
 
@@ -48,13 +49,29 @@ export const CAPTIONS = [
 
 // ------------------------------------------------------------ star physics (stylised)
 
-export const PLANETS = [
-  { name: "Mercury", au: 0.39, color: "#b9b2a8", size: 8, engulf: 21.5 },
-  { name: "Venus", au: 0.72, color: "#e8cf9a", size: 11, engulf: 22.5 },
-  { name: "Earth", au: 1.0, color: "#5aa9ff", size: 12, engulf: 23.5 },
-  { name: "Mars", au: 1.52, color: "#e0704a", size: 9, engulf: 24.0 },
-  { name: "Jupiter", au: 5.2, color: "#e2b98b", size: 20, engulf: 25.5 },
+/** When each planet's name is spoken (from the generated narration), else a default on the beat. */
+function spokenAt(name: string, fallback: number) {
+  const words = (narration as { lines: { words: { word: string; start: number }[] }[] }).lines.flatMap((l) => l.words);
+  const w = words.find((x) => x.word.toLowerCase().replace(/[^a-z]/g, "") === name.toLowerCase());
+  return w ? w.start + 0.12 : fallback;
+}
+const BODIES = [
+  { name: "Mercury", au: 0.39, color: "#b9b2a8", size: 8, fallback: 21.5 },
+  { name: "Venus", au: 0.72, color: "#e8cf9a", size: 11, fallback: 22.5 },
+  { name: "Earth", au: 1.0, color: "#5aa9ff", size: 12, fallback: 23.5 },
+  { name: "Mars", au: 1.52, color: "#e0704a", size: 9, fallback: 24.0 },
+  { name: "Jupiter", au: 5.2, color: "#e2b98b", size: 20, fallback: 25.5 },
 ];
+/** Planets with the moment the star's surface reaches them: in order, inside the supergiant phase. */
+export const PLANETS = (() => {
+  let last = T.giant + 0.6;
+  return BODIES.map(({ fallback, ...p }, i) => {
+    const max = T.collapse - 0.45 - (BODIES.length - 1 - i) * 0.3;
+    const engulf = Math.min(max, Math.max(last + 0.3, spokenAt(p.name, fallback)));
+    last = engulf;
+    return { ...p, engulf };
+  });
+})();
 
 /** (time, radius AU) keyframes: the star's surface reaches each orbit exactly at its engulf time. */
 const GIANT_KEYS: [number, number][] = [

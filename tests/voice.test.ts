@@ -38,7 +38,9 @@ describe("word timing", () => {
   });
   it("word error rate", () => {
     expect(wordErrorRate("This star will live for ten million years.", "this star will live for 10 million years")).toBe(0);
-    expect(wordErrorRate("a b c d", "a x c d")).toBe(0.25);
+    expect(wordErrorRate("the b c d", "the x c d")).toBe(0.25);
+    expect(wordErrorRate("And this is the Sun, a hundred and nine Earths across.", "And this is the Sun, 109 Earths across.")).toBe(0);
+    expect(wordErrorRate("the biggest star is Stephenson two eighteen", "the biggest star is Stevenson 218")).toBe(0);
   });
 });
 

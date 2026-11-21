@@ -53,6 +53,20 @@ Series scenes are composed for vertical video. See [docs/CHANNEL-PLAN.md](docs/C
 
 ## Voice-over
 
+**Narrator: Chatterbox** (Resemble AI, MIT licence), using its built-in male voice. A video uses it when
+its voice is set to `"chatterbox"`. It is a Python model, so it needs a one-time setup:
+
+```bash
+python -m venv .venv-tts
+.venv-tts/bin/pip install chatterbox-tts "setuptools<81"      # Windows: .venv-tts\Scripts\pip
+```
+
+`npm run voice` then starts it automatically (GPU if available, otherwise CPU at about 4 s per second
+of speech). Every take is transcribed with Whisper and regenerated if words come out wrong. Chatterbox
+adds an inaudible watermark marking the audio as AI-generated; it is left on.
+
+The older engine, Kokoro, is still available by setting a voice such as `"am_fenrir"` or `"af_heart"`:
+
 - **Engine:** [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0) via the official
   `kokoro-js` package — runs locally on CPU, free, commercial use allowed. Default voice `af_heart`
   (Kokoro's top-graded voice); change `VOICE` in `src/videos/<id>/narration.ts`.
