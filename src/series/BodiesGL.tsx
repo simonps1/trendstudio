@@ -5,7 +5,7 @@ import type { Body } from "./types";
 /** A body placed on screen (pixels). Drawn in array order: later = on top. */
 export interface PlacedBody { body: Body; x: number; y: number; r: number }
 
-const MAX = 3;
+const MAX = 6;
 
 const VERT = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }`;
 

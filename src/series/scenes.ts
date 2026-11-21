@@ -7,7 +7,7 @@
  * Convention: a featured body sits at the frame centre with radius FIT, so
  * consecutive beats about the same body cut seamlessly.
  */
-import { clamp, ease, lerp, noise1, progress } from "../core/anim";
+import { clamp, ease, hash, lerp, noise1, progress } from "../core/anim";
 import type { DrawContext } from "../core/components/CanvasLayer";
 import { blob, drawStarfield, softSprite } from "../videos/star-life/cosmos";
 import type { PlacedBody } from "./BodiesGL";
@@ -52,8 +52,9 @@ export function cameraFx(layout: EpisodeLayout, t: number, u: number) {
 
 function compareGeometry(v: Extract<Visual, { type: "compare" }>, lt: number, cy: number, fit: number) {
   const e = zoomEase(lt, v);
-  // world: `from` at the origin, `to` directly above it, almost touching
-  const toY = -(v.from.radius + v.to.radius * 1.1);
+  // world: `from` at the origin, `to` directly above it
+  // gap between them: a tenth of the big body, but never so far that the big one is off-screen at the start
+  const toY = -(v.from.radius + v.to.radius + Math.min(v.to.radius * 0.1, v.from.radius * 2.5));
   const s = Math.exp(lerp(Math.log(fit / v.from.radius), Math.log(fit / v.to.radius), e));
   // the small body slides steadily from the centre to just below the big one
   const camY = (e * toY * (fit / v.to.radius)) / s;
@@ -72,7 +73,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
   switch (v.type) {
     case "body": {
       const pop = ease.outBack(progress(lt, 0, 0.35)); // punch in on the cut
-      return [{ body: v.body, x: cx, y: cy, r: fit * (0.9 + 0.1 * pop) * (1 + 0.015 * Math.sin(lt * 1.3)) }];
+      return [{ body: v.body, x: cx, y: cy, r: fit * (0.9 + 0.1 * pop) * (1 + 0.07 * progress(lt, 0, dur)) }]; // slow push-in
     }
     case "compare": {
       const g = compareGeometry(v, lt, cy, fit);
@@ -108,12 +109,12 @@ function label(ctx: Ctx, text: string, x: number, y: number, px: number, alpha: 
 }
 
 /** Name + fact above a featured body. `punch` 0..1 scales it in. */
-function nameplate(d: DrawContext, b: Body, cx: number, cy: number, alpha: number, punch = 1, note = b.note) {
+function nameplate(d: DrawContext, b: Body, cx: number, cy: number, alpha: number, punch = 1, note = b.note, headline = false) {
   const { ctx, u } = d;
   const y = cy - FIT * u - 158 * u;
   const k = 0.7 + 0.3 * ease.outBack(clamp(punch));
   label(ctx, b.name.toUpperCase(), cx, y, 76 * u * k, alpha);
-  if (note) label(ctx, note.toUpperCase(), cx, y + 72 * u, 42 * u * k, alpha, "Anton", "#ffd23f");
+  if (note) label(ctx, note.toUpperCase(), cx, y + (headline ? 80 : 72) * u, (headline ? 58 : 42) * u * k, alpha, "Anton", "#ffd23f");
 }
 
 export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
@@ -125,7 +126,7 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   const cx = cx0 + fx.shake[0], cy = cy0 + fx.shake[1];
   const fit = FIT * u;
 
-  if (v.type === "body") nameplate(d, v.body, cx, cy, progress(lt, 0.05, 0.25), progress(lt, 0.05, 0.4));
+  if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25), progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
 
   if (v.type === "compare") {
     const Z = zoomTime(v);
@@ -214,5 +215,18 @@ export function drawBackground(d: DrawContext, layout: EpisodeLayout) {
   ctx.fillRect(0, 0, w, h);
   const fx = cameraFx(layout, t, u);
   ctx.translate(fx.shake[0] * 0.5, fx.shake[1] * 0.5);
+  // drifting nebula clouds give the sky colour and depth; they slide inward as the camera pulls out
+  const [cx, cy] = centre(w, h);
+  ctx.globalCompositeOperation = "lighter";
+  for (let i = 0; i < 16; i++) {
+    const col = NEBULA[i % NEBULA.length];
+    const k = 1 - fx.zoom * 0.25 * (0.4 + 0.6 * hash(i + 3));
+    const x = cx + ((hash(i * 3.1) - 0.5) * 1.5 * w + Math.sin(t * 0.05 + i) * 60 * u) * k;
+    const y = cy + ((hash(i * 7.7) - 0.5) * 1.3 * h + Math.cos(t * 0.04 + i * 2) * 60 * u) * k;
+    ctx.globalAlpha = 0.07 + 0.06 * hash(i + 11);
+    blob(ctx, softSprite(col), x, y, (260 + 420 * hash(i + 5)) * u);
+  }
+  ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
   drawStarfield(ctx, t, w, h, u, 1, fx.zoom * 0.55);
 }
+const NEBULA: [number, number, number][] = [[70, 90, 255], [170, 70, 255], [40, 180, 220], [255, 80, 150], [60, 110, 220]];

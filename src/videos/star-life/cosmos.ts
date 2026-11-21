@@ -5,6 +5,7 @@
 import { clamp, ease, hash, lerp, noise1, progress, rng } from "../../core/anim";
 import type { DrawContext } from "../../core/components/CanvasLayer";
 import type { PlacedBody } from "../../series/BodiesGL";
+import type { Body } from "../../series/types";
 import { engulfTimes, giantRadiusAU, PLANETS, T } from "./timeline";
 
 type Ctx = CanvasRenderingContext2D;
@@ -209,13 +210,11 @@ export function drawBack({ ctx, t, width: w, height: h, u }: DrawContext) {
     drawStarfield(ctx, t - DURATION_LOOP, w, h, u, k);
   } else drawStarfield(ctx, t, w, h, u, starAlpha, pull);
 
-  // --- hook: the star as a distant point, camera pushing in
+  // --- hook: open on the blazing star, then pull far away until it is a point of light
   if (t < T.nebula + 0.6) {
     const a = 1 - progress(t, T.nebula - 0.2, T.nebula + 0.6);
     const pulse = 0.85 + 0.15 * Math.sin(t * 5);
-    const r = (9 + 9 * ease.inOutCubic(progress(t, 0, T.nebula))) * u;
-    drawStar(ctx, cx, cy, r * pulse, t, 1, 0.2, a);
-    flareSpikes(ctx, cx, cy, 360 * u * pulse, 0.55 * a, [190, 215, 255]);
+    flareSpikes(ctx, cx, cy, (360 * u + hookStarRadius(t, u) * 2.4) * pulse, 0.55 * a, [190, 215, 255]);
   }
 
   // --- nebula collapse (and blow-out at ignition)
@@ -292,43 +291,54 @@ function giantStar(t: number, u: number) {
   return { starPx, pxPerAU: starPx / giantRadiusAU(t), r: starPx * (1 - collapse * 0.97), temp: temp * (1 - collapse) + collapse };
 }
 
-/** Orbits and planets. "back" = behind the star, "front" = in front of it, plus vaporisation flashes. */
-function drawGiantPhase(ctx: Ctx, t: number, cx: number, cy: number, u: number, layer: "back" | "front") {
-  if (t < T.giant || t >= T.supernova) return;
+/** Radius of the star during the opening: it fills the frame, then recedes to a point. */
+function hookStarRadius(t: number, u: number) {
+  const e = ease.inOutCubic(progress(t, 0.35, T.nebula - 0.3));
+  return Math.exp(lerp(Math.log(250 * u), Math.log(4 * u), e)) * (1 - progress(t, T.nebula - 0.2, T.nebula + 0.6));
+}
+
+const PLANET_LOOK: Record<string, Pick<Body, "surface">> = { Earth: { surface: "earth" }, Jupiter: { surface: "bands" } };
+
+/** Where each planet is in the supergiant phase (screen pixels), and whether it still exists. */
+function giantPlanets(t: number, cx: number, cy: number, u: number) {
   const { pxPerAU } = giantStar(t, u);
   const orbitA = progress(t, T.giant + 0.1, T.giant + 0.8) * (1 - progress(t, T.collapse, T.collapse + 0.5));
   const tilt = 0.32;
-  const planetPos = PLANETS.map((pl, i) => {
+  const planets = PLANETS.map((pl, i) => {
     const ang = (t - T.giant) * (0.9 / Math.pow(pl.au, 1.5)) * 0.6 + i * 1.7;
-    return { pl, ang, x: cx + Math.cos(ang) * pl.au * pxPerAU, y: cy + Math.sin(ang) * pl.au * pxPerAU * tilt };
+    return {
+      pl, ang, x: cx + Math.cos(ang) * pl.au * pxPerAU, y: cy + Math.sin(ang) * pl.au * pxPerAU * tilt,
+      r: pl.size * u * 1.35 * orbitA, alive: giantRadiusAU(t) < pl.au && orbitA > 0,
+    };
   });
-  const swallowed = (au: number) => giantRadiusAU(t) >= au;
-  const drawPlanet = (pp: (typeof planetPos)[number]) => {
-    if (swallowed(pp.pl.au) || orbitA <= 0) return;
-    const s = pp.pl.size * u;
+  return { planets, pxPerAU, orbitA, tilt };
+}
+
+/** Orbits and planet labels. "back" = behind the star, "front" = in front of it, plus vaporisation flashes. */
+function drawGiantPhase(ctx: Ctx, t: number, cx: number, cy: number, u: number, layer: "back" | "front") {
+  if (t < T.giant || t >= T.supernova) return;
+  const { planets, pxPerAU, orbitA, tilt } = giantPlanets(t, cx, cy, u);
+  const labelPlanet = (pp: (typeof planets)[number]) => {
+    if (!pp.alive) return;
     ctx.globalAlpha = orbitA;
-    const g = ctx.createRadialGradient(pp.x - s * 0.4, pp.y - s * 0.4, 0, pp.x, pp.y, s);
-    g.addColorStop(0, "#fff"); g.addColorStop(0.35, pp.pl.color); g.addColorStop(1, "#111");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(pp.x, pp.y, s, 0, Math.PI * 2); ctx.fill();
     ctx.font = `800 ${28 * u}px Inter`; ctx.textAlign = "center";
     ctx.lineWidth = 5 * u; ctx.strokeStyle = "rgba(0,0,0,0.8)"; ctx.lineJoin = "round";
-    ctx.strokeText(pp.pl.name.toUpperCase(), pp.x, pp.y - s - 10 * u);
-    ctx.fillStyle = "#fff"; ctx.fillText(pp.pl.name.toUpperCase(), pp.x, pp.y - s - 10 * u);
+    ctx.strokeText(pp.pl.name.toUpperCase(), pp.x, pp.y - pp.r - 12 * u);
+    ctx.fillStyle = "#fff"; ctx.fillText(pp.pl.name.toUpperCase(), pp.x, pp.y - pp.r - 12 * u);
     ctx.globalAlpha = 1;
   };
   if (layer === "back") {
     ctx.lineWidth = 1.6 * u;
-    for (const { pl } of planetPos) {
+    for (const { pl, alive } of planets) {
       const rx = pl.au * pxPerAU;
-      ctx.strokeStyle = `rgba(255,255,255,${0.22 * orbitA * (swallowed(pl.au) ? 0.3 : 1)})`;
+      ctx.strokeStyle = `rgba(255,255,255,${0.22 * orbitA * (alive ? 1 : 0.3)})`;
       ctx.beginPath(); ctx.ellipse(cx, cy, rx, rx * tilt, 0, 0, Math.PI * 2); ctx.stroke();
     }
-    planetPos.filter((p) => Math.sin(p.ang) < 0).forEach(drawPlanet);
     return;
   }
-  planetPos.filter((p) => Math.sin(p.ang) >= 0).forEach(drawPlanet);
+  planets.forEach(labelPlanet);
   ctx.globalCompositeOperation = "lighter";
-  for (const pp of planetPos) { // vaporisation flashes
+  for (const pp of planets) { // vaporisation flashes
     const te = engulfAt(pp.pl.name);
     const k = progress(t, te, te + 0.7);
     if (k > 0 && k < 1) {
@@ -346,6 +356,10 @@ export function placeStarLife(t: number, w: number, h: number, u: number): Place
   const [cx0, cy0] = center(w, h);
   const cx = cx0 + sx, cy = cy0 + sy;
   const star = (r: number, temp: number): PlacedBody => ({ body: { name: "Star", kind: "star", radius: 1, temp }, x: cx, y: cy, r });
+  if (t < T.nebula + 0.6) { // the opening: the star, close up, receding to a point
+    const r = hookStarRadius(t, u);
+    return r > 0.3 ? [star(r, 1)] : [];
+  }
   if (t >= T.ignition && t < T.giant) {
     const born = ease.outElastic(progress(t, T.ignition, T.ignition + 1.1));
     const pulse = 1 + 0.03 * Math.pow(Math.max(0, Math.cos(Math.PI * (t - T.main) / 0.5) * 0.5 + 0.5), 6); // on the beat
@@ -356,7 +370,13 @@ export function placeStarLife(t: number, w: number, h: number, u: number): Place
   }
   if (t >= T.giant && t < T.supernova) {
     const g = giantStar(t, u);
-    return [star(g.r, g.temp)];
+    const { planets } = giantPlanets(t, cx, cy, u);
+    const sphere = (pp: (typeof planets)[number]): PlacedBody => ({
+      body: { name: pp.pl.name, kind: "planet", radius: 1, color: pp.pl.color, ...(PLANET_LOOK[pp.pl.name] ?? { surface: "plain" }) }, x: pp.x, y: pp.y, r: pp.r,
+    });
+    const alive = planets.filter((pp) => pp.alive && pp.r > 0.5);
+    // far-side planets, then the star, then near-side planets
+    return [...alive.filter((pp) => Math.sin(pp.ang) < 0).map(sphere), star(g.r, g.temp), ...alive.filter((pp) => Math.sin(pp.ang) >= 0).map(sphere)];
   }
   return [];
 }

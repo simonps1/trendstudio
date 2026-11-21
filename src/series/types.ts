@@ -18,8 +18,8 @@ export interface Body {
 }
 
 export type Visual =
-  /** One body, centred. */
-  | { type: "body"; body: Body }
+  /** One body, centred, with a slow push-in. `fact` replaces the small note with a headline number. */
+  | { type: "body"; body: Body; fact?: string }
   /** Zoom out from `from` to reveal the larger `to`, drawn to scale. `big` = cinematic impact. */
   | { type: "compare"; from: Body; to: Body; big?: boolean }
   /** Planet orbits drawn inside a star of radius `radiusAu` (astronomical units). */
