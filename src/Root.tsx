@@ -1,11 +1,14 @@
 import React from "react";
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
+import { Avatar, Banner } from "./brand/Brand";
 import { compositionId, FORMATS } from "./core/formats";
 import { MANIFEST } from "./core/manifest";
 import { COMPONENTS } from "./core/registry";
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Still id="brand-avatar" component={Avatar} width={1080} height={1080} />
+    <Still id="brand-banner" component={Banner} width={2560} height={1440} />
     {MANIFEST.flatMap((v) =>
       v.formats.map((f) => {
         const fmt = FORMATS[f];

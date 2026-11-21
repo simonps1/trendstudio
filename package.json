@@ -8,6 +8,7 @@
     "studio": "remotion studio src/index.ts",
     "audio": "tsx scripts/build-audio.ts",
     "voice": "tsx scripts/build-voice.ts",
+    "brand": "tsx scripts/brand.ts",
     "voice:samples": "tsx scripts/build-voice.ts --samples",
     "render": "tsx scripts/render.ts",
     "verify": "tsx scripts/verify.ts",
