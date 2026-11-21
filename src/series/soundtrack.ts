@@ -45,7 +45,7 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
   // --- voice: placed by the layout, not by the generated track -----------------
   for (const clip of ctx.voice) {
     const at = layout.beats.find((b) => b.beat.id === clip.id)?.voiceStart;
-    if (at !== undefined) m.add(voiceChain(clip.audio), at, 2.1, 0, 0.05, "voice");
+    if (at !== undefined) m.add(voiceChain(clip.audio), at, 2.1, 0, 0, "voice"); // dry: no reverb on the narrator
   }
   const out = m.master({ peakDb: -1, duckMusicDb: 8.5, duckFxDb: 9 });
   ctx.onMixer?.(m);

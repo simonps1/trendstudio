@@ -57,7 +57,7 @@ export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   m.add(shimmer(3, 81), T.dust + 0.3, 0.25, 0, 0.8);
 
   // --- narration -------------------------------------------------------
-  for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 2.1, 0, 0.05, "voice");
+  for (const clip of ctx.voice) m.add(voiceChain(clip.audio), clip.start, 2.1, 0, 0, "voice"); // dry: no reverb on the narrator
 
   // with a voice present, music and effects dip ~9 dB under speech
   const out = m.master({ peakDb: -1, duckMusicDb: 8.5, duckFxDb: 9 });
