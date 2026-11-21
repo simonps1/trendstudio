@@ -38,6 +38,32 @@ export function addBeatTrack(m: Mixer, D: number, level: (t: number) => number, 
   }
   // pad under everything, one chord per bar
   const bar = BEAT * 4;
-  for (let b = 0; b * bar < D; b++) m.add(pad(bar + 0.6, BARS[b % BARS.length].slice(1).map(hz), 100 + b, 0.9), Math.max(0, b * bar - 0.3), 0.24, 0, 0.45, "music");
+  for (let b = 0; b * bar < D; b++) {
+    const at = Math.max(0, b * bar - 0.3);
+    // sidechain: once the kick is running, the pad ducks on every beat and swells back ("pumping")
+    const pumped = shape(pad(bar + 0.6, BARS[b % BARS.length].slice(1).map(hz), 100 + b, 0.9), (t) => {
+      const abs = at + t;
+      return level(abs) >= 2 && !isQuiet(abs) ? 1 - 0.55 * Math.exp(-(abs % BEAT) * 9) : 1;
+    });
+    m.add(pumped, at, 0.3, 0, 0.45, "music");
+  }
   m.add(shape(biquad(softSaw(D, hz(33), 4, 77), "lowpass", 90), fades(D, 1, 1.5)), 0, 0.12, 0, 0, "music");
+}
+
+/** Snare-roll fill that crescendos into `landAt` (used to build into a reveal). */
+export function addFill(m: Mixer, landAt: number, beats = 1) {
+  const n16 = Math.round(beats * 4);
+  for (let k = 0; k < n16; k++) {
+    const t = landAt - (n16 - k) * (BEAT / 4);
+    if (t < 0) continue;
+    m.add(clap(900 + k), t, 0.07 + 0.2 * ((k + 1) / n16) ** 2, k % 2 ? 0.2 : -0.2, 0.2, "music");
+  }
+}
+
+/** A short rising motif (A minor arpeggio) for the biggest moments. */
+export function addMotif(m: Mixer, at: number, gain = 0.2) {
+  [69, 72, 76, 81].forEach((note, k) => {
+    const tone = shape(mix([softSaw(1.4, hz(note), 6, 40 + k), 0.6], [sine(1.4, hz(note)), 0.5]), adEnv(0.004, 0.45));
+    m.add(biquad(tone, "lowpass", 3200), at + k * (BEAT / 2), gain, (k - 1.5) * 0.25, 0.55, "music");
+  });
 }

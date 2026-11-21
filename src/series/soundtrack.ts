@@ -3,7 +3,7 @@
  * that gains a layer with every reveal, drops out for quiet moments, and hits
  * hard on the big reveal. Cuts and reveals are on the beat grid (see layout.ts).
  */
-import { addBeatTrack } from "../audio/beat";
+import { addBeatTrack, addFill, addMotif } from "../audio/beat";
 import { adEnv, biquad, chime, impact, Mixer, riser, shape, shimmer, sine, voiceChain, whoosh } from "../audio/synth";
 import type { SoundtrackContext } from "../core/types";
 import { BEAT, zoomTime, type EpisodeLayout } from "./layout";
@@ -31,7 +31,8 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
       m.add(whoosh(Z, 300 + i, 0.8), b.start, 0.38, (t) => -0.6 + (1.2 * t) / Z, 0.3);
       m.add(riser(Z, 400 + i), b.start, v.big ? 0.55 : 0.25, 0, 0.2);
       m.add(impact(v.big ? 1.3 : 0.35, 500 + i), land, v.big ? 1.1 : 0.6, 0, 0.3);
-      if (v.big) m.add(shimmer(2, 550 + i), land + 0.05, 0.3, 0, 0.7);
+      if (v.big) { m.add(shimmer(2, 550 + i), land + 0.05, 0.3, 0, 0.7); addMotif(m, land); }
+      if (i > 0) addFill(m, land, v.big ? 2 : 1);
     }
     if (v.type === "body" && i > 0) m.add(impact(0.15, 600 + i), b.start, 0.4, 0, 0.2);
     if (v.type === "orbits") v.orbits.forEach((_, k) => m.add(shape(sine(0.25, hz(72 + 4 * k)), adEnv(0.002, 0.07)), b.start + 0.25 + k * orbitStagger(dur, v.orbits.length), 0.22, k % 2 ? 0.3 : -0.3, 0.4));
@@ -39,7 +40,7 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
       m.add(shape(biquad(whoosh(dur - 0.8, 800 + i, 0.4), "highpass", 900), (t) => 0.4 + 0.6 * (t / dur)), b.start + 0.3, 0.3, (t) => Math.sin((t / (dur - 0.8)) * Math.PI * 2), 0.4);
       m.add(chime(hz(84), 2), b.end - 0.5, 0.14, 0, 0.6);
     }
-    if (v.type === "shrink") { m.add(shimmer(2.5, 900 + i), b.start + 0.2, 0.22, 0, 0.8); m.add(chime(hz(76), 3.5), b.start + BEAT, 0.16, 0, 0.7); }
+    if (v.type === "shrink") { addMotif(m, b.start + BEAT, 0.14); m.add(shimmer(2.5, 900 + i), b.start + 0.2, 0.22, 0, 0.8); m.add(chime(hz(76), 3.5), b.start + BEAT, 0.16, 0, 0.7); }
   });
 
   // --- voice: placed by the layout, not by the generated track -----------------
@@ -47,7 +48,7 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
     const at = layout.beats.find((b) => b.beat.id === clip.id)?.voiceStart;
     if (at !== undefined) m.add(voiceChain(clip.audio), at, 2.1, 0, 0, "voice"); // dry: no reverb on the narrator
   }
-  const out = m.master({ peakDb: -1, duckMusicDb: 8.5, duckFxDb: 9 });
+  const out = m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 11 });
   ctx.onMixer?.(m);
   return out;
 }

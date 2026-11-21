@@ -5,7 +5,7 @@
 import {
   biquad, brown, chime, fades, impact, Mixer, pop, riser, shape, shimmer, sizzle, voiceChain, whoosh,
 } from "../../audio/synth";
-import { addBeatTrack } from "../../audio/beat";
+import { addBeatTrack, addFill, addMotif } from "../../audio/beat";
 import type { SoundtrackContext } from "../../core/types";
 import { CAPTIONS, DURATION, engulfTimes, T } from "./timeline";
 
@@ -20,6 +20,7 @@ export function buildSoundtrack(ctx: SoundtrackContext = { voice: [] }) {
   const level = (t: number) => (t < T.ignition ? 0 : t < T.giant ? 2 : t < T.collapse ? 3 : t < T.blackHole ? 0 : 1);
   const isQuiet = (t: number) => (t >= T.collapse && t < T.blackHole) || t >= T.dust;
   addBeatTrack(m, DURATION, level, isQuiet);
+  addFill(m, T.ignition, 2); addMotif(m, T.ignition); addFill(m, T.giant, 1); addMotif(m, T.supernova + 0.5, 0.16); addMotif(m, T.dust + 0.5, 0.14);
   m.add(shape(biquad(brown(T.ignition - T.nebula, 31), "lowpass", 180), fades(T.ignition - T.nebula, 1.5, 0.2)), T.nebula, 0.5, 0, 0, "music");
   m.add(shape(biquad(brown(T.end - T.blackHole, 32), "lowpass", 120), fades(T.end - T.blackHole, 1.0, 2.5)), T.blackHole, 0.6, 0, 0, "music");
 

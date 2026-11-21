@@ -57,6 +57,8 @@ void main(){
       float heat = 0.45 + 0.75 * big + 0.35 * cells;
       float limb = mix(0.30, 1.0, pow(z, 0.55));
       vec3 s = base * heat * 1.35 * limb + vec3(1.0, 0.95, 0.85) * pow(max(heat - 0.55, 0.0), 2.0) * 1.6 * limb;
+      float spots = smoothstep(0.66, 0.73, fbm(n * 7.0 + vec3(seed * 2.0, 3.0, uTime * 0.02))); // small sunspot groups
+      s *= 1.0 - 0.4 * spots;
       col = mix(s, s * vec3(1.0, 0.72, 0.55), (1.0 - z) * 0.6); // redder towards the edge
     } else {
       vec3 pc = uC[i].rgb; float seed = uC[i].a;
@@ -75,6 +77,8 @@ void main(){
         vec3 h = normalize(L + vec3(0.0, 0.0, 1.0));
         s = s * (0.03 + 1.15 * diff) + vec3(1.0) * pow(max(dot(n, h), 0.0), 60.0) * (1.0 - isLand) * (1.0 - cloud) * 0.6;
         s += vec3(0.30, 0.55, 1.0) * pow(1.0 - z, 3.0) * (0.25 + diff);
+        float city = smoothstep(0.66, 0.74, noise(nr * 46.0 + seed)) * smoothstep(0.55, 0.75, noise(nr * 9.0 + 5.0));
+        s += vec3(1.0, 0.72, 0.38) * city * isLand * (1.0 - cloud) * smoothstep(0.12, 0.0, dot(n, L)) * 0.9;
       } else if (kind < 2.5) {
         float turb = fbm(vec3(nr.x * 3.0, nr.y * 9.0, nr.z * 3.0) + seed);
         float band = 0.5 + 0.5 * sin((nr.y * 8.5 + turb * 0.75) * 3.14159);
@@ -111,8 +115,17 @@ void main(){
       if (dpx < Lg * 5.0 && edge < 1.0) {
         float streak = 0.55 + 0.45 * noise(vec3(atan(d2.y, d2.x) * 5.0, uTime * 0.25 + uC[i].y, dpx / Lg * 0.7));
         float glow = exp(-dpx / Lg * 2.6) * streak * 0.75 + exp(-dpx / Lg * 0.9) * 0.22;
+        // prominences: tongues of fire that flicker along the edge
+        float ang = atan(d2.y, d2.x);
+        float Lf = min(r * 0.2, 240.0 * uU) + 3.0 * uU;
+        float tongue = smoothstep(0.48, 0.86, noise(vec3(ang * 9.0 + uC[i].y, uTime * 0.4, uC[i].y * 1.7)));
+        glow += tongue * exp(-dpx / Lf * (1.6 + 2.0 * noise(vec3(ang * 23.0, uTime * 0.9, 1.0)))) * 0.95;
         col += base * glow * (1.0 - edge); alpha = max(alpha, clamp(glow, 0.0, 1.0) * (1.0 - edge));
       }
+      // anamorphic lens streak across bright stars (fades out for giants that fill the frame)
+      float an = exp(-abs(d2.y) / (r * 0.045 + 2.0 * uU)) * exp(-abs(d2.x) / (r * 3.4 + 40.0 * uU)) * 0.3
+        * smoothstep(10.0 * uU, 40.0 * uU, r) * (1.0 - smoothstep(700.0 * uU, 1400.0 * uU, r)) * (1.0 - edge);
+      col += mix(base, vec3(0.75, 0.86, 1.0), 0.45) * an; alpha = max(alpha, an);
     } else if (kind < 1.5 && edge < 1.0) { // thin atmosphere outside the disc
       float atm = exp(-dpx / (r * 0.05 + 1.0)) * 0.55 * (1.0 - edge);
       float lit = clamp(dot(normalize(vec3(d2.x, -d2.y, 0.0)), L) * 0.9 + 0.55, 0.0, 1.0);

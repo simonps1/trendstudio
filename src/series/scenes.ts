@@ -226,7 +226,29 @@ export function drawBackground(d: DrawContext, layout: EpisodeLayout) {
     ctx.globalAlpha = 0.07 + 0.06 * hash(i + 11);
     blob(ctx, softSprite(col), x, y, (260 + 420 * hash(i + 5)) * u);
   }
+  // Milky Way: a soft diagonal band of light and fine star dust
+  ctx.save();
+  ctx.translate(cx, cy); ctx.rotate(-0.55); ctx.scale(1 - fx.zoom * 0.12, 1 - fx.zoom * 0.12);
+  const L = Math.hypot(w, h), band = ctx.createLinearGradient(0, -260 * u, 0, 260 * u);
+  band.addColorStop(0, "rgba(150,170,255,0)"); band.addColorStop(0.5, "rgba(170,185,255,0.085)"); band.addColorStop(1, "rgba(150,170,255,0)");
+  ctx.globalAlpha = 1; ctx.fillStyle = band; ctx.fillRect(-L, -260 * u, L * 2, 520 * u);
+  for (let i = 0; i < 420; i++) {
+    const x = (hash(i * 1.7) - 0.5) * 2 * L, y = (hash(i * 4.3) + hash(i * 9.1) - 1) * 170 * u;
+    ctx.globalAlpha = 0.25 + 0.5 * hash(i + 2) * (0.6 + 0.4 * Math.sin(t * (1 + 3 * hash(i)) + i));
+    ctx.fillStyle = "#dfe6ff"; ctx.fillRect(x, y, 1.6 * u, 1.6 * u);
+  }
+  ctx.restore();
   ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
   drawStarfield(ctx, t, w, h, u, 1, fx.zoom * 0.55);
+  // glints on a few bright stars
+  ctx.globalCompositeOperation = "lighter";
+  for (let i = 0; i < 9; i++) {
+    const x = hash(i * 12.7 + 1) * w, y = hash(i * 5.3 + 2) * h, tw = 0.5 + 0.5 * Math.sin(t * (1.2 + hash(i) * 2) + i * 3);
+    const len = (26 + 40 * hash(i + 7)) * u * (0.6 + 0.4 * tw);
+    ctx.strokeStyle = `rgba(210,225,255,${0.55 * tw})`; ctx.lineWidth = 1.6 * u;
+    ctx.beginPath(); ctx.moveTo(x - len, y); ctx.lineTo(x + len, y); ctx.moveTo(x, y - len); ctx.lineTo(x, y + len); ctx.stroke();
+    ctx.globalAlpha = 0.9 * tw; blob(ctx, softSprite([230, 238, 255], 0.3), x, y, 7 * u); ctx.globalAlpha = 1;
+  }
+  ctx.globalCompositeOperation = "source-over";
 }
 const NEBULA: [number, number, number][] = [[70, 90, 255], [170, 70, 255], [40, 180, 220], [255, 80, 150], [60, 110, 220]];
