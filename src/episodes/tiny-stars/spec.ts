@@ -32,6 +32,7 @@ export const TINY_STARS: EpisodeSpec = {
     { id: "limit", only: "long", say: "Any smaller, and it could not shine at all.", visual: { type: "body", body: smallest, fact: "the lower limit for a star" } },
     { id: "proxima", say: "Proxima Centauri, the nearest star to the Sun, is only a little wider than Jupiter.", visual: { type: "compare", from: smallest, to: proxima } },
     { id: "dim", only: "long", say: "It's so dim that you can't see it without a telescope.", visual: { type: "body", body: proxima, fact: "too dim to see by eye" } },
+    { id: "planet", only: "long", say: "It still has at least one planet of its own.", visual: { type: "body", body: proxima, fact: "has its own planets" } },
     { id: "trillions", only: "long", say: "But it will keep burning for trillions of years.", visual: { type: "body", body: proxima, fact: "lifespan: trillions of years" } },
     { id: "sun", say: "Next to all of them, our Sun is a giant.", visual: { type: "compare", from: proxima, to: sun, big: true } },
     { id: "sunlife", only: "long", say: "But it will only shine for about ten billion years.", visual: { type: "body", body: sun, fact: "lifespan: ≈ 10 billion years" } },
