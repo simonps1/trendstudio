@@ -930,66 +930,66 @@
     },
     {
       "id": "lap2",
-      "text": "Even light needs almost nine hours to travel around this star.",
-      "file": "public/voice/star-sizes-long/lap2.0e64d778618c.wav",
+      "text": "Even light needs almost nine hours to circle this one star.",
+      "file": "public/voice/star-sizes-long/lap2.0997cec2e6d0.wav",
       "start": 48.93,
-      "duration": 2.96,
+      "duration": 3.09,
       "speed": 1,
       "words": [
         {
           "word": "Even",
           "start": 48.93,
-          "end": 49.11
+          "end": 49.13
         },
         {
           "word": "light",
-          "start": 49.11,
-          "end": 49.33
+          "start": 49.13,
+          "end": 49.37
         },
         {
           "word": "needs",
-          "start": 49.33,
-          "end": 49.53
+          "start": 49.37,
+          "end": 49.57
         },
         {
           "word": "almost",
-          "start": 49.53,
-          "end": 49.83
+          "start": 49.57,
+          "end": 49.87
         },
         {
           "word": "nine",
-          "start": 49.83,
-          "end": 50.17
+          "start": 49.87,
+          "end": 50.21
         },
         {
           "word": "hours",
-          "start": 50.17,
-          "end": 50.45
+          "start": 50.21,
+          "end": 50.51
         },
         {
           "word": "to",
-          "start": 50.45,
-          "end": 50.67
+          "start": 50.51,
+          "end": 50.73
         },
         {
-          "word": "travel",
-          "start": 50.67,
-          "end": 50.87
-        },
-        {
-          "word": "around",
-          "start": 50.87,
-          "end": 51.21
+          "word": "circle",
+          "start": 50.73,
+          "end": 50.95
         },
         {
           "word": "this",
+          "start": 50.95,
+          "end": 51.21
+        },
+        {
+          "word": "one",
           "start": 51.21,
-          "end": 51.33
+          "end": 51.37
         },
         {
           "word": "star.",
-          "start": 51.33,
-          "end": 51.61
+          "start": 51.37,
+          "end": 51.75
         }
       ]
     },
@@ -997,84 +997,84 @@
       "id": "far",
       "text": "It's so far away that its light takes nearly twenty thousand years to reach us.",
       "file": "public/voice/star-sizes-long/far.0bb9f1023d9d.wav",
-      "start": 52.29,
+      "start": 52.42,
       "duration": 3.89,
       "speed": 1,
       "words": [
         {
           "word": "It's",
-          "start": 52.29,
-          "end": 52.45
+          "start": 52.42,
+          "end": 52.58
         },
         {
           "word": "so",
-          "start": 52.45,
-          "end": 52.59
+          "start": 52.58,
+          "end": 52.72
         },
         {
           "word": "far",
-          "start": 52.59,
-          "end": 52.79
+          "start": 52.72,
+          "end": 52.92
         },
         {
           "word": "away",
-          "start": 52.79,
-          "end": 53.03
+          "start": 52.92,
+          "end": 53.16
         },
         {
           "word": "that",
-          "start": 53.03,
-          "end": 53.33
+          "start": 53.16,
+          "end": 53.46
         },
         {
           "word": "its",
-          "start": 53.33,
-          "end": 53.45
+          "start": 53.46,
+          "end": 53.58
         },
         {
           "word": "light",
-          "start": 53.45,
-          "end": 53.65
+          "start": 53.58,
+          "end": 53.78
         },
         {
           "word": "takes",
-          "start": 53.65,
-          "end": 53.93
+          "start": 53.78,
+          "end": 54.06
         },
         {
           "word": "nearly",
-          "start": 53.93,
-          "end": 54.17
+          "start": 54.06,
+          "end": 54.3
         },
         {
           "word": "twenty",
-          "start": 54.17,
-          "end": 54.63
+          "start": 54.3,
+          "end": 54.76
         },
         {
           "word": "thousand",
-          "start": 54.63,
-          "end": 55.07
+          "start": 54.76,
+          "end": 55.2
         },
         {
           "word": "years",
-          "start": 55.07,
-          "end": 55.29
+          "start": 55.2,
+          "end": 55.42
         },
         {
           "word": "to",
-          "start": 55.29,
-          "end": 55.53
+          "start": 55.42,
+          "end": 55.66
         },
         {
           "word": "reach",
-          "start": 55.53,
-          "end": 55.71
+          "start": 55.66,
+          "end": 55.84
         },
         {
           "word": "us.",
-          "start": 55.71,
-          "end": 55.97
+          "start": 55.84,
+          "end": 56.1
         }
       ]
     },
@@ -1082,79 +1082,79 @@
       "id": "unstable",
       "text": "Stars this big don't last. One day it will collapse, and most likely explode.",
       "file": "public/voice/star-sizes-long/unstable.fd849f6fc804.wav",
-      "start": 56.58,
+      "start": 56.71,
       "duration": 4.03,
       "speed": 1,
       "words": [
         {
           "word": "Stars",
-          "start": 56.58,
-          "end": 56.78
+          "start": 56.71,
+          "end": 56.91
         },
         {
           "word": "this",
-          "start": 56.78,
-          "end": 57.04
+          "start": 56.91,
+          "end": 57.17
         },
         {
           "word": "big",
-          "start": 57.04,
-          "end": 57.26
+          "start": 57.17,
+          "end": 57.39
         },
         {
           "word": "don't",
-          "start": 57.26,
-          "end": 57.58
+          "start": 57.39,
+          "end": 57.71
         },
         {
           "word": "last.",
-          "start": 57.58,
-          "end": 57.8
+          "start": 57.71,
+          "end": 57.93
         },
         {
           "word": "One",
-          "start": 58.3,
-          "end": 58.35
+          "start": 58.43,
+          "end": 58.48
         },
         {
           "word": "day",
-          "start": 58.3,
-          "end": 58.54
+          "start": 58.43,
+          "end": 58.67
         },
         {
           "word": "it",
-          "start": 58.54,
-          "end": 58.74
+          "start": 58.67,
+          "end": 58.87
         },
         {
           "word": "will",
-          "start": 58.74,
-          "end": 58.82
+          "start": 58.87,
+          "end": 58.95
         },
         {
           "word": "collapse,",
-          "start": 58.82,
-          "end": 59.12
+          "start": 58.95,
+          "end": 59.25
         },
         {
           "word": "and",
-          "start": 59.12,
-          "end": 59.48
+          "start": 59.25,
+          "end": 59.61
         },
         {
           "word": "most",
-          "start": 59.48,
-          "end": 59.6
+          "start": 59.61,
+          "end": 59.73
         },
         {
           "word": "likely",
-          "start": 59.6,
-          "end": 59.88
+          "start": 59.73,
+          "end": 60.01
         },
         {
           "word": "explode.",
-          "start": 59.88,
-          "end": 60.3
+          "start": 60.01,
+          "end": 60.43
         }
       ]
     },
@@ -1162,54 +1162,54 @@
       "id": "end",
       "text": "And it's still just one star, out of billions.",
       "file": "public/voice/star-sizes-long/end.ecfdcdd9e944.wav",
-      "start": 61.01,
+      "start": 61.14,
       "duration": 2.16,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 61.01,
-          "end": 61.11
+          "start": 61.14,
+          "end": 61.24
         },
         {
           "word": "it's",
-          "start": 61.11,
-          "end": 61.25
+          "start": 61.24,
+          "end": 61.38
         },
         {
           "word": "still",
-          "start": 61.25,
-          "end": 61.41
+          "start": 61.38,
+          "end": 61.54
         },
         {
           "word": "just",
-          "start": 61.41,
-          "end": 61.55
+          "start": 61.54,
+          "end": 61.68
         },
         {
           "word": "one",
-          "start": 61.55,
-          "end": 61.75
+          "start": 61.68,
+          "end": 61.88
         },
         {
           "word": "star,",
-          "start": 61.75,
-          "end": 62.07
+          "start": 61.88,
+          "end": 62.2
         },
         {
           "word": "out",
-          "start": 62.07,
-          "end": 62.45
+          "start": 62.2,
+          "end": 62.58
         },
         {
           "word": "of",
-          "start": 62.45,
-          "end": 62.55
+          "start": 62.58,
+          "end": 62.68
         },
         {
           "word": "billions.",
-          "start": 62.55,
-          "end": 62.75
+          "start": 62.68,
+          "end": 62.88
         }
       ]
     },
@@ -1217,34 +1217,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/star-sizes-long/cta.aca43710994b.wav",
-      "start": 63.57,
+      "start": 63.7,
       "duration": 1.83,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 63.57,
-          "end": 63.83
+          "start": 63.7,
+          "end": 63.96
         },
         {
           "word": "for",
-          "start": 63.83,
-          "end": 64.13
+          "start": 63.96,
+          "end": 64.26
         },
         {
           "word": "more",
-          "start": 64.13,
-          "end": 64.29
+          "start": 64.26,
+          "end": 64.42
         },
         {
           "word": "cosmic",
-          "start": 64.29,
-          "end": 64.71
+          "start": 64.42,
+          "end": 64.84
         },
         {
           "word": "scale.",
-          "start": 64.71,
-          "end": 65.17
+          "start": 64.84,
+          "end": 65.3
         }
       ]
     }
