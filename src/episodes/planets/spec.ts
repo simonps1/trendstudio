@@ -29,7 +29,7 @@ export const PLANETS: EpisodeSpec = {
     { id: "float", only: "long", say: "Saturn is so light that it would float in water.", visual: { type: "body", body: saturn, fact: "less dense than water" } },
     { id: "jupiter", say: "And Jupiter is the biggest of them all.", visual: { type: "pair", a: saturn, b: jupiter } },
     { id: "heavy", say: "It outweighs every other planet combined, twice over.", visual: { type: "body", body: jupiter, fact: "2.5 × all other planets combined" } },
-    { id: "moons", only: "long", say: "It has ninety-five known moons.", visual: { type: "body", body: jupiter, fact: "95 known moons" } },
+    { id: "moons", only: "long", say: "It has around a hundred known moons.", visual: { type: "body", body: jupiter, fact: "≈ 100 known moons" } },
     { id: "end", say: "And next to the Sun, even Jupiter is tiny.", visual: { type: "shrink", body: jupiter } },
     { id: "cta", only: "long", say: "Follow for more cosmic scale.", visual: { type: "stars" } },
   ],

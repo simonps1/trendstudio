@@ -25,7 +25,7 @@ export const TINY_STARS: EpisodeSpec = {
     { id: "teaspoon", only: "long", say: "A single teaspoon of it would weigh billions of tonnes.", visual: { type: "body", body: neutron, fact: "1 teaspoon ≈ billions of tonnes" } },
     { id: "spin", only: "long", say: "Some of them spin hundreds of times every second.", visual: { type: "body", body: neutron, fact: "up to 716 spins per second" } },
     { id: "remnant", only: "long", say: "It's what remains after a giant star explodes.", visual: { type: "body", body: neutron, fact: "left behind by a supernova" } },
-    { id: "dwarf", say: "A white dwarf is far bigger, but still smaller than Earth.", visual: { type: "compare", from: neutron, to: siriusB } },
+    { id: "dwarf", say: "Sirius B, a white dwarf, is far bigger, but still smaller than Earth.", visual: { type: "compare", from: neutron, to: siriusB } },
     { id: "core", only: "long", say: "It's the leftover core of a star that has died.", visual: { type: "body", body: siriusB, fact: "the core of a dead star" } },
     { id: "packed", only: "long", say: "It packs the mass of the Sun into the size of a planet.", visual: { type: "body", body: siriusB, fact: "a Sun's mass, planet-sized" } },
     { id: "future", only: "long", say: "One day, our own Sun will end up just like this.", visual: { type: "body", body: siriusB, fact: "the Sun's future" } },
