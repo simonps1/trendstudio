@@ -14,7 +14,7 @@ const LEAD = BEAT / 2;
 const grid = (t: number) => Math.ceil(t / BEAT - 1e-6) * BEAT;
 
 /** Seconds from the start of a compare beat to the moment the zoom lands (always whole beats). */
-export const zoomTime = (v: Visual) => (v.type === "compare" && v.big ? 3 * BEAT : 2 * BEAT);
+export const zoomTime = (v: Visual) => (v.type === "compare" && v.open ? BEAT : v.type === "compare" && v.big ? 3 * BEAT : 2 * BEAT);
 
 /** Shortest time a visual needs on screen to read. */
 function minDuration(v: Visual) {

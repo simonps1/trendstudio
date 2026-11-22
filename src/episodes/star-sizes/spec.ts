@@ -18,7 +18,7 @@ export const STAR_SIZES: EpisodeSpec = {
   voice: "chatterbox",
   emphasis: ["planet", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn", "hours", "billions", "disappear"],
   beats: [
-    { id: "hook", say: "This is our Sun, next to the biggest star we know.", visual: { type: "compare", from: sun, to: s218, big: true } },
+    { id: "hook", say: "That tiny dot is our Sun. This is the biggest star we know.", visual: { type: "compare", from: sun, to: s218, big: true, open: true } },
     { id: "earth", say: "To feel how big that is, start with Earth.", visual: { type: "body", body: earth } },
     { id: "jupiter", say: "This is Jupiter, eleven times wider than Earth.", visual: { type: "compare", from: earth, to: jupiter } },
     { id: "sun", say: "And this is the Sun, a hundred and nine Earths across.", visual: { type: "compare", from: jupiter, to: sun } },

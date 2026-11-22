@@ -10,7 +10,7 @@ export const PLANETS: EpisodeSpec = {
   voice: "chatterbox",
   emphasis: ["mercury", "mars", "venus", "earth", "neptune", "uranus", "saturn", "jupiter", "smallest", "biggest", "rings", "tiny", "float", "hottest"],
   beats: [
-    { id: "hook", say: "This is the smallest planet in our solar system, next to the biggest.", visual: { type: "compare", from: mercury, to: jupiter, big: true } },
+    { id: "hook", say: "That dot is the smallest planet in our solar system. This is the biggest.", visual: { type: "compare", from: mercury, to: jupiter, big: true, open: true } },
     { id: "mercury", say: "Mercury is the smallest, not much bigger than our Moon.", visual: { type: "body", body: mercury } },
     { id: "mercyear", only: "long", say: "A year there lasts just eighty-eight days.", visual: { type: "body", body: mercury, fact: "one year: 88 days" } },
     { id: "mars", say: "Mars comes next, about half as wide as Earth.", visual: { type: "compare", from: mercury, to: mars } },

@@ -25,6 +25,7 @@ const active = (layout: EpisodeLayout, t: number): LaidOutBeat =>
 /** Zoom progress 0..1 of a compare beat: slow start, fast middle, hard landing on the beat. */
 const zoomEase = (lt: number, v: Visual) => {
   const x = progress(lt, 0, zoomTime(v));
+  if (v.type === "compare" && v.open) return 0.78 + 0.22 * (1 - Math.pow(1 - x, 3)); // cold open: already most of the way out
   return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; // quartic in, cubic out
 };
 
@@ -126,7 +127,8 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
         { body: v.b, x: g.x, y: g.by, r: v.b.radius * g.s },
       ];
       g.fill.forEach((f, i) => {
-        const pop = ease.outBack(progress(lt, 0.5 + i * g.stagger(dur), 0.8 + i * g.stagger(dur)));
+        const f0 = b.start === 0 ? 0.04 : 0.5, st = b.start === 0 ? 0.09 : g.stagger(dur); // a video's first beat fills at once
+        const pop = b.start === 0 ? 1 + 0.06 * Math.exp(-lt * 6) * Math.sin(lt * 18 + i) : ease.outBack(progress(lt, f0 + i * st, f0 + 0.3 + i * st)); // first beat: all there from frame one
         if (pop > 0) out.push({ body: f.body, x: g.x, y: f.y, r: f.body.radius * g.s * pop });
       });
       return out;
@@ -173,8 +175,8 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   if (v.type === "compare") {
     const Z = zoomTime(v);
     const g = compareGeometry(v, lt, cy, fit);
-    nameplate(d, v.from, cx, cy, 1 - progress(lt, 0, 0.18));
-    nameplate(d, v.to, cx, cy, progress(lt, Z - 0.03, Z + 0.08), progress(lt, Z - 0.03, Z + 0.3));
+    if (!v.open) nameplate(d, v.from, cx, cy, 1 - progress(lt, 0, 0.18));
+    nameplate(d, v.to, cx, cy, v.open ? 1 : progress(lt, Z - 0.03, Z + 0.08), v.open ? progress(lt, 0, 0.3) : progress(lt, Z - 0.03, Z + 0.3));
     // the outgoing body keeps a tag so the eye can follow it
     const fromR = v.from.radius * g.s;
     if (fromR < fit * 0.55) {
@@ -249,7 +251,7 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
 
   if (v.type === "gap") {
     const g = gapGeometry(v, cx, cy, u);
-    const a = progress(lt, 0.05, 0.4);
+    const a = b.start === 0 ? 1 : progress(lt, 0.05, 0.4);
     // the gap itself: a dashed line from surface to surface
     ctx.save();
     ctx.globalAlpha = 0.75 * a; ctx.strokeStyle = "#cfe0ff"; ctx.lineWidth = 2.2 * u;
@@ -273,7 +275,8 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
       label(ctx, v.ruler.label.toUpperCase(), tx, mid + 70 * u, 44 * u, a, "Anton", "#ffd23f", "left");
     }
     g.fill.forEach((f, i) => {
-      const fa = progress(lt, 0.6 + i * g.stagger(dur), 0.85 + i * g.stagger(dur));
+      const f0 = b.start === 0 ? 0.1 : 0.6, st = b.start === 0 ? 0.09 : g.stagger(dur);
+      const fa = b.start === 0 ? 1 : progress(lt, f0 + i * st, f0 + 0.25 + i * st);
       const x0 = g.x + Math.max(f.body.radius * g.s * extent(f.body, true), 4 * u) + 12 * u;
       label(ctx, f.body.name.toUpperCase(), x0, f.y, 30 * u, fa, "Inter", "#fff", "left");
     });

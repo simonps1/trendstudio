@@ -14,10 +14,11 @@ export const MOON_DISTANCE: EpisodeSpec = {
   voice: "chatterbox",
   emphasis: ["moon", "earth", "earths", "light", "second", "planet", "days", "months", "sun", "centimetres", "twelve", "scale", "eclipse"],
   beats: [
-    { id: "hook", say: "This is the real distance between Earth and the Moon, drawn to scale.", visual: gap({ note: "384,400 km" }) },
+    // cold open on the most surprising picture: the planets stacked inside the gap
+    { id: "fit", say: "Every other planet in the solar system fits between Earth and the Moon.", visual: gap({ distance: FAR, fill: [mercury, jupiter, mars, saturn, venus, uranus, neptune], note: "at its farthest" }), hold: 0.3 },
+    { id: "hook", say: "This is the real distance between them, drawn to scale.", visual: gap({ note: "384,400 km" }) },
     { id: "thirty", say: "It is about thirty Earths away.", visual: gap({ ruler: { step: 2, label: "Earths apart" } }) },
     { id: "light", say: "Even light, the fastest thing there is, needs more than a second to cross it.", visual: gap({ trip: { label: "at light speed", seconds: 1.28 } }) },
-    { id: "fit", say: "At its farthest, every other planet in the solar system would fit in between.", visual: gap({ distance: FAR, fill: [mercury, jupiter, mars, saturn, venus, uranus, neptune] }), hold: 0.5 },
     { id: "apollo", say: "The Apollo astronauts needed three days to make the trip.", visual: gap({ trip: { label: "3 days" } }) },
     { id: "jet", only: "long", say: "A passenger jet would need about eighteen days.", visual: gap({ trip: { label: "18 days by jet" } }) },
     { id: "car", say: "At highway speed, the drive would take more than five months.", visual: gap({ trip: { label: "5 months by car" } }) },

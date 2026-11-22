@@ -18,7 +18,7 @@ export const TINY_STARS: EpisodeSpec = {
   voice: "chatterbox",
   emphasis: ["star", "earth", "neutron", "kilometres", "teaspoon", "dwarf", "saturn", "jupiter", "proxima", "giant", "trillions", "smaller", "sun"],
   beats: [
-    { id: "hook", say: "This is a real star, and this is how small it is next to Earth.", visual: { type: "compare", from: neutron, to: earth, big: true } },
+    { id: "hook", say: "That dot next to Earth is a real star, and it is smaller than a city.", visual: { type: "compare", from: neutron, to: earth, big: true, open: true } },
     { id: "neutron", say: "It's a neutron star, only about twenty kilometres wide.", visual: { type: "body", body: neutron } },
     { id: "mass", say: "Yet it holds more mass than our entire Sun.", visual: { type: "body", body: neutron, fact: "more mass than the Sun" } },
     { id: "teaspoon", only: "long", say: "A single teaspoon of it would weigh billions of tonnes.", visual: { type: "body", body: neutron, fact: "1 teaspoon ≈ billions of tonnes" } },

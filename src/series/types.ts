@@ -22,8 +22,12 @@ export interface Body {
 export type Visual =
   /** One body, centred, with a slow push-in. `fact` replaces the small note with a headline number. */
   | { type: "body"; body: Body; fact?: string }
-  /** Zoom out from `from` to reveal the larger `to`, drawn to scale. `big` = cinematic impact. */
-  | { type: "compare"; from: Body; to: Body; big?: boolean }
+  /**
+   * Zoom out from `from` to reveal the larger `to`, drawn to scale. `big` = cinematic impact.
+   * `open` = cold open for a video's first beat: the big body already fills the frame at 0:00 and
+   * slams into place half a second later, so the first second is the spectacle, not the build-up.
+   */
+  | { type: "compare"; from: Body; to: Body; big?: boolean; open?: boolean }
   /** Planet orbits drawn inside a star of radius `radiusAu` (astronomical units). */
   | { type: "orbits"; body: Body; radiusAu: number; orbits: { name: string; au: number; label?: boolean }[] }
   /** A photon laps the body; counter runs 0 → `value` `unit`. */
