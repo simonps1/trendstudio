@@ -150,7 +150,12 @@ function label(ctx: Ctx, text: string, x: number, y: number, px: number, alpha: 
   if (alpha <= 0) return;
   ctx.save();
   ctx.globalAlpha = clamp(alpha);
-  ctx.font = `${font === "Inter" ? "800 " : ""}${px}px ${font}`;
+  const face = (size: number) => `${font === "Inter" ? "800 " : ""}${size}px ${font}`;
+  ctx.font = face(px);
+  // never let a label run off the frame: shrink it to the room it has
+  const W = ctx.canvas.width, pad = 36 * (W / 1080), tw = ctx.measureText(text).width;
+  const room = align === "left" ? W - pad - x : align === "right" ? x - pad : 2 * (Math.min(x, W - x) - pad);
+  if (tw > room && room > 0) { px *= room / tw; ctx.font = face(px); }
   ctx.textAlign = align; ctx.textBaseline = "middle";
   ctx.lineWidth = px * 0.18; ctx.strokeStyle = "rgba(0,0,0,0.9)"; ctx.lineJoin = "round";
   ctx.strokeText(text, x, y);

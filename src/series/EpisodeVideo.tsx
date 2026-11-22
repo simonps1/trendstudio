@@ -38,7 +38,7 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean 
   if (a <= 0) return null;
   const next = EPISODES.some((e) => e.spec.series === spec.series && e.spec.episode === spec.episode + 1);
   return (
-    <div style={{ position: "absolute", top: height * (high ? 0.285 : 0.36), left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 * u, opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
+    <div style={{ position: "absolute", top: height * (high ? 0.268 : 0.36), left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 * u, opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
       {spec.ask ? (
         <div style={{ fontFamily: FONT_DISPLAY, fontSize: 62 * u, lineHeight: 1.1, letterSpacing: 1.5 * u, color: "#fff", textAlign: "center", maxWidth: 860 * u, textTransform: "uppercase", textShadow: `0 ${4 * u}px ${24 * u}px rgba(0,0,0,0.95), 0 0 ${3 * u}px #000` }}>
           {spec.ask}
