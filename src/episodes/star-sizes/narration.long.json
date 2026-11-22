@@ -5,66 +5,76 @@
   "lines": [
     {
       "id": "hook",
-      "text": "This is our Sun, next to the biggest star we know.",
-      "file": "public/voice/star-sizes-long/hook.06e408ea4493.wav",
+      "text": "That tiny dot is our Sun. This is the biggest star we know.",
+      "file": "public/voice/star-sizes-long/hook.10ec0c4d14fa.wav",
       "start": 0.25,
-      "duration": 3.13,
+      "duration": 3.37,
       "speed": 1,
       "words": [
         {
-          "word": "This",
+          "word": "That",
           "start": 0.25,
-          "end": 0.49
+          "end": 0.37
+        },
+        {
+          "word": "tiny",
+          "start": 0.37,
+          "end": 0.61
+        },
+        {
+          "word": "dot",
+          "start": 0.61,
+          "end": 0.93
         },
         {
           "word": "is",
-          "start": 0.49,
-          "end": 0.71
+          "start": 0.93,
+          "end": 1.15
         },
         {
           "word": "our",
-          "start": 0.71,
-          "end": 0.91
+          "start": 1.15,
+          "end": 1.27
         },
         {
-          "word": "Sun,",
-          "start": 0.91,
-          "end": 1.21
+          "word": "Sun.",
+          "start": 1.27,
+          "end": 1.55
         },
         {
-          "word": "next",
-          "start": 1.53,
-          "end": 1.77
-        },
-        {
-          "word": "to",
-          "start": 1.77,
-          "end": 1.97
-        },
-        {
-          "word": "the",
-          "start": 1.97,
-          "end": 2.05
-        },
-        {
-          "word": "biggest",
-          "start": 2.05,
+          "word": "This",
+          "start": 2.09,
           "end": 2.25
         },
         {
-          "word": "star",
+          "word": "is",
           "start": 2.25,
-          "end": 2.71
+          "end": 2.39
+        },
+        {
+          "word": "the",
+          "start": 2.39,
+          "end": 2.53
+        },
+        {
+          "word": "biggest",
+          "start": 2.53,
+          "end": 2.75
+        },
+        {
+          "word": "star",
+          "start": 2.75,
+          "end": 3.05
         },
         {
           "word": "we",
-          "start": 2.71,
-          "end": 2.91
+          "start": 3.05,
+          "end": 3.21
         },
         {
           "word": "know.",
-          "start": 2.91,
-          "end": 3.17
+          "start": 3.21,
+          "end": 3.43
         }
       ]
     },
@@ -72,54 +82,54 @@
       "id": "earth",
       "text": "To feel how big that is, start with Earth.",
       "file": "public/voice/star-sizes-long/earth.37fd5d112116.wav",
-      "start": 3.78,
+      "start": 4.02,
       "duration": 2.01,
       "speed": 1,
       "words": [
         {
           "word": "To",
-          "start": 3.78,
-          "end": 3.86
+          "start": 4.02,
+          "end": 4.1
         },
         {
           "word": "feel",
-          "start": 3.86,
-          "end": 3.98
+          "start": 4.1,
+          "end": 4.22
         },
         {
           "word": "how",
-          "start": 3.98,
-          "end": 4.18
+          "start": 4.22,
+          "end": 4.42
         },
         {
           "word": "big",
-          "start": 4.18,
-          "end": 4.34
+          "start": 4.42,
+          "end": 4.58
         },
         {
           "word": "that",
-          "start": 4.34,
-          "end": 4.52
+          "start": 4.58,
+          "end": 4.76
         },
         {
           "word": "is,",
-          "start": 4.52,
-          "end": 4.78
+          "start": 4.76,
+          "end": 5.02
         },
         {
           "word": "start",
-          "start": 5,
-          "end": 5.22
+          "start": 5.24,
+          "end": 5.46
         },
         {
           "word": "with",
-          "start": 5.22,
-          "end": 5.4
+          "start": 5.46,
+          "end": 5.64
         },
         {
           "word": "Earth.",
-          "start": 5.4,
-          "end": 5.62
+          "start": 5.64,
+          "end": 5.86
         }
       ]
     },
@@ -127,49 +137,49 @@
       "id": "jupiter",
       "text": "This is Jupiter, eleven times wider than Earth.",
       "file": "public/voice/star-sizes-long/jupiter.09c992c8f0fa.wav",
-      "start": 6.19,
+      "start": 6.43,
       "duration": 2.35,
       "speed": 1,
       "words": [
         {
           "word": "This",
-          "start": 6.19,
-          "end": 6.37
+          "start": 6.43,
+          "end": 6.61
         },
         {
           "word": "is",
-          "start": 6.37,
-          "end": 6.49
+          "start": 6.61,
+          "end": 6.73
         },
         {
           "word": "Jupiter,",
-          "start": 6.49,
-          "end": 6.75
+          "start": 6.73,
+          "end": 6.99
         },
         {
           "word": "eleven",
-          "start": 7.13,
-          "end": 7.43
+          "start": 7.37,
+          "end": 7.67
         },
         {
           "word": "times",
-          "start": 7.43,
-          "end": 7.69
+          "start": 7.67,
+          "end": 7.93
         },
         {
           "word": "wider",
-          "start": 7.69,
-          "end": 7.95
+          "start": 7.93,
+          "end": 8.19
         },
         {
           "word": "than",
-          "start": 7.95,
-          "end": 8.23
+          "start": 8.19,
+          "end": 8.47
         },
         {
           "word": "Earth.",
-          "start": 8.23,
-          "end": 8.45
+          "start": 8.47,
+          "end": 8.69
         }
       ]
     },
@@ -177,64 +187,64 @@
       "id": "sun",
       "text": "And this is the Sun, a hundred and nine Earths across.",
       "file": "public/voice/star-sizes-long/sun.81ce85aa7bbb.wav",
-      "start": 8.94,
+      "start": 9.18,
       "duration": 2.8,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 8.94,
-          "end": 9.06
+          "start": 9.18,
+          "end": 9.3
         },
         {
           "word": "this",
-          "start": 9.06,
-          "end": 9.24
+          "start": 9.3,
+          "end": 9.48
         },
         {
           "word": "is",
-          "start": 9.24,
-          "end": 9.36
+          "start": 9.48,
+          "end": 9.6
         },
         {
           "word": "the",
-          "start": 9.36,
-          "end": 9.5
+          "start": 9.6,
+          "end": 9.74
         },
         {
           "word": "Sun,",
-          "start": 9.5,
-          "end": 9.76
+          "start": 9.74,
+          "end": 10
         },
         {
           "word": "a",
-          "start": 9.76,
-          "end": 9.873
+          "start": 10,
+          "end": 10.113
         },
         {
           "word": "hundred",
-          "start": 9.873,
-          "end": 9.987
+          "start": 10.113,
+          "end": 10.227
         },
         {
           "word": "and",
-          "start": 9.987,
-          "end": 10.1
+          "start": 10.227,
+          "end": 10.34
         },
         {
           "word": "nine",
-          "start": 10.1,
-          "end": 10.56
+          "start": 10.34,
+          "end": 10.8
         },
         {
           "word": "Earths",
-          "start": 10.56,
-          "end": 11.1
+          "start": 10.8,
+          "end": 11.34
         },
         {
           "word": "across.",
-          "start": 11.1,
-          "end": 11.34
+          "start": 11.34,
+          "end": 11.58
         }
       ]
     },
@@ -242,69 +252,69 @@
       "id": "sunmass",
       "text": "It holds ninety-nine percent of all the mass in our solar system.",
       "file": "public/voice/star-sizes-long/sunmass.560aba08ff4c.wav",
-      "start": 12.14,
+      "start": 12.38,
       "duration": 2.8,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 12.14,
-          "end": 12.24
+          "start": 12.38,
+          "end": 12.48
         },
         {
           "word": "holds",
-          "start": 12.24,
-          "end": 12.36
+          "start": 12.48,
+          "end": 12.6
         },
         {
           "word": "ninety-nine",
-          "start": 12.36,
-          "end": 12.7
+          "start": 12.6,
+          "end": 12.94
         },
         {
           "word": "percent",
-          "start": 12.7,
-          "end": 12.75
+          "start": 12.94,
+          "end": 12.99
         },
         {
           "word": "of",
-          "start": 13.16,
-          "end": 13.34
+          "start": 13.4,
+          "end": 13.58
         },
         {
           "word": "all",
-          "start": 13.34,
-          "end": 13.52
+          "start": 13.58,
+          "end": 13.76
         },
         {
           "word": "the",
-          "start": 13.52,
-          "end": 13.66
+          "start": 13.76,
+          "end": 13.9
         },
         {
           "word": "mass",
-          "start": 13.66,
-          "end": 13.84
+          "start": 13.9,
+          "end": 14.08
         },
         {
           "word": "in",
-          "start": 13.84,
-          "end": 14.06
-        },
-        {
-          "word": "our",
-          "start": 14.06,
-          "end": 14.14
-        },
-        {
-          "word": "solar",
-          "start": 14.14,
+          "start": 14.08,
           "end": 14.3
         },
         {
-          "word": "system.",
+          "word": "our",
           "start": 14.3,
-          "end": 14.7
+          "end": 14.38
+        },
+        {
+          "word": "solar",
+          "start": 14.38,
+          "end": 14.54
+        },
+        {
+          "word": "system.",
+          "start": 14.54,
+          "end": 14.94
         }
       ]
     },
@@ -312,74 +322,74 @@
       "id": "sirius",
       "text": "Sirius, the brightest star in our night sky, is almost twice as wide.",
       "file": "public/voice/star-sizes-long/sirius.4dea2bbad84e.wav",
-      "start": 15.34,
+      "start": 15.58,
       "duration": 3.72,
       "speed": 1,
       "words": [
         {
           "word": "Sirius,",
-          "start": 15.34,
-          "end": 15.66
+          "start": 15.58,
+          "end": 15.9
         },
         {
           "word": "the",
-          "start": 15.98,
-          "end": 16.12
+          "start": 16.22,
+          "end": 16.36
         },
         {
           "word": "brightest",
-          "start": 16.12,
-          "end": 16.4
+          "start": 16.36,
+          "end": 16.64
         },
         {
           "word": "star",
-          "start": 16.4,
-          "end": 16.7
+          "start": 16.64,
+          "end": 16.94
         },
         {
           "word": "in",
-          "start": 16.7,
-          "end": 16.88
-        },
-        {
-          "word": "our",
-          "start": 16.88,
-          "end": 16.98
-        },
-        {
-          "word": "night",
-          "start": 16.98,
+          "start": 16.94,
           "end": 17.12
         },
         {
-          "word": "sky,",
+          "word": "our",
           "start": 17.12,
-          "end": 17.38
+          "end": 17.22
+        },
+        {
+          "word": "night",
+          "start": 17.22,
+          "end": 17.36
+        },
+        {
+          "word": "sky,",
+          "start": 17.36,
+          "end": 17.62
         },
         {
           "word": "is",
-          "start": 17.64,
-          "end": 17.78
+          "start": 17.88,
+          "end": 18.02
         },
         {
           "word": "almost",
-          "start": 17.78,
-          "end": 18.08
+          "start": 18.02,
+          "end": 18.32
         },
         {
           "word": "twice",
-          "start": 18.08,
-          "end": 18.36
-        },
-        {
-          "word": "as",
-          "start": 18.36,
+          "start": 18.32,
           "end": 18.6
         },
         {
-          "word": "wide.",
+          "word": "as",
           "start": 18.6,
-          "end": 18.86
+          "end": 18.84
+        },
+        {
+          "word": "wide.",
+          "start": 18.84,
+          "end": 19.1
         }
       ]
     },
@@ -387,54 +397,54 @@
       "id": "rigel",
       "text": "Rigel, a blue supergiant, is nearly eighty Suns across.",
       "file": "public/voice/star-sizes-long/rigel.2cbf28894a7c.wav",
-      "start": 19.46,
+      "start": 19.7,
       "duration": 3.27,
       "speed": 1,
       "words": [
         {
           "word": "Rigel,",
-          "start": 19.46,
-          "end": 19.88
+          "start": 19.7,
+          "end": 20.12
         },
         {
           "word": "a",
-          "start": 20.02,
-          "end": 20.1
+          "start": 20.26,
+          "end": 20.34
         },
         {
           "word": "blue",
-          "start": 20.1,
-          "end": 20.24
+          "start": 20.34,
+          "end": 20.48
         },
         {
           "word": "supergiant,",
-          "start": 20.24,
-          "end": 20.84
-        },
-        {
-          "word": "is",
-          "start": 20.84,
+          "start": 20.48,
           "end": 21.08
         },
         {
-          "word": "nearly",
+          "word": "is",
           "start": 21.08,
-          "end": 21.26
+          "end": 21.32
+        },
+        {
+          "word": "nearly",
+          "start": 21.32,
+          "end": 21.5
         },
         {
           "word": "eighty",
-          "start": 21.26,
-          "end": 21.64
+          "start": 21.5,
+          "end": 21.88
         },
         {
           "word": "Suns",
-          "start": 21.64,
-          "end": 21.9
+          "start": 21.88,
+          "end": 22.14
         },
         {
           "word": "across.",
-          "start": 21.9,
-          "end": 22.3
+          "start": 22.14,
+          "end": 22.54
         }
       ]
     },
@@ -442,59 +452,59 @@
       "id": "betel-l",
       "text": "Betelgeuse, a red supergiant, is about seven hundred Suns across.",
       "file": "public/voice/star-sizes-long/betel-l.c3adafefad14.wav",
-      "start": 23.13,
+      "start": 23.37,
       "duration": 3.86,
       "speed": 1,
       "words": [
         {
           "word": "Betelgeuse,",
-          "start": 23.13,
-          "end": 23.71
-        },
-        {
-          "word": "a",
-          "start": 23.81,
+          "start": 23.37,
           "end": 23.95
         },
         {
+          "word": "a",
+          "start": 24.05,
+          "end": 24.19
+        },
+        {
           "word": "red",
-          "start": 23.95,
-          "end": 24.11
+          "start": 24.19,
+          "end": 24.35
         },
         {
           "word": "supergiant,",
-          "start": 24.11,
-          "end": 24.75
+          "start": 24.35,
+          "end": 24.99
         },
         {
           "word": "is",
-          "start": 24.99,
-          "end": 25.23
+          "start": 25.23,
+          "end": 25.47
         },
         {
           "word": "about",
-          "start": 25.23,
-          "end": 25.39
+          "start": 25.47,
+          "end": 25.63
         },
         {
           "word": "seven",
-          "start": 25.39,
-          "end": 25.44
+          "start": 25.63,
+          "end": 25.68
         },
         {
           "word": "hundred",
-          "start": 25.39,
-          "end": 25.79
+          "start": 25.63,
+          "end": 26.03
         },
         {
           "word": "Suns",
-          "start": 25.79,
-          "end": 26.23
+          "start": 26.03,
+          "end": 26.47
         },
         {
           "word": "across.",
-          "start": 26.23,
-          "end": 26.61
+          "start": 26.47,
+          "end": 26.85
         }
       ]
     },
@@ -502,69 +512,69 @@
       "id": "betelmars",
       "text": "If it replaced our Sun, its surface would reach out past Mars.",
       "file": "public/voice/star-sizes-long/betelmars.637136fcbc92.wav",
-      "start": 27.39,
+      "start": 27.63,
       "duration": 3.47,
       "speed": 1,
       "words": [
         {
           "word": "If",
-          "start": 27.39,
-          "end": 27.51
+          "start": 27.63,
+          "end": 27.75
         },
         {
           "word": "it",
-          "start": 27.51,
-          "end": 27.56
+          "start": 27.75,
+          "end": 27.8
         },
         {
           "word": "replaced",
-          "start": 27.53,
-          "end": 27.81
+          "start": 27.77,
+          "end": 28.05
         },
         {
           "word": "our",
-          "start": 27.81,
-          "end": 28.11
+          "start": 28.05,
+          "end": 28.35
         },
         {
           "word": "Sun,",
-          "start": 28.11,
-          "end": 28.39
+          "start": 28.35,
+          "end": 28.63
         },
         {
           "word": "its",
-          "start": 28.73,
-          "end": 28.87
+          "start": 28.97,
+          "end": 29.11
         },
         {
           "word": "surface",
-          "start": 28.87,
-          "end": 29.17
+          "start": 29.11,
+          "end": 29.41
         },
         {
           "word": "would",
-          "start": 29.17,
-          "end": 29.47
-        },
-        {
-          "word": "reach",
-          "start": 29.47,
+          "start": 29.41,
           "end": 29.71
         },
         {
-          "word": "out",
+          "word": "reach",
           "start": 29.71,
-          "end": 29.87
+          "end": 29.95
+        },
+        {
+          "word": "out",
+          "start": 29.95,
+          "end": 30.11
         },
         {
           "word": "past",
-          "start": 29.87,
-          "end": 30.17
+          "start": 30.11,
+          "end": 30.41
         },
         {
           "word": "Mars.",
-          "start": 30.17,
-          "end": 30.49
+          "start": 30.41,
+          "end": 30.73
         }
       ]
     },
@@ -572,69 +582,69 @@
       "id": "s218",
       "text": "And then there is Stephenson two eighteen, around two thousand Suns across.",
       "file": "public/voice/star-sizes-long/s218.da5342c68127.wav",
-      "start": 31.26,
+      "start": 31.5,
       "duration": 3.21,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 31.26,
-          "end": 31.36
+          "start": 31.5,
+          "end": 31.6
         },
         {
           "word": "then",
-          "start": 31.36,
-          "end": 31.46
+          "start": 31.6,
+          "end": 31.7
         },
         {
           "word": "there",
-          "start": 31.46,
-          "end": 31.58
+          "start": 31.7,
+          "end": 31.82
         },
         {
           "word": "is",
-          "start": 31.58,
-          "end": 31.68
+          "start": 31.82,
+          "end": 31.92
         },
         {
           "word": "Stephenson",
-          "start": 31.68,
-          "end": 31.73
+          "start": 31.92,
+          "end": 31.97
         },
         {
           "word": "two",
-          "start": 31.68,
-          "end": 31.96
+          "start": 31.92,
+          "end": 32.2
         },
         {
           "word": "eighteen,",
-          "start": 31.96,
-          "end": 32.36
+          "start": 32.2,
+          "end": 32.6
         },
         {
           "word": "around",
-          "start": 32.92,
-          "end": 33.1
+          "start": 33.16,
+          "end": 33.34
         },
         {
           "word": "two",
-          "start": 33.1,
-          "end": 33.36
+          "start": 33.34,
+          "end": 33.6
         },
         {
           "word": "thousand",
-          "start": 33.36,
-          "end": 33.64
+          "start": 33.6,
+          "end": 33.88
         },
         {
           "word": "Suns",
-          "start": 33.64,
-          "end": 33.78
+          "start": 33.88,
+          "end": 34.02
         },
         {
           "word": "across.",
-          "start": 33.78,
-          "end": 34.12
+          "start": 34.02,
+          "end": 34.36
         }
       ]
     },
@@ -642,54 +652,54 @@
       "id": "volume",
       "text": "You could fit nearly ten billion Suns inside it.",
       "file": "public/voice/star-sizes-long/volume.e0a4d8155385.wav",
-      "start": 34.87,
+      "start": 35.11,
       "duration": 2.1,
       "speed": 1,
       "words": [
         {
           "word": "You",
-          "start": 34.87,
-          "end": 34.95
-        },
-        {
-          "word": "could",
-          "start": 34.95,
-          "end": 35.07
-        },
-        {
-          "word": "fit",
-          "start": 35.07,
+          "start": 35.11,
           "end": 35.19
         },
         {
-          "word": "nearly",
+          "word": "could",
           "start": 35.19,
-          "end": 35.37
+          "end": 35.31
+        },
+        {
+          "word": "fit",
+          "start": 35.31,
+          "end": 35.43
+        },
+        {
+          "word": "nearly",
+          "start": 35.43,
+          "end": 35.61
         },
         {
           "word": "ten",
-          "start": 35.37,
-          "end": 35.71
+          "start": 35.61,
+          "end": 35.95
         },
         {
           "word": "billion",
-          "start": 35.71,
-          "end": 36.01
+          "start": 35.95,
+          "end": 36.25
         },
         {
           "word": "Suns",
-          "start": 36.01,
-          "end": 36.27
+          "start": 36.25,
+          "end": 36.51
         },
         {
           "word": "inside",
-          "start": 36.27,
-          "end": 36.69
+          "start": 36.51,
+          "end": 36.93
         },
         {
           "word": "it.",
-          "start": 36.69,
-          "end": 36.85
+          "start": 36.93,
+          "end": 37.09
         }
       ]
     },
@@ -697,79 +707,79 @@
       "id": "orbits",
       "text": "Put it in our solar system, and it would swallow everything out to Saturn.",
       "file": "public/voice/star-sizes-long/orbits.caeb1e9b0fd4.wav",
-      "start": 37.37,
+      "start": 37.61,
       "duration": 3.5,
       "speed": 1,
       "words": [
         {
           "word": "Put",
-          "start": 37.37,
-          "end": 37.49
+          "start": 37.61,
+          "end": 37.73
         },
         {
           "word": "it",
-          "start": 37.49,
-          "end": 37.57
+          "start": 37.73,
+          "end": 37.81
         },
         {
           "word": "in",
-          "start": 37.57,
-          "end": 37.67
+          "start": 37.81,
+          "end": 37.91
         },
         {
           "word": "our",
-          "start": 37.67,
-          "end": 37.77
+          "start": 37.91,
+          "end": 38.01
         },
         {
           "word": "solar",
-          "start": 37.77,
-          "end": 37.93
+          "start": 38.01,
+          "end": 38.17
         },
         {
           "word": "system,",
-          "start": 37.93,
-          "end": 38.33
+          "start": 38.17,
+          "end": 38.57
         },
         {
           "word": "and",
-          "start": 38.75,
-          "end": 38.93
+          "start": 38.99,
+          "end": 39.17
         },
         {
           "word": "it",
-          "start": 38.93,
-          "end": 39.01
+          "start": 39.17,
+          "end": 39.25
         },
         {
           "word": "would",
-          "start": 39.01,
-          "end": 39.11
+          "start": 39.25,
+          "end": 39.35
         },
         {
           "word": "swallow",
-          "start": 39.11,
-          "end": 39.31
+          "start": 39.35,
+          "end": 39.55
         },
         {
           "word": "everything",
-          "start": 39.31,
-          "end": 39.99
+          "start": 39.55,
+          "end": 40.23
         },
         {
           "word": "out",
-          "start": 39.99,
-          "end": 40.19
+          "start": 40.23,
+          "end": 40.43
         },
         {
           "word": "to",
-          "start": 40.19,
-          "end": 40.35
+          "start": 40.43,
+          "end": 40.59
         },
         {
           "word": "Saturn.",
-          "start": 40.35,
-          "end": 40.57
+          "start": 40.59,
+          "end": 40.81
         }
       ]
     },
@@ -777,69 +787,69 @@
       "id": "bright",
       "text": "It's cooler than the Sun, yet hundreds of thousands of times brighter.",
       "file": "public/voice/star-sizes-long/bright.41778b33fe47.wav",
-      "start": 41.27,
+      "start": 41.51,
       "duration": 3.34,
       "speed": 1,
       "words": [
         {
           "word": "It's",
-          "start": 41.27,
-          "end": 41.45
+          "start": 41.51,
+          "end": 41.69
         },
         {
           "word": "cooler",
-          "start": 41.45,
-          "end": 41.57
+          "start": 41.69,
+          "end": 41.81
         },
         {
           "word": "than",
-          "start": 41.57,
-          "end": 41.85
+          "start": 41.81,
+          "end": 42.09
         },
         {
           "word": "the",
-          "start": 41.85,
-          "end": 41.95
+          "start": 42.09,
+          "end": 42.19
         },
         {
           "word": "Sun,",
-          "start": 41.95,
-          "end": 42.17
+          "start": 42.19,
+          "end": 42.41
         },
         {
           "word": "yet",
-          "start": 42.59,
-          "end": 42.69
+          "start": 42.83,
+          "end": 42.93
         },
         {
           "word": "hundreds",
-          "start": 42.69,
-          "end": 43.01
+          "start": 42.93,
+          "end": 43.25
         },
         {
           "word": "of",
-          "start": 43.01,
-          "end": 43.23
-        },
-        {
-          "word": "thousands",
-          "start": 43.23,
+          "start": 43.25,
           "end": 43.47
         },
         {
-          "word": "of",
+          "word": "thousands",
           "start": 43.47,
-          "end": 43.81
+          "end": 43.71
+        },
+        {
+          "word": "of",
+          "start": 43.71,
+          "end": 44.05
         },
         {
           "word": "times",
-          "start": 43.81,
-          "end": 44.01
+          "start": 44.05,
+          "end": 44.25
         },
         {
           "word": "brighter.",
-          "start": 44.01,
-          "end": 44.31
+          "start": 44.25,
+          "end": 44.55
         }
       ]
     },
@@ -847,64 +857,64 @@
       "id": "lap1",
       "text": "Light can circle the Earth seven times in a single second.",
       "file": "public/voice/star-sizes-long/lap1.89862866d7a6.wav",
-      "start": 45.01,
+      "start": 45.25,
       "duration": 2.91,
       "speed": 1,
       "words": [
         {
           "word": "Light",
-          "start": 45.01,
-          "end": 45.23
+          "start": 45.25,
+          "end": 45.47
         },
         {
           "word": "can",
-          "start": 45.23,
-          "end": 45.41
+          "start": 45.47,
+          "end": 45.65
         },
         {
           "word": "circle",
-          "start": 45.41,
-          "end": 45.61
-        },
-        {
-          "word": "the",
-          "start": 45.61,
+          "start": 45.65,
           "end": 45.85
         },
         {
-          "word": "Earth",
+          "word": "the",
           "start": 45.85,
-          "end": 45.95
+          "end": 46.09
+        },
+        {
+          "word": "Earth",
+          "start": 46.09,
+          "end": 46.19
         },
         {
           "word": "seven",
-          "start": 45.95,
-          "end": 46.37
+          "start": 46.19,
+          "end": 46.61
         },
         {
           "word": "times",
-          "start": 46.37,
-          "end": 46.71
+          "start": 46.61,
+          "end": 46.95
         },
         {
           "word": "in",
-          "start": 46.71,
-          "end": 46.99
+          "start": 46.95,
+          "end": 47.23
         },
         {
           "word": "a",
-          "start": 46.99,
-          "end": 47.07
-        },
-        {
-          "word": "single",
-          "start": 47.07,
+          "start": 47.23,
           "end": 47.31
         },
         {
-          "word": "second.",
+          "word": "single",
           "start": 47.31,
-          "end": 47.73
+          "end": 47.55
+        },
+        {
+          "word": "second.",
+          "start": 47.55,
+          "end": 47.97
         }
       ]
     },
@@ -912,64 +922,64 @@
       "id": "lap2",
       "text": "Even light needs almost nine hours to travel around this star.",
       "file": "public/voice/star-sizes-long/lap2.0e64d778618c.wav",
-      "start": 48.32,
+      "start": 48.56,
       "duration": 2.96,
       "speed": 1,
       "words": [
         {
           "word": "Even",
-          "start": 48.32,
-          "end": 48.5
+          "start": 48.56,
+          "end": 48.74
         },
         {
           "word": "light",
-          "start": 48.5,
-          "end": 48.72
+          "start": 48.74,
+          "end": 48.96
         },
         {
           "word": "needs",
-          "start": 48.72,
-          "end": 48.92
+          "start": 48.96,
+          "end": 49.16
         },
         {
           "word": "almost",
-          "start": 48.92,
-          "end": 49.22
+          "start": 49.16,
+          "end": 49.46
         },
         {
           "word": "nine",
-          "start": 49.22,
-          "end": 49.56
+          "start": 49.46,
+          "end": 49.8
         },
         {
           "word": "hours",
-          "start": 49.56,
-          "end": 49.84
+          "start": 49.8,
+          "end": 50.08
         },
         {
           "word": "to",
-          "start": 49.84,
-          "end": 50.06
+          "start": 50.08,
+          "end": 50.3
         },
         {
           "word": "travel",
-          "start": 50.06,
-          "end": 50.26
+          "start": 50.3,
+          "end": 50.5
         },
         {
           "word": "around",
-          "start": 50.26,
-          "end": 50.6
+          "start": 50.5,
+          "end": 50.84
         },
         {
           "word": "this",
-          "start": 50.6,
-          "end": 50.72
+          "start": 50.84,
+          "end": 50.96
         },
         {
           "word": "star.",
-          "start": 50.72,
-          "end": 51
+          "start": 50.96,
+          "end": 51.24
         }
       ]
     },
@@ -977,84 +987,84 @@
       "id": "far",
       "text": "It's so far away that its light takes nearly twenty thousand years to reach us.",
       "file": "public/voice/star-sizes-long/far.0bb9f1023d9d.wav",
-      "start": 51.68,
+      "start": 51.92,
       "duration": 3.89,
       "speed": 1,
       "words": [
         {
           "word": "It's",
-          "start": 51.68,
-          "end": 51.84
+          "start": 51.92,
+          "end": 52.08
         },
         {
           "word": "so",
-          "start": 51.84,
-          "end": 51.98
+          "start": 52.08,
+          "end": 52.22
         },
         {
           "word": "far",
-          "start": 51.98,
-          "end": 52.18
-        },
-        {
-          "word": "away",
-          "start": 52.18,
+          "start": 52.22,
           "end": 52.42
         },
         {
-          "word": "that",
+          "word": "away",
           "start": 52.42,
-          "end": 52.72
+          "end": 52.66
+        },
+        {
+          "word": "that",
+          "start": 52.66,
+          "end": 52.96
         },
         {
           "word": "its",
-          "start": 52.72,
-          "end": 52.84
+          "start": 52.96,
+          "end": 53.08
         },
         {
           "word": "light",
-          "start": 52.84,
-          "end": 53.04
+          "start": 53.08,
+          "end": 53.28
         },
         {
           "word": "takes",
-          "start": 53.04,
-          "end": 53.32
-        },
-        {
-          "word": "nearly",
-          "start": 53.32,
+          "start": 53.28,
           "end": 53.56
         },
         {
-          "word": "twenty",
+          "word": "nearly",
           "start": 53.56,
-          "end": 54.02
+          "end": 53.8
+        },
+        {
+          "word": "twenty",
+          "start": 53.8,
+          "end": 54.26
         },
         {
           "word": "thousand",
-          "start": 54.02,
-          "end": 54.46
+          "start": 54.26,
+          "end": 54.7
         },
         {
           "word": "years",
-          "start": 54.46,
-          "end": 54.68
-        },
-        {
-          "word": "to",
-          "start": 54.68,
+          "start": 54.7,
           "end": 54.92
         },
         {
-          "word": "reach",
+          "word": "to",
           "start": 54.92,
-          "end": 55.1
+          "end": 55.16
+        },
+        {
+          "word": "reach",
+          "start": 55.16,
+          "end": 55.34
         },
         {
           "word": "us.",
-          "start": 55.1,
-          "end": 55.36
+          "start": 55.34,
+          "end": 55.6
         }
       ]
     },
@@ -1062,69 +1072,69 @@
       "id": "unstable",
       "text": "Stars this big don't last. One day it will collapse, and explode.",
       "file": "public/voice/star-sizes-long/unstable.76c3bccb883b.wav",
-      "start": 55.97,
+      "start": 56.21,
       "duration": 3.94,
       "speed": 1,
       "words": [
         {
           "word": "Stars",
-          "start": 55.97,
-          "end": 56.17
+          "start": 56.21,
+          "end": 56.41
         },
         {
           "word": "this",
-          "start": 56.17,
-          "end": 56.43
-        },
-        {
-          "word": "big",
-          "start": 56.43,
+          "start": 56.41,
           "end": 56.67
         },
         {
-          "word": "don't",
+          "word": "big",
           "start": 56.67,
-          "end": 57.03
+          "end": 56.91
+        },
+        {
+          "word": "don't",
+          "start": 56.91,
+          "end": 57.27
         },
         {
           "word": "last.",
-          "start": 57.03,
-          "end": 57.25
+          "start": 57.27,
+          "end": 57.49
         },
         {
           "word": "One",
-          "start": 57.93,
-          "end": 57.98
+          "start": 58.17,
+          "end": 58.22
         },
         {
           "word": "day",
-          "start": 57.93,
-          "end": 58.17
+          "start": 58.17,
+          "end": 58.41
         },
         {
           "word": "it",
-          "start": 58.17,
-          "end": 58.39
+          "start": 58.41,
+          "end": 58.63
         },
         {
           "word": "will",
-          "start": 58.39,
-          "end": 58.51
+          "start": 58.63,
+          "end": 58.75
         },
         {
           "word": "collapse,",
-          "start": 58.51,
-          "end": 58.85
+          "start": 58.75,
+          "end": 59.09
         },
         {
           "word": "and",
-          "start": 58.85,
-          "end": 59.23
+          "start": 59.09,
+          "end": 59.47
         },
         {
           "word": "explode.",
-          "start": 59.23,
-          "end": 59.61
+          "start": 59.47,
+          "end": 59.85
         }
       ]
     },
@@ -1132,54 +1142,54 @@
       "id": "end",
       "text": "And it's still just one star, out of billions.",
       "file": "public/voice/star-sizes-long/end.ecfdcdd9e944.wav",
-      "start": 60.31,
+      "start": 60.55,
       "duration": 2.16,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 60.31,
-          "end": 60.41
+          "start": 60.55,
+          "end": 60.65
         },
         {
           "word": "it's",
-          "start": 60.41,
-          "end": 60.55
+          "start": 60.65,
+          "end": 60.79
         },
         {
           "word": "still",
-          "start": 60.55,
-          "end": 60.71
+          "start": 60.79,
+          "end": 60.95
         },
         {
           "word": "just",
-          "start": 60.71,
-          "end": 60.85
+          "start": 60.95,
+          "end": 61.09
         },
         {
           "word": "one",
-          "start": 60.85,
-          "end": 61.05
+          "start": 61.09,
+          "end": 61.29
         },
         {
           "word": "star,",
-          "start": 61.05,
-          "end": 61.37
+          "start": 61.29,
+          "end": 61.61
         },
         {
           "word": "out",
-          "start": 61.37,
-          "end": 61.75
+          "start": 61.61,
+          "end": 61.99
         },
         {
           "word": "of",
-          "start": 61.75,
-          "end": 61.85
+          "start": 61.99,
+          "end": 62.09
         },
         {
           "word": "billions.",
-          "start": 61.85,
-          "end": 62.05
+          "start": 62.09,
+          "end": 62.29
         }
       ]
     },
@@ -1187,34 +1197,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/star-sizes-long/cta.aca43710994b.wav",
-      "start": 62.87,
+      "start": 63.11,
       "duration": 1.83,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 62.87,
-          "end": 63.13
+          "start": 63.11,
+          "end": 63.37
         },
         {
           "word": "for",
-          "start": 63.13,
-          "end": 63.43
+          "start": 63.37,
+          "end": 63.67
         },
         {
           "word": "more",
-          "start": 63.43,
-          "end": 63.59
+          "start": 63.67,
+          "end": 63.83
         },
         {
           "word": "cosmic",
-          "start": 63.59,
-          "end": 64.01
+          "start": 63.83,
+          "end": 64.25
         },
         {
           "word": "scale.",
-          "start": 64.01,
-          "end": 64.47
+          "start": 64.25,
+          "end": 64.71
         }
       ]
     }
