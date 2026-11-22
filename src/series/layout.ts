@@ -21,6 +21,8 @@ function minDuration(v: Visual) {
   switch (v.type) {
     case "body": return 2 * BEAT;
     case "compare": return zoomTime(v) + 2 * BEAT;
+    case "pair": return 5 * BEAT;
+    case "gap": return 7 * BEAT;
     case "orbits": return 6 * BEAT;
     case "lap": return 7 * BEAT;
     case "shrink": return 6 * BEAT;

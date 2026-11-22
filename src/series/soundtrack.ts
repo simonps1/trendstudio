@@ -34,6 +34,12 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
       if (v.big) { m.add(shimmer(2, 550 + i), land + 0.05, 0.3, 0, 0.7); addMotif(m, land); }
       if (i > 0) addFill(m, land, v.big ? 2 : 1);
     }
+    if (v.type === "pair") { m.add(impact(0.3, 620 + i), b.start + 0.05, 0.5, -0.3, 0.2); m.add(impact(0.3, 640 + i), b.start + 0.3, 0.5, 0.3, 0.2); }
+    if (v.type === "gap") {
+      m.add(whoosh(0.8, 700 + i, 0.6), b.start + 0.1, 0.3, 0, 0.3);
+      (v.fill ?? []).forEach((_, k) => m.add(shape(sine(0.2, hz(67 + 2 * k)), adEnv(0.002, 0.06)), b.start + 0.5 + k * Math.min(0.3, Math.max(0.12, (dur - 1.6) / Math.max(1, v.fill!.length))), 0.2, k % 2 ? 0.3 : -0.3, 0.4));
+      if (v.trip) m.add(chime(hz(84), 1.5), b.start + 0.5, 0.12, 0, 0.6);
+    }
     if (v.type === "body" && i > 0) m.add(impact(0.15, 600 + i), b.start, 0.4, 0, 0.2);
     if (v.type === "orbits") v.orbits.forEach((_, k) => m.add(shape(sine(0.25, hz(72 + 4 * k)), adEnv(0.002, 0.07)), b.start + 0.25 + k * orbitStagger(dur, v.orbits.length), 0.22, k % 2 ? 0.3 : -0.3, 0.4));
     if (v.type === "lap") {
