@@ -39,7 +39,7 @@ export const STAR_SIZES: EpisodeSpec = {
     },
     { id: "bright", only: "long", say: "It's cooler than the Sun, yet hundreds of thousands of times brighter.", visual: { type: "body", body: s218, fact: "100,000s of times brighter" } },
     { id: "lap1", only: "long", say: "Light can circle the Earth seven times in a single second.", visual: { type: "body", body: earth, fact: "7.5 laps of Earth per second" } },
-    { id: "lap2", say: "Even light needs almost nine hours to travel around this star.", visual: { type: "lap", body: s218, value: 8.7, unit: "hours" } },
+    { id: "lap2", say: "Even light needs almost nine hours to circle this one star.", visual: { type: "lap", body: s218, value: 8.7, unit: "hours" } },
     { id: "far", only: "long", say: "It's so far away that its light takes nearly twenty thousand years to reach us.", visual: { type: "body", body: s218, fact: "≈ 19,000 light-years away" } },
     { id: "unstable", only: "long", say: "Stars this big don't last. One day it will collapse, and most likely explode.", visual: { type: "body", body: s218, fact: "a supernova in waiting" } },
     { id: "end", say: "And it's still just one star, out of billions.", visual: { type: "shrink", body: s218 } },
