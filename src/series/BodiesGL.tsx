@@ -6,18 +6,23 @@ import type { Body } from "./types";
 export interface PlacedBody { body: Body; x: number; y: number; r: number }
 
 const MAX = 10;
+/** Shaders are built per scene: only the body kinds on screen are compiled in, and the loop runs once per body. */
+type Variant = { n: number; kinds: number[]; rings: boolean };
 
 const VERT = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }`;
 
 /** Surface detail is computed at this fraction of the frame size, then sampled at full size. */
 const SURFACE_SCALE = 0.5;
 
-const COMMON = `
+const common = (v: Variant) => `
+${v.kinds.map((k) => `#define K${k}`).join("\n")}
+${v.rings ? "#define RINGS" : ""}
+#define N ${v.n}
 precision highp float;
 uniform vec2 uRes; uniform float uTime; uniform float uU;
-uniform vec4 uA[${MAX}]; // x, y, radius, kind (0 star, 1 earth, 2 bands, 3 plain, 4 rocky, 5 mars, 6 black hole, <0 none)
-uniform vec4 uD[${MAX}]; // x: 1 = ring system
-uniform vec4 uC[${MAX}]; // star: temp, seed, 0, 0   planet: r, g, b, seed
+uniform vec4 uA[N]; // x, y, radius, kind (0 star, 1 earth, 2 bands, 3 plain, 4 rocky, 5 mars, 6 black hole, <0 none)
+uniform vec4 uD[N]; // x: 1 = ring system
+uniform vec4 uC[N]; // star: temp, seed, 0, 0   planet: r, g, b, seed
 float hash(vec3 p){ p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float noise(vec3 x){
   vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -38,18 +43,19 @@ const vec3 L = vec3(-0.52, 0.56, 0.64); // light from the upper left, towards th
  * each pixel. Surfaces are smooth, so half resolution loses nothing visible.
  * Every body is an analytic sphere, exact at any radius.
  */
-const FRAG_SURFACE = COMMON + `
+const fragSurface = (v: Variant) => common(v) + `
 uniform float uScale;
 void main(){
   vec2 frag = vec2(gl_FragCoord.x / uScale, uRes.y - gl_FragCoord.y / uScale);
   vec3 col = vec3(0.0);
-  for (int i = 0; i < ${MAX}; i++){
+  for (int i = 0; i < N; i++){
     float kind = uA[i].w; if (kind < -0.5) continue;
     vec2 d2 = frag - uA[i].xy; float r = uA[i].z;
     if (length(d2) > r + 4.0) continue; // slightly past the edge so edge pixels sample valid colour
     vec2 p = d2 / r; float pl = length(p); if (pl > 1.0) p /= pl;
     float z = sqrt(max(0.0, 1.0 - dot(p, p)));
     vec3 n = vec3(p.x, -p.y, z);
+#ifdef K0
     if (kind < 0.5) {
       float temp = uC[i].x, seed = uC[i].y;
       vec3 base = starBase(temp);
@@ -61,11 +67,14 @@ void main(){
       float spots = smoothstep(0.66, 0.73, fbm(n * 7.0 + vec3(seed * 2.0, 3.0, uTime * 0.02))); // small sunspot groups
       s *= 1.0 - 0.4 * spots;
       col = mix(s, s * vec3(1.0, 0.72, 0.55), (1.0 - z) * 0.6); // redder towards the edge
-    } else {
+    }
+#endif
+    if (kind > 0.5) {
       vec3 pc = uC[i].rgb; float seed = uC[i].a;
       vec3 nr = rotY(n, uTime * 0.12 + seed);
       float diff = clamp(dot(n, L), 0.0, 1.0);
-      vec3 s;
+      vec3 s = vec3(0.0);
+#ifdef K1
       if (kind < 1.5) {
         float land = fbm(nr * 2.3 + seed);
         float isLand = smoothstep(0.50, 0.535, land);
@@ -80,7 +89,10 @@ void main(){
         s += vec3(0.30, 0.55, 1.0) * pow(1.0 - z, 3.0) * (0.25 + diff);
         float city = smoothstep(0.66, 0.74, noise(nr * 46.0 + seed)) * smoothstep(0.55, 0.75, noise(nr * 9.0 + 5.0));
         s += vec3(1.0, 0.72, 0.38) * city * isLand * (1.0 - cloud) * smoothstep(0.12, 0.0, dot(n, L)) * 0.9;
-      } else if (kind < 2.5) {
+      }
+#endif
+#ifdef K2
+      if (kind > 1.5 && kind < 2.5) {
         float turb = fbm(vec3(nr.x * 3.0, nr.y * 9.0, nr.z * 3.0) + seed);
         float band = 0.5 + 0.5 * sin((nr.y * 8.5 + turb * 0.75) * 3.14159);
         s = mix(pc * vec3(0.55, 0.42, 0.34), pc * 1.18, smoothstep(0.2, 0.8, band));
@@ -89,12 +101,18 @@ void main(){
         float spot = length(vec2((lon - 0.4) * 1.0, (nr.y + 0.36) * 2.6));
         s = mix(vec3(0.72, 0.26, 0.14), s, smoothstep(0.10, 0.19, spot));
         s *= 0.04 + 1.12 * diff;
-      } else if (kind < 3.5) {
+      }
+#endif
+#ifdef K3
+      if (kind > 2.5 && kind < 3.5) {
         // cloud-covered world: soft streaks along the lines of latitude
         float streak = fbm(vec3(nr.x * 2.0, nr.y * 11.0, nr.z * 2.0) + seed);
         s = pc * (0.78 + 0.34 * streak + 0.12 * fbm(nr * 5.0 + seed)) * (0.04 + 1.12 * diff);
         s += pc * pow(1.0 - z, 3.0) * 0.35 * diff;
-      } else if (kind < 4.5) {
+      }
+#endif
+#ifdef K4
+      if (kind > 3.5 && kind < 4.5) {
         // airless rock: dark plains, craters with bright rims, hard shadows
         float plains = smoothstep(0.50, 0.62, fbm(nr * 1.9 + seed));
         float cr = noise(nr * 13.0 + seed * 3.0), cr2 = noise(nr * 31.0 + seed);
@@ -104,7 +122,10 @@ void main(){
         s *= 1.0 - 0.30 * pit - 0.16 * pit2;
         s += pc * (0.30 * rim + 0.16 * rim2);
         s *= 0.02 + 1.25 * pow(diff, 0.85);
-      } else if (kind < 5.5) {
+      }
+#endif
+#ifdef K5
+      if (kind > 4.5 && kind < 5.5) {
         // Mars: rust plains, dark highlands, polar caps, a thin dusty haze
         float dark = smoothstep(0.48, 0.62, fbm(nr * 2.2 + seed));
         s = mix(pc, pc * vec3(0.42, 0.36, 0.34), dark * 0.75) * (0.85 + 0.3 * fbm(nr * 8.0 + 2.0));
@@ -113,9 +134,8 @@ void main(){
         s = mix(s, vec3(0.96, 0.95, 0.93), smoothstep(0.86, 0.92, abs(nr.y) + 0.06 * fbm(nr * 6.0)));
         s *= 0.03 + 1.15 * diff;
         s += vec3(0.95, 0.55, 0.35) * pow(1.0 - z, 3.0) * 0.22 * (0.2 + diff);
-      } else {
-        s = vec3(0.0); // event horizon
       }
+#endif
       col = s;
     }
   }
@@ -123,8 +143,9 @@ void main(){
 }`;
 
 /** Pass 2 (full size): crisp anti-aliased edges, glow and atmosphere; surfaces come from pass 1. */
-const FRAG_FINAL = COMMON + `
+const fragFinal = (v: Variant) => common(v) + `
 uniform sampler2D uSurface;
+#ifdef RINGS
 // Saturn-style rings: C ring (faint), B ring (bright), the Cassini gap, A ring. Radii in planet radii.
 vec4 ringAt(vec2 d2, float r, vec3 pc, float seed){
   const float tilt = 0.30;
@@ -140,6 +161,8 @@ vec4 ringAt(vec2 d2, float r, vec3 pc, float seed){
   float shade = 1.0 - 0.75 * smoothstep(1.05, 0.9, abs(q.x * 0.8 - 0.55)) * step(d2.y, 0.0) * smoothstep(0.2, 0.6, q.x);
   return vec4(pc * vec3(1.08, 1.0, 0.88) * (0.5 + 0.55 * b) * fine * shade, dens * b * 0.94);
 }
+#endif
+#ifdef K6
 // Accretion disc of a black hole: hot gas circling the horizon, brighter on the side moving towards us.
 vec4 discAt(vec2 d2, float r, float seed){
   const float tilt = 0.20;
@@ -154,15 +177,17 @@ vec4 discAt(vec2 d2, float r, float seed){
   vec3 c = mix(vec3(1.0, 0.50, 0.14), vec3(1.0, 0.94, 0.80), smoothstep(1.75, 1.2, rr)) * (0.75 + 0.7 * n);
   return vec4(c * doppler * 1.25, clamp(dens * (0.5 + 0.7 * n) * (0.55 + doppler * 0.6), 0.0, 1.0));
 }
+#endif
 void main(){
   vec2 frag = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);
   vec3 surface = texture2D(uSurface, gl_FragCoord.xy / uRes).rgb;
   vec3 col = vec3(0.0); float alpha = 0.0;
-  for (int i = 0; i < ${MAX}; i++){
+  for (int i = 0; i < N; i++){
     float kind = uA[i].w; if (kind < -0.5) continue;
     vec2 d2 = frag - uA[i].xy; float r = uA[i].z; float dist = length(d2);
     float edge = clamp(r - dist + 0.5, 0.0, 1.0);
     float dpx = max(dist - r, 0.0);
+#ifdef K0
     if (kind < 0.5) {
       vec3 base = starBase(uC[i].x);
       float Lg = min(r * 0.45, 520.0 * uU) + 6.0 * uU; // glow length in pixels, capped for giants
@@ -180,12 +205,19 @@ void main(){
       float an = exp(-abs(d2.y) / (r * 0.045 + 2.0 * uU)) * exp(-abs(d2.x) / (r * 3.4 + 40.0 * uU)) * 0.3
         * smoothstep(10.0 * uU, 40.0 * uU, r) * (1.0 - smoothstep(700.0 * uU, 1400.0 * uU, r)) * (1.0 - edge);
       col += mix(base, vec3(0.75, 0.86, 1.0), 0.45) * an; alpha = max(alpha, an);
-    } else if (kind < 1.5 && edge < 1.0) { // thin atmosphere outside the disc
+    }
+#endif
+#ifdef K1
+    if (kind > 0.5 && kind < 1.5 && edge < 1.0) { // thin atmosphere outside the disc
       float atm = exp(-dpx / (r * 0.05 + 1.0)) * 0.55 * (1.0 - edge);
       float lit = clamp(dot(normalize(vec3(d2.x, -d2.y, 0.0)), L) * 0.9 + 0.55, 0.0, 1.0);
       col += vec3(0.35, 0.6, 1.0) * atm * lit; alpha = max(alpha, atm * lit);
     }
+#endif
     bool ringed = uD[i].x > 0.5, hole = kind > 5.5;
+    // nothing of a planet or hole reaches past its rings or disc: skip the rest for far pixels
+    if (kind > 0.5 && dist > r * (ringed || hole ? 2.5 : 1.0) + r * 0.3 + 4.0) continue;
+#ifdef K6
     if (hole && edge < 1.0) {
       // light from behind the hole is bent around it into a thin bright ring
       float x = dist / r;
@@ -195,7 +227,14 @@ void main(){
         col += vec3(1.0, 0.78, 0.48) * g; alpha = max(alpha, clamp(g, 0.0, 1.0));
       }
     }
-    vec4 extra = ringed ? ringAt(d2, r, uC[i].rgb, uC[i].a) : hole ? discAt(d2, r, uC[i].y) : vec4(0.0);
+#endif
+    vec4 extra = vec4(0.0);
+#ifdef RINGS
+    if (ringed) extra = ringAt(d2, r, uC[i].rgb, uC[i].a);
+#endif
+#ifdef K6
+    if (hole) extra = discAt(d2, r, uC[i].y);
+#endif
     if (extra.a > 0.0 && d2.y < 0.0) { col = mix(col, extra.rgb, extra.a); alpha = max(alpha, extra.a); } // far side, behind the body
     if (edge > 0.0) { col = mix(col, surface, edge); alpha = max(alpha, edge); }
     if (extra.a > 0.0 && d2.y >= 0.0) { col = mix(col, extra.rgb, extra.a); alpha = max(alpha, extra.a); } // near side, in front
@@ -211,7 +250,7 @@ const KINDS = { earth: 1, bands: 2, plain: 3, rocky: 4, mars: 5 } as const;
 const seedOf = (name: string) => [...name].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) % 997, 7) / 37;
 
 interface Program { prog: WebGLProgram; loc: Record<string, WebGLUniformLocation | null> }
-interface GLState { gl: WebGLRenderingContext; surface: Program; final: Program; fbo: WebGLFramebuffer; tex: WebGLTexture; sw: number; sh: number }
+interface GLState { gl: WebGLRenderingContext; programs: Map<string, { surface: Program; final: Program }>; pick: (v: Variant) => { surface: Program; final: Program }; fbo: WebGLFramebuffer; tex: WebGLTexture; sw: number; sh: number }
 
 function init(canvas: HTMLCanvasElement): GLState {
   const gl = canvas.getContext("webgl", { premultipliedAlpha: true, preserveDrawingBuffer: true, antialias: false, alpha: true });
@@ -246,7 +285,14 @@ function init(canvas: HTMLCanvasElement): GLState {
   gl.bindFramebuffer(gl.FRAMEBUFFER, fbo);
   gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
   gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-  return { gl, surface: program(FRAG_SURFACE), final: program(FRAG_FINAL), fbo, tex, sw, sh };
+  const programs: GLState["programs"] = new Map();
+  const pick = (v: Variant) => {
+    const key = `${v.n}|${v.kinds.join("")}|${v.rings ? 1 : 0}`;
+    let p = programs.get(key);
+    if (!p) programs.set(key, (p = { surface: program(fragSurface(v)), final: program(fragFinal(v)) }));
+    return p;
+  };
+  return { gl, programs, pick, fbo, tex, sw, sh };
 }
 
 /** WebGL layer that draws the frame's bodies. `place` must be a pure function of time. */
@@ -258,17 +304,21 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
   useLayoutEffect(() => {
     if (!ref.current) return;
     state.current ??= init(ref.current);
-    const { gl, surface, final, fbo, tex, sw, sh } = state.current;
+    const { gl, pick, fbo, tex, sw, sh } = state.current;
     const t = frame / fps, u = Math.min(width, height) / 1080;
     const bodies = place(t, width, height, u).slice(-MAX);
-    const A = new Float32Array(MAX * 4).fill(-1), C = new Float32Array(MAX * 4), D = new Float32Array(MAX * 4);
+    const n = Math.max(1, bodies.length);
+    const A = new Float32Array(n * 4).fill(-1), C = new Float32Array(n * 4), D = new Float32Array(n * 4);
+    const kinds = new Set<number>();
     bodies.forEach((b, i) => {
       const kind = b.body.kind === "star" ? 0 : b.body.kind === "hole" ? 6 : KINDS[b.body.surface ?? "plain"];
       D.set([b.body.rings ? 1 : 0, 0, 0, 0], i * 4);
+      kinds.add(kind);
       A.set([b.x, b.y, Math.max(b.r, 1.6 * u), kind], i * 4); // never smaller than a visible dot
       if (kind === 0 || kind === 6) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), 0, 0], i * 4);
       else C.set([...hexToRgb(b.body.color ?? "#8899aa"), seedOf(b.body.name)], i * 4);
     });
+    const { surface, final } = pick({ n, kinds: [...kinds].sort(), rings: bodies.some((b) => b.body.rings) });
     const use = (p: Program) => {
       gl.useProgram(p.prog);
       gl.uniform2f(p.loc.uRes, width, height); gl.uniform1f(p.loc.uTime, t); gl.uniform1f(p.loc.uU, u);
