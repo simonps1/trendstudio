@@ -34,7 +34,7 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
       if (v.big) { m.add(shimmer(2, 550 + i), land + 0.05, 0.3, 0, 0.7); addMotif(m, land); }
       if (i > 0) addFill(m, land, v.big ? 2 : 1);
     }
-    if (v.type === "pair") { m.add(impact(0.25, 620 + i), b.start + 0.02, 0.22, -0.3, 0.15); m.add(impact(0.25, 640 + i), b.start + 0.26, 0.16, 0.3, 0.15); }
+    if (v.type === "pair") { m.add(impact(0.25, 620 + i), b.start + 0.02, 0.14, -0.3, 0.15); m.add(impact(0.25, 640 + i), b.start + 0.26, 0.1, 0.3, 0.15); }
     if (v.type === "gap") {
       m.add(whoosh(0.8, 700 + i, 0.6), b.start + 0.1, 0.3, 0, 0.3);
       (v.fill ?? []).forEach((_, k) => m.add(shape(sine(0.2, hz(67 + 2 * k)), adEnv(0.002, 0.06)), b.start + 0.5 + k * Math.min(0.3, Math.max(0.12, (dur - 1.6) / Math.max(1, v.fill!.length))), 0.2, k % 2 ? 0.3 : -0.3, 0.4));
@@ -54,7 +54,7 @@ export function buildEpisodeSoundtrack(layout: EpisodeLayout, ctx: SoundtrackCon
     const at = layout.beats.find((b) => b.beat.id === clip.id)?.voiceStart;
     if (at !== undefined) m.add(voiceChain(clip.audio), at, 2.1, 0, 0, "voice"); // dry: no reverb on the narrator
   }
-  const out = m.master({ peakDb: -1, duckMusicDb: 9, duckFxDb: 11 });
+  const out = m.master({ peakDb: -1, duckMusicDb: 10.5, duckFxDb: 12.5 });
   ctx.onMixer?.(m);
   return out;
 }

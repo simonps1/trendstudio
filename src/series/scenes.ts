@@ -176,7 +176,9 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   const cx = cx0 + fx.shake[0], cy = cy0 + fx.shake[1];
   const fit = FIT * u;
 
-  if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25), progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
+  // a closing body hands its nameplate's place to the end question
+  const closing = b.end >= layout.duration - 1e-6 ? 1 - progress(t, layout.duration - 3.1, layout.duration - 2.8) : 1;
+  if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25) * closing, progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
 
   if (v.type === "compare") {
     const Z = zoomTime(v);
@@ -299,7 +301,11 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
       label(ctx, T ? `${(p * T).toFixed(2)} s` : v.trip.label.toUpperCase(), tx, T ? mid - 30 * u : mid, (T ? 120 : 96) * u, a, "Anton", "#fff", "left");
       if (T) label(ctx, v.trip.label.toUpperCase(), tx, mid + 62 * u, 42 * u, a, "Anton", "#ffd23f", "left");
     }
-    if (v.note && !v.ruler && !v.trip) label(ctx, v.note.toUpperCase(), tx, mid, 58 * u, a, "Anton", "#ffd23f", "left");
+    // with planets stacked in the gap the middle is taken, so the note sits under the far body's tag
+    if (v.note && !v.ruler && !v.trip) {
+      if (g.fill.length) label(ctx, v.note.toUpperCase(), g.x - 64 * u, g.by + 46 * u, 34 * u, a, "Anton", "#ffd23f", "right");
+      else label(ctx, v.note.toUpperCase(), tx, mid, 58 * u, a, "Anton", "#ffd23f", "left");
+    }
   }
 
   // journey rail: one dot per reveal, so the viewer can see how far the climb goes

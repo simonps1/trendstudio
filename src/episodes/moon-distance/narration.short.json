@@ -4,77 +4,137 @@
   "alignment": "whisper",
   "lines": [
     {
-      "id": "hook",
-      "text": "This is the real distance between Earth and the Moon, drawn to scale.",
-      "file": "public/voice/moon-distance/hook.9d8f5d651c88.wav",
+      "id": "fit",
+      "text": "Every other planet in the solar system fits between Earth and the Moon.",
+      "file": "public/voice/moon-distance/fit.ee151927f9e0.wav",
       "start": 0.25,
-      "duration": 3.33,
+      "duration": 2.94,
       "speed": 1,
       "words": [
         {
-          "word": "This",
+          "word": "Every",
           "start": 0.25,
           "end": 0.43
         },
         {
-          "word": "is",
+          "word": "other",
           "start": 0.43,
-          "end": 0.61
+          "end": 0.57
+        },
+        {
+          "word": "planet",
+          "start": 0.57,
+          "end": 0.81
+        },
+        {
+          "word": "in",
+          "start": 0.81,
+          "end": 1.13
         },
         {
           "word": "the",
-          "start": 0.61,
-          "end": 0.77
+          "start": 1.13,
+          "end": 1.19
         },
         {
-          "word": "real",
-          "start": 0.77,
-          "end": 0.89
+          "word": "solar",
+          "start": 1.19,
+          "end": 1.31
         },
         {
-          "word": "distance",
-          "start": 0.89,
-          "end": 1.25
+          "word": "system",
+          "start": 1.31,
+          "end": 1.75
+        },
+        {
+          "word": "fits",
+          "start": 1.75,
+          "end": 1.99
         },
         {
           "word": "between",
-          "start": 1.25,
-          "end": 1.67
+          "start": 1.99,
+          "end": 2.27
         },
         {
           "word": "Earth",
-          "start": 1.67,
-          "end": 1.93
+          "start": 2.27,
+          "end": 2.53
         },
         {
           "word": "and",
-          "start": 1.93,
-          "end": 2.11
+          "start": 2.53,
+          "end": 2.65
         },
         {
           "word": "the",
-          "start": 2.11,
-          "end": 2.23
+          "start": 2.65,
+          "end": 2.75
         },
         {
-          "word": "Moon,",
-          "start": 2.23,
-          "end": 2.45
+          "word": "Moon.",
+          "start": 2.75,
+          "end": 2.95
+        }
+      ]
+    },
+    {
+      "id": "hook",
+      "text": "This is the real distance between them, drawn to scale.",
+      "file": "public/voice/moon-distance/hook.7c7b1b01226d.wav",
+      "start": 3.59,
+      "duration": 2.63,
+      "speed": 1,
+      "words": [
+        {
+          "word": "This",
+          "start": 3.59,
+          "end": 3.79
+        },
+        {
+          "word": "is",
+          "start": 3.79,
+          "end": 3.91
+        },
+        {
+          "word": "the",
+          "start": 3.91,
+          "end": 4.07
+        },
+        {
+          "word": "real",
+          "start": 4.07,
+          "end": 4.19
+        },
+        {
+          "word": "distance",
+          "start": 4.19,
+          "end": 4.51
+        },
+        {
+          "word": "between",
+          "start": 4.51,
+          "end": 4.87
+        },
+        {
+          "word": "them,",
+          "start": 4.87,
+          "end": 5.13
         },
         {
           "word": "drawn",
-          "start": 2.67,
-          "end": 2.85
+          "start": 5.13,
+          "end": 5.47
         },
         {
           "word": "to",
-          "start": 2.85,
-          "end": 3.09
+          "start": 5.47,
+          "end": 5.67
         },
         {
           "word": "scale.",
-          "start": 3.09,
-          "end": 3.31
+          "start": 5.67,
+          "end": 5.87
         }
       ]
     },
@@ -82,39 +142,39 @@
       "id": "thirty",
       "text": "It is about thirty Earths away.",
       "file": "public/voice/moon-distance/thirty.72572413ff58.wav",
-      "start": 3.98,
+      "start": 6.62,
       "duration": 1.6,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 3.98,
-          "end": 4.06
+          "start": 6.62,
+          "end": 6.7
         },
         {
           "word": "is",
-          "start": 4.06,
-          "end": 4.16
+          "start": 6.7,
+          "end": 6.8
         },
         {
           "word": "about",
-          "start": 4.16,
-          "end": 4.36
+          "start": 6.8,
+          "end": 7
         },
         {
           "word": "thirty",
-          "start": 4.36,
-          "end": 4.68
+          "start": 7,
+          "end": 7.32
         },
         {
           "word": "Earths",
-          "start": 4.68,
-          "end": 5.16
+          "start": 7.32,
+          "end": 7.8
         },
         {
           "word": "away.",
-          "start": 5.16,
-          "end": 5.3
+          "start": 7.8,
+          "end": 7.94
         }
       ]
     },
@@ -122,164 +182,84 @@
       "id": "light",
       "text": "Even light, the fastest thing there is, needs more than a second to cross it.",
       "file": "public/voice/moon-distance/light.fd393f1c3a45.wav",
-      "start": 5.98,
+      "start": 8.62,
       "duration": 3.6,
       "speed": 1,
       "words": [
         {
           "word": "Even",
-          "start": 5.98,
-          "end": 6.16
+          "start": 8.62,
+          "end": 8.8
         },
         {
           "word": "light,",
-          "start": 6.16,
-          "end": 6.44
+          "start": 8.8,
+          "end": 9.08
         },
         {
           "word": "the",
-          "start": 6.68,
-          "end": 6.82
+          "start": 9.32,
+          "end": 9.46
         },
         {
           "word": "fastest",
-          "start": 6.82,
-          "end": 7.12
+          "start": 9.46,
+          "end": 9.76
         },
         {
           "word": "thing",
-          "start": 7.12,
-          "end": 7.36
+          "start": 9.76,
+          "end": 10
         },
         {
           "word": "there",
-          "start": 7.36,
-          "end": 7.52
-        },
-        {
-          "word": "is,",
-          "start": 7.52,
-          "end": 7.86
-        },
-        {
-          "word": "needs",
-          "start": 7.96,
-          "end": 8.08
-        },
-        {
-          "word": "more",
-          "start": 8.08,
-          "end": 8.34
-        },
-        {
-          "word": "than",
-          "start": 8.34,
-          "end": 8.5
-        },
-        {
-          "word": "a",
-          "start": 8.5,
-          "end": 8.58
-        },
-        {
-          "word": "second",
-          "start": 8.58,
-          "end": 8.84
-        },
-        {
-          "word": "to",
-          "start": 8.84,
-          "end": 9.02
-        },
-        {
-          "word": "cross",
-          "start": 9.02,
-          "end": 9.22
-        },
-        {
-          "word": "it.",
-          "start": 9.22,
-          "end": 9.46
-        }
-      ]
-    },
-    {
-      "id": "fit",
-      "text": "At its farthest, every other planet in the solar system would fit in between.",
-      "file": "public/voice/moon-distance/fit.e81f2612ca79.wav",
-      "start": 9.98,
-      "duration": 3.55,
-      "speed": 1,
-      "words": [
-        {
-          "word": "At",
-          "start": 9.98,
-          "end": 10.08
-        },
-        {
-          "word": "its",
-          "start": 10.08,
+          "start": 10,
           "end": 10.16
         },
         {
-          "word": "farthest,",
+          "word": "is,",
           "start": 10.16,
-          "end": 10.66
+          "end": 10.5
         },
         {
-          "word": "every",
-          "start": 10.88,
-          "end": 11.1
+          "word": "needs",
+          "start": 10.6,
+          "end": 10.72
         },
         {
-          "word": "other",
-          "start": 11.1,
-          "end": 11.36
+          "word": "more",
+          "start": 10.72,
+          "end": 10.98
         },
         {
-          "word": "planet",
-          "start": 11.36,
-          "end": 11.56
+          "word": "than",
+          "start": 10.98,
+          "end": 11.14
         },
         {
-          "word": "in",
-          "start": 11.56,
-          "end": 11.88
+          "word": "a",
+          "start": 11.14,
+          "end": 11.22
         },
         {
-          "word": "the",
-          "start": 11.88,
-          "end": 11.94
+          "word": "second",
+          "start": 11.22,
+          "end": 11.48
         },
         {
-          "word": "solar",
-          "start": 11.94,
-          "end": 12.08
+          "word": "to",
+          "start": 11.48,
+          "end": 11.66
         },
         {
-          "word": "system",
-          "start": 12.08,
-          "end": 12.5
+          "word": "cross",
+          "start": 11.66,
+          "end": 11.86
         },
         {
-          "word": "would",
-          "start": 12.5,
-          "end": 12.66
-        },
-        {
-          "word": "fit",
-          "start": 12.66,
-          "end": 12.82
-        },
-        {
-          "word": "in",
-          "start": 12.82,
-          "end": 12.94
-        },
-        {
-          "word": "between.",
-          "start": 12.94,
-          "end": 13.16
+          "word": "it.",
+          "start": 11.86,
+          "end": 12.1
         }
       ]
     },
@@ -287,59 +267,59 @@
       "id": "apollo",
       "text": "The Apollo astronauts needed three days to make the trip.",
       "file": "public/voice/moon-distance/apollo.34a4850522e0.wav",
-      "start": 13.93,
+      "start": 12.62,
       "duration": 2.23,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 13.93,
-          "end": 14.01
+          "start": 12.62,
+          "end": 12.7
         },
         {
           "word": "Apollo",
-          "start": 14.01,
-          "end": 14.23
+          "start": 12.7,
+          "end": 12.92
         },
         {
           "word": "astronauts",
-          "start": 14.23,
-          "end": 14.57
+          "start": 12.92,
+          "end": 13.26
         },
         {
           "word": "needed",
-          "start": 14.57,
-          "end": 14.99
+          "start": 13.26,
+          "end": 13.68
         },
         {
           "word": "three",
-          "start": 14.99,
-          "end": 15.25
+          "start": 13.68,
+          "end": 13.94
         },
         {
           "word": "days",
-          "start": 15.25,
-          "end": 15.45
+          "start": 13.94,
+          "end": 14.14
         },
         {
           "word": "to",
-          "start": 15.45,
-          "end": 15.61
+          "start": 14.14,
+          "end": 14.3
         },
         {
           "word": "make",
-          "start": 15.61,
-          "end": 15.71
+          "start": 14.3,
+          "end": 14.4
         },
         {
           "word": "the",
-          "start": 15.71,
-          "end": 15.85
+          "start": 14.4,
+          "end": 14.54
         },
         {
           "word": "trip.",
-          "start": 15.85,
-          "end": 16.01
+          "start": 14.54,
+          "end": 14.7
         }
       ]
     },
@@ -347,64 +327,64 @@
       "id": "car",
       "text": "At highway speed, the drive would take more than five months.",
       "file": "public/voice/moon-distance/car.524c8cc63854.wav",
-      "start": 16.56,
+      "start": 15.25,
       "duration": 2.72,
       "speed": 1,
       "words": [
         {
           "word": "At",
-          "start": 16.56,
-          "end": 16.68
+          "start": 15.25,
+          "end": 15.37
         },
         {
           "word": "highway",
-          "start": 16.68,
-          "end": 16.82
+          "start": 15.37,
+          "end": 15.51
         },
         {
           "word": "speed,",
-          "start": 16.82,
-          "end": 17.24
+          "start": 15.51,
+          "end": 15.93
         },
         {
           "word": "the",
-          "start": 17.5,
-          "end": 17.58
+          "start": 16.19,
+          "end": 16.27
         },
         {
           "word": "drive",
-          "start": 17.58,
-          "end": 17.8
+          "start": 16.27,
+          "end": 16.49
         },
         {
           "word": "would",
-          "start": 17.8,
-          "end": 17.96
+          "start": 16.49,
+          "end": 16.65
         },
         {
           "word": "take",
-          "start": 17.96,
-          "end": 18.12
+          "start": 16.65,
+          "end": 16.81
         },
         {
           "word": "more",
-          "start": 18.12,
-          "end": 18.28
+          "start": 16.81,
+          "end": 16.97
         },
         {
           "word": "than",
-          "start": 18.28,
-          "end": 18.44
+          "start": 16.97,
+          "end": 17.13
         },
         {
           "word": "five",
-          "start": 18.44,
-          "end": 18.68
+          "start": 17.13,
+          "end": 17.37
         },
         {
           "word": "months.",
-          "start": 18.68,
-          "end": 18.96
+          "start": 17.37,
+          "end": 17.65
         }
       ]
     },
@@ -412,64 +392,64 @@
       "id": "drift",
       "text": "And every year, the Moon drifts almost four centimetres farther away.",
       "file": "public/voice/moon-distance/drift.12847cd25653.wav",
-      "start": 19.68,
+      "start": 18.37,
       "duration": 3.48,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 19.68,
-          "end": 19.8
+          "start": 18.37,
+          "end": 18.49
         },
         {
           "word": "every",
-          "start": 19.8,
-          "end": 20.02
+          "start": 18.49,
+          "end": 18.71
         },
         {
           "word": "year,",
-          "start": 20.02,
-          "end": 20.34
+          "start": 18.71,
+          "end": 19.03
         },
         {
           "word": "the",
-          "start": 20.6,
-          "end": 20.68
+          "start": 19.29,
+          "end": 19.37
         },
         {
           "word": "Moon",
-          "start": 20.68,
-          "end": 20.84
+          "start": 19.37,
+          "end": 19.53
         },
         {
           "word": "drifts",
-          "start": 20.84,
-          "end": 21.08
+          "start": 19.53,
+          "end": 19.77
         },
         {
           "word": "almost",
-          "start": 21.08,
-          "end": 21.46
+          "start": 19.77,
+          "end": 20.15
         },
         {
           "word": "four",
-          "start": 21.46,
-          "end": 21.72
+          "start": 20.15,
+          "end": 20.41
         },
         {
           "word": "centimetres",
-          "start": 21.72,
-          "end": 22.18
+          "start": 20.41,
+          "end": 20.87
         },
         {
           "word": "farther",
-          "start": 22.18,
-          "end": 22.52
+          "start": 20.87,
+          "end": 21.21
         },
         {
           "word": "away.",
-          "start": 22.52,
-          "end": 22.98
+          "start": 21.21,
+          "end": 21.67
         }
       ]
     }
