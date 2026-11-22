@@ -1020,36 +1020,46 @@
     },
     {
       "id": "moons",
-      "text": "It has ninety-five known moons.",
-      "file": "public/voice/planets-long/moons.436553524aeb.wav",
+      "text": "It has around a hundred known moons.",
+      "file": "public/voice/planets-long/moons.594d3e943d21.wav",
       "start": 52.9,
-      "duration": 1.79,
+      "duration": 2.1,
       "speed": 1,
       "words": [
         {
           "word": "It",
           "start": 52.9,
-          "end": 53
+          "end": 53.02
         },
         {
           "word": "has",
-          "start": 53,
-          "end": 53.12
+          "start": 53.02,
+          "end": 53.14
         },
         {
-          "word": "ninety-five",
-          "start": 53.12,
-          "end": 53.7
+          "word": "around",
+          "start": 53.14,
+          "end": 53.4
+        },
+        {
+          "word": "a",
+          "start": 53.4,
+          "end": 53.45
+        },
+        {
+          "word": "hundred",
+          "start": 53.4,
+          "end": 53.9
         },
         {
           "word": "known",
-          "start": 53.7,
-          "end": 53.96
+          "start": 53.9,
+          "end": 54.2
         },
         {
           "word": "moons.",
-          "start": 53.96,
-          "end": 54.26
+          "start": 54.2,
+          "end": 54.58
         }
       ]
     },
@@ -1057,54 +1067,54 @@
       "id": "end",
       "text": "And next to the Sun, even Jupiter is tiny.",
       "file": "public/voice/planets-long/end.ec66b45432aa.wav",
-      "start": 55.09,
+      "start": 55.4,
       "duration": 2.44,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 55.09,
-          "end": 55.21
+          "start": 55.4,
+          "end": 55.52
         },
         {
           "word": "next",
-          "start": 55.21,
-          "end": 55.35
+          "start": 55.52,
+          "end": 55.66
         },
         {
           "word": "to",
-          "start": 55.35,
-          "end": 55.57
+          "start": 55.66,
+          "end": 55.88
         },
         {
           "word": "the",
-          "start": 55.57,
-          "end": 55.65
+          "start": 55.88,
+          "end": 55.96
         },
         {
           "word": "Sun,",
-          "start": 55.65,
-          "end": 55.89
+          "start": 55.96,
+          "end": 56.2
         },
         {
           "word": "even",
-          "start": 56.19,
-          "end": 56.35
+          "start": 56.5,
+          "end": 56.66
         },
         {
           "word": "Jupiter",
-          "start": 56.35,
-          "end": 56.61
+          "start": 56.66,
+          "end": 56.92
         },
         {
           "word": "is",
-          "start": 56.61,
-          "end": 56.97
+          "start": 56.92,
+          "end": 57.28
         },
         {
           "word": "tiny.",
-          "start": 56.97,
-          "end": 57.21
+          "start": 57.28,
+          "end": 57.52
         }
       ]
     },
@@ -1112,34 +1122,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/planets-long/cta.aca43710994b.wav",
-      "start": 57.93,
+      "start": 58.24,
       "duration": 1.83,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 57.93,
-          "end": 58.19
+          "start": 58.24,
+          "end": 58.5
         },
         {
           "word": "for",
-          "start": 58.19,
-          "end": 58.49
+          "start": 58.5,
+          "end": 58.8
         },
         {
           "word": "more",
-          "start": 58.49,
-          "end": 58.65
+          "start": 58.8,
+          "end": 58.96
         },
         {
           "word": "cosmic",
-          "start": 58.65,
-          "end": 59.07
+          "start": 58.96,
+          "end": 59.38
         },
         {
           "word": "scale.",
-          "start": 59.07,
-          "end": 59.53
+          "start": 59.38,
+          "end": 59.84
         }
       ]
     }

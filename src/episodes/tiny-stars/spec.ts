@@ -23,7 +23,7 @@ export const TINY_STARS: EpisodeSpec = {
     { id: "neutron", say: "It's a neutron star, only about twenty kilometres wide.", visual: { type: "body", body: neutron } },
     { id: "mass", say: "Yet it holds more mass than our entire Sun.", visual: { type: "body", body: neutron, fact: "more mass than the Sun" } },
     { id: "teaspoon", only: "long", say: "A single teaspoon of it would weigh billions of tonnes.", visual: { type: "body", body: neutron, fact: "1 teaspoon ≈ billions of tonnes" } },
-    { id: "spin", only: "long", say: "Some of them spin hundreds of times every second.", visual: { type: "body", body: neutron, fact: "up to 716 spins per second" } },
+    { id: "spin", only: "long", say: "Some of them rotate hundreds of times every second.", visual: { type: "body", body: neutron, fact: "up to 716 spins per second" } },
     { id: "remnant", only: "long", say: "It's what remains after a giant star explodes.", visual: { type: "body", body: neutron, fact: "left behind by a supernova" } },
     { id: "dwarf", say: "Sirius B, a white dwarf, is far bigger, but still smaller than Earth.", visual: { type: "compare", from: neutron, to: siriusB } },
     { id: "core", only: "long", say: "It's the leftover core of a star that has died.", visual: { type: "body", body: siriusB, fact: "the core of a dead star" } },
