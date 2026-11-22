@@ -1,4 +1,4 @@
-import type { Body, EpisodeSpec } from "../../series/types";
+import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 import { sun } from "../bodies";
 
 // Event-horizon radius = 2.95 km per solar mass (Schwarzschild). Radii below in Earth radii (6,371 km).
@@ -17,7 +17,7 @@ export const BLACK_HOLES: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 4,
   title: "How big is the biggest black hole?",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["black", "hole", "marble", "sun", "kilometres", "galaxy", "solar", "system", "light", "days", "billion", "million", "never"],
   beats: [
     { id: "hook", say: "That tiny dot is our Sun. This is the biggest black hole we know.", visual: { type: "compare", from: sun, to: ton, big: true, open: true } },

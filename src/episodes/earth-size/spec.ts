@@ -1,4 +1,4 @@
-import type { Body, EpisodeSpec } from "../../series/types";
+import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 
 // Radii in Earth radii (NASA planetary fact sheets). Stephenson 2-18 is a published estimate.
 const SUN = 109.2;
@@ -15,11 +15,11 @@ export const EARTH_SIZE: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 2,
   title: "How small is Earth, really?",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["earth", "moon", "mars", "neptune", "jupiter", "sun", "thousand", "million", "fourteen", "billions", "disappears", "storm"],
   beats: [
     { id: "hook", say: "That tiny dot is Earth. This is the Sun, drawn to the same scale.", visual: { type: "compare", from: earth, to: sun, big: true, open: true } },
-    { id: "moon", say: "To see how small our world really is, start with the Moon.", visual: { type: "body", body: moon } },
+    { id: "moon", only: "long", say: "To see how small our world really is, start with the Moon.", visual: { type: "body", body: moon } },
     { id: "moongap", only: "long", say: "It's so far away that every other planet could fit in the gap between us.", visual: { type: "body", body: moon, fact: "all the planets fit in the gap" } },
     { id: "moon-earth", only: "short", say: "Earth is almost four times wider than the Moon.", visual: { type: "compare", from: moon, to: earth } },
     { id: "mars", only: "long", say: "Mars is about twice as wide as the Moon.", visual: { type: "compare", from: moon, to: mars } },

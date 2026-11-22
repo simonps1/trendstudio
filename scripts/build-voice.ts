@@ -187,13 +187,25 @@ const seedOf = (text: string, attempt: number) => (parseInt(createHash("sha1").u
  * script; a take with wrong words or an implausible length is regenerated with a
  * new seed (up to 5 tries). `speed` is applied afterwards as a pitch-preserving tempo change.
  */
-async function synthChatterbox(line: NarrationLine, speed: number, outWav: string) {
+/**
+ * Delivery styles, chosen by the voice name: "chatterbox" (neutral), "chatterbox:expressive"
+ * (stronger emphasis, more rise and fall), "chatterbox:deep" (expressive, pitched 1.5 semitones lower).
+ * `exaggeration` raises emotional intensity; a lower `cfg_weight` loosens the pacing.
+ */
+const CHATTERBOX_STYLES: Record<string, { exaggeration: number; cfg_weight: number; pitch?: number }> = {
+  "": { exaggeration: 0.5, cfg_weight: 0.5 },
+  expressive: { exaggeration: 0.75, cfg_weight: 0.35 },
+  deep: { exaggeration: 0.75, cfg_weight: 0.35, pitch: 0.917 },
+};
+
+async function synthChatterbox(line: NarrationLine, speed: number, outWav: string, voice = "chatterbox") {
+  const style = CHATTERBOX_STYLES[voice.split(":")[1] ?? ""] ?? CHATTERBOX_STYLES[""];
   const w = await chatterboxWorker();
   const raw = outWav.replace(/\.wav$/, ".raw.wav"), trimmed = outWav.replace(/\.wav$/, ".trim.wav");
   const nWords = line.text.split(/\s+/).length;
   let best: { wer: number; seconds: number } | null = null;
   for (let attempt = 0; attempt < 5; attempt++) {
-    const r = await w.send({ text: line.text, out: raw, seed: seedOf(line.text, attempt) });
+    const r = await w.send({ text: line.text, out: raw, seed: seedOf(line.text, attempt), exaggeration: style.exaggeration, cfg_weight: style.cfg_weight });
     if (!r.ok) throw new Error(`Chatterbox failed on "${line.id}": ${r.error}`);
     const pcm = trim(readPcm(raw, 24000), 24000);
     // level every line to the same loudness (-18.3 dB RMS) so the mix treats all takes alike
@@ -211,14 +223,14 @@ async function synthChatterbox(line: NarrationLine, speed: number, outWav: strin
     console.log(`[voice] ${line.id}: take ${attempt + 1} rejected (${(wer * 100).toFixed(0)}% words wrong, ${seconds.toFixed(2)}s) — retrying`);
   }
   if (best!.wer * nWords > Math.max(1, 0.25 * nWords)) console.warn(`[voice] ! ${line.id}: best take still has ${(best!.wer * 100).toFixed(0)}% words wrong — listen to it`);
-  const tempo = speed !== 1 ? `atempo=${speed.toFixed(3)},` : "";
+  const tempo = (style.pitch ? `rubberband=pitch=${style.pitch}:formant=preserved,` : "") + (speed !== 1 ? `atempo=${speed.toFixed(3)},` : "");
   run("ffmpeg", ["-v", "error", "-y", "-i", trimmed, "-af", `${tempo}aresample=48000`, "-ac", "1", "-c:a", "pcm_s16le", outWav]);
   rmSync(raw, { force: true }); rmSync(trimmed, { force: true });
   return best!.seconds / speed;
 }
 
 async function synthLine(line: NarrationLine, voice: string, speed: number, outWav: string) {
-  if (isChatterbox(voice)) return synthChatterbox(line, speed, outWav);
+  if (isChatterbox(voice)) return synthChatterbox(line, speed, outWav, voice);
   const model = await loadTts();
   const res = await model.generate(line.text, { voice, speed });
   const audio = trim(res.audio, res.sampling_rate);

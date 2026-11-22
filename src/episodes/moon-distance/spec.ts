@@ -1,4 +1,4 @@
-import type { EpisodeSpec, Visual } from "../../series/types";
+import { NARRATOR, type EpisodeSpec, type Visual } from "../../series/types";
 import { earth, jupiter, mars, mercury, moon, neptune, saturn, sun, uranus, venus } from "../bodies";
 
 // Distances in Earth radii (6,371 km). Moon: 384,400 km on average, 405,500 km at its farthest (NASA).
@@ -11,7 +11,7 @@ export const MOON_DISTANCE: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 6,
   title: "How far away is the Moon, really?",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["moon", "earth", "earths", "light", "second", "planet", "days", "months", "sun", "centimetres", "twelve", "scale", "eclipse"],
   beats: [
     // cold open on the most surprising picture: the planets stacked inside the gap

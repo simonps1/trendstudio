@@ -1,4 +1,4 @@
-import type { EpisodeSpec } from "../../series/types";
+import { NARRATOR, type EpisodeSpec } from "../../series/types";
 import { earth, jupiter, mars, mercury, neptune, saturn, uranus, venus } from "../bodies";
 
 // Sizes: NASA planetary fact sheets. Other facts: NASA Solar System Exploration pages for each planet.
@@ -7,7 +7,7 @@ export const PLANETS: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 5,
   title: "Every planet, from smallest to largest",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["mercury", "mars", "venus", "earth", "neptune", "uranus", "saturn", "jupiter", "smallest", "biggest", "rings", "tiny", "float", "hottest"],
   beats: [
     { id: "hook", say: "That dot is the smallest planet in our solar system. This is the biggest.", visual: { type: "compare", from: mercury, to: jupiter, big: true, open: true } },

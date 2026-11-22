@@ -1,4 +1,4 @@
-import type { Body, EpisodeSpec } from "../../series/types";
+import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 
 // Radii in Earth radii. Star sizes are published best estimates (the largest are uncertain).
 const SUN = 109.2;
@@ -15,7 +15,7 @@ export const STAR_SIZES: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 1,
   title: "How big is the biggest star?",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["planet", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn", "hours", "billions", "disappear"],
   beats: [
     { id: "hook", say: "That tiny dot is our Sun. This is the biggest star we know.", visual: { type: "compare", from: sun, to: s218, big: true, open: true } },

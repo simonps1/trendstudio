@@ -15,3 +15,6 @@
 - Narrator is Chatterbox (voice `"chatterbox"`, Python worker `scripts/tts_chatterbox.py`, venv `.venv-tts` or `CHATTERBOX_PYTHON`). Write narration as flowing sentences, not fragments. In the cloud sandbox also set `HF_HUB_DISABLE_XET=1 NODE_USE_ENV_PROXY=1`.
 - The channel host (astronaut) is `src/series/host.ts`; keep him identical across videos.
 - Series visuals: `body`, `compare`, `pair` (similar sizes side by side), `gap` (true distance, with `ruler` / `fill` / `trip`), `orbits`, `lap`, `shrink`, `stars`. Bodies: stars, planets (`earth`, `bands`, `plain`, `rocky`, `mars`, optional `rings`) and black holes (`kind: "hole"`). Shared cast lives in `src/episodes/bodies.ts`. Use `pair`, not `compare`, when the size ratio is under about 1.6.
+- Openings: a video's first beat must put the spectacle on screen at 0:00 (`compare` with `open: true`, or a `gap` with `fill`); the first words carry the surprise. TikTok retention on episode 1 lost half the viewers within two seconds of a slow build-up.
+- Narrator style is `NARRATOR` in `src/series/types.ts` (styles live in `scripts/build-voice.ts`). Audio-only changes: `npx tsx scripts/remux.ts <id>` replaces the soundtrack and re-runs QC without re-rendering.
+- Never start a render before that video's narration JSON has been regenerated for the current script (a stale track renders with no voice).

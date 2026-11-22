@@ -5,9 +5,10 @@
  * are left to the sound design.
  */
 import type { NarrationLine } from "../../voice/types";
+import { NARRATOR } from "../../series/types";
 import { T } from "./timeline";
 
-export const VOICE = "chatterbox"; // the channel narrator: Chatterbox's built-in male voice
+export const VOICE = NARRATOR; // the channel narrator: Chatterbox's built-in male voice
 
 export const NARRATION: NarrationLine[] = [
   // hook

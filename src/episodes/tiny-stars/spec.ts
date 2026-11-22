@@ -1,4 +1,4 @@
-import type { Body, EpisodeSpec } from "../../series/types";
+import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 
 // Radii in Earth radii. Sources: Sirius B 0.0084 R☉ (Bond et al. 2017); EBLM J0555-57Ab 0.84 R♃
 // (von Boetticher et al. 2017); Proxima Centauri 0.154 R☉; a typical neutron star is ≈ 10–12 km in radius.
@@ -15,7 +15,7 @@ export const TINY_STARS: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 3,
   title: "How small can a star get?",
-  voice: "chatterbox",
+  voice: NARRATOR,
   emphasis: ["star", "earth", "neutron", "kilometres", "teaspoon", "dwarf", "saturn", "jupiter", "proxima", "giant", "trillions", "smaller", "sun"],
   beats: [
     { id: "hook", say: "That dot next to Earth is a real star, and it is smaller than a city.", visual: { type: "compare", from: neutron, to: earth, big: true, open: true } },
