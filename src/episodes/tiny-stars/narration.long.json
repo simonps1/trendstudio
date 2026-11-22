@@ -645,10 +645,10 @@
     },
     {
       "id": "smallest",
-      "text": "The smallest star still burning is only about as wide as Saturn.",
-      "file": "public/voice/tiny-stars-long/smallest.5f669336a0e0.wav",
+      "text": "The smallest star we know of is only about as wide as Saturn.",
+      "file": "public/voice/tiny-stars-long/smallest.80d4989cfdd9.wav",
       "start": 31.75,
-      "duration": 3.08,
+      "duration": 2.7,
       "speed": 1,
       "words": [
         {
@@ -659,197 +659,227 @@
         {
           "word": "smallest",
           "start": 31.83,
-          "end": 32.09
+          "end": 32.05
         },
         {
           "word": "star",
-          "start": 32.09,
-          "end": 32.45
+          "start": 32.05,
+          "end": 32.35
         },
         {
-          "word": "still",
-          "start": 32.45,
-          "end": 32.73
+          "word": "we",
+          "start": 32.35,
+          "end": 32.49
         },
         {
-          "word": "burning",
-          "start": 32.73,
-          "end": 32.99
+          "word": "know",
+          "start": 32.49,
+          "end": 32.63
+        },
+        {
+          "word": "of",
+          "start": 32.63,
+          "end": 32.87
         },
         {
           "word": "is",
-          "start": 32.99,
-          "end": 33.23
+          "start": 32.87,
+          "end": 32.95
         },
         {
           "word": "only",
-          "start": 33.23,
-          "end": 33.43
+          "start": 32.95,
+          "end": 33.21
         },
         {
           "word": "about",
-          "start": 33.43,
-          "end": 33.65
+          "start": 33.21,
+          "end": 33.41
         },
         {
           "word": "as",
-          "start": 33.65,
-          "end": 33.89
+          "start": 33.41,
+          "end": 33.61
         },
         {
           "word": "wide",
-          "start": 33.89,
-          "end": 34.11
+          "start": 33.61,
+          "end": 33.79
         },
         {
           "word": "as",
-          "start": 34.11,
-          "end": 34.27
+          "start": 33.79,
+          "end": 33.93
         },
         {
           "word": "Saturn.",
-          "start": 34.27,
-          "end": 34.59
+          "start": 33.93,
+          "end": 34.21
         }
       ]
     },
     {
       "id": "limit",
-      "text": "Any smaller, and it could not shine at all.",
-      "file": "public/voice/tiny-stars-long/limit.d9e3877981d4.wav",
-      "start": 35.23,
-      "duration": 2.21,
+      "text": "With any less mass, it could not shine at all.",
+      "file": "public/voice/tiny-stars-long/limit.d649b63353cc.wav",
+      "start": 34.85,
+      "duration": 2.34,
       "speed": 1,
       "words": [
         {
-          "word": "Any",
-          "start": 35.23,
-          "end": 35.41
+          "word": "With",
+          "start": 34.85,
+          "end": 34.99
         },
         {
-          "word": "smaller,",
-          "start": 35.41,
-          "end": 35.73
+          "word": "any",
+          "start": 34.99,
+          "end": 35.19
         },
         {
-          "word": "and",
-          "start": 36.17,
-          "end": 36.29
+          "word": "less",
+          "start": 35.19,
+          "end": 35.39
+        },
+        {
+          "word": "mass,",
+          "start": 35.39,
+          "end": 35.63
         },
         {
           "word": "it",
-          "start": 36.29,
-          "end": 36.37
+          "start": 35.95,
+          "end": 36.05
         },
         {
           "word": "could",
-          "start": 36.37,
-          "end": 36.51
+          "start": 36.05,
+          "end": 36.17
         },
         {
           "word": "not",
-          "start": 36.51,
-          "end": 36.67
+          "start": 36.17,
+          "end": 36.35
         },
         {
           "word": "shine",
-          "start": 36.67,
-          "end": 36.87
+          "start": 36.35,
+          "end": 36.55
         },
         {
           "word": "at",
-          "start": 36.87,
-          "end": 37.05
+          "start": 36.55,
+          "end": 36.77
         },
         {
           "word": "all.",
-          "start": 37.05,
-          "end": 37.23
+          "start": 36.77,
+          "end": 36.95
         }
       ]
     },
     {
       "id": "proxima",
-      "text": "Proxima Centauri, the nearest star to the Sun, is only a little wider than Jupiter.",
-      "file": "public/voice/tiny-stars-long/proxima.a9ed8eb8a0a2.wav",
-      "start": 37.84,
-      "duration": 4.26,
+      "text": "Proxima Centauri, the nearest star to the Sun, is only one and a half times as wide as Jupiter.",
+      "file": "public/voice/tiny-stars-long/proxima.51ce3f96de85.wav",
+      "start": 37.59,
+      "duration": 4.51,
       "speed": 1,
       "words": [
         {
           "word": "Proxima",
-          "start": 37.84,
-          "end": 38.12
+          "start": 37.59,
+          "end": 37.91
         },
         {
           "word": "Centauri,",
-          "start": 38.12,
-          "end": 38.44
+          "start": 37.91,
+          "end": 38.25
         },
         {
           "word": "the",
-          "start": 38.88,
-          "end": 38.98
+          "start": 38.61,
+          "end": 38.73
         },
         {
           "word": "nearest",
-          "start": 38.98,
-          "end": 39.16
+          "start": 38.73,
+          "end": 38.91
         },
         {
           "word": "star",
-          "start": 39.16,
-          "end": 39.5
+          "start": 38.91,
+          "end": 39.15
         },
         {
           "word": "to",
-          "start": 39.5,
-          "end": 39.66
+          "start": 39.15,
+          "end": 39.31
         },
         {
           "word": "the",
-          "start": 39.66,
-          "end": 39.76
+          "start": 39.31,
+          "end": 39.39
         },
         {
           "word": "Sun,",
-          "start": 39.76,
-          "end": 39.98
+          "start": 39.39,
+          "end": 39.61
         },
         {
           "word": "is",
-          "start": 40.26,
-          "end": 40.56
+          "start": 39.83,
+          "end": 39.93
         },
         {
           "word": "only",
-          "start": 40.56,
-          "end": 40.82
+          "start": 39.93,
+          "end": 40.11
+        },
+        {
+          "word": "one",
+          "start": 40.11,
+          "end": 40.41
+        },
+        {
+          "word": "and",
+          "start": 40.41,
+          "end": 40.55
         },
         {
           "word": "a",
-          "start": 40.82,
-          "end": 40.92
+          "start": 40.55,
+          "end": 40.61
         },
         {
-          "word": "little",
-          "start": 40.92,
-          "end": 41.1
+          "word": "half",
+          "start": 40.61,
+          "end": 40.77
         },
         {
-          "word": "wider",
-          "start": 41.1,
-          "end": 41.34
+          "word": "times",
+          "start": 40.77,
+          "end": 41.05
         },
         {
-          "word": "than",
-          "start": 41.34,
-          "end": 41.58
+          "word": "as",
+          "start": 41.05,
+          "end": 41.23
+        },
+        {
+          "word": "wide",
+          "start": 41.23,
+          "end": 41.41
+        },
+        {
+          "word": "as",
+          "start": 41.41,
+          "end": 41.61
         },
         {
           "word": "Jupiter.",
-          "start": 41.58,
-          "end": 41.74
+          "start": 41.61,
+          "end": 41.77
         }
       ]
     },
