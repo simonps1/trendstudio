@@ -1,9 +1,8 @@
 import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
+import { mars, moon } from "../bodies";
 
 // Radii in Earth radii (NASA planetary fact sheets). Stephenson 2-18 is a published estimate.
 const SUN = 109.2;
-const moon: Body = { name: "The Moon", kind: "planet", radius: 0.273, color: "#a3a3a8", surface: "plain", note: "3,475 km wide" };
-const mars: Body = { name: "Mars", kind: "planet", radius: 0.532, color: "#c1583a", surface: "plain", note: "6,779 km wide" };
 const earth: Body = { name: "Earth", kind: "planet", radius: 1, color: "#2a6fd6", surface: "earth", note: "12,742 km wide" };
 const neptune: Body = { name: "Neptune", kind: "planet", radius: 3.88, color: "#3f66e0", surface: "plain", note: "almost 4 Earths wide" };
 const jupiter: Body = { name: "Jupiter", kind: "planet", radius: 11.2, color: "#d9a877", surface: "bands", note: "11 Earths wide" };

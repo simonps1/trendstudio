@@ -10,13 +10,31 @@ import type { NarrationTrack } from "../src/voice/types";
 import { lastAsrEngine, transcribeWords } from "./build-voice";
 import { runBinary } from "./lib/ffmpeg";
 
+/**
+ * Whisper sometimes drops a whole stretch of a recording longer than its 30-second window.
+ * Transcribe in overlapping 20-second windows instead and keep each window's middle.
+ */
+async function transcribeLong(pcm: Float32Array, rate = 16000) {
+  const WIN = 20, HOP = 16, EDGE = (WIN - HOP) / 2;
+  if (pcm.length <= WIN * rate) return transcribeWords(pcm);
+  const out: { word: string; start: number; end: number }[] = [];
+  for (let s = 0; s * rate < pcm.length; s += HOP) {
+    const first = s === 0, last = (s + WIN) * rate >= pcm.length;
+    const words = await transcribeWords(pcm.subarray(s * rate, Math.min(pcm.length, (s + WIN) * rate)));
+    if (!words) return null;
+    for (const w of words) if ((first || w.start >= EDGE) && (last || w.start < WIN - EDGE)) out.push({ word: w.word, start: w.start + s, end: w.end + s });
+    if (last) break;
+  }
+  return out;
+}
+
 export async function verifySpeech(file: string, narrationJson: string) {
   const track: NarrationTrack = JSON.parse(readFileSync(narrationJson, "utf8"));
   if (!track.lines.length) return { status: "SKIP", detail: "no narration" };
   const b = runBinary("ffmpeg", ["-v", "error", "-i", file, "-map", "0:a", "-ac", "1", "-ar", "16000", "-f", "f32le", "-"]);
   const pcm = new Float32Array(b.buffer.slice(b.byteOffset, b.byteOffset + Math.floor(b.length / 4) * 4));
   let words;
-  try { words = await transcribeWords(pcm); } catch (e) { words = null; }
+  try { words = await transcribeLong(pcm); } catch (e) { words = null; }
   const ref = track.lines.map((l) => l.text).join(" ");
   let result: { status: "PASS" | "WARN" | "FAIL"; detail: string; wer?: number; heard?: string };
   if (!words) result = { status: "WARN", detail: "speech model unavailable — intelligibility not checked" };

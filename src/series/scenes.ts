@@ -25,7 +25,13 @@ const active = (layout: EpisodeLayout, t: number): LaidOutBeat =>
 /** Zoom progress 0..1 of a compare beat: slow start, fast middle, hard landing on the beat. */
 const zoomEase = (lt: number, v: Visual) => {
   const x = progress(lt, 0, zoomTime(v));
-  if (v.type === "compare" && v.open) return 0.78 + 0.22 * (1 - Math.pow(1 - x, 3)); // cold open: already most of the way out
+  if (v.type === "compare" && v.open) {
+    // cold open: start with the big body about 2.3 times its final size, whatever the ratio, so frame one
+    // shows a recognisable globe filling the width rather than a wall of texture
+    const ratio = (v.to.radius * extent(v.to)) / (v.from.radius * extent(v.from));
+    const e0 = clamp(1 - Math.log(2.3) / Math.log(Math.max(ratio, 2.4)), 0.05, 0.92);
+    return e0 + (1 - e0) * (1 - Math.pow(1 - x, 3));
+  }
   return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; // quartic in, cubic out
 };
 
