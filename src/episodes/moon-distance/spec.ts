@@ -26,6 +26,8 @@ export const MOON_DISTANCE: EpisodeSpec = {
     { id: "quarter", only: "long", say: "The Moon itself is about a quarter as wide as Earth.", visual: { type: "pair", a: moon, b: earth } },
     { id: "side", only: "long", say: "The same side of it always faces us.", visual: { type: "body", body: moon, fact: "one side always faces Earth" } },
     { id: "tides", only: "long", say: "Its pull is what drives our ocean tides.", visual: { type: "body", body: moon, fact: "it raises the tides" } },
+    { id: "heat", only: "long", say: "By day its surface is hotter than boiling water, and at night it drops far below freezing.", visual: { type: "body", body: moon, fact: "120 °C by day, −130 °C by night" } },
+    { id: "born", only: "long", say: "Scientists think it formed when a world the size of Mars struck the young Earth.", visual: { type: "body", body: moon, fact: "about 4.5 billion years old" } },
     { id: "twelve", only: "long", say: "Only twelve people have ever walked on it.", visual: { type: "body", body: moon, fact: "12 moonwalkers, 1969 to 1972" } },
     { id: "sunfar", only: "long", say: "The Sun is almost four hundred times farther away than the Moon.", visual: { type: "gap", a: earth, b: sun, distance: AU, note: "150 million km" } },
     { id: "sunlight", only: "long", say: "Sunlight needs more than eight minutes to make that trip.", visual: { type: "gap", a: earth, b: sun, distance: AU, trip: { label: "8 min 19 s" } } },

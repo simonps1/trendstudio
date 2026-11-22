@@ -1,1 +1,1062 @@
-{ "voice": "chatterbox", "model": "resemble-ai/chatterbox", "alignment": "none", "lines": [] }
+{
+  "voice": "chatterbox",
+  "model": "resemble-ai/chatterbox",
+  "alignment": "whisper",
+  "lines": [
+    {
+      "id": "fit",
+      "text": "Every other planet in the solar system fits between Earth and the Moon.",
+      "file": "public/voice/moon-distance-long/fit.ee151927f9e0.wav",
+      "start": 0.25,
+      "duration": 2.94,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Every",
+          "start": 0.25,
+          "end": 0.43
+        },
+        {
+          "word": "other",
+          "start": 0.43,
+          "end": 0.57
+        },
+        {
+          "word": "planet",
+          "start": 0.57,
+          "end": 0.81
+        },
+        {
+          "word": "in",
+          "start": 0.81,
+          "end": 1.13
+        },
+        {
+          "word": "the",
+          "start": 1.13,
+          "end": 1.19
+        },
+        {
+          "word": "solar",
+          "start": 1.19,
+          "end": 1.31
+        },
+        {
+          "word": "system",
+          "start": 1.31,
+          "end": 1.75
+        },
+        {
+          "word": "fits",
+          "start": 1.75,
+          "end": 1.99
+        },
+        {
+          "word": "between",
+          "start": 1.99,
+          "end": 2.27
+        },
+        {
+          "word": "Earth",
+          "start": 2.27,
+          "end": 2.53
+        },
+        {
+          "word": "and",
+          "start": 2.53,
+          "end": 2.65
+        },
+        {
+          "word": "the",
+          "start": 2.65,
+          "end": 2.75
+        },
+        {
+          "word": "Moon.",
+          "start": 2.75,
+          "end": 2.95
+        }
+      ]
+    },
+    {
+      "id": "hook",
+      "text": "This is the real distance between them, drawn to scale.",
+      "file": "public/voice/moon-distance-long/hook.7c7b1b01226d.wav",
+      "start": 3.59,
+      "duration": 2.63,
+      "speed": 1,
+      "words": [
+        {
+          "word": "This",
+          "start": 3.59,
+          "end": 3.79
+        },
+        {
+          "word": "is",
+          "start": 3.79,
+          "end": 3.91
+        },
+        {
+          "word": "the",
+          "start": 3.91,
+          "end": 4.07
+        },
+        {
+          "word": "real",
+          "start": 4.07,
+          "end": 4.19
+        },
+        {
+          "word": "distance",
+          "start": 4.19,
+          "end": 4.51
+        },
+        {
+          "word": "between",
+          "start": 4.51,
+          "end": 4.87
+        },
+        {
+          "word": "them,",
+          "start": 4.87,
+          "end": 5.13
+        },
+        {
+          "word": "drawn",
+          "start": 5.13,
+          "end": 5.47
+        },
+        {
+          "word": "to",
+          "start": 5.47,
+          "end": 5.67
+        },
+        {
+          "word": "scale.",
+          "start": 5.67,
+          "end": 5.87
+        }
+      ]
+    },
+    {
+      "id": "thirty",
+      "text": "It is about thirty Earths away.",
+      "file": "public/voice/moon-distance-long/thirty.72572413ff58.wav",
+      "start": 6.62,
+      "duration": 1.6,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 6.62,
+          "end": 6.7
+        },
+        {
+          "word": "is",
+          "start": 6.7,
+          "end": 6.8
+        },
+        {
+          "word": "about",
+          "start": 6.8,
+          "end": 7
+        },
+        {
+          "word": "thirty",
+          "start": 7,
+          "end": 7.32
+        },
+        {
+          "word": "Earths",
+          "start": 7.32,
+          "end": 7.8
+        },
+        {
+          "word": "away.",
+          "start": 7.8,
+          "end": 7.94
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "text": "Even light, the fastest thing there is, needs more than a second to cross it.",
+      "file": "public/voice/moon-distance-long/light.fd393f1c3a45.wav",
+      "start": 8.62,
+      "duration": 3.6,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Even",
+          "start": 8.62,
+          "end": 8.8
+        },
+        {
+          "word": "light,",
+          "start": 8.8,
+          "end": 9.08
+        },
+        {
+          "word": "the",
+          "start": 9.32,
+          "end": 9.46
+        },
+        {
+          "word": "fastest",
+          "start": 9.46,
+          "end": 9.76
+        },
+        {
+          "word": "thing",
+          "start": 9.76,
+          "end": 10
+        },
+        {
+          "word": "there",
+          "start": 10,
+          "end": 10.16
+        },
+        {
+          "word": "is,",
+          "start": 10.16,
+          "end": 10.5
+        },
+        {
+          "word": "needs",
+          "start": 10.6,
+          "end": 10.72
+        },
+        {
+          "word": "more",
+          "start": 10.72,
+          "end": 10.98
+        },
+        {
+          "word": "than",
+          "start": 10.98,
+          "end": 11.14
+        },
+        {
+          "word": "a",
+          "start": 11.14,
+          "end": 11.22
+        },
+        {
+          "word": "second",
+          "start": 11.22,
+          "end": 11.48
+        },
+        {
+          "word": "to",
+          "start": 11.48,
+          "end": 11.66
+        },
+        {
+          "word": "cross",
+          "start": 11.66,
+          "end": 11.86
+        },
+        {
+          "word": "it.",
+          "start": 11.86,
+          "end": 12.1
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "text": "The Apollo astronauts needed three days to make the trip.",
+      "file": "public/voice/moon-distance-long/apollo.34a4850522e0.wav",
+      "start": 12.62,
+      "duration": 2.23,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 12.62,
+          "end": 12.7
+        },
+        {
+          "word": "Apollo",
+          "start": 12.7,
+          "end": 12.92
+        },
+        {
+          "word": "astronauts",
+          "start": 12.92,
+          "end": 13.26
+        },
+        {
+          "word": "needed",
+          "start": 13.26,
+          "end": 13.68
+        },
+        {
+          "word": "three",
+          "start": 13.68,
+          "end": 13.94
+        },
+        {
+          "word": "days",
+          "start": 13.94,
+          "end": 14.14
+        },
+        {
+          "word": "to",
+          "start": 14.14,
+          "end": 14.3
+        },
+        {
+          "word": "make",
+          "start": 14.3,
+          "end": 14.4
+        },
+        {
+          "word": "the",
+          "start": 14.4,
+          "end": 14.54
+        },
+        {
+          "word": "trip.",
+          "start": 14.54,
+          "end": 14.7
+        }
+      ]
+    },
+    {
+      "id": "jet",
+      "text": "A passenger jet would need about eighteen days.",
+      "file": "public/voice/moon-distance-long/jet.b8432cf63422.wav",
+      "start": 15.25,
+      "duration": 2.02,
+      "speed": 1,
+      "words": [
+        {
+          "word": "A",
+          "start": 15.25,
+          "end": 15.33
+        },
+        {
+          "word": "passenger",
+          "start": 15.33,
+          "end": 15.59
+        },
+        {
+          "word": "jet",
+          "start": 15.59,
+          "end": 15.87
+        },
+        {
+          "word": "would",
+          "start": 15.87,
+          "end": 16.05
+        },
+        {
+          "word": "need",
+          "start": 16.05,
+          "end": 16.17
+        },
+        {
+          "word": "about",
+          "start": 16.17,
+          "end": 16.39
+        },
+        {
+          "word": "eighteen",
+          "start": 16.39,
+          "end": 16.69
+        },
+        {
+          "word": "days.",
+          "start": 16.69,
+          "end": 17.03
+        }
+      ]
+    },
+    {
+      "id": "car",
+      "text": "At highway speed, the drive would take more than five months.",
+      "file": "public/voice/moon-distance-long/car.524c8cc63854.wav",
+      "start": 17.67,
+      "duration": 2.72,
+      "speed": 1,
+      "words": [
+        {
+          "word": "At",
+          "start": 17.67,
+          "end": 17.79
+        },
+        {
+          "word": "highway",
+          "start": 17.79,
+          "end": 17.93
+        },
+        {
+          "word": "speed,",
+          "start": 17.93,
+          "end": 18.35
+        },
+        {
+          "word": "the",
+          "start": 18.61,
+          "end": 18.69
+        },
+        {
+          "word": "drive",
+          "start": 18.69,
+          "end": 18.91
+        },
+        {
+          "word": "would",
+          "start": 18.91,
+          "end": 19.07
+        },
+        {
+          "word": "take",
+          "start": 19.07,
+          "end": 19.23
+        },
+        {
+          "word": "more",
+          "start": 19.23,
+          "end": 19.39
+        },
+        {
+          "word": "than",
+          "start": 19.39,
+          "end": 19.55
+        },
+        {
+          "word": "five",
+          "start": 19.55,
+          "end": 19.79
+        },
+        {
+          "word": "months.",
+          "start": 19.79,
+          "end": 20.07
+        }
+      ]
+    },
+    {
+      "id": "quarter",
+      "text": "The Moon itself is about a quarter as wide as Earth.",
+      "file": "public/voice/moon-distance-long/quarter.7f17b8346af4.wav",
+      "start": 20.79,
+      "duration": 2.31,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 20.79,
+          "end": 20.85
+        },
+        {
+          "word": "Moon",
+          "start": 20.85,
+          "end": 20.99
+        },
+        {
+          "word": "itself",
+          "start": 20.99,
+          "end": 21.29
+        },
+        {
+          "word": "is",
+          "start": 21.29,
+          "end": 21.57
+        },
+        {
+          "word": "about",
+          "start": 21.57,
+          "end": 21.79
+        },
+        {
+          "word": "a",
+          "start": 21.79,
+          "end": 21.93
+        },
+        {
+          "word": "quarter",
+          "start": 21.93,
+          "end": 22.21
+        },
+        {
+          "word": "as",
+          "start": 22.21,
+          "end": 22.43
+        },
+        {
+          "word": "wide",
+          "start": 22.43,
+          "end": 22.61
+        },
+        {
+          "word": "as",
+          "start": 22.61,
+          "end": 22.75
+        },
+        {
+          "word": "Earth.",
+          "start": 22.75,
+          "end": 23.01
+        }
+      ]
+    },
+    {
+      "id": "side",
+      "text": "The same side of it always faces us.",
+      "file": "public/voice/moon-distance-long/side.bd6c01f32258.wav",
+      "start": 23.5,
+      "duration": 1.79,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 23.5,
+          "end": 23.58
+        },
+        {
+          "word": "same",
+          "start": 23.58,
+          "end": 23.76
+        },
+        {
+          "word": "side",
+          "start": 23.76,
+          "end": 23.98
+        },
+        {
+          "word": "of",
+          "start": 23.98,
+          "end": 24.12
+        },
+        {
+          "word": "it",
+          "start": 24.12,
+          "end": 24.2
+        },
+        {
+          "word": "always",
+          "start": 24.2,
+          "end": 24.48
+        },
+        {
+          "word": "faces",
+          "start": 24.48,
+          "end": 24.78
+        },
+        {
+          "word": "us.",
+          "start": 24.78,
+          "end": 25.04
+        }
+      ]
+    },
+    {
+      "id": "tides",
+      "text": "Its pull is what drives our ocean tides.",
+      "file": "public/voice/moon-distance-long/tides.1d0a2d8e0e18.wav",
+      "start": 25.69,
+      "duration": 2.1,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Its",
+          "start": 25.69,
+          "end": 25.83
+        },
+        {
+          "word": "pull",
+          "start": 25.83,
+          "end": 26.07
+        },
+        {
+          "word": "is",
+          "start": 26.07,
+          "end": 26.31
+        },
+        {
+          "word": "what",
+          "start": 26.31,
+          "end": 26.45
+        },
+        {
+          "word": "drives",
+          "start": 26.45,
+          "end": 26.63
+        },
+        {
+          "word": "our",
+          "start": 26.63,
+          "end": 26.83
+        },
+        {
+          "word": "ocean",
+          "start": 26.83,
+          "end": 27.11
+        },
+        {
+          "word": "tides.",
+          "start": 27.11,
+          "end": 27.43
+        }
+      ]
+    },
+    {
+      "id": "twelve",
+      "text": "Only twelve people have ever walked on it.",
+      "file": "public/voice/moon-distance-long/twelve.2ce774b6fd3f.wav",
+      "start": 28.19,
+      "duration": 1.92,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Only",
+          "start": 28.19,
+          "end": 28.39
+        },
+        {
+          "word": "twelve",
+          "start": 28.39,
+          "end": 28.59
+        },
+        {
+          "word": "people",
+          "start": 28.59,
+          "end": 29.03
+        },
+        {
+          "word": "have",
+          "start": 29.03,
+          "end": 29.21
+        },
+        {
+          "word": "ever",
+          "start": 29.21,
+          "end": 29.37
+        },
+        {
+          "word": "walked",
+          "start": 29.37,
+          "end": 29.59
+        },
+        {
+          "word": "on",
+          "start": 29.59,
+          "end": 29.83
+        },
+        {
+          "word": "it.",
+          "start": 29.83,
+          "end": 29.99
+        }
+      ]
+    },
+    {
+      "id": "sunfar",
+      "text": "The Sun is almost four hundred times farther away than the Moon.",
+      "file": "public/voice/moon-distance-long/sunfar.33ea5c8d1246.wav",
+      "start": 30.51,
+      "duration": 2.83,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 30.51,
+          "end": 30.59
+        },
+        {
+          "word": "Sun",
+          "start": 30.59,
+          "end": 30.75
+        },
+        {
+          "word": "is",
+          "start": 30.75,
+          "end": 30.95
+        },
+        {
+          "word": "almost",
+          "start": 30.95,
+          "end": 31.15
+        },
+        {
+          "word": "four",
+          "start": 31.15,
+          "end": 31.2
+        },
+        {
+          "word": "hundred",
+          "start": 31.15,
+          "end": 31.49
+        },
+        {
+          "word": "times",
+          "start": 31.49,
+          "end": 32.03
+        },
+        {
+          "word": "farther",
+          "start": 32.03,
+          "end": 32.27
+        },
+        {
+          "word": "away",
+          "start": 32.27,
+          "end": 32.61
+        },
+        {
+          "word": "than",
+          "start": 32.61,
+          "end": 32.83
+        },
+        {
+          "word": "the",
+          "start": 32.83,
+          "end": 32.89
+        },
+        {
+          "word": "Moon.",
+          "start": 32.89,
+          "end": 33.09
+        }
+      ]
+    },
+    {
+      "id": "sunlight",
+      "text": "Sunlight needs more than eight minutes to make that trip.",
+      "file": "public/voice/moon-distance-long/sunlight.ab5c6dfdee97.wav",
+      "start": 33.74,
+      "duration": 2.53,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Sunlight",
+          "start": 33.74,
+          "end": 34.2
+        },
+        {
+          "word": "needs",
+          "start": 34.2,
+          "end": 34.4
+        },
+        {
+          "word": "more",
+          "start": 34.4,
+          "end": 34.66
+        },
+        {
+          "word": "than",
+          "start": 34.66,
+          "end": 34.8
+        },
+        {
+          "word": "eight",
+          "start": 34.8,
+          "end": 35.02
+        },
+        {
+          "word": "minutes",
+          "start": 35.02,
+          "end": 35.3
+        },
+        {
+          "word": "to",
+          "start": 35.3,
+          "end": 35.52
+        },
+        {
+          "word": "make",
+          "start": 35.52,
+          "end": 35.64
+        },
+        {
+          "word": "that",
+          "start": 35.64,
+          "end": 35.84
+        },
+        {
+          "word": "trip.",
+          "start": 35.84,
+          "end": 36.06
+        }
+      ]
+    },
+    {
+      "id": "same",
+      "text": "It is also four hundred times wider, which is why the Sun and Moon look the same size in our sky.",
+      "file": "public/voice/moon-distance-long/same.aa9e8774a915.wav",
+      "start": 36.67,
+      "duration": 4.27,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 36.67,
+          "end": 36.77
+        },
+        {
+          "word": "is",
+          "start": 36.77,
+          "end": 36.85
+        },
+        {
+          "word": "also",
+          "start": 36.85,
+          "end": 37.11
+        },
+        {
+          "word": "four",
+          "start": 37.11,
+          "end": 37.16
+        },
+        {
+          "word": "hundred",
+          "start": 37.11,
+          "end": 37.39
+        },
+        {
+          "word": "times",
+          "start": 37.39,
+          "end": 37.83
+        },
+        {
+          "word": "wider,",
+          "start": 37.83,
+          "end": 38.11
+        },
+        {
+          "word": "which",
+          "start": 38.49,
+          "end": 38.57
+        },
+        {
+          "word": "is",
+          "start": 38.57,
+          "end": 38.67
+        },
+        {
+          "word": "why",
+          "start": 38.67,
+          "end": 38.81
+        },
+        {
+          "word": "the",
+          "start": 38.81,
+          "end": 38.93
+        },
+        {
+          "word": "Sun",
+          "start": 38.93,
+          "end": 39.07
+        },
+        {
+          "word": "and",
+          "start": 39.07,
+          "end": 39.21
+        },
+        {
+          "word": "Moon",
+          "start": 39.21,
+          "end": 39.35
+        },
+        {
+          "word": "look",
+          "start": 39.35,
+          "end": 39.63
+        },
+        {
+          "word": "the",
+          "start": 39.63,
+          "end": 39.75
+        },
+        {
+          "word": "same",
+          "start": 39.75,
+          "end": 39.91
+        },
+        {
+          "word": "size",
+          "start": 39.91,
+          "end": 40.17
+        },
+        {
+          "word": "in",
+          "start": 40.17,
+          "end": 40.37
+        },
+        {
+          "word": "our",
+          "start": 40.37,
+          "end": 40.49
+        },
+        {
+          "word": "sky.",
+          "start": 40.49,
+          "end": 40.71
+        }
+      ]
+    },
+    {
+      "id": "eclipse",
+      "text": "That coincidence is what makes a total solar eclipse possible.",
+      "file": "public/voice/moon-distance-long/eclipse.5eee338b8ef8.wav",
+      "start": 41.34,
+      "duration": 3.11,
+      "speed": 1,
+      "words": [
+        {
+          "word": "That",
+          "start": 41.34,
+          "end": 41.48
+        },
+        {
+          "word": "coincidence",
+          "start": 41.48,
+          "end": 41.84
+        },
+        {
+          "word": "is",
+          "start": 41.84,
+          "end": 42.38
+        },
+        {
+          "word": "what",
+          "start": 42.38,
+          "end": 42.54
+        },
+        {
+          "word": "makes",
+          "start": 42.54,
+          "end": 42.7
+        },
+        {
+          "word": "a",
+          "start": 42.7,
+          "end": 42.84
+        },
+        {
+          "word": "total",
+          "start": 42.84,
+          "end": 43.08
+        },
+        {
+          "word": "solar",
+          "start": 43.08,
+          "end": 43.38
+        },
+        {
+          "word": "eclipse",
+          "start": 43.38,
+          "end": 43.7
+        },
+        {
+          "word": "possible.",
+          "start": 43.7,
+          "end": 44.28
+        }
+      ]
+    },
+    {
+      "id": "drift",
+      "text": "And every year, the Moon drifts almost four centimetres farther away.",
+      "file": "public/voice/moon-distance-long/drift.12847cd25653.wav",
+      "start": 44.85,
+      "duration": 3.48,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 44.85,
+          "end": 44.97
+        },
+        {
+          "word": "every",
+          "start": 44.97,
+          "end": 45.19
+        },
+        {
+          "word": "year,",
+          "start": 45.19,
+          "end": 45.51
+        },
+        {
+          "word": "the",
+          "start": 45.77,
+          "end": 45.85
+        },
+        {
+          "word": "Moon",
+          "start": 45.85,
+          "end": 46.01
+        },
+        {
+          "word": "drifts",
+          "start": 46.01,
+          "end": 46.25
+        },
+        {
+          "word": "almost",
+          "start": 46.25,
+          "end": 46.63
+        },
+        {
+          "word": "four",
+          "start": 46.63,
+          "end": 46.89
+        },
+        {
+          "word": "centimetres",
+          "start": 46.89,
+          "end": 47.35
+        },
+        {
+          "word": "farther",
+          "start": 47.35,
+          "end": 47.69
+        },
+        {
+          "word": "away.",
+          "start": 47.69,
+          "end": 48.15
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "text": "Follow for more cosmic scale.",
+      "file": "public/voice/moon-distance-long/cta.aca43710994b.wav",
+      "start": 48.73,
+      "duration": 1.83,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Follow",
+          "start": 48.73,
+          "end": 48.99
+        },
+        {
+          "word": "for",
+          "start": 48.99,
+          "end": 49.29
+        },
+        {
+          "word": "more",
+          "start": 49.29,
+          "end": 49.45
+        },
+        {
+          "word": "cosmic",
+          "start": 49.45,
+          "end": 49.87
+        },
+        {
+          "word": "scale.",
+          "start": 49.87,
+          "end": 50.33
+        }
+      ]
+    }
+  ]
+}
