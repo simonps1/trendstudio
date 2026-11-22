@@ -214,11 +214,13 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   const closing = b.end >= layout.duration - 1e-6 ? 1 - progress(t, layout.duration - 3.1, layout.duration - 2.8) : 1;
   // while a body sweeps through the top of the frame during a zoom, darken a soft band behind the spoken words
   if (fx.zoom > 0.02) {
-    const band = ctx.createLinearGradient(0, h * 0.12, 0, h * 0.31);
-    const sa = 0.62 * clamp(fx.zoom * 2.2);
-    band.addColorStop(0, "rgba(3,4,11,0)"); band.addColorStop(0.35, `rgba(3,4,11,${sa})`);
-    band.addColorStop(0.65, `rgba(3,4,11,${sa})`); band.addColorStop(1, "rgba(3,4,11,0)");
-    ctx.fillStyle = band; ctx.fillRect(0, h * 0.12, w, h * 0.19);
+    // an ellipse hugging the caption, feathered to nothing in every direction, so it never reads as a bar
+    const sa = 0.5 * clamp(fx.zoom * 2.2), rx = w * 0.56, ry = h * 0.085;
+    ctx.save(); ctx.translate(w / 2, h * 0.215); ctx.scale(1, ry / rx);
+    const band = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
+    band.addColorStop(0, `rgba(3,4,11,${sa})`); band.addColorStop(0.45, `rgba(3,4,11,${sa * 0.8})`);
+    band.addColorStop(0.8, `rgba(3,4,11,${sa * 0.25})`); band.addColorStop(1, "rgba(3,4,11,0)");
+    ctx.fillStyle = band; ctx.beginPath(); ctx.arc(0, 0, rx, 0, Math.PI * 2); ctx.fill(); ctx.restore();
   }
   if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25) * closing, progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
 

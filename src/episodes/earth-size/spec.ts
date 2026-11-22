@@ -38,7 +38,7 @@ export const EARTH_SIZE: EpisodeSpec = {
     { id: "row", only: "long", say: "You would need over a hundred Suns in a row to bridge that distance.", visual: { type: "body", body: sun, fact: "107 Suns from here to Earth" } },
     { id: "lap", say: "Light circles the Earth in a blink, but needs fourteen seconds to lap the Sun.", visual: { type: "lap", body: sun, value: 14.6, unit: "seconds" } },
     { id: "end-s", only: "short", say: "And our Sun is only one star among hundreds of billions.", visual: { type: "shrink", body: sun } },
-    { id: "s218", only: "long", say: "And next to the largest star we know, even the Sun disappears.", visual: { type: "compare", from: sun, to: s218, big: true } },
+    { id: "s218", only: "long", say: "And next to one of the largest stars we know, even the Sun disappears.", visual: { type: "compare", from: sun, to: s218, big: true } },
     { id: "end-l", only: "long", say: "And that is still only one star among hundreds of billions.", visual: { type: "shrink", body: s218 } },
     { id: "cta", only: "long", say: "Follow for more cosmic scale.", visual: { type: "stars" } },
   ],

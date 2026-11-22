@@ -19,7 +19,7 @@ export const STAR_SIZES: EpisodeSpec = {
   ask: "Which star surprised you most?",
   emphasis: ["planet", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn", "hours", "billions", "disappear"],
   beats: [
-    { id: "hook", say: "That tiny dot is our Sun. This is the biggest star we know.", visual: { type: "compare", from: sun, to: s218, big: true, open: true } },
+    { id: "hook", say: "That tiny dot is our Sun. This is one of the biggest stars ever found.", visual: { type: "compare", from: sun, to: s218, big: true, open: true } },
     { id: "earth", say: "To feel how big that is, start with Earth.", visual: { type: "body", body: earth } },
     { id: "jupiter", say: "This is Jupiter, eleven times wider than Earth.", visual: { type: "compare", from: earth, to: jupiter } },
     { id: "sun", say: "And this is the Sun, a hundred and nine Earths across.", visual: { type: "compare", from: jupiter, to: sun } },
@@ -41,7 +41,7 @@ export const STAR_SIZES: EpisodeSpec = {
     { id: "lap1", only: "long", say: "Light can circle the Earth seven times in a single second.", visual: { type: "body", body: earth, fact: "7.5 laps of Earth per second" } },
     { id: "lap2", say: "Even light needs almost nine hours to travel around this star.", visual: { type: "lap", body: s218, value: 8.7, unit: "hours" } },
     { id: "far", only: "long", say: "It's so far away that its light takes nearly twenty thousand years to reach us.", visual: { type: "body", body: s218, fact: "≈ 19,000 light-years away" } },
-    { id: "unstable", only: "long", say: "Stars this big don't last. One day it will collapse, and explode.", visual: { type: "body", body: s218, fact: "destined to explode" } },
+    { id: "unstable", only: "long", say: "Stars this big don't last. One day it will collapse, and most likely explode.", visual: { type: "body", body: s218, fact: "a supernova in waiting" } },
     { id: "end", say: "And it's still just one star, out of billions.", visual: { type: "shrink", body: s218 } },
     { id: "cta", only: "long", say: "Follow for more cosmic scale.", visual: { type: "stars" } },
   ],
