@@ -8,6 +8,7 @@ export const PLANETS: EpisodeSpec = {
   episode: 5,
   title: "Every planet, from smallest to largest",
   voice: NARRATOR,
+  ask: "Which planet would you visit?",
   emphasis: ["mercury", "mars", "venus", "earth", "neptune", "uranus", "saturn", "jupiter", "smallest", "biggest", "rings", "tiny", "float", "hottest"],
   beats: [
     { id: "hook", say: "That dot is the smallest planet in our solar system. This is the biggest.", visual: { type: "compare", from: mercury, to: jupiter, big: true, open: true } },

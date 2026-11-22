@@ -16,6 +16,7 @@ export const EARTH_SIZE: EpisodeSpec = {
   episode: 2,
   title: "How small is Earth, really?",
   voice: NARRATOR,
+  ask: "Did you know Earth was this small?",
   emphasis: ["earth", "moon", "mars", "neptune", "jupiter", "sun", "thousand", "million", "fourteen", "billions", "disappears", "storm"],
   beats: [
     { id: "hook", say: "That tiny dot is Earth. This is the Sun, drawn to the same scale.", visual: { type: "compare", from: earth, to: sun, big: true, open: true } },

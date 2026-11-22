@@ -18,6 +18,7 @@ export const BLACK_HOLES: EpisodeSpec = {
   episode: 4,
   title: "How big is the biggest black hole?",
   voice: NARRATOR,
+  ask: "Which one scares you most?",
   emphasis: ["black", "hole", "marble", "sun", "kilometres", "galaxy", "solar", "system", "light", "days", "billion", "million", "never"],
   beats: [
     { id: "hook", say: "That tiny dot is our Sun. This is the biggest black hole we know.", visual: { type: "compare", from: sun, to: ton, big: true, open: true } },

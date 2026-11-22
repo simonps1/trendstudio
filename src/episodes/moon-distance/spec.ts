@@ -12,6 +12,7 @@ export const MOON_DISTANCE: EpisodeSpec = {
   episode: 6,
   title: "How far away is the Moon, really?",
   voice: NARRATOR,
+  ask: "Would you make the 3-day trip?",
   emphasis: ["moon", "earth", "earths", "light", "second", "planet", "days", "months", "sun", "centimetres", "twelve", "scale", "eclipse"],
   beats: [
     // cold open on the most surprising picture: the planets stacked inside the gap

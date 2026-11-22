@@ -34,11 +34,16 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number }> = ({ spec, du
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const t = frame / fps, u = Math.min(width, height) / 1080;
-  const a = progress(t, duration - 2.2, duration - 1.8) * (1 - progress(t, duration - 0.35, duration - 0.1));
+  const a = progress(t, duration - 2.8, duration - 2.4) * (1 - progress(t, duration - 0.35, duration - 0.1));
   if (a <= 0) return null;
   const next = EPISODES.some((e) => e.spec.series === spec.series && e.spec.episode === spec.episode + 1);
   return (
-    <div style={{ position: "absolute", top: height * 0.66, left: 0, right: 0, display: "flex", justifyContent: "center", opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
+    <div style={{ position: "absolute", top: height * 0.36, left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 * u, opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
+      {spec.ask ? (
+        <div style={{ fontFamily: FONT_DISPLAY, fontSize: 62 * u, lineHeight: 1.1, letterSpacing: 1.5 * u, color: "#fff", textAlign: "center", maxWidth: 860 * u, textTransform: "uppercase", textShadow: `0 ${4 * u}px ${24 * u}px rgba(0,0,0,0.95), 0 0 ${3 * u}px #000` }}>
+          {spec.ask}
+        </div>
+      ) : null}
       <div style={{
         fontFamily: FONT_DISPLAY, fontSize: 46 * u, letterSpacing: 2 * u, color: "#1c1200", background: "#ffd23f",
         padding: `${10 * u}px ${30 * u}px`, borderRadius: 10 * u, boxShadow: `0 ${10 * u}px ${40 * u}px rgba(255,180,50,0.55)`,

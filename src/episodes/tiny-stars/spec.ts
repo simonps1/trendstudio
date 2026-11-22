@@ -16,6 +16,7 @@ export const TINY_STARS: EpisodeSpec = {
   episode: 3,
   title: "How small can a star get?",
   voice: NARRATOR,
+  ask: "Neutron star or white dwarf?",
   emphasis: ["star", "earth", "neutron", "kilometres", "teaspoon", "dwarf", "saturn", "jupiter", "proxima", "giant", "trillions", "smaller", "sun"],
   beats: [
     { id: "hook", say: "That dot next to Earth is a real star, and it is smaller than a city.", visual: { type: "compare", from: neutron, to: earth, big: true, open: true } },

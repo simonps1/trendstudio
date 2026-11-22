@@ -70,6 +70,8 @@ export interface EpisodeSpec {
   title: string;
   voice: string;
   beats: Beat[];
+  /** A question shown on screen at the very end, to give viewers something to answer in the comments. */
+  ask?: string;
   /** Words (lowercase) highlighted in captions. */
   emphasis?: string[];
 }

@@ -16,6 +16,7 @@ export const STAR_SIZES: EpisodeSpec = {
   episode: 1,
   title: "How big is the biggest star?",
   voice: NARRATOR,
+  ask: "Which star surprised you most?",
   emphasis: ["planet", "jupiter", "sun", "sirius", "rigel", "betelgeuse", "stephenson", "saturn", "hours", "billions", "disappear"],
   beats: [
     { id: "hook", say: "That tiny dot is our Sun. This is the biggest star we know.", visual: { type: "compare", from: sun, to: s218, big: true, open: true } },
