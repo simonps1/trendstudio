@@ -4,13 +4,16 @@ import { sun } from "../bodies";
 // Event-horizon radius = 2.95 km per solar mass (Schwarzschild). Radii below in Earth radii (6,371 km).
 // Masses: Cygnus X-1 21.2 M☉ (Miller-Jones et al. 2021); Sagittarius A* 4.3 million M☉ (GRAVITY 2022);
 // M87* 6.5 billion M☉ (Event Horizon Telescope 2019); TON 618 ≈ 66 billion M☉ (Shemmer et al. 2004, an estimate).
-const hole = (name: string, km: number, note: string): Body => ({ name, kind: "hole", radius: km / 6371, note });
-const earthHole = hole("Earth as a black hole", 8.87e-6, "1.8 cm wide");
-const sunHole = hole("The Sun as a black hole", 2.95, "6 km wide");
-const cygnus = hole("Cygnus X-1", 62.5, "≈ 125 km wide");
-const sgrA = hole("Sagittarius A*", 1.269e7, "≈ 18 Suns wide");
-const m87 = hole("M87*", 1.918e10, "wider than our solar system");
-const ton = hole("TON 618", 1.947e11, "≈ 2,600 × the Earth–Sun distance · estimate");
+// Looks follow what each one is: a bare hole has nothing falling in, so it only bends the starlight behind it;
+// Cygnus X-1 strips hot blue-white gas from a companion star; Sagittarius A* is dim and red; M87* fires a jet
+// (first seen in 1918); TON 618 is a quasar, among the brightest objects known.
+const hole = (name: string, km: number, note: string, look: Partial<Body> = {}): Body => ({ name, kind: "hole", radius: km / 6371, note, ...look });
+const earthHole = hole("Earth as a black hole", 8.87e-6, "1.8 cm wide", { disc: 0 });
+const sunHole = hole("The Sun as a black hole", 2.95, "6 km wide", { disc: 0 });
+const cygnus = hole("Cygnus X-1", 62.5, "≈ 125 km wide", { temp: 1, disc: 0.34 });
+const sgrA = hole("Sagittarius A*", 1.269e7, "≈ 18 Suns wide", { temp: 0.08, disc: 0.5 });
+const m87 = hole("M87*", 1.918e10, "wider than our solar system", { temp: 0.42, disc: 0.3, jet: 0.55 });
+const ton = hole("TON 618", 1.947e11, "≈ 2,600 × the Earth–Sun distance · estimate", { temp: 0.8, disc: 0.17, jet: 1 });
 
 export const BLACK_HOLES: EpisodeSpec = {
   id: "black-holes",

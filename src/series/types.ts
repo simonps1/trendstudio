@@ -15,6 +15,10 @@ export interface Body {
   surface?: "plain" | "earth" | "bands" | "rocky" | "mars";
   /** Planets: draw a ring system (Saturn). */
   rings?: boolean;
+  /** Black holes: tilt of the accretion disc (0 = no disc, a bare hole; default 0.2 = nearly edge-on). */
+  disc?: number;
+  /** Black holes: strength of the jets from the poles (0 = none … 1 = a quasar). */
+  jet?: number;
   /** Small line under the name, e.g. "109 Earths wide". */
   note?: string;
 }
@@ -82,7 +86,7 @@ export const FIT = 300;
 export const orbitStagger = (dur: number, n: number) => Math.min(0.5, Math.max(0.15, (dur - 1.2) / Math.max(1, n)));
 
 /** How far a body's picture reaches beyond its radius (rings, accretion disc). `full` = the whole extent. */
-export const extent = (b: Body, full = false) => (b.rings ? (full ? 2.35 : 1.6) : b.kind === "hole" ? (full ? 1.9 : 1.55) : 1);
+export const extent = (b: Body, full = false) => (b.rings ? (full ? 2.35 : 1.6) : b.kind === "hole" ? (b.disc === 0 ? 1.18 : full ? 1.9 : 1.55) : 1);
 
 /** The channel narrator: one voice and delivery style for every video (styles are defined in scripts/build-voice.ts). */
 export const NARRATOR = "chatterbox";

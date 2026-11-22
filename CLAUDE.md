@@ -18,3 +18,4 @@
 - Openings: a video's first beat must put the spectacle on screen at 0:00 (`compare` with `open: true`, or a `gap` with `fill`); the first words carry the surprise. TikTok retention on episode 1 lost half the viewers within two seconds of a slow build-up.
 - Narrator style is `NARRATOR` in `src/series/types.ts` (styles live in `scripts/build-voice.ts`). Audio-only changes: `npx tsx scripts/remux.ts <id>` replaces the soundtrack and re-runs QC without re-rendering.
 - Never start a render before that video's narration JSON has been regenerated for the current script (a stale track renders with no voice).
+- Black holes take `disc` (tilt; 0 = bare hole), `jet` and `temp` so each one looks different. Consecutive `body` beats on the same body cycle through framings (`holdPose` in `src/series/scenes.ts`); keep facts that share a body in a run so the camera has somewhere to go.

@@ -91,6 +91,28 @@ function gapGeometry(v: Extract<Visual, { type: "gap" }>, cx: number, cy: number
 }
 
 /** Bodies on screen at time t (pixels). */
+/** How many beats in a row, before this one, held the same body on screen. */
+function holdIndex(layout: EpisodeLayout, b: LaidOutBeat) {
+  const i = layout.beats.indexOf(b), v = b.beat.visual;
+  let k = 0;
+  if (v.type !== "body") return 0;
+  for (let j = i - 1; j >= 0; j--) {
+    const p = layout.beats[j].beat.visual;
+    if (p.type === "body" && p.body === v.body) k++; else break;
+  }
+  return k;
+}
+/** Framing for the k-th hold: scale, offset (fractions of the frame), growth and sideways drift over the beat. */
+function holdPose(k: number) {
+  const poses = [
+    { s: 1, x: 0, y: 0, grow: 0.07, slide: 0 },          // centred, slow push-in
+    { s: 1.16, x: 0.11, y: 0.035, grow: 0.04, slide: -0.02 }, // close pass, drifting across
+    { s: 0.74, x: -0.05, y: -0.01, grow: 0.1, slide: 0.03 },  // pulled back, more sky
+    { s: 0.92, x: 0.08, y: 0.02, grow: 0.06, slide: -0.05 },  // off-centre, drifting back
+  ];
+  return poses[k % poses.length];
+}
+
 export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: number, u: number): PlacedBody[] {
   const b = active(layout, t);
   const v = b.beat.visual, lt = t - b.start, dur = b.end - b.start;
@@ -100,8 +122,15 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
   const fit = FIT * u;
   switch (v.type) {
     case "body": {
-      const pop = ease.outBack(progress(lt, 0, 0.35)); // punch in on the cut
-      return [{ body: v.body, x: cx, y: cy, r: (fit / extent(v.body)) * (0.9 + 0.1 * pop) * (1 + 0.07 * progress(lt, 0, dur)) }]; // slow push-in
+      // several facts in a row about one body: each one gets its own framing, and the camera moves between them
+      const k = holdIndex(layout, b);
+      const to = holdPose(k), from = k > 0 ? holdPose(k - 1) : to;
+      const m = ease.inOutCubic(progress(lt, 0, 0.55));
+      const drift = progress(lt, 0, dur);
+      const pop = k === 0 ? 0.9 + 0.1 * ease.outBack(progress(lt, 0, 0.35)) : 1; // punch in on the first cut only
+      const scale = lerp(from.s * (1 + from.grow), to.s * (1 + to.grow * drift), m);
+      const dx = lerp(from.x + from.slide, to.x + to.slide * drift, m), dy = lerp(from.y, to.y, m);
+      return [{ body: v.body, x: cx + dx * w, y: cy + dy * h, r: (fit / extent(v.body)) * pop * scale }];
     }
     case "compare": {
       const g = compareGeometry(v, lt, cy, fit);
@@ -183,6 +212,14 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
 
   // a closing body hands its nameplate's place to the end question
   const closing = b.end >= layout.duration - 1e-6 ? 1 - progress(t, layout.duration - 3.1, layout.duration - 2.8) : 1;
+  // while a body sweeps through the top of the frame during a zoom, darken a soft band behind the spoken words
+  if (fx.zoom > 0.02) {
+    const band = ctx.createLinearGradient(0, h * 0.12, 0, h * 0.31);
+    const sa = 0.62 * clamp(fx.zoom * 2.2);
+    band.addColorStop(0, "rgba(3,4,11,0)"); band.addColorStop(0.35, `rgba(3,4,11,${sa})`);
+    band.addColorStop(0.65, `rgba(3,4,11,${sa})`); band.addColorStop(1, "rgba(3,4,11,0)");
+    ctx.fillStyle = band; ctx.fillRect(0, h * 0.12, w, h * 0.19);
+  }
   if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25) * closing, progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
 
   if (v.type === "compare") {

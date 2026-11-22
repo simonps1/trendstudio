@@ -164,8 +164,11 @@ vec4 ringAt(vec2 d2, float r, vec3 pc, float seed){
 #endif
 #ifdef K6
 // Accretion disc of a black hole: hot gas circling the horizon, brighter on the side moving towards us.
-vec4 discAt(vec2 d2, float r, float seed){
-  const float tilt = 0.20;
+vec3 holeTint(float temp){ // 0 = dim red, 0.5 = gold, 1 = blue-white
+  return temp < 0.5 ? mix(vec3(1.0, 0.36, 0.16), vec3(1.0, 0.78, 0.48), temp * 2.0) : mix(vec3(1.0, 0.78, 0.48), vec3(0.72, 0.86, 1.0), temp * 2.0 - 1.0);
+}
+vec4 discAt(vec2 d2, float r, float seed, float tilt, float temp){
+  if (tilt <= 0.0) return vec4(0.0);
   vec2 q = vec2(d2.x, d2.y / tilt) / r; float rr = length(q);
   if (rr < 1.12 || rr > 1.95) return vec4(0.0);
   float w = 1.5 / (r * tilt);
@@ -174,7 +177,8 @@ vec4 discAt(vec2 d2, float r, float seed){
   vec2 qr = vec2(cos(ang) * q.x - sin(ang) * q.y, sin(ang) * q.x + cos(ang) * q.y);
   float n = noise(vec3(qr * 3.4, seed)) * 0.65 + noise(vec3(qr * 9.0, seed + 4.0)) * 0.35;
   float doppler = 0.62 + 0.38 * (-q.x / rr);
-  vec3 c = mix(vec3(1.0, 0.50, 0.14), vec3(1.0, 0.94, 0.80), smoothstep(1.75, 1.2, rr)) * (0.75 + 0.7 * n);
+  vec3 tint = holeTint(temp);
+  vec3 c = mix(tint * vec3(1.0, 0.64, 0.3), mix(tint, vec3(1.0), 0.55), smoothstep(1.75, 1.2, rr)) * (0.75 + 0.7 * n);
   return vec4(c * doppler * 1.25, clamp(dens * (0.5 + 0.7 * n) * (0.55 + doppler * 0.6), 0.0, 1.0));
 }
 #endif
@@ -216,7 +220,8 @@ void main(){
 #endif
     bool ringed = uD[i].x > 0.5, hole = kind > 5.5;
     // nothing of a planet or hole reaches past its rings or disc: skip the rest for far pixels
-    if (kind > 0.5 && dist > r * (ringed || hole ? 2.5 : 1.0) + r * 0.3 + 4.0) continue;
+    if (kind > 0.5 && dist > r * (ringed || hole ? 2.5 : 1.0) + r * 0.3 + 4.0 && !hole) continue;
+    if (hole && dist > r * 2.8 + 4.0) continue;
 #ifdef K6
     if (hole && edge < 1.0) {
       // light from behind the hole is bent around it into a thin bright ring
@@ -224,8 +229,19 @@ void main(){
       if (x < 2.4) {
         float halo = exp(-pow((x - 1.10) / 0.075, 2.0)) * (0.78 + 0.22 * (-d2.y / max(dist, 0.001)));
         float g = (halo * 1.05 + exp(-max(x - 1.0, 0.0) * 3.2) * 0.3) * (1.0 - edge);
-        col += vec3(1.0, 0.78, 0.48) * g; alpha = max(alpha, clamp(g, 0.0, 1.0));
+        // a hole with no disc only shows the thin ring of bent starlight
+        if (uC[i].z <= 0.0) g *= 0.55;
+        col += (uC[i].z <= 0.0 ? vec3(0.8, 0.88, 1.0) : holeTint(uC[i].x)) * g; alpha = max(alpha, clamp(g, 0.0, 1.0));
       }
+    }
+    if (hole && uC[i].w > 0.0 && edge < 1.0) {
+      // jets: two narrow beams of gas thrown out along the spin axis, leaning a little off vertical
+      vec2 ax = vec2(0.34, -0.94); float along = dot(d2, ax); vec2 off = d2 - ax * along;
+      float a = abs(along) / r, wj = r * (0.03 + 0.03 * a);
+      float beam = exp(-dot(off, off) / (wj * wj)) * smoothstep(0.95, 1.3, a) * exp(-a / (1.0 + 1.2 * uC[i].w));
+      // the jet coming towards us outshines the one going away (the far one points up, behind the nameplate)
+      beam *= (0.65 + 0.7 * noise(vec3(a * 6.0 - uTime * 2.4, uC[i].y, 2.0))) * uC[i].w * (along < 0.0 ? 1.25 : 0.28) * (1.0 - edge);
+      col += vec3(0.42, 0.68, 1.0) * beam * 1.3; alpha = max(alpha, clamp(beam, 0.0, 1.0));
     }
 #endif
     vec4 extra = vec4(0.0);
@@ -233,7 +249,7 @@ void main(){
     if (ringed) extra = ringAt(d2, r, uC[i].rgb, uC[i].a);
 #endif
 #ifdef K6
-    if (hole) extra = discAt(d2, r, uC[i].y);
+    if (hole) extra = discAt(d2, r, uC[i].y, uC[i].z, uC[i].x);
 #endif
     if (extra.a > 0.0 && d2.y < 0.0) { col = mix(col, extra.rgb, extra.a); alpha = max(alpha, extra.a); } // far side, behind the body
     if (edge > 0.0) { col = mix(col, surface, edge); alpha = max(alpha, edge); }
@@ -315,7 +331,8 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
       D.set([b.body.rings ? 1 : 0, 0, 0, 0], i * 4);
       kinds.add(kind);
       A.set([b.x, b.y, Math.max(b.r, 1.6 * u), kind], i * 4); // never smaller than a visible dot
-      if (kind === 0 || kind === 6) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), 0, 0], i * 4);
+      if (kind === 6) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), b.body.disc ?? 0.2, b.body.jet ?? 0], i * 4);
+      else if (kind === 0) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), 0, 0], i * 4);
       else C.set([...hexToRgb(b.body.color ?? "#8899aa"), seedOf(b.body.name)], i * 4);
     });
     const { surface, final } = pick({ n, kinds: [...kinds].sort(), rings: bodies.some((b) => b.body.rings) });
