@@ -25,7 +25,7 @@ export const MOON_DISTANCE: EpisodeSpec = {
     { id: "jet", only: "long", say: "A passenger jet would need about eighteen days.", visual: gap({ trip: { label: "18 days by jet" } }) },
     { id: "car", say: "At highway speed, the drive would take more than five months.", visual: gap({ trip: { label: "5 months by car" } }) },
     { id: "quarter", only: "long", say: "The Moon itself is about a quarter as wide as Earth.", visual: { type: "pair", a: moon, b: earth } },
-    { id: "side", only: "long", say: "The same side of it always faces us.", visual: { type: "body", body: moon, fact: "one side always faces Earth" } },
+    { id: "side", only: "long", say: "We always see the same side of it.", visual: { type: "body", body: moon, fact: "one side always faces Earth" } },
     { id: "tides", only: "long", say: "Its pull is what drives our ocean tides.", visual: { type: "body", body: moon, fact: "it raises the tides" } },
     { id: "heat", only: "long", say: "By day its surface is hotter than boiling water, and at night it drops far below freezing.", visual: { type: "body", body: moon, fact: "120 °C by day, −130 °C by night" } },
     { id: "born", only: "long", say: "Scientists think it formed when a world the size of Mars struck the young Earth.", visual: { type: "body", body: moon, fact: "about 4.5 billion years old" } },
