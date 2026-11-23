@@ -18,7 +18,8 @@ export const EARTH_SIZE: EpisodeSpec = {
   ask: "Did you know Earth was this small?",
   emphasis: ["earth", "moon", "mars", "neptune", "jupiter", "sun", "thousand", "million", "fourteen", "billions", "disappears", "storm"],
   beats: [
-    { id: "hook", say: "That tiny dot is Earth. This is the Sun, drawn to the same scale.", visual: { type: "compare", from: earth, to: sun, big: true, open: true } },
+    { id: "hook", only: "short", say: "That tiny dot is Earth. This is the Sun, drawn to the same scale.", visual: { type: "compare", from: earth, to: sun, big: true, open: true } },
+    { id: "hook-l", only: "long", say: "Our whole world is that tiny dot. Next to it is the Sun, drawn to the same scale.", visual: { type: "compare", from: earth, to: sun, big: true, open: true } },
     { id: "moon", only: "long", say: "To see how small our world really is, start with the Moon.", visual: { type: "body", body: moon } },
     { id: "moongap", only: "long", say: "It's so far away that every other planet could fit in the gap between us.", visual: { type: "body", body: moon, fact: "all the planets fit in the gap" } },
     { id: "moon-earth", only: "short", say: "Earth is almost four times wider than the Moon.", visual: { type: "compare", from: moon, to: earth } },

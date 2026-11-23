@@ -40,7 +40,8 @@ export const estimateSeconds = (text: string, speed = 1) =>
 export function narrationLines(spec: EpisodeSpec, variant: Variant): NarrationLine[] {
   const beats = beatsFor(spec, variant);
   return beats.map((b, i) => ({
-    id: b.id, text: b.say, speed: b.speed, until: 1e9,
+    // the opening line is delivered a little quicker than the rest: the first seconds decide who stays
+    id: b.id, text: b.say, speed: b.speed ?? (i === 0 ? 1.12 : undefined), until: 1e9,
     ...(i === 0 ? { at: LEAD } : { after: beats[i - 1].id, gap: 0.4 }),
   }));
 }

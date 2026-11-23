@@ -192,14 +192,16 @@ const seedOf = (text: string, attempt: number) => (parseInt(createHash("sha1").u
  * (stronger emphasis, more rise and fall), "chatterbox:deep" (expressive, pitched 1.5 semitones lower).
  * `exaggeration` raises emotional intensity; a lower `cfg_weight` loosens the pacing.
  */
-const CHATTERBOX_STYLES: Record<string, { exaggeration: number; cfg_weight: number; pitch?: number }> = {
+const CHATTERBOX_STYLES: Record<string, { exaggeration: number; cfg_weight: number; pitch?: number; tempo?: number }> = {
   "": { exaggeration: 0.5, cfg_weight: 0.5 },
+  calm: { exaggeration: 0.35, cfg_weight: 0.3, tempo: 0.88 }, // steadier pitch, about 200 words a minute
   expressive: { exaggeration: 0.75, cfg_weight: 0.35 },
   deep: { exaggeration: 0.75, cfg_weight: 0.35, pitch: 0.917 },
 };
 
-async function synthChatterbox(line: NarrationLine, speed: number, outWav: string, voice = "chatterbox") {
+async function synthChatterbox(line: NarrationLine, lineSpeed: number, outWav: string, voice = "chatterbox") {
   const style = CHATTERBOX_STYLES[voice.split(":")[1] ?? ""] ?? CHATTERBOX_STYLES[""];
+  const speed = lineSpeed * (style.tempo ?? 1);
   const w = await chatterboxWorker();
   const raw = outWav.replace(/\.wav$/, ".raw.wav"), trimmed = outWav.replace(/\.wav$/, ".trim.wav");
   const nWords = line.text.split(/\s+/).length;

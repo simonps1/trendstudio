@@ -89,4 +89,4 @@ export const orbitStagger = (dur: number, n: number) => Math.min(0.5, Math.max(0
 export const extent = (b: Body, full = false) => (b.rings ? (full ? 2.35 : 1.6) : b.kind === "hole" ? (b.disc === 0 ? 1.18 : full ? 1.9 : 1.55) : 1);
 
 /** The channel narrator: one voice and delivery style for every video (styles are defined in scripts/build-voice.ts). */
-export const NARRATOR = "chatterbox";
+export const NARRATOR = "chatterbox:calm";

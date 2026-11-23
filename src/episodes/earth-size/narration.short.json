@@ -1,515 +1,515 @@
 {
-  "voice": "chatterbox",
+  "voice": "chatterbox:calm",
   "model": "resemble-ai/chatterbox",
   "alignment": "whisper",
   "lines": [
     {
       "id": "hook",
       "text": "That tiny dot is Earth. This is the Sun, drawn to the same scale.",
-      "file": "public/voice/earth-size/hook.59c7cb142313.wav",
+      "file": "public/voice/earth-size/hook.fa24b57044ed.wav",
       "start": 0.25,
-      "duration": 3.97,
-      "speed": 1,
+      "duration": 4.464,
+      "speed": 1.12,
       "words": [
         {
           "word": "That",
           "start": 0.25,
-          "end": 0.39
+          "end": 0.43
         },
         {
           "word": "tiny",
-          "start": 0.39,
-          "end": 0.61
+          "start": 0.43,
+          "end": 0.67
         },
         {
           "word": "dot",
-          "start": 0.61,
-          "end": 0.97
+          "start": 0.67,
+          "end": 1.05
         },
         {
           "word": "is",
-          "start": 0.97,
-          "end": 1.27
+          "start": 1.05,
+          "end": 1.43
         },
         {
           "word": "Earth.",
-          "start": 1.27,
-          "end": 1.53
+          "start": 1.43,
+          "end": 1.71
         },
         {
           "word": "This",
-          "start": 1.97,
-          "end": 2.15
+          "start": 2.37,
+          "end": 2.53
         },
         {
           "word": "is",
-          "start": 2.15,
-          "end": 2.41
+          "start": 2.53,
+          "end": 2.67
         },
         {
           "word": "the",
-          "start": 2.41,
-          "end": 2.57
+          "start": 2.67,
+          "end": 2.81
         },
         {
           "word": "Sun,",
-          "start": 2.57,
-          "end": 2.75
+          "start": 2.81,
+          "end": 3.07
         },
         {
           "word": "drawn",
-          "start": 2.75,
-          "end": 3.17
-        },
-        {
-          "word": "to",
-          "start": 3.17,
-          "end": 3.37
-        },
-        {
-          "word": "the",
-          "start": 3.37,
+          "start": 3.07,
           "end": 3.45
         },
         {
-          "word": "same",
+          "word": "to",
           "start": 3.45,
-          "end": 3.65
+          "end": 3.71
+        },
+        {
+          "word": "the",
+          "start": 3.71,
+          "end": 3.81
+        },
+        {
+          "word": "same",
+          "start": 3.81,
+          "end": 4.01
         },
         {
           "word": "scale.",
-          "start": 3.65,
-          "end": 3.99
+          "start": 4.01,
+          "end": 4.45
         }
       ]
     },
     {
       "id": "moon-earth",
       "text": "Earth is almost four times wider than the Moon.",
-      "file": "public/voice/earth-size/moon-earth.4ac4f9052084.wav",
-      "start": 4.62,
-      "duration": 2.11,
+      "file": "public/voice/earth-size/moon-earth.2ad001cd4682.wav",
+      "start": 5.114,
+      "duration": 2.489,
       "speed": 1,
       "words": [
         {
           "word": "Earth",
-          "start": 4.62,
-          "end": 4.78
+          "start": 5.114,
+          "end": 5.274
         },
         {
           "word": "is",
-          "start": 4.78,
-          "end": 4.92
+          "start": 5.274,
+          "end": 5.434
         },
         {
           "word": "almost",
-          "start": 4.92,
-          "end": 5.12
+          "start": 5.434,
+          "end": 5.714
         },
         {
           "word": "four",
-          "start": 5.12,
-          "end": 5.42
+          "start": 5.714,
+          "end": 5.994
         },
         {
           "word": "times",
-          "start": 5.42,
-          "end": 5.66
+          "start": 5.994,
+          "end": 6.274
         },
         {
           "word": "wider",
-          "start": 5.66,
-          "end": 5.92
+          "start": 6.274,
+          "end": 6.574
         },
         {
           "word": "than",
-          "start": 5.92,
-          "end": 6.24
+          "start": 6.574,
+          "end": 6.954
         },
         {
           "word": "the",
-          "start": 6.24,
-          "end": 6.34
+          "start": 6.954,
+          "end": 7.074
         },
         {
           "word": "Moon.",
-          "start": 6.34,
-          "end": 6.54
+          "start": 7.074,
+          "end": 7.294
         }
       ]
     },
     {
       "id": "jupiter-s",
       "text": "Jupiter is eleven times wider than Earth.",
-      "file": "public/voice/earth-size/jupiter-s.475bab841563.wav",
-      "start": 7.13,
-      "duration": 2.17,
+      "file": "public/voice/earth-size/jupiter-s.db051a892b12.wav",
+      "start": 8.003,
+      "duration": 2.432,
       "speed": 1,
       "words": [
         {
           "word": "Jupiter",
-          "start": 7.13,
-          "end": 7.35
+          "start": 8.003,
+          "end": 8.303
         },
         {
           "word": "is",
-          "start": 7.35,
-          "end": 7.75
+          "start": 8.303,
+          "end": 8.663
         },
         {
           "word": "eleven",
-          "start": 7.75,
-          "end": 8.09
+          "start": 8.663,
+          "end": 8.983
         },
         {
           "word": "times",
-          "start": 8.09,
-          "end": 8.39
+          "start": 8.983,
+          "end": 9.343
         },
         {
           "word": "wider",
-          "start": 8.39,
-          "end": 8.67
+          "start": 9.343,
+          "end": 9.683
         },
         {
           "word": "than",
-          "start": 8.67,
-          "end": 9.01
+          "start": 9.683,
+          "end": 10.043
         },
         {
           "word": "Earth.",
-          "start": 9.01,
-          "end": 9.21
+          "start": 10.043,
+          "end": 10.223
         }
       ]
     },
     {
       "id": "jupvol",
       "text": "More than a thousand Earths would fit inside it.",
-      "file": "public/voice/earth-size/jupvol.7fa0a2d20c44.wav",
-      "start": 9.7,
-      "duration": 2.11,
+      "file": "public/voice/earth-size/jupvol.b0b02ebe7d48.wav",
+      "start": 10.835,
+      "duration": 2.477,
       "speed": 1,
       "words": [
         {
           "word": "More",
-          "start": 9.7,
-          "end": 9.84
+          "start": 10.835,
+          "end": 10.995
         },
         {
           "word": "than",
-          "start": 9.84,
-          "end": 9.98
+          "start": 10.995,
+          "end": 11.155
         },
         {
           "word": "a",
-          "start": 9.98,
-          "end": 10.06
+          "start": 11.155,
+          "end": 11.255
         },
         {
           "word": "thousand",
-          "start": 10.06,
-          "end": 10.36
+          "start": 11.255,
+          "end": 11.635
         },
         {
           "word": "Earths",
-          "start": 10.36,
-          "end": 10.86
+          "start": 11.635,
+          "end": 12.215
         },
         {
           "word": "would",
-          "start": 10.86,
-          "end": 11
+          "start": 12.215,
+          "end": 12.335
         },
         {
           "word": "fit",
-          "start": 11,
-          "end": 11.14
+          "start": 12.335,
+          "end": 12.535
         },
         {
           "word": "inside",
-          "start": 11.14,
-          "end": 11.42
+          "start": 12.535,
+          "end": 12.935
         },
         {
           "word": "it.",
-          "start": 11.42,
-          "end": 11.68
+          "start": 12.935,
+          "end": 13.155
         }
       ]
     },
     {
       "id": "sun",
       "text": "And the Sun is about ten times wider than Jupiter.",
-      "file": "public/voice/earth-size/sun.6b0c65378ab1.wav",
-      "start": 12.21,
-      "duration": 2.04,
+      "file": "public/voice/earth-size/sun.c956a33119bb.wav",
+      "start": 13.712,
+      "duration": 3.102,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 12.21,
-          "end": 12.31
+          "start": 13.712,
+          "end": 13.952
         },
         {
           "word": "the",
-          "start": 12.31,
-          "end": 12.39
+          "start": 13.952,
+          "end": 14.072
         },
         {
           "word": "Sun",
-          "start": 12.39,
-          "end": 12.57
+          "start": 14.072,
+          "end": 14.292
         },
         {
           "word": "is",
-          "start": 12.57,
-          "end": 12.79
+          "start": 14.292,
+          "end": 14.552
         },
         {
           "word": "about",
-          "start": 12.79,
-          "end": 12.93
+          "start": 14.552,
+          "end": 14.772
         },
         {
           "word": "ten",
-          "start": 12.93,
-          "end": 13.15
+          "start": 14.772,
+          "end": 15.172
         },
         {
           "word": "times",
-          "start": 13.15,
-          "end": 13.35
+          "start": 15.172,
+          "end": 15.512
         },
         {
           "word": "wider",
-          "start": 13.35,
-          "end": 13.57
+          "start": 15.512,
+          "end": 15.832
         },
         {
           "word": "than",
-          "start": 13.57,
-          "end": 13.81
+          "start": 15.832,
+          "end": 16.212
         },
         {
           "word": "Jupiter.",
-          "start": 13.81,
-          "end": 13.95
+          "start": 16.212,
+          "end": 16.412
         }
       ]
     },
     {
       "id": "sunvol",
       "text": "You could fit more than a million Earths inside the Sun.",
-      "file": "public/voice/earth-size/sunvol.40f0b5db0649.wav",
-      "start": 14.65,
-      "duration": 2.67,
+      "file": "public/voice/earth-size/sunvol.677b884374d0.wav",
+      "start": 17.214,
+      "duration": 3.318,
       "speed": 1,
       "words": [
         {
           "word": "You",
-          "start": 14.65,
-          "end": 14.75
+          "start": 17.214,
+          "end": 17.334
         },
         {
           "word": "could",
-          "start": 14.75,
-          "end": 14.85
+          "start": 17.334,
+          "end": 17.534
         },
         {
           "word": "fit",
-          "start": 14.85,
-          "end": 15.01
+          "start": 17.534,
+          "end": 17.834
         },
         {
           "word": "more",
-          "start": 15.01,
-          "end": 15.27
+          "start": 17.834,
+          "end": 18.134
         },
         {
           "word": "than",
-          "start": 15.27,
-          "end": 15.43
+          "start": 18.134,
+          "end": 18.294
         },
         {
           "word": "a",
-          "start": 15.43,
-          "end": 15.53
+          "start": 18.294,
+          "end": 18.414
         },
         {
           "word": "million",
-          "start": 15.53,
-          "end": 15.79
+          "start": 18.414,
+          "end": 18.734
         },
         {
           "word": "Earths",
-          "start": 15.79,
-          "end": 16.25
+          "start": 18.734,
+          "end": 19.354
         },
         {
           "word": "inside",
-          "start": 16.25,
-          "end": 16.43
+          "start": 19.354,
+          "end": 19.734
         },
         {
           "word": "the",
-          "start": 16.43,
-          "end": 16.83
+          "start": 19.734,
+          "end": 19.974
         },
         {
           "word": "Sun.",
-          "start": 16.83,
-          "end": 17.07
+          "start": 19.974,
+          "end": 20.234
         }
       ]
     },
     {
       "id": "lap",
       "text": "Light circles the Earth in a blink, but needs fourteen seconds to lap the Sun.",
-      "file": "public/voice/earth-size/lap.e8563147ed05.wav",
-      "start": 17.72,
-      "duration": 3.69,
+      "file": "public/voice/earth-size/lap.ef28183fa38d.wav",
+      "start": 20.932,
+      "duration": 4.818,
       "speed": 1,
       "words": [
         {
           "word": "Light",
-          "start": 17.72,
-          "end": 17.96
+          "start": 20.932,
+          "end": 21.152
         },
         {
           "word": "circles",
-          "start": 17.96,
-          "end": 18.2
+          "start": 21.152,
+          "end": 21.432
         },
         {
           "word": "the",
-          "start": 18.2,
-          "end": 18.54
+          "start": 21.432,
+          "end": 21.812
         },
         {
           "word": "Earth",
-          "start": 18.54,
-          "end": 18.72
+          "start": 21.812,
+          "end": 22.012
         },
         {
           "word": "in",
-          "start": 18.72,
-          "end": 18.9
+          "start": 22.012,
+          "end": 22.332
         },
         {
           "word": "a",
-          "start": 18.9,
-          "end": 18.98
+          "start": 22.332,
+          "end": 22.392
         },
         {
           "word": "blink,",
-          "start": 18.98,
-          "end": 19.14
+          "start": 22.392,
+          "end": 22.592
         },
         {
           "word": "but",
-          "start": 19.44,
-          "end": 19.54
+          "start": 22.592,
+          "end": 23.172
         },
         {
           "word": "needs",
-          "start": 19.54,
-          "end": 19.68
+          "start": 23.172,
+          "end": 23.352
         },
         {
           "word": "fourteen",
-          "start": 19.68,
-          "end": 20.02
+          "start": 23.352,
+          "end": 23.812
         },
         {
           "word": "seconds",
-          "start": 20.02,
-          "end": 20.46
+          "start": 23.812,
+          "end": 24.352
         },
         {
           "word": "to",
-          "start": 20.46,
-          "end": 20.72
+          "start": 24.352,
+          "end": 24.692
         },
         {
           "word": "lap",
-          "start": 20.72,
-          "end": 20.86
+          "start": 24.692,
+          "end": 24.872
         },
         {
           "word": "the",
-          "start": 20.86,
-          "end": 21.02
+          "start": 24.872,
+          "end": 25.132
         },
         {
           "word": "Sun.",
-          "start": 21.02,
-          "end": 21.24
+          "start": 25.132,
+          "end": 25.432
         }
       ]
     },
     {
       "id": "end-s",
       "text": "And our Sun is only one star among hundreds of billions.",
-      "file": "public/voice/earth-size/end-s.1f778c687f9b.wav",
-      "start": 21.81,
-      "duration": 3.24,
+      "file": "public/voice/earth-size/end-s.81e7d456a515.wav",
+      "start": 26.15,
+      "duration": 3.966,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 21.81,
-          "end": 22.03
+          "start": 26.15,
+          "end": 26.33
         },
         {
           "word": "our",
-          "start": 22.03,
-          "end": 22.21
+          "start": 26.33,
+          "end": 26.59
         },
         {
           "word": "Sun",
-          "start": 22.21,
-          "end": 22.47
+          "start": 26.59,
+          "end": 26.91
         },
         {
           "word": "is",
-          "start": 22.47,
-          "end": 22.69
+          "start": 26.91,
+          "end": 27.41
         },
         {
           "word": "only",
-          "start": 22.69,
-          "end": 22.93
+          "start": 27.41,
+          "end": 27.67
         },
         {
           "word": "one",
-          "start": 22.93,
-          "end": 23.15
+          "start": 27.67,
+          "end": 27.89
         },
         {
           "word": "star",
-          "start": 23.15,
-          "end": 23.47
+          "start": 27.89,
+          "end": 28.25
         },
         {
           "word": "among",
-          "start": 23.47,
-          "end": 23.81
+          "start": 28.25,
+          "end": 28.65
         },
         {
           "word": "hundreds",
-          "start": 23.81,
-          "end": 24.23
+          "start": 28.65,
+          "end": 29.09
         },
         {
           "word": "of",
-          "start": 24.23,
-          "end": 24.41
+          "start": 29.09,
+          "end": 29.29
         },
         {
           "word": "billions.",
-          "start": 24.41,
-          "end": 24.63
+          "start": 29.29,
+          "end": 29.61
         }
       ]
     }

@@ -52,6 +52,8 @@ export function cameraFx(layout: EpisodeLayout, t: number, u: number) {
     const dt = 1 / 120;
     zoom = clamp(((zoomEase(lt + dt, v) - zoomEase(lt - dt, v)) / (2 * dt)) * Z * 0.5);
   }
+  // a new fact about the same body: the sky streaks for a moment as the camera moves to its next framing
+  if (v.type === "body" && holdIndex(layout, b) > 0) zoom = 0.34 * Math.sin(Math.PI * progress(lt, 0, 0.5));
   if (v.type === "shrink") zoom = 0.5 * Math.sin(Math.PI * progress(lt, 0.1, (b.end - b.start) * 0.8));
   return { shake: [noise1(t * 37) * shake * u, noise1(t * 41 + 50) * shake * u] as [number, number], flash, zoom };
 }
@@ -82,10 +84,12 @@ function pairGeometry(v: Extract<Visual, { type: "pair" }>, cx: number, u: numbe
 }
 
 /** `a` at the bottom, `b` at the top, the true distance between them, everything on one scale. */
-function gapGeometry(v: Extract<Visual, { type: "gap" }>, cx: number, cy: number, u: number) {
+function gapGeometry(v: Extract<Visual, { type: "gap" }>, cx: number, cy: number, u: number, openT = 9) {
   const top = cy - 420 * u, bottom = cy + 450 * u; // clear of the captions above and the app's own text below
-  const s = (bottom - top) / (v.distance + v.a.radius + v.b.radius);
-  const ay = bottom - v.a.radius * s, by = top + v.b.radius * s;
+  // a video's first beat starts close on the near body and pulls back until the whole distance is in frame
+  const k = v.fill ? lerp(2.5, 1, 1 - Math.pow(1 - progress(openT, 0, 1.7), 3)) : 1;
+  const s = ((bottom - top) / (v.distance + v.a.radius + v.b.radius)) * k;
+  const ay = bottom - v.a.radius * s, by = ay - v.distance * s;
   let cursor = ay - v.a.radius * s;
   const fill = (v.fill ?? []).map((body) => { const y = cursor - body.radius * s; cursor -= 2 * body.radius * s; return { body, y }; });
   return { s, x: cx + 40 * u, ay, by, aTop: ay - v.a.radius * s, bBottom: by + v.b.radius * s, fill, stagger: (dur: number) => Math.min(0.3, Math.max(0.12, (dur - 1.6) / Math.max(1, fill.length))) };
@@ -107,14 +111,28 @@ function holdIndex(layout: EpisodeLayout, b: LaidOutBeat) {
 function holdPose(k: number) {
   const poses = [
     { s: 1, x: 0, y: 0, grow: 0.07, slide: 0 },          // centred, slow push-in
-    { s: 1.16, x: 0.11, y: 0.035, grow: 0.04, slide: -0.02 }, // close pass, drifting across
-    { s: 0.74, x: -0.05, y: -0.01, grow: 0.1, slide: 0.03 },  // pulled back, more sky
-    { s: 0.92, x: 0.08, y: 0.02, grow: 0.06, slide: -0.05 },  // off-centre, drifting back
+    { s: 1.34, x: 0.17, y: 0.05, grow: 0.05, slide: -0.03 }, // close pass on the right, drifting across
+    { s: 0.66, x: -0.07, y: -0.01, grow: 0.12, slide: 0.04 }, // pulled well back, more sky
+    { s: 1.46, x: -0.13, y: -0.07, grow: 0.04, slide: 0.03 }, // tight, high on the left
+    { s: 0.86, x: 0.09, y: 0.03, grow: 0.08, slide: -0.06 },  // off-centre, drifting back
+    { s: 1.18, x: 0, y: 0.1, grow: 0.06, slide: 0 },          // low and close
   ];
   return poses[k % poses.length];
 }
 
+/** Last moments of a video that ends on empty sky: the opening picture rushes back in, so a replay starts seamlessly. */
+const loopIn = (layout: EpisodeLayout, t: number) => {
+  const first = layout.beats[0].beat.visual, last = layout.beats[layout.beats.length - 1].beat.visual;
+  const ok = first.type === "compare" && !!first.open && (last.type === "shrink" || last.type === "stars");
+  return ok ? Math.pow(progress(t, layout.duration - 0.4, layout.duration), 2) : 0;
+};
+
 export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: number, u: number): PlacedBody[] {
+  const loop = loopIn(layout, t);
+  if (loop > 0) {
+    const [lx, ly] = centre(w, h), k = lerp(0.04, 1, loop);
+    return placeBodies(layout, 0, w, h, u).map((p) => ({ ...p, x: lx + (p.x - lx) * k, y: ly + (p.y - ly) * k, r: p.r * k }));
+  }
   const b = active(layout, t);
   const v = b.beat.visual, lt = t - b.start, dur = b.end - b.start;
   const [cx0, cy0] = centre(w, h);
@@ -157,7 +175,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
       ].filter((b) => b.r > 0);
     }
     case "gap": {
-      const g = gapGeometry(v, cx, cy, u);
+      const g = gapGeometry(v, cx, cy, u, b.start === 0 ? lt : 9);
       const out: PlacedBody[] = [
         { body: v.a, x: g.x, y: g.ay, r: v.a.radius * g.s },
         { body: v.b, x: g.x, y: g.by, r: v.b.radius * g.s },
@@ -238,6 +256,10 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
       if (v.open) {
         // the first words point at this dot, so make it impossible to miss: target rings pulsing around it
         const hold = 1 - progress(lt, dur - 0.9, dur - 0.3);
+        // a dark pad behind the dot and its tag, so they read even against a bright star's glow
+        const px = cx + 86 * u, pad = ctx.createRadialGradient(px, g.fromScreenY, 0, px, g.fromScreenY, 230 * u);
+        pad.addColorStop(0, `rgba(3,4,11,${0.62 * a})`); pad.addColorStop(0.55, `rgba(3,4,11,${0.4 * a})`); pad.addColorStop(1, "rgba(3,4,11,0)");
+        ctx.fillStyle = pad; ctx.fillRect(px - 230 * u, g.fromScreenY - 230 * u, 460 * u, 460 * u);
         ctx.globalCompositeOperation = "lighter";
         for (let k = 0; k < 2; k++) {
           const ph = (((lt * 1.25 + k * 0.5) % 1) + 1) % 1;
@@ -315,7 +337,7 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   }
 
   if (v.type === "gap") {
-    const g = gapGeometry(v, cx, cy, u);
+    const g = gapGeometry(v, cx, cy, u, b.start === 0 ? lt : 9);
     const a = b.start === 0 ? 1 : progress(lt, 0.05, 0.4);
     // the gap itself: a dashed line from surface to surface
     ctx.save();
@@ -323,13 +345,17 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
     ctx.setLineDash([10 * u, 9 * u]);
     ctx.beginPath(); ctx.moveTo(g.x, g.aTop); ctx.lineTo(g.x, lerp(g.aTop, g.bBottom, ease.outCubic(progress(lt, 0.1, 0.9)))); ctx.stroke();
     ctx.restore();
-    const tag = (b: Body, y: number) => {
+    // while a first beat pulls back, the far body's tag waits until it has dropped clear of the spoken words
+    const farA = b.start === 0 && v.fill ? progress(lt, 1.25, 1.6) : 1;
+    const tag = (b: Body, y: number, k = 1) => {
+      const a0 = a;
+      { const a = a0 * k;
       ctx.globalAlpha = a; ctx.strokeStyle = "rgba(255,255,255,0.85)"; ctx.lineWidth = 2.5 * u;
       const x1 = g.x - Math.max(b.radius * g.s, 4 * u) - 14 * u;
       ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(x1 - 34 * u, y); ctx.stroke(); ctx.globalAlpha = 1;
-      label(ctx, b.name.toUpperCase(), x1 - 46 * u, y, 38 * u, a, "Inter", "#fff", "right");
+      label(ctx, b.name.toUpperCase(), x1 - 46 * u, y, 38 * u, a, "Inter", "#fff", "right"); }
     };
-    tag(v.b, g.by); tag(v.a, g.ay);
+    tag(v.b, g.by, farA); tag(v.a, g.ay);
     const mid = (g.aTop + g.bBottom) / 2, tx = g.x + 44 * u;
     if (v.ruler) {
       const n = Math.floor((g.ay - g.by) / (v.ruler.step * g.s) + 1e-6); // counted centre to centre
@@ -360,7 +386,7 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
     }
     // with planets stacked in the gap the middle is taken, so the note sits under the far body's tag
     if (v.note && !v.ruler && !v.trip) {
-      if (g.fill.length) label(ctx, v.note.toUpperCase(), g.x - 64 * u, g.by + 46 * u, 34 * u, a, "Anton", "#ffd23f", "right");
+      if (g.fill.length) label(ctx, v.note.toUpperCase(), g.x - 64 * u, g.by + 46 * u, 34 * u, a * farA, "Anton", "#ffd23f", "right");
       else label(ctx, v.note.toUpperCase(), tx, mid, 58 * u, a, "Anton", "#ffd23f", "left");
     }
   }
