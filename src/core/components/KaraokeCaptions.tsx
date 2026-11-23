@@ -17,6 +17,8 @@ export interface KaraokeProps {
   emphasis?: string[];
   emphasisColor?: string;
   maxWords?: number;
+  /** Keep every chunk on a single line, shrinking long ones to fit, so captions never grow down into the scene. */
+  oneLine?: boolean;
 }
 
 const clean = (w: string) => w.toLowerCase().replace(/[^a-z0-9']/g, "");
@@ -27,7 +29,7 @@ const clean = (w: string) => w.toLowerCase().replace(/[^a-z0-9']/g, "");
  * on frame 0 so the opening frame (cover / first impression) carries the hook.
  */
 export const KaraokeCaptions: React.FC<KaraokeProps> = ({
-  words, y = 0.27, size = 100, color = "#ffffff", active = "#ffd23f", emphasis = [], emphasisColor = "#7fd4ff", maxWords = 4,
+  words, y = 0.27, size = 100, color = "#ffffff", active = "#ffd23f", emphasis = [], emphasisColor = "#7fd4ff", maxWords = 4, oneLine = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -44,14 +46,17 @@ export const KaraokeCaptions: React.FC<KaraokeProps> = ({
   });
   if (idx < 0) return null;
   const chunk = chunks[idx];
+  // estimated line width in units of the font size (condensed display face, plus the gaps between words)
+  const est = chunk.reduce((n, w) => n + w.word.replace(/[.,!?;:…]+$/, "").length * 0.52 + 0.4, 0);
+  const fit = oneLine ? Math.min(1, (0.9 * width) / (est * size * u)) : 1;
   const enter = idx === 0 ? 1 : ease.outBack(clamp((t - (chunk[0].start - 0.04)) / 0.14));
 
   return (
     <AbsoluteFill style={{ alignItems: "center", pointerEvents: "none" }}>
       <div style={{
-        position: "absolute", top: `${y * 100}%`, width: "90%", textAlign: "center",
+        position: "absolute", top: `${y * 100}%`, width: "90%", textAlign: "center", ...(oneLine ? { display: "flex", justifyContent: "center", whiteSpace: "nowrap" as const } : {}),
         transform: `translateY(-50%) scale(${0.82 + 0.18 * enter})`, opacity: clamp(enter * 2),
-        fontFamily: FONT_DISPLAY, fontSize: size * u, lineHeight: 1.04, textTransform: "uppercase", letterSpacing: 1.5 * u,
+        fontFamily: FONT_DISPLAY, fontSize: size * u * fit, lineHeight: 1.04, textTransform: "uppercase", letterSpacing: 1.5 * u,
       }}>
         {chunk.map((w, i) => {
           const speaking = t >= w.start - 0.02 && t < w.end + 0.06;
@@ -60,7 +65,7 @@ export const KaraokeCaptions: React.FC<KaraokeProps> = ({
           const fill = speaking ? active : emph.has(clean(w.word)) ? emphasisColor : color;
           return (
             <span key={i} style={{
-              display: "inline-block", margin: `0 ${0.2 * size * u}px`, color: fill, transformOrigin: "50% 70%",
+              display: "inline-block", margin: `0 ${0.2 * size * u * fit}px`, color: fill, transformOrigin: "50% 70%",
               opacity: spoken || idx === 0 ? 1 : 0.88,
               transform: `scale(${1 + 0.08 * pop}) translateY(${-5 * u * pop}px)`,
               WebkitTextStroke: `${7 * u}px #000`, paintOrder: "stroke fill",

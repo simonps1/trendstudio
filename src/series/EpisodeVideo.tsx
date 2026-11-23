@@ -3,9 +3,9 @@ import { AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig } from
 import { progress } from "../core/anim";
 import { CanvasLayer, type DrawContext } from "../core/components/CanvasLayer";
 import { FilmFinish } from "../core/components/FilmFinish";
+import { writtenCaptions } from "./captions";
 import { KaraokeCaptions } from "../core/components/KaraokeCaptions";
 import { ensureFonts, FONT_BODY, FONT_DISPLAY } from "../core/fonts";
-import { EPISODES } from "../episodes";
 import type { NarrationTrack } from "../voice/types";
 import { layoutEpisode } from "./layout";
 import { BodiesGL } from "./BodiesGL";
@@ -36,7 +36,6 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean 
   const t = frame / fps, u = Math.min(width, height) / 1080;
   const a = progress(t, duration - 2.8, duration - 2.4) * (1 - progress(t, duration - 0.35, duration - 0.1));
   if (a <= 0) return null;
-  const next = EPISODES.some((e) => e.spec.series === spec.series && e.spec.episode === spec.episode + 1);
   return (
     <div style={{ position: "absolute", top: height * (high ? 0.268 : 0.36), left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 * u, opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
       {spec.ask ? (
@@ -48,7 +47,7 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean 
         fontFamily: FONT_DISPLAY, fontSize: 46 * u, letterSpacing: 2 * u, color: "#1c1200", background: "#ffd23f",
         padding: `${10 * u}px ${30 * u}px`, borderRadius: 10 * u, boxShadow: `0 ${10 * u}px ${40 * u}px rgba(255,180,50,0.55)`,
       }}>
-        {next ? `FOLLOW FOR EPISODE ${spec.episode + 1}` : "FOLLOW FOR MORE"}
+        FOLLOW FOR MORE
       </div>
     </div>
   );
@@ -57,6 +56,7 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean 
 /** Generic player for any series episode. */
 export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track: NarrationTrack | null; videoId: string }> = ({ spec, variant, track, videoId }) => {
   const layout = useMemo(() => layoutEpisode(spec, variant, track), [spec, variant, track]);
+  const captionWords = useMemo(() => writtenCaptions(layout.words), [layout]);
   const background = useCallback((d: DrawContext) => drawBackground(d, layout), [layout]);
   const overlay = useCallback((d: DrawContext) => drawOverlay(d, layout), [layout]);
   const place = useCallback((t: number, w: number, h: number, u: number) => placeBodies(layout, t, w, h, u), [layout]);
@@ -67,7 +67,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
       <CanvasLayer draw={overlay} />
       <SeriesTag spec={spec} duration={layout.duration} />
       <FollowTag spec={spec} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
-      <KaraokeCaptions words={layout.words} emphasis={spec.emphasis ?? []} y={0.215} />
+      <KaraokeCaptions words={captionWords} emphasis={spec.emphasis ?? []} y={0.215} oneLine />
       <FilmFinish />
       <Audio src={staticFile(`audio/${videoId}.wav`)} />
     </AbsoluteFill>
