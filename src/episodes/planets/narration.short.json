@@ -1,15 +1,15 @@
 {
-  "voice": "chatterbox",
+  "voice": "chatterbox:calm",
   "model": "resemble-ai/chatterbox",
   "alignment": "whisper",
   "lines": [
     {
       "id": "hook",
       "text": "That dot is the smallest planet in our solar system. This is the biggest.",
-      "file": "public/voice/planets/hook.214af5fa3606.wav",
+      "file": "public/voice/planets/hook.2e3545506034.wav",
       "start": 0.25,
-      "duration": 3.9,
-      "speed": 1,
+      "duration": 4.616,
+      "speed": 1.12,
       "words": [
         {
           "word": "That",
@@ -19,597 +19,597 @@
         {
           "word": "dot",
           "start": 0.45,
-          "end": 0.67
+          "end": 0.65
         },
         {
           "word": "is",
-          "start": 0.67,
+          "start": 0.65,
           "end": 0.99
         },
         {
           "word": "the",
           "start": 0.99,
-          "end": 1.11
+          "end": 1.15
         },
         {
           "word": "smallest",
-          "start": 1.11,
-          "end": 1.27
+          "start": 1.15,
+          "end": 1.49
         },
         {
           "word": "planet",
-          "start": 1.27,
-          "end": 1.69
+          "start": 1.49,
+          "end": 1.87
         },
         {
           "word": "in",
-          "start": 1.69,
-          "end": 1.99
+          "start": 1.87,
+          "end": 2.17
         },
         {
           "word": "our",
-          "start": 1.99,
-          "end": 2.09
+          "start": 2.17,
+          "end": 2.29
         },
         {
           "word": "solar",
-          "start": 2.09,
-          "end": 2.27
+          "start": 2.29,
+          "end": 2.51
         },
         {
           "word": "system.",
-          "start": 2.27,
-          "end": 2.71
+          "start": 2.51,
+          "end": 2.97
         },
         {
           "word": "This",
-          "start": 3.11,
-          "end": 3.29
+          "start": 3.41,
+          "end": 3.67
         },
         {
           "word": "is",
-          "start": 3.29,
-          "end": 3.53
+          "start": 3.67,
+          "end": 4.01
         },
         {
           "word": "the",
-          "start": 3.53,
-          "end": 3.65
+          "start": 4.01,
+          "end": 4.29
         },
         {
           "word": "biggest.",
-          "start": 3.65,
-          "end": 3.85
+          "start": 4.29,
+          "end": 4.51
         }
       ]
     },
     {
       "id": "mercury",
       "text": "Mercury is the smallest, not much bigger than our Moon.",
-      "file": "public/voice/planets/mercury.baf56d394acc.wav",
-      "start": 4.55,
-      "duration": 2.65,
+      "file": "public/voice/planets/mercury.0e85991afe93.wav",
+      "start": 5.266,
+      "duration": 3.375,
       "speed": 1,
       "words": [
         {
           "word": "Mercury",
-          "start": 4.55,
-          "end": 4.77
+          "start": 5.266,
+          "end": 5.566
         },
         {
           "word": "is",
-          "start": 4.77,
-          "end": 5.07
+          "start": 5.566,
+          "end": 6.006
         },
         {
           "word": "the",
-          "start": 5.07,
-          "end": 5.17
+          "start": 6.006,
+          "end": 6.146
         },
         {
           "word": "smallest,",
-          "start": 5.17,
-          "end": 5.43
+          "start": 6.146,
+          "end": 6.466
         },
         {
           "word": "not",
-          "start": 5.91,
-          "end": 6.03
+          "start": 7.066,
+          "end": 7.186
         },
         {
           "word": "much",
-          "start": 6.03,
-          "end": 6.19
+          "start": 7.186,
+          "end": 7.386
         },
         {
           "word": "bigger",
-          "start": 6.19,
-          "end": 6.43
+          "start": 7.386,
+          "end": 7.666
         },
         {
           "word": "than",
-          "start": 6.43,
-          "end": 6.65
+          "start": 7.666,
+          "end": 7.946
         },
         {
           "word": "our",
-          "start": 6.65,
-          "end": 6.73
+          "start": 7.946,
+          "end": 8.066
         },
         {
           "word": "Moon.",
-          "start": 6.73,
-          "end": 7.01
+          "start": 8.066,
+          "end": 8.326
         }
       ]
     },
     {
       "id": "mars",
       "text": "Mars comes next, about half as wide as Earth.",
-      "file": "public/voice/planets/mars.e9d15c5956ed.wav",
-      "start": 7.6,
-      "duration": 2.18,
+      "file": "public/voice/planets/mars.d14bfebc0a2c.wav",
+      "start": 9.041,
+      "duration": 2.818,
       "speed": 1,
       "words": [
         {
           "word": "Mars",
-          "start": 7.6,
-          "end": 7.78
+          "start": 9.041,
+          "end": 9.281
         },
         {
           "word": "comes",
-          "start": 7.78,
-          "end": 8
+          "start": 9.281,
+          "end": 9.541
         },
         {
           "word": "next,",
-          "start": 8,
-          "end": 8.32
+          "start": 9.541,
+          "end": 9.901
         },
         {
           "word": "about",
-          "start": 8.62,
-          "end": 8.76
+          "start": 10.361,
+          "end": 10.521
         },
         {
           "word": "half",
-          "start": 8.76,
-          "end": 9
+          "start": 10.521,
+          "end": 10.821
         },
         {
           "word": "as",
-          "start": 9,
-          "end": 9.2
+          "start": 10.821,
+          "end": 11.101
         },
         {
           "word": "wide",
-          "start": 9.2,
-          "end": 9.36
+          "start": 11.101,
+          "end": 11.281
         },
         {
           "word": "as",
-          "start": 9.36,
-          "end": 9.52
+          "start": 11.281,
+          "end": 11.521
         },
         {
           "word": "Earth.",
-          "start": 9.52,
-          "end": 9.7
+          "start": 11.521,
+          "end": 11.781
         }
       ]
     },
     {
       "id": "venus",
       "text": "Then Venus, which is almost exactly Earth's size.",
-      "file": "public/voice/planets/venus.9f02f013d7f7.wav",
-      "start": 10.18,
-      "duration": 2.95,
+      "file": "public/voice/planets/venus.6a8344d10128.wav",
+      "start": 12.26,
+      "duration": 3.591,
       "speed": 1,
       "words": [
         {
           "word": "Then",
-          "start": 10.18,
-          "end": 10.34
+          "start": 12.26,
+          "end": 12.44
         },
         {
           "word": "Venus,",
-          "start": 10.34,
-          "end": 10.54
+          "start": 12.44,
+          "end": 12.66
         },
         {
           "word": "which",
-          "start": 10.98,
-          "end": 11.12
+          "start": 13.22,
+          "end": 13.42
         },
         {
           "word": "is",
-          "start": 11.12,
-          "end": 11.24
+          "start": 13.42,
+          "end": 13.64
         },
         {
           "word": "almost",
-          "start": 11.24,
-          "end": 11.48
+          "start": 13.64,
+          "end": 14.2
         },
         {
           "word": "exactly",
-          "start": 11.48,
-          "end": 11.94
+          "start": 14.2,
+          "end": 14.68
         },
         {
           "word": "Earth's",
-          "start": 11.94,
-          "end": 12.52
+          "start": 14.68,
+          "end": 15.06
         },
         {
           "word": "size.",
-          "start": 12.52,
-          "end": 12.88
+          "start": 15.06,
+          "end": 15.46
         }
       ]
     },
     {
       "id": "twins",
       "text": "Side by side, you can hardly tell the difference.",
-      "file": "public/voice/planets/twins.a535933fb4e9.wav",
-      "start": 13.53,
-      "duration": 2.43,
+      "file": "public/voice/planets/twins.68451b2b9a60.wav",
+      "start": 16.251,
+      "duration": 2.966,
       "speed": 1,
       "words": [
         {
           "word": "Side",
-          "start": 13.53,
-          "end": 13.79
+          "start": 16.251,
+          "end": 16.511
         },
         {
           "word": "by",
-          "start": 13.79,
-          "end": 13.97
+          "start": 16.511,
+          "end": 16.711
         },
         {
           "word": "side,",
-          "start": 13.97,
-          "end": 14.35
+          "start": 16.711,
+          "end": 17.151
         },
         {
           "word": "you",
-          "start": 14.35,
-          "end": 14.57
+          "start": 17.431,
+          "end": 17.571
         },
         {
           "word": "can",
-          "start": 14.57,
-          "end": 14.69
+          "start": 17.571,
+          "end": 17.691
         },
         {
           "word": "hardly",
-          "start": 14.69,
-          "end": 14.93
+          "start": 17.691,
+          "end": 17.951
         },
         {
           "word": "tell",
-          "start": 14.93,
-          "end": 15.25
+          "start": 17.951,
+          "end": 18.331
         },
         {
           "word": "the",
-          "start": 15.25,
-          "end": 15.37
+          "start": 18.331,
+          "end": 18.471
         },
         {
           "word": "difference.",
-          "start": 15.37,
-          "end": 15.63
+          "start": 18.471,
+          "end": 18.811
         }
       ]
     },
     {
       "id": "neptune",
       "text": "Neptune is nearly four times wider than Earth.",
-      "file": "public/voice/planets/neptune.768b66631645.wav",
-      "start": 16.36,
-      "duration": 2.19,
+      "file": "public/voice/planets/neptune.5b4e556ae901.wav",
+      "start": 19.616,
+      "duration": 2.557,
       "speed": 1,
       "words": [
         {
           "word": "Neptune",
-          "start": 16.68,
-          "end": 16.73
+          "start": 19.996,
+          "end": 20.046
         },
         {
           "word": "is",
-          "start": 16.68,
-          "end": 16.92
+          "start": 19.996,
+          "end": 20.276
         },
         {
           "word": "nearly",
-          "start": 16.92,
-          "end": 17.08
+          "start": 20.276,
+          "end": 20.456
         },
         {
           "word": "four",
-          "start": 17.08,
-          "end": 17.38
+          "start": 20.456,
+          "end": 20.796
         },
         {
           "word": "times",
-          "start": 17.38,
-          "end": 17.66
+          "start": 20.796,
+          "end": 21.076
         },
         {
           "word": "wider",
-          "start": 17.66,
-          "end": 17.92
+          "start": 21.076,
+          "end": 21.376
         },
         {
           "word": "than",
-          "start": 17.92,
-          "end": 18.16
+          "start": 21.376,
+          "end": 21.656
         },
         {
           "word": "Earth.",
-          "start": 18.16,
-          "end": 18.38
+          "start": 21.656,
+          "end": 21.856
         }
       ]
     },
     {
       "id": "uranus",
       "text": "Uranus beats it, but only just.",
-      "file": "public/voice/planets/uranus.55e62b671bf8.wav",
-      "start": 18.95,
-      "duration": 1.64,
+      "file": "public/voice/planets/uranus.347ebbccf27c.wav",
+      "start": 22.573,
+      "duration": 1.886,
       "speed": 1,
       "words": [
         {
           "word": "Uranus",
-          "start": 18.95,
-          "end": 19.31
+          "start": 22.573,
+          "end": 22.973
         },
         {
           "word": "beats",
-          "start": 19.31,
-          "end": 19.45
+          "start": 22.973,
+          "end": 23.113
         },
         {
           "word": "it,",
-          "start": 19.45,
-          "end": 19.69
+          "start": 23.113,
+          "end": 23.393
         },
         {
           "word": "but",
-          "start": 19.79,
-          "end": 19.89
+          "start": 23.493,
+          "end": 23.613
         },
         {
           "word": "only",
-          "start": 19.89,
-          "end": 19.99
+          "start": 23.613,
+          "end": 23.813
         },
         {
           "word": "just.",
-          "start": 19.99,
-          "end": 20.29
+          "start": 23.813,
+          "end": 24.113
         }
       ]
     },
     {
       "id": "saturn",
       "text": "Saturn is more than twice as wide, even without its rings.",
-      "file": "public/voice/planets/saturn.c151616a8c79.wav",
-      "start": 20.99,
-      "duration": 2.63,
+      "file": "public/voice/planets/saturn.c9a12d0ceec9.wav",
+      "start": 24.86,
+      "duration": 3.455,
       "speed": 1,
       "words": [
         {
           "word": "Saturn",
-          "start": 20.99,
-          "end": 21.23
+          "start": 24.86,
+          "end": 25.2
         },
         {
           "word": "is",
-          "start": 21.23,
-          "end": 21.41
+          "start": 25.2,
+          "end": 25.46
         },
         {
           "word": "more",
-          "start": 21.41,
-          "end": 21.57
+          "start": 25.46,
+          "end": 25.7
         },
         {
           "word": "than",
-          "start": 21.57,
-          "end": 21.71
+          "start": 25.7,
+          "end": 25.88
         },
         {
           "word": "twice",
-          "start": 21.71,
-          "end": 21.91
+          "start": 25.88,
+          "end": 26.1
         },
         {
           "word": "as",
-          "start": 21.91,
-          "end": 22.13
+          "start": 26.1,
+          "end": 26.36
         },
         {
           "word": "wide,",
-          "start": 22.13,
-          "end": 22.37
+          "start": 26.36,
+          "end": 26.64
         },
         {
           "word": "even",
-          "start": 22.53,
-          "end": 22.65
+          "start": 26.94,
+          "end": 27.08
         },
         {
           "word": "without",
-          "start": 22.65,
-          "end": 22.87
+          "start": 27.08,
+          "end": 27.38
         },
         {
           "word": "its",
-          "start": 22.87,
-          "end": 23.01
+          "start": 27.38,
+          "end": 27.6
         },
         {
           "word": "rings.",
-          "start": 23.01,
-          "end": 23.25
+          "start": 27.6,
+          "end": 27.86
         }
       ]
     },
     {
       "id": "jupiter",
       "text": "And Jupiter is the biggest of them all.",
-      "file": "public/voice/planets/jupiter.5c329502f30a.wav",
-      "start": 24.02,
-      "duration": 1.81,
+      "file": "public/voice/planets/jupiter.e048c671be3e.wav",
+      "start": 28.714,
+      "duration": 2.068,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 24.06,
-          "end": 24.11
+          "start": 28.754,
+          "end": 28.804
         },
         {
           "word": "Jupiter",
-          "start": 24.02,
-          "end": 24.4
+          "start": 28.714,
+          "end": 29.074
         },
         {
           "word": "is",
-          "start": 24.4,
-          "end": 24.72
+          "start": 29.074,
+          "end": 29.534
         },
         {
           "word": "the",
-          "start": 24.72,
-          "end": 24.82
+          "start": 29.534,
+          "end": 29.634
         },
         {
           "word": "biggest",
-          "start": 24.82,
-          "end": 25.06
+          "start": 29.634,
+          "end": 29.874
         },
         {
           "word": "of",
-          "start": 25.06,
-          "end": 25.28
+          "start": 29.874,
+          "end": 30.094
         },
         {
           "word": "them",
-          "start": 25.28,
-          "end": 25.42
+          "start": 30.094,
+          "end": 30.294
         },
         {
           "word": "all.",
-          "start": 25.42,
-          "end": 25.64
+          "start": 30.294,
+          "end": 30.534
         }
       ]
     },
     {
       "id": "heavy",
       "text": "It outweighs every other planet combined, twice over.",
-      "file": "public/voice/planets/heavy.f433674ad3cd.wav",
-      "start": 26.23,
-      "duration": 2.53,
+      "file": "public/voice/planets/heavy.df7b500d951c.wav",
+      "start": 31.182,
+      "duration": 3.602,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 26.23,
-          "end": 26.33
+          "start": 31.182,
+          "end": 31.282
         },
         {
           "word": "outweighs",
-          "start": 26.33,
-          "end": 26.69
+          "start": 31.282,
+          "end": 31.902
         },
         {
           "word": "every",
-          "start": 26.69,
-          "end": 26.93
+          "start": 31.902,
+          "end": 32.162
         },
         {
           "word": "other",
-          "start": 26.93,
-          "end": 27.05
+          "start": 32.162,
+          "end": 32.482
         },
         {
           "word": "planet",
-          "start": 27.05,
-          "end": 27.29
+          "start": 32.482,
+          "end": 32.782
         },
         {
           "word": "combined,",
-          "start": 27.29,
-          "end": 27.71
+          "start": 32.782,
+          "end": 33.242
         },
         {
           "word": "twice",
-          "start": 28.11,
-          "end": 28.19
+          "start": 33.802,
+          "end": 34.022
         },
         {
           "word": "over.",
-          "start": 28.19,
-          "end": 28.55
+          "start": 34.022,
+          "end": 34.522
         }
       ]
     },
     {
       "id": "end",
       "text": "And next to the Sun, even Jupiter is tiny.",
-      "file": "public/voice/planets/end.ec66b45432aa.wav",
-      "start": 29.16,
-      "duration": 2.44,
+      "file": "public/voice/planets/end.6cbc99696fcc.wav",
+      "start": 35.185,
+      "duration": 3.102,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 29.16,
-          "end": 29.28
+          "start": 35.185,
+          "end": 35.525
         },
         {
           "word": "next",
-          "start": 29.28,
-          "end": 29.42
+          "start": 35.525,
+          "end": 35.785
         },
         {
           "word": "to",
-          "start": 29.42,
-          "end": 29.64
+          "start": 35.785,
+          "end": 36.025
         },
         {
           "word": "the",
-          "start": 29.64,
-          "end": 29.72
+          "start": 36.025,
+          "end": 36.125
         },
         {
           "word": "Sun,",
-          "start": 29.72,
-          "end": 29.96
+          "start": 36.125,
+          "end": 36.385
         },
         {
           "word": "even",
-          "start": 30.26,
-          "end": 30.42
+          "start": 36.885,
+          "end": 37.065
         },
         {
           "word": "Jupiter",
-          "start": 30.42,
-          "end": 30.68
+          "start": 37.065,
+          "end": 37.325
         },
         {
           "word": "is",
-          "start": 30.68,
-          "end": 31.04
+          "start": 37.325,
+          "end": 37.705
         },
         {
           "word": "tiny.",
-          "start": 31.04,
-          "end": 31.28
+          "start": 37.705,
+          "end": 37.965
         }
       ]
     }
