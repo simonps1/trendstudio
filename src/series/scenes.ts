@@ -45,8 +45,9 @@ export function cameraFx(layout: EpisodeLayout, t: number, u: number) {
   if (v.type === "compare") {
     const Z = zoomTime(v), since = lt - Z;
     if (since >= 0) {
-      shake = (v.big ? 26 : 9) * Math.exp(-since * 6);
-      flash = (v.big ? 0.75 : 0.28) * Math.exp(-since * (v.big ? 5 : 9));
+      // a cold open lands softly: a white flash in a video's first second reads as a glitch and hides the picture
+      shake = (v.open ? 7 : v.big ? 26 : 9) * Math.exp(-since * 6);
+      flash = v.open ? 0 : (v.big ? 0.75 : 0.28) * Math.exp(-since * (v.big ? 5 : 9));
     }
     const dt = 1 / 120;
     zoom = clamp(((zoomEase(lt + dt, v) - zoomEase(lt - dt, v)) / (2 * dt)) * Z * 0.5);
@@ -163,7 +164,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
       ];
       g.fill.forEach((f, i) => {
         const f0 = b.start === 0 ? 0.04 : 0.5, st = b.start === 0 ? 0.09 : g.stagger(dur); // a video's first beat fills at once
-        const pop = b.start === 0 ? 1 + 0.06 * Math.exp(-lt * 6) * Math.sin(lt * 18 + i) : ease.outBack(progress(lt, f0 + i * st, f0 + 0.3 + i * st)); // first beat: all there from frame one
+        const pop = b.start === 0 ? 1 + 0.16 * Math.exp(-Math.pow((lt - 0.1 - i * 0.15) / 0.11, 2)) + 0.1 * Math.exp(-Math.pow((lt - 2.0 - i * 0.1) / 0.1, 2)) : ease.outBack(progress(lt, f0 + i * st, f0 + 0.3 + i * st)); // first beat: all there from frame one
         if (pop > 0) out.push({ body: f.body, x: g.x, y: f.y, r: f.body.radius * g.s * pop });
       });
       return out;
@@ -228,22 +229,34 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
     const Z = zoomTime(v);
     const g = compareGeometry(v, lt, cy, fit);
     if (!v.open) nameplate(d, v.from, cx, cy, 1 - progress(lt, 0, 0.18));
-    nameplate(d, v.to, cx, cy, v.open ? 1 : progress(lt, Z - 0.03, Z + 0.08), v.open ? progress(lt, 0, 0.3) : progress(lt, Z - 0.03, Z + 0.3));
+    // on a cold open the big body's name waits until it has pulled back clear of the words
+    nameplate(d, v.to, cx, cy, progress(lt, Z - (v.open ? 0.45 : 0.03), Z + (v.open ? -0.15 : 0.08)), progress(lt, Z - (v.open ? 0.45 : 0.03), Z + 0.3));
     // the outgoing body keeps a tag so the eye can follow it
     const fromR = v.from.radius * g.s;
     if (fromR < fit * 0.55) {
-      const a = progress(g.e, 0.55, 0.9) * (1 - progress(lt, dur - 0.2, dur));
-      const x0 = cx + Math.max(fromR, 4 * u) + 14 * u;
-      ctx.globalAlpha = a; ctx.strokeStyle = "rgba(255,255,255,0.85)"; ctx.lineWidth = 2.5 * u;
+      const a = (v.open ? 1 : progress(g.e, 0.55, 0.9)) * (1 - progress(lt, dur - 0.2, dur));
+      if (v.open) {
+        // the first words point at this dot, so make it impossible to miss: target rings pulsing around it
+        const hold = 1 - progress(lt, dur - 0.9, dur - 0.3);
+        ctx.globalCompositeOperation = "lighter";
+        for (let k = 0; k < 2; k++) {
+          const ph = (((lt * 1.25 + k * 0.5) % 1) + 1) % 1;
+          ctx.strokeStyle = `rgba(255,210,63,${(1 - ph) * 0.95 * hold * a})`; ctx.lineWidth = (5 - 3 * ph) * u;
+          ctx.beginPath(); ctx.arc(cx, g.fromScreenY, Math.max(fromR, 4 * u) + (14 + 62 * ph) * u, 0, Math.PI * 2); ctx.stroke();
+        }
+        ctx.globalCompositeOperation = "source-over";
+      }
+      const x0 = cx + Math.max(fromR, 4 * u) + (v.open ? 26 : 14) * u, big = v.open ? 1.5 : 1;
+      ctx.globalAlpha = a; ctx.strokeStyle = v.open ? "rgba(255,210,63,0.95)" : "rgba(255,255,255,0.85)"; ctx.lineWidth = 2.5 * u * big;
       ctx.beginPath(); ctx.moveTo(x0, g.fromScreenY); ctx.lineTo(x0 + 34 * u, g.fromScreenY); ctx.stroke(); ctx.globalAlpha = 1;
-      label(ctx, v.from.name.toUpperCase(), x0 + 46 * u, g.fromScreenY, 34 * u, a, "Inter", "#fff", "left");
+      label(ctx, v.from.name.toUpperCase(), x0 + 46 * u, g.fromScreenY, 34 * u * big, a, v.open ? "Anton" : "Inter", v.open ? "#ffd23f" : "#fff", "left");
     }
     // shock ring on landing
     const since = lt - Z;
     if (since >= 0 && since < 0.7) {
       const k = since / 0.7;
       ctx.globalCompositeOperation = "lighter";
-      ctx.strokeStyle = `rgba(255,240,210,${(1 - k) * (v.big ? 0.8 : 0.4)})`;
+      ctx.strokeStyle = `rgba(255,240,210,${(1 - k) * (v.open ? 0.35 : v.big ? 0.8 : 0.4)})`;
       ctx.lineWidth = (v.big ? 16 : 7) * u * (1 - k);
       ctx.beginPath(); ctx.arc(cx, cy, fit * (1.02 + ease.outCubic(k) * (v.big ? 1.6 : 0.7)), 0, Math.PI * 2); ctx.stroke();
       ctx.globalCompositeOperation = "source-over";
