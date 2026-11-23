@@ -24,7 +24,8 @@ export const BLACK_HOLES: EpisodeSpec = {
   ask: "Which one scares you most?",
   emphasis: ["black", "hole", "marble", "sun", "kilometres", "galaxy", "solar", "system", "light", "days", "billion", "million", "never"],
   beats: [
-    { id: "hook", say: "That tiny dot is our Sun. This is one of the biggest black holes ever found.", visual: { type: "compare", from: sun, to: ton, big: true, open: true } },
+    { id: "hook", only: "short", say: "Our Sun is that tiny dot. Above it is one of the biggest black holes ever found.", visual: { type: "compare", from: sun, to: ton, big: true, open: true } },
+    { id: "hook-l", only: "long", say: "This black hole is so wide that our whole Sun is just that tiny dot beneath it.", visual: { type: "compare", from: sun, to: ton, big: true, open: true } },
     { id: "marble", say: "Crush the whole Earth into a black hole, and it would be the size of a marble.", visual: { type: "body", body: earthHole, fact: "the whole Earth: 1.8 cm wide" } },
     { id: "mass", only: "long", say: "A black hole's size depends only on how much mass it holds.", visual: { type: "body", body: earthHole, fact: "more mass, wider hole" } },
     { id: "sunhole", say: "Do the same to the Sun, and it would be just six kilometres wide.", visual: { type: "compare", from: earthHole, to: sunHole } },

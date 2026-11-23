@@ -16,7 +16,8 @@ export const MOON_DISTANCE: EpisodeSpec = {
   emphasis: ["moon", "earth", "earths", "light", "second", "planet", "days", "months", "sun", "centimetres", "twelve", "scale", "eclipse"],
   beats: [
     // cold open on the most surprising picture: the planets stacked inside the gap
-    { id: "fit", say: "Every other planet in the solar system fits between Earth and the Moon.", visual: gap({ distance: FAR, fill: [mercury, jupiter, mars, saturn, venus, uranus, neptune], note: "at its farthest" }), hold: 0.3 },
+    { id: "fit", only: "short", say: "Every other planet in the solar system fits between Earth and the Moon.", visual: gap({ distance: FAR, fill: [mercury, jupiter, mars, saturn, venus, uranus, neptune], note: "at its farthest" }), hold: 0.3 },
+    { id: "fit-l", only: "long", say: "The Moon is so far from Earth that every other planet fits in between.", visual: gap({ distance: FAR, fill: [mercury, jupiter, mars, saturn, venus, uranus, neptune], note: "at its farthest" }), hold: 0.3 },
     { id: "hook", say: "This is the real distance between them, drawn to scale.", visual: gap({ note: "384,400 km" }) },
     { id: "thirty", say: "It is about thirty Earths away.", visual: gap({ ruler: { step: 2, label: "Earths apart" } }) },
     { id: "light", say: "Even light, the fastest thing there is, needs more than a second to cross it.", visual: gap({ trip: { label: "at light speed", seconds: 1.28 } }) },
