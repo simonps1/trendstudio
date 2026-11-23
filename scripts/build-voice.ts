@@ -195,6 +195,7 @@ const seedOf = (text: string, attempt: number) => (parseInt(createHash("sha1").u
 const CHATTERBOX_STYLES: Record<string, { exaggeration: number; cfg_weight: number; pitch?: number; tempo?: number }> = {
   "": { exaggeration: 0.5, cfg_weight: 0.5 },
   calm: { exaggeration: 0.35, cfg_weight: 0.3, tempo: 0.88 }, // steadier pitch, about 200 words a minute
+  human: { exaggeration: 0.6, cfg_weight: 0.4 }, // natural pace, no time-stretch, a little more feeling
   expressive: { exaggeration: 0.75, cfg_weight: 0.35 },
   deep: { exaggeration: 0.75, cfg_weight: 0.35, pitch: 0.917 },
 };
