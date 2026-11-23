@@ -1,15 +1,15 @@
 {
-  "voice": "chatterbox",
+  "voice": "chatterbox:calm",
   "model": "resemble-ai/chatterbox",
   "alignment": "whisper",
   "lines": [
     {
       "id": "hook",
       "text": "That dot next to Earth is a real star, and it is smaller than a city.",
-      "file": "public/voice/tiny-stars/hook.81f6c18f43f9.wav",
+      "file": "public/voice/tiny-stars/hook.01f7d45253f1.wav",
       "start": 0.25,
-      "duration": 3.77,
-      "speed": 1,
+      "duration": 3.653,
+      "speed": 1.12,
       "words": [
         {
           "word": "That",
@@ -29,16 +29,16 @@
         {
           "word": "to",
           "start": 0.95,
-          "end": 1.15
+          "end": 1.13
         },
         {
           "word": "Earth",
-          "start": 1.15,
-          "end": 1.33
+          "start": 1.13,
+          "end": 1.27
         },
         {
           "word": "is",
-          "start": 1.33,
+          "start": 1.27,
           "end": 1.53
         },
         {
@@ -49,552 +49,552 @@
         {
           "word": "real",
           "start": 1.63,
-          "end": 1.81
+          "end": 1.79
         },
         {
           "word": "star,",
-          "start": 1.81,
-          "end": 2.17
+          "start": 1.79,
+          "end": 2.07
         },
         {
           "word": "and",
-          "start": 2.51,
-          "end": 2.61
+          "start": 2.43,
+          "end": 2.59
         },
         {
           "word": "it",
-          "start": 2.61,
-          "end": 2.71
+          "start": 2.59,
+          "end": 2.69
         },
         {
           "word": "is",
-          "start": 2.71,
+          "start": 2.69,
           "end": 2.81
         },
         {
           "word": "smaller",
           "start": 2.81,
-          "end": 3.07
+          "end": 3.05
         },
         {
           "word": "than",
-          "start": 3.07,
-          "end": 3.47
+          "start": 3.05,
+          "end": 3.33
         },
         {
           "word": "a",
-          "start": 3.47,
-          "end": 3.57
+          "start": 3.33,
+          "end": 3.43
         },
         {
           "word": "city.",
-          "start": 3.57,
-          "end": 3.77
+          "start": 3.43,
+          "end": 3.63
         }
       ]
     },
     {
       "id": "neutron",
       "text": "It's a neutron star, only about twenty kilometres wide.",
-      "file": "public/voice/tiny-stars/neutron.0249b55f0680.wav",
-      "start": 4.42,
-      "duration": 2.69,
+      "file": "public/voice/tiny-stars/neutron.fc4c13fd285b.wav",
+      "start": 4.303,
+      "duration": 3.33,
       "speed": 1,
       "words": [
         {
           "word": "It's",
-          "start": 4.62,
-          "end": 4.67
+          "start": 4.303,
+          "end": 4.463
         },
         {
           "word": "a",
-          "start": 4.62,
-          "end": 4.67
+          "start": 4.463,
+          "end": 4.523
         },
         {
           "word": "neutron",
-          "start": 4.62,
-          "end": 4.74
+          "start": 4.523,
+          "end": 4.703
         },
         {
           "word": "star,",
-          "start": 4.74,
-          "end": 5.18
+          "start": 4.703,
+          "end": 5.283
         },
         {
           "word": "only",
-          "start": 5.42,
-          "end": 5.68
+          "start": 5.643,
+          "end": 5.863
         },
         {
           "word": "about",
-          "start": 5.68,
-          "end": 5.84
+          "start": 5.863,
+          "end": 6.043
         },
         {
           "word": "twenty",
-          "start": 5.84,
-          "end": 6.2
+          "start": 6.043,
+          "end": 6.443
         },
         {
           "word": "kilometres",
-          "start": 6.2,
-          "end": 6.4
+          "start": 6.443,
+          "end": 6.663
         },
         {
           "word": "wide.",
-          "start": 6.4,
-          "end": 6.94
+          "start": 6.663,
+          "end": 7.423
         }
       ]
     },
     {
       "id": "mass",
       "text": "Yet it holds more mass than our entire Sun.",
-      "file": "public/voice/tiny-stars/mass.d1c5ebc777a9.wav",
-      "start": 7.51,
-      "duration": 2.26,
+      "file": "public/voice/tiny-stars/mass.6a3ad5430430.wav",
+      "start": 8.032,
+      "duration": 3.148,
       "speed": 1,
       "words": [
         {
           "word": "Yet",
-          "start": 7.51,
-          "end": 7.63
+          "start": 8.032,
+          "end": 8.192
         },
         {
           "word": "it",
-          "start": 7.63,
-          "end": 7.73
+          "start": 8.192,
+          "end": 8.292
         },
         {
           "word": "holds",
-          "start": 7.73,
-          "end": 7.91
+          "start": 8.292,
+          "end": 8.512
         },
         {
           "word": "more",
-          "start": 7.91,
-          "end": 8.19
+          "start": 8.512,
+          "end": 8.832
         },
         {
           "word": "mass",
-          "start": 8.19,
-          "end": 8.43
+          "start": 8.832,
+          "end": 9.192
         },
         {
           "word": "than",
-          "start": 8.43,
-          "end": 8.67
+          "start": 9.192,
+          "end": 9.732
         },
         {
           "word": "our",
-          "start": 8.67,
-          "end": 8.83
+          "start": 9.732,
+          "end": 10.032
         },
         {
           "word": "entire",
-          "start": 8.83,
-          "end": 8.97
+          "start": 10.032,
+          "end": 10.272
         },
         {
           "word": "Sun.",
-          "start": 8.97,
-          "end": 9.53
+          "start": 10.272,
+          "end": 10.892
         }
       ]
     },
     {
       "id": "dwarf",
       "text": "Sirius B, a white dwarf, is far bigger, but still smaller than Earth.",
-      "file": "public/voice/tiny-stars/dwarf.8dfab2b54142.wav",
-      "start": 10.17,
-      "duration": 3.68,
+      "file": "public/voice/tiny-stars/dwarf.ce1b30677d0f.wav",
+      "start": 11.58,
+      "duration": 4.398,
       "speed": 1,
       "words": [
         {
           "word": "Sirius",
-          "start": 10.17,
-          "end": 10.43
+          "start": 11.58,
+          "end": 11.9
         },
         {
           "word": "B,",
-          "start": 10.43,
-          "end": 10.79
+          "start": 11.9,
+          "end": 12.32
         },
         {
           "word": "a",
-          "start": 11.07,
-          "end": 11.17
+          "start": 12.68,
+          "end": 12.78
         },
         {
           "word": "white",
-          "start": 11.17,
-          "end": 11.33
+          "start": 12.78,
+          "end": 12.98
         },
         {
           "word": "dwarf,",
-          "start": 11.33,
-          "end": 11.59
+          "start": 12.98,
+          "end": 13.28
         },
         {
           "word": "is",
-          "start": 11.83,
-          "end": 12.01
+          "start": 13.62,
+          "end": 13.78
         },
         {
           "word": "far",
-          "start": 12.01,
-          "end": 12.19
+          "start": 13.78,
+          "end": 13.98
         },
         {
           "word": "bigger,",
-          "start": 12.19,
-          "end": 12.43
+          "start": 13.98,
+          "end": 14.32
         },
         {
           "word": "but",
-          "start": 12.43,
-          "end": 12.81
+          "start": 14.32,
+          "end": 14.66
         },
         {
           "word": "still",
-          "start": 12.81,
-          "end": 13.03
+          "start": 14.66,
+          "end": 14.9
         },
         {
           "word": "smaller",
-          "start": 13.03,
-          "end": 13.33
+          "start": 14.9,
+          "end": 15.28
         },
         {
           "word": "than",
-          "start": 13.33,
-          "end": 13.51
+          "start": 15.28,
+          "end": 15.54
         },
         {
           "word": "Earth.",
-          "start": 13.51,
-          "end": 13.71
+          "start": 15.54,
+          "end": 15.84
         }
       ]
     },
     {
       "id": "smallest",
       "text": "The smallest star we know of is only about as wide as Saturn.",
-      "file": "public/voice/tiny-stars/smallest.80d4989cfdd9.wav",
-      "start": 14.25,
-      "duration": 2.7,
+      "file": "public/voice/tiny-stars/smallest.c139406b2129.wav",
+      "start": 16.378,
+      "duration": 3.557,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 14.25,
-          "end": 14.33
+          "start": 16.378,
+          "end": 16.518
         },
         {
           "word": "smallest",
-          "start": 14.33,
-          "end": 14.55
+          "start": 16.518,
+          "end": 16.858
         },
         {
           "word": "star",
-          "start": 14.55,
-          "end": 14.85
+          "start": 16.858,
+          "end": 17.318
         },
         {
           "word": "we",
-          "start": 14.85,
-          "end": 14.99
+          "start": 17.318,
+          "end": 17.538
         },
         {
           "word": "know",
-          "start": 14.99,
-          "end": 15.13
+          "start": 17.538,
+          "end": 17.718
         },
         {
           "word": "of",
-          "start": 15.13,
-          "end": 15.37
+          "start": 17.718,
+          "end": 17.938
         },
         {
           "word": "is",
-          "start": 15.37,
-          "end": 15.45
+          "start": 17.938,
+          "end": 18.098
         },
         {
           "word": "only",
-          "start": 15.45,
-          "end": 15.71
+          "start": 18.098,
+          "end": 18.398
         },
         {
           "word": "about",
-          "start": 15.71,
-          "end": 15.91
+          "start": 18.398,
+          "end": 18.658
         },
         {
           "word": "as",
-          "start": 15.91,
-          "end": 16.11
+          "start": 18.658,
+          "end": 18.878
         },
         {
           "word": "wide",
-          "start": 16.11,
-          "end": 16.29
+          "start": 18.878,
+          "end": 19.098
         },
         {
           "word": "as",
-          "start": 16.29,
-          "end": 16.43
+          "start": 19.098,
+          "end": 19.258
         },
         {
           "word": "Saturn.",
-          "start": 16.43,
-          "end": 16.71
+          "start": 19.258,
+          "end": 19.618
         }
       ]
     },
     {
       "id": "proxima",
       "text": "Proxima Centauri, the nearest star to the Sun, is only one and a half times as wide as Jupiter.",
-      "file": "public/voice/tiny-stars/proxima.51ce3f96de85.wav",
-      "start": 17.35,
-      "duration": 4.51,
+      "file": "public/voice/tiny-stars/proxima.58d7bd788e17.wav",
+      "start": 20.334,
+      "duration": 6.148,
       "speed": 1,
       "words": [
         {
           "word": "Proxima",
-          "start": 17.35,
-          "end": 17.67
+          "start": 20.334,
+          "end": 20.794
         },
         {
           "word": "Centauri,",
-          "start": 17.67,
-          "end": 18.01
+          "start": 20.794,
+          "end": 21.114
         },
         {
           "word": "the",
-          "start": 18.37,
-          "end": 18.49
+          "start": 21.774,
+          "end": 21.934
         },
         {
           "word": "nearest",
-          "start": 18.49,
-          "end": 18.67
+          "start": 21.934,
+          "end": 22.174
         },
         {
           "word": "star",
-          "start": 18.67,
-          "end": 18.91
+          "start": 22.174,
+          "end": 22.474
         },
         {
           "word": "to",
-          "start": 18.91,
-          "end": 19.07
+          "start": 22.474,
+          "end": 22.614
         },
         {
           "word": "the",
-          "start": 19.07,
-          "end": 19.15
+          "start": 22.614,
+          "end": 22.734
         },
         {
           "word": "Sun,",
-          "start": 19.15,
-          "end": 19.37
+          "start": 22.734,
+          "end": 23.014
         },
         {
           "word": "is",
-          "start": 19.59,
-          "end": 19.69
+          "start": 23.474,
+          "end": 23.794
         },
         {
           "word": "only",
-          "start": 19.69,
-          "end": 19.87
+          "start": 23.794,
+          "end": 24.054
         },
         {
           "word": "one",
-          "start": 19.87,
-          "end": 20.17
+          "start": 24.054,
+          "end": 24.394
         },
         {
           "word": "and",
-          "start": 20.17,
-          "end": 20.31
+          "start": 24.394,
+          "end": 24.534
         },
         {
           "word": "a",
-          "start": 20.31,
-          "end": 20.37
+          "start": 24.534,
+          "end": 24.614
         },
         {
           "word": "half",
-          "start": 20.37,
-          "end": 20.53
+          "start": 24.614,
+          "end": 24.834
         },
         {
           "word": "times",
-          "start": 20.53,
-          "end": 20.81
+          "start": 24.834,
+          "end": 25.214
         },
         {
           "word": "as",
-          "start": 20.81,
-          "end": 20.99
+          "start": 25.214,
+          "end": 25.374
         },
         {
           "word": "wide",
-          "start": 20.99,
-          "end": 21.17
+          "start": 25.374,
+          "end": 25.594
         },
         {
           "word": "as",
-          "start": 21.17,
-          "end": 21.37
+          "start": 25.594,
+          "end": 25.794
         },
         {
           "word": "Jupiter.",
-          "start": 21.37,
-          "end": 21.53
+          "start": 25.794,
+          "end": 26.034
         }
       ]
     },
     {
       "id": "sun",
       "text": "Next to all of them, our Sun is a giant.",
-      "file": "public/voice/tiny-stars/sun.25c5d4bc105e.wav",
-      "start": 22.26,
-      "duration": 2.31,
+      "file": "public/voice/tiny-stars/sun.886ef1bd29af.wav",
+      "start": 26.882,
+      "duration": 3.205,
       "speed": 1,
       "words": [
         {
           "word": "Next",
-          "start": 22.26,
-          "end": 22.46
+          "start": 26.882,
+          "end": 27.102
         },
         {
           "word": "to",
-          "start": 22.46,
-          "end": 22.58
+          "start": 27.102,
+          "end": 27.202
         },
         {
           "word": "all",
-          "start": 22.58,
-          "end": 22.76
+          "start": 27.202,
+          "end": 27.442
         },
         {
           "word": "of",
-          "start": 22.76,
-          "end": 22.88
+          "start": 27.442,
+          "end": 27.602
         },
         {
           "word": "them,",
-          "start": 22.88,
-          "end": 23.08
+          "start": 27.602,
+          "end": 27.842
         },
         {
           "word": "our",
-          "start": 23.38,
-          "end": 23.48
+          "start": 28.142,
+          "end": 28.342
         },
         {
           "word": "Sun",
-          "start": 23.48,
-          "end": 23.68
+          "start": 28.342,
+          "end": 28.682
         },
         {
           "word": "is",
-          "start": 23.68,
-          "end": 23.94
+          "start": 28.682,
+          "end": 29.262
         },
         {
           "word": "a",
-          "start": 23.94,
-          "end": 24
+          "start": 29.262,
+          "end": 29.382
         },
         {
           "word": "giant.",
-          "start": 24,
-          "end": 24.26
+          "start": 29.382,
+          "end": 29.662
         }
       ]
     },
     {
       "id": "end",
       "text": "In fact, most of the stars in our galaxy are smaller than the Sun.",
-      "file": "public/voice/tiny-stars/end.ac7205ff5010.wav",
-      "start": 24.97,
-      "duration": 3.36,
+      "file": "public/voice/tiny-stars/end.fd1260ae3bd2.wav",
+      "start": 30.487,
+      "duration": 4.045,
       "speed": 1,
       "words": [
         {
           "word": "In",
-          "start": 24.97,
-          "end": 25.05
+          "start": 30.487,
+          "end": 30.587
         },
         {
           "word": "fact,",
-          "start": 25.05,
-          "end": 25.27
+          "start": 30.587,
+          "end": 30.827
         },
         {
           "word": "most",
-          "start": 25.63,
-          "end": 25.97
+          "start": 31.207,
+          "end": 31.587
         },
         {
           "word": "of",
-          "start": 25.97,
-          "end": 26.11
+          "start": 31.587,
+          "end": 31.707
         },
         {
           "word": "the",
-          "start": 26.11,
-          "end": 26.17
+          "start": 31.707,
+          "end": 31.827
         },
         {
           "word": "stars",
-          "start": 26.17,
-          "end": 26.33
+          "start": 31.827,
+          "end": 31.987
         },
         {
           "word": "in",
-          "start": 26.33,
-          "end": 26.55
+          "start": 31.987,
+          "end": 32.267
         },
         {
           "word": "our",
-          "start": 26.55,
-          "end": 26.63
+          "start": 32.267,
+          "end": 32.367
         },
         {
           "word": "galaxy",
-          "start": 26.63,
-          "end": 26.89
+          "start": 32.367,
+          "end": 32.707
         },
         {
           "word": "are",
-          "start": 26.89,
-          "end": 27.25
+          "start": 32.707,
+          "end": 33.167
         },
         {
           "word": "smaller",
-          "start": 27.25,
-          "end": 27.53
+          "start": 33.167,
+          "end": 33.487
         },
         {
           "word": "than",
-          "start": 27.53,
-          "end": 27.81
+          "start": 33.487,
+          "end": 33.827
         },
         {
           "word": "the",
-          "start": 27.81,
-          "end": 27.93
+          "start": 33.827,
+          "end": 33.967
         },
         {
           "word": "Sun.",
-          "start": 27.93,
-          "end": 28.13
+          "start": 33.967,
+          "end": 34.207
         }
       ]
     }
