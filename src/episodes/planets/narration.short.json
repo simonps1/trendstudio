@@ -202,49 +202,49 @@
       "id": "venus",
       "text": "Then Venus, which is almost exactly Earth's size.",
       "file": "public/voice/planets/venus.6a8344d10128.wav",
-      "start": 12.26,
+      "start": 12.259,
       "duration": 3.591,
       "speed": 1,
       "words": [
         {
           "word": "Then",
-          "start": 12.26,
-          "end": 12.44
+          "start": 12.259,
+          "end": 12.439
         },
         {
           "word": "Venus,",
-          "start": 12.44,
-          "end": 12.66
+          "start": 12.439,
+          "end": 12.659
         },
         {
           "word": "which",
-          "start": 13.22,
-          "end": 13.42
+          "start": 13.219,
+          "end": 13.419
         },
         {
           "word": "is",
-          "start": 13.42,
-          "end": 13.64
+          "start": 13.419,
+          "end": 13.639
         },
         {
           "word": "almost",
-          "start": 13.64,
-          "end": 14.2
+          "start": 13.639,
+          "end": 14.199
         },
         {
           "word": "exactly",
-          "start": 14.2,
-          "end": 14.68
+          "start": 14.199,
+          "end": 14.679
         },
         {
           "word": "Earth's",
-          "start": 14.68,
-          "end": 15.06
+          "start": 14.679,
+          "end": 15.059
         },
         {
           "word": "size.",
-          "start": 15.06,
-          "end": 15.46
+          "start": 15.059,
+          "end": 15.459
         }
       ]
     },
@@ -252,54 +252,54 @@
       "id": "twins",
       "text": "Side by side, you can hardly tell the difference.",
       "file": "public/voice/planets/twins.68451b2b9a60.wav",
-      "start": 16.251,
+      "start": 16.25,
       "duration": 2.966,
       "speed": 1,
       "words": [
         {
           "word": "Side",
-          "start": 16.251,
-          "end": 16.511
+          "start": 16.25,
+          "end": 16.51
         },
         {
           "word": "by",
-          "start": 16.511,
-          "end": 16.711
+          "start": 16.51,
+          "end": 16.71
         },
         {
           "word": "side,",
-          "start": 16.711,
-          "end": 17.151
+          "start": 16.71,
+          "end": 17.15
         },
         {
           "word": "you",
-          "start": 17.431,
-          "end": 17.571
+          "start": 17.43,
+          "end": 17.57
         },
         {
           "word": "can",
-          "start": 17.571,
-          "end": 17.691
+          "start": 17.57,
+          "end": 17.69
         },
         {
           "word": "hardly",
-          "start": 17.691,
-          "end": 17.951
+          "start": 17.69,
+          "end": 17.95
         },
         {
           "word": "tell",
-          "start": 17.951,
-          "end": 18.331
+          "start": 17.95,
+          "end": 18.33
         },
         {
           "word": "the",
-          "start": 18.331,
-          "end": 18.471
+          "start": 18.33,
+          "end": 18.47
         },
         {
           "word": "difference.",
-          "start": 18.471,
-          "end": 18.811
+          "start": 18.47,
+          "end": 18.81
         }
       ]
     },
@@ -397,64 +397,64 @@
       "id": "saturn",
       "text": "Saturn is more than twice as wide, even without its rings.",
       "file": "public/voice/planets/saturn.c9a12d0ceec9.wav",
-      "start": 24.86,
+      "start": 24.859,
       "duration": 3.455,
       "speed": 1,
       "words": [
         {
           "word": "Saturn",
-          "start": 24.86,
-          "end": 25.2
+          "start": 24.859,
+          "end": 25.199
         },
         {
           "word": "is",
-          "start": 25.2,
-          "end": 25.46
+          "start": 25.199,
+          "end": 25.459
         },
         {
           "word": "more",
-          "start": 25.46,
-          "end": 25.7
+          "start": 25.459,
+          "end": 25.699
         },
         {
           "word": "than",
-          "start": 25.7,
-          "end": 25.88
+          "start": 25.699,
+          "end": 25.879
         },
         {
           "word": "twice",
-          "start": 25.88,
-          "end": 26.1
+          "start": 25.879,
+          "end": 26.099
         },
         {
           "word": "as",
-          "start": 26.1,
-          "end": 26.36
+          "start": 26.099,
+          "end": 26.359
         },
         {
           "word": "wide,",
-          "start": 26.36,
-          "end": 26.64
+          "start": 26.359,
+          "end": 26.639
         },
         {
           "word": "even",
-          "start": 26.94,
-          "end": 27.08
+          "start": 26.939,
+          "end": 27.079
         },
         {
           "word": "without",
-          "start": 27.08,
-          "end": 27.38
+          "start": 27.079,
+          "end": 27.379
         },
         {
           "word": "its",
-          "start": 27.38,
-          "end": 27.6
+          "start": 27.379,
+          "end": 27.599
         },
         {
           "word": "rings.",
-          "start": 27.6,
-          "end": 27.86
+          "start": 27.599,
+          "end": 27.859
         }
       ]
     },
@@ -562,54 +562,54 @@
       "id": "end",
       "text": "And next to the Sun, even Jupiter is tiny.",
       "file": "public/voice/planets/end.6cbc99696fcc.wav",
-      "start": 35.185,
+      "start": 35.184,
       "duration": 3.102,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 35.185,
-          "end": 35.525
+          "start": 35.184,
+          "end": 35.524
         },
         {
           "word": "next",
-          "start": 35.525,
-          "end": 35.785
+          "start": 35.524,
+          "end": 35.784
         },
         {
           "word": "to",
-          "start": 35.785,
-          "end": 36.025
+          "start": 35.784,
+          "end": 36.024
         },
         {
           "word": "the",
-          "start": 36.025,
-          "end": 36.125
+          "start": 36.024,
+          "end": 36.124
         },
         {
           "word": "Sun,",
-          "start": 36.125,
-          "end": 36.385
+          "start": 36.124,
+          "end": 36.384
         },
         {
           "word": "even",
-          "start": 36.885,
-          "end": 37.065
+          "start": 36.884,
+          "end": 37.064
         },
         {
           "word": "Jupiter",
-          "start": 37.065,
-          "end": 37.325
+          "start": 37.064,
+          "end": 37.324
         },
         {
           "word": "is",
-          "start": 37.325,
-          "end": 37.705
+          "start": 37.324,
+          "end": 37.704
         },
         {
           "word": "tiny.",
-          "start": 37.705,
-          "end": 37.965
+          "start": 37.704,
+          "end": 37.964
         }
       ]
     }

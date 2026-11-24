@@ -142,39 +142,39 @@
       "id": "thirty",
       "text": "It is about thirty Earths away.",
       "file": "public/voice/moon-distance/thirty.83f8e50bbc85.wav",
-      "start": 7.592,
+      "start": 7.591,
       "duration": 1.841,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 7.592,
-          "end": 7.692
+          "start": 7.591,
+          "end": 7.691
         },
         {
           "word": "is",
-          "start": 7.692,
-          "end": 7.812
+          "start": 7.691,
+          "end": 7.811
         },
         {
           "word": "about",
-          "start": 7.812,
-          "end": 8.012
+          "start": 7.811,
+          "end": 8.011
         },
         {
           "word": "thirty",
-          "start": 8.012,
-          "end": 8.352
+          "start": 8.011,
+          "end": 8.351
         },
         {
           "word": "Earths",
-          "start": 8.352,
-          "end": 8.912
+          "start": 8.351,
+          "end": 8.911
         },
         {
           "word": "away.",
-          "start": 8.912,
-          "end": 9.072
+          "start": 8.911,
+          "end": 9.071
         }
       ]
     },
@@ -182,84 +182,84 @@
       "id": "light",
       "text": "Even light, the fastest thing there is, needs more than a second to cross it.",
       "file": "public/voice/moon-distance/light.9d78c554ee08.wav",
-      "start": 9.833,
+      "start": 9.832,
       "duration": 4.466,
       "speed": 1,
       "words": [
         {
           "word": "Even",
-          "start": 9.833,
-          "end": 10.033
+          "start": 9.832,
+          "end": 10.032
         },
         {
           "word": "light,",
-          "start": 10.033,
-          "end": 10.353
+          "start": 10.032,
+          "end": 10.352
         },
         {
           "word": "the",
-          "start": 10.733,
-          "end": 10.913
+          "start": 10.732,
+          "end": 10.912
         },
         {
           "word": "fastest",
-          "start": 10.913,
-          "end": 11.213
+          "start": 10.912,
+          "end": 11.212
         },
         {
           "word": "thing",
-          "start": 11.213,
-          "end": 11.473
+          "start": 11.212,
+          "end": 11.472
         },
         {
           "word": "there",
-          "start": 11.473,
-          "end": 11.633
+          "start": 11.472,
+          "end": 11.632
         },
         {
           "word": "is,",
-          "start": 11.633,
-          "end": 12.033
+          "start": 11.632,
+          "end": 12.032
         },
         {
           "word": "needs",
-          "start": 12.293,
-          "end": 12.433
+          "start": 12.292,
+          "end": 12.432
         },
         {
           "word": "more",
-          "start": 12.433,
-          "end": 12.793
+          "start": 12.432,
+          "end": 12.792
         },
         {
           "word": "than",
-          "start": 12.793,
-          "end": 12.973
+          "start": 12.792,
+          "end": 12.972
         },
         {
           "word": "a",
-          "start": 12.973,
-          "end": 13.053
+          "start": 12.972,
+          "end": 13.052
         },
         {
           "word": "second",
-          "start": 13.053,
-          "end": 13.313
+          "start": 13.052,
+          "end": 13.312
         },
         {
           "word": "to",
-          "start": 13.313,
-          "end": 13.513
+          "start": 13.312,
+          "end": 13.512
         },
         {
           "word": "cross",
-          "start": 13.513,
-          "end": 13.733
+          "start": 13.512,
+          "end": 13.732
         },
         {
           "word": "it.",
-          "start": 13.733,
-          "end": 14.013
+          "start": 13.732,
+          "end": 14.012
         }
       ]
     },
@@ -267,59 +267,59 @@
       "id": "apollo",
       "text": "The Apollo astronauts needed three days to make the trip.",
       "file": "public/voice/moon-distance/apollo.c0b51e7fec42.wav",
-      "start": 14.699,
+      "start": 14.698,
       "duration": 3.068,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 14.699,
-          "end": 14.779
+          "start": 14.698,
+          "end": 14.778
         },
         {
           "word": "Apollo",
-          "start": 14.779,
-          "end": 15.039
+          "start": 14.778,
+          "end": 15.038
         },
         {
           "word": "astronauts",
-          "start": 15.039,
-          "end": 15.439
+          "start": 15.038,
+          "end": 15.438
         },
         {
           "word": "needed",
-          "start": 15.439,
-          "end": 16.039
+          "start": 15.438,
+          "end": 16.038
         },
         {
           "word": "three",
-          "start": 16.039,
-          "end": 16.399
+          "start": 16.038,
+          "end": 16.398
         },
         {
           "word": "days",
-          "start": 16.399,
-          "end": 16.659
+          "start": 16.398,
+          "end": 16.658
         },
         {
           "word": "to",
-          "start": 16.659,
-          "end": 16.939
+          "start": 16.658,
+          "end": 16.938
         },
         {
           "word": "make",
-          "start": 16.939,
-          "end": 17.079
+          "start": 16.938,
+          "end": 17.078
         },
         {
           "word": "the",
-          "start": 17.079,
-          "end": 17.259
+          "start": 17.078,
+          "end": 17.258
         },
         {
           "word": "trip.",
-          "start": 17.259,
-          "end": 17.499
+          "start": 17.258,
+          "end": 17.498
         }
       ]
     },
@@ -327,64 +327,64 @@
       "id": "car",
       "text": "At highway speed, the drive would take more than five months.",
       "file": "public/voice/moon-distance/car.78f32e8b0817.wav",
-      "start": 18.167,
+      "start": 18.166,
       "duration": 3.443,
       "speed": 1,
       "words": [
         {
           "word": "At",
-          "start": 18.167,
-          "end": 18.287
+          "start": 18.166,
+          "end": 18.286
         },
         {
           "word": "highway",
-          "start": 18.287,
-          "end": 18.467
+          "start": 18.286,
+          "end": 18.466
         },
         {
           "word": "speed,",
-          "start": 18.467,
-          "end": 18.927
+          "start": 18.466,
+          "end": 18.926
         },
         {
           "word": "the",
-          "start": 19.507,
-          "end": 19.647
+          "start": 19.506,
+          "end": 19.646
         },
         {
           "word": "drive",
-          "start": 19.647,
-          "end": 19.867
+          "start": 19.646,
+          "end": 19.866
         },
         {
           "word": "would",
-          "start": 19.867,
-          "end": 20.087
+          "start": 19.866,
+          "end": 20.086
         },
         {
           "word": "take",
-          "start": 20.087,
-          "end": 20.287
+          "start": 20.086,
+          "end": 20.286
         },
         {
           "word": "more",
-          "start": 20.287,
-          "end": 20.507
+          "start": 20.286,
+          "end": 20.506
         },
         {
           "word": "than",
-          "start": 20.507,
-          "end": 20.687
+          "start": 20.506,
+          "end": 20.686
         },
         {
           "word": "five",
-          "start": 20.687,
-          "end": 20.947
+          "start": 20.686,
+          "end": 20.946
         },
         {
           "word": "months.",
-          "start": 20.947,
-          "end": 21.247
+          "start": 20.946,
+          "end": 21.246
         }
       ]
     },
@@ -392,64 +392,64 @@
       "id": "drift",
       "text": "And every year, the Moon drifts almost four centimetres farther away.",
       "file": "public/voice/moon-distance/drift.1b43cd6418ac.wav",
-      "start": 22.01,
+      "start": 22.009,
       "duration": 4.17,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 22.01,
-          "end": 22.13
+          "start": 22.009,
+          "end": 22.129
         },
         {
           "word": "every",
-          "start": 22.13,
-          "end": 22.43
+          "start": 22.129,
+          "end": 22.429
         },
         {
           "word": "year,",
-          "start": 22.43,
-          "end": 22.71
+          "start": 22.429,
+          "end": 22.709
         },
         {
           "word": "the",
-          "start": 22.71,
-          "end": 23.07
+          "start": 22.709,
+          "end": 23.069
         },
         {
           "word": "Moon",
-          "start": 23.07,
-          "end": 23.27
+          "start": 23.069,
+          "end": 23.269
         },
         {
           "word": "drifts",
-          "start": 23.27,
-          "end": 23.75
+          "start": 23.269,
+          "end": 23.749
         },
         {
           "word": "almost",
-          "start": 23.75,
-          "end": 24.13
+          "start": 23.749,
+          "end": 24.129
         },
         {
           "word": "four",
-          "start": 24.13,
-          "end": 24.45
+          "start": 24.129,
+          "end": 24.449
         },
         {
           "word": "centimetres",
-          "start": 24.45,
-          "end": 24.91
+          "start": 24.449,
+          "end": 24.909
         },
         {
           "word": "farther",
-          "start": 24.91,
-          "end": 25.45
+          "start": 24.909,
+          "end": 25.449
         },
         {
           "word": "away.",
-          "start": 25.45,
-          "end": 25.99
+          "start": 25.449,
+          "end": 25.989
         }
       ]
     }
