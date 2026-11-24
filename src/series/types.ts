@@ -83,6 +83,8 @@ export interface EpisodeSpec {
   /** Number shown on the long cut, which is posted as its own video. */
   episodeLong: number;
   title: string;
+  /** Cuts that leave out the "Cosmic Scale · EP n" line at the top (e.g. a video posted as a reply to a comment). */
+  hideTag?: Variant[];
   /** The long cut is its own video on a different angle of the topic, so it has its own title and question. */
   titleLong?: string;
   askLong?: string;

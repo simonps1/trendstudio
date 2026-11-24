@@ -26,6 +26,7 @@ export const NEBULAE: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 14,
   episodeLong: 15,
+  hideTag: ["short"],
   title: "The biggest nebulae, to scale",
   titleLong: "What is a nebula?",
   voice: NARRATOR,

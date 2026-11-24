@@ -65,7 +65,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
       <CanvasLayer draw={background} />
       <BodiesGL place={place} />
       <CanvasLayer draw={overlay} />
-      <SeriesTag spec={spec} variant={variant} duration={layout.duration} />
+      {spec.hideTag?.includes(variant) ? null : <SeriesTag spec={spec} variant={variant} duration={layout.duration} />}
       <FollowTag spec={spec} ask={variant === "long" ? spec.askLong ?? spec.ask : spec.ask} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
       <KaraokeCaptions words={captionWords} emphasis={spec.emphasis ?? []} y={0.215} oneLine />
       <FilmFinish />
