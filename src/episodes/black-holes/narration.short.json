@@ -587,59 +587,59 @@
       "id": "lap",
       "text": "Even light would need forty-seven days to travel around it.",
       "file": "public/voice/black-holes/lap.4ed8d5db0f8d.wav",
-      "start": 33.134,
+      "start": 33.135,
       "duration": 3.432,
       "speed": 1,
       "words": [
         {
           "word": "Even",
-          "start": 33.134,
-          "end": 33.354
+          "start": 33.135,
+          "end": 33.355
         },
         {
           "word": "light",
-          "start": 33.354,
-          "end": 33.654
+          "start": 33.355,
+          "end": 33.655
         },
         {
           "word": "would",
-          "start": 33.654,
-          "end": 33.934
+          "start": 33.655,
+          "end": 33.935
         },
         {
           "word": "need",
-          "start": 33.934,
-          "end": 34.114
+          "start": 33.935,
+          "end": 34.115
         },
         {
           "word": "forty-seven",
-          "start": 34.114,
-          "end": 34.454
+          "start": 34.115,
+          "end": 34.455
         },
         {
           "word": "days",
-          "start": 34.454,
-          "end": 34.954
+          "start": 34.455,
+          "end": 34.955
         },
         {
           "word": "to",
-          "start": 34.954,
-          "end": 35.374
+          "start": 34.955,
+          "end": 35.375
         },
         {
           "word": "travel",
-          "start": 35.374,
-          "end": 35.574
+          "start": 35.375,
+          "end": 35.575
         },
         {
           "word": "around",
-          "start": 35.574,
-          "end": 36.054
+          "start": 35.575,
+          "end": 36.055
         },
         {
           "word": "it.",
-          "start": 36.054,
-          "end": 36.294
+          "start": 36.055,
+          "end": 36.295
         }
       ]
     },
@@ -647,74 +647,74 @@
       "id": "end",
       "text": "And nearly every large galaxy has a supermassive black hole at its centre.",
       "file": "public/voice/black-holes/end.e73cd1278d70.wav",
-      "start": 36.966,
+      "start": 36.967,
       "duration": 5.034,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 36.966,
-          "end": 37.166
+          "start": 36.967,
+          "end": 37.167
         },
         {
           "word": "nearly",
-          "start": 37.166,
-          "end": 37.486
+          "start": 37.167,
+          "end": 37.487
         },
         {
           "word": "every",
-          "start": 37.486,
-          "end": 37.966
+          "start": 37.487,
+          "end": 37.967
         },
         {
           "word": "large",
-          "start": 37.966,
-          "end": 38.306
+          "start": 37.967,
+          "end": 38.307
         },
         {
           "word": "galaxy",
-          "start": 38.306,
-          "end": 38.786
+          "start": 38.307,
+          "end": 38.787
         },
         {
           "word": "has",
-          "start": 38.786,
-          "end": 39.286
+          "start": 38.787,
+          "end": 39.287
         },
         {
           "word": "a",
-          "start": 39.286,
-          "end": 39.406
+          "start": 39.287,
+          "end": 39.407
         },
         {
           "word": "supermassive",
-          "start": 39.406,
-          "end": 40.006
+          "start": 39.407,
+          "end": 40.007
         },
         {
           "word": "black",
-          "start": 40.006,
-          "end": 40.386
+          "start": 40.007,
+          "end": 40.387
         },
         {
           "word": "hole",
-          "start": 40.386,
-          "end": 40.746
+          "start": 40.387,
+          "end": 40.747
         },
         {
           "word": "at",
-          "start": 40.746,
-          "end": 41.086
+          "start": 40.747,
+          "end": 41.087
         },
         {
           "word": "its",
-          "start": 41.086,
-          "end": 41.206
+          "start": 41.087,
+          "end": 41.207
         },
         {
           "word": "centre.",
-          "start": 41.206,
-          "end": 41.686
+          "start": 41.207,
+          "end": 41.687
         }
       ]
     }

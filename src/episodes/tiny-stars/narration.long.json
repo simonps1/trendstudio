@@ -5,1251 +5,1376 @@
   "lines": [
     {
       "id": "hook-l",
-      "text": "Some stars are smaller than a city. That dot next to Earth is one of them.",
-      "file": "public/voice/tiny-stars-long/hook-l.b569ec97f371.wav",
+      "text": "One day, our Sun will shrink into that tiny dot.",
+      "file": "public/voice/tiny-stars-long/hook-l.225f8fd5316b.wav",
       "start": 0.25,
-      "duration": 3.977,
+      "duration": 2.496,
       "speed": 1.12,
       "words": [
         {
-          "word": "Some",
+          "word": "One",
           "start": 0.25,
-          "end": 0.45
+          "end": 0.39
         },
         {
-          "word": "stars",
-          "start": 0.45,
-          "end": 0.67
-        },
-        {
-          "word": "are",
-          "start": 0.67,
-          "end": 1.07
-        },
-        {
-          "word": "smaller",
-          "start": 1.07,
-          "end": 1.31
-        },
-        {
-          "word": "than",
-          "start": 1.31,
-          "end": 1.63
-        },
-        {
-          "word": "a",
-          "start": 1.63,
-          "end": 1.73
-        },
-        {
-          "word": "city.",
-          "start": 1.73,
-          "end": 1.93
-        },
-        {
-          "word": "That",
-          "start": 2.49,
-          "end": 2.57
-        },
-        {
-          "word": "dot",
-          "start": 2.57,
-          "end": 2.77
-        },
-        {
-          "word": "next",
-          "start": 2.77,
-          "end": 3.01
-        },
-        {
-          "word": "to",
-          "start": 3.01,
-          "end": 3.17
-        },
-        {
-          "word": "Earth",
-          "start": 3.17,
-          "end": 3.33
-        },
-        {
-          "word": "is",
-          "start": 3.33,
-          "end": 3.53
-        },
-        {
-          "word": "one",
-          "start": 3.53,
-          "end": 3.69
-        },
-        {
-          "word": "of",
-          "start": 3.69,
-          "end": 3.83
-        },
-        {
-          "word": "them.",
-          "start": 3.83,
-          "end": 4.01
-        }
-      ]
-    },
-    {
-      "id": "neutron",
-      "text": "It's a neutron star, only about twenty kilometres wide.",
-      "file": "public/voice/tiny-stars-long/neutron.fc4c13fd285b.wav",
-      "start": 4.627,
-      "duration": 3.33,
-      "speed": 1,
-      "words": [
-        {
-          "word": "It's",
-          "start": 4.627,
-          "end": 4.787
-        },
-        {
-          "word": "a",
-          "start": 4.787,
-          "end": 4.847
-        },
-        {
-          "word": "neutron",
-          "start": 4.847,
-          "end": 5.027
-        },
-        {
-          "word": "star,",
-          "start": 5.027,
-          "end": 5.607
-        },
-        {
-          "word": "only",
-          "start": 5.967,
-          "end": 6.187
-        },
-        {
-          "word": "about",
-          "start": 6.187,
-          "end": 6.367
-        },
-        {
-          "word": "twenty",
-          "start": 6.367,
-          "end": 6.767
-        },
-        {
-          "word": "kilometres",
-          "start": 6.767,
-          "end": 6.987
-        },
-        {
-          "word": "wide.",
-          "start": 6.987,
-          "end": 7.747
-        }
-      ]
-    },
-    {
-      "id": "mass",
-      "text": "Yet it holds more mass than our entire Sun.",
-      "file": "public/voice/tiny-stars-long/mass.6a3ad5430430.wav",
-      "start": 8.357,
-      "duration": 3.148,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Yet",
-          "start": 8.357,
-          "end": 8.517
-        },
-        {
-          "word": "it",
-          "start": 8.517,
-          "end": 8.617
-        },
-        {
-          "word": "holds",
-          "start": 8.617,
-          "end": 8.837
-        },
-        {
-          "word": "more",
-          "start": 8.837,
-          "end": 9.157
-        },
-        {
-          "word": "mass",
-          "start": 9.157,
-          "end": 9.517
-        },
-        {
-          "word": "than",
-          "start": 9.517,
-          "end": 10.057
+          "word": "day,",
+          "start": 0.39,
+          "end": 0.61
         },
         {
           "word": "our",
-          "start": 10.057,
-          "end": 10.357
+          "start": 0.85,
+          "end": 0.97
         },
         {
-          "word": "entire",
-          "start": 10.357,
-          "end": 10.597
+          "word": "Sun",
+          "start": 0.97,
+          "end": 1.19
         },
         {
-          "word": "Sun.",
-          "start": 10.597,
-          "end": 11.217
+          "word": "will",
+          "start": 1.19,
+          "end": 1.33
+        },
+        {
+          "word": "shrink",
+          "start": 1.33,
+          "end": 1.55
+        },
+        {
+          "word": "into",
+          "start": 1.55,
+          "end": 1.75
+        },
+        {
+          "word": "that",
+          "start": 1.75,
+          "end": 1.97
+        },
+        {
+          "word": "tiny",
+          "start": 1.97,
+          "end": 2.19
+        },
+        {
+          "word": "dot.",
+          "start": 2.19,
+          "end": 2.53
         }
       ]
     },
     {
-      "id": "teaspoon",
-      "text": "A single teaspoon of it would weigh billions of tonnes.",
-      "file": "public/voice/tiny-stars-long/teaspoon.18a2f2f545fe.wav",
-      "start": 11.905,
-      "duration": 3,
+      "id": "age",
+      "text": "Right now it is about four and a half billion years old, roughly halfway through its life.",
+      "file": "public/voice/tiny-stars-long/age.6d7e1b89e7af.wav",
+      "start": 3.146,
+      "duration": 4.784,
       "speed": 1,
       "words": [
         {
-          "word": "A",
-          "start": 11.905,
-          "end": 11.985
+          "word": "Right",
+          "start": 3.146,
+          "end": 3.286
         },
         {
-          "word": "single",
-          "start": 11.985,
-          "end": 12.205
-        },
-        {
-          "word": "teaspoon",
-          "start": 12.205,
-          "end": 12.545
-        },
-        {
-          "word": "of",
-          "start": 12.545,
-          "end": 12.945
+          "word": "now",
+          "start": 3.286,
+          "end": 3.566
         },
         {
           "word": "it",
-          "start": 12.945,
-          "end": 13.065
-        },
-        {
-          "word": "would",
-          "start": 13.065,
-          "end": 13.225
-        },
-        {
-          "word": "weigh",
-          "start": 13.225,
-          "end": 13.405
-        },
-        {
-          "word": "billions",
-          "start": 13.405,
-          "end": 13.805
-        },
-        {
-          "word": "of",
-          "start": 13.805,
-          "end": 14.165
-        },
-        {
-          "word": "tonnes.",
-          "start": 14.165,
-          "end": 14.385
-        }
-      ]
-    },
-    {
-      "id": "spin",
-      "text": "Some of them rotate hundreds of times every second.",
-      "file": "public/voice/tiny-stars-long/spin.78d736982a6e.wav",
-      "start": 15.305,
-      "duration": 2.875,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Some",
-          "start": 15.305,
-          "end": 15.465
-        },
-        {
-          "word": "of",
-          "start": 15.465,
-          "end": 15.585
-        },
-        {
-          "word": "them",
-          "start": 15.585,
-          "end": 15.745
-        },
-        {
-          "word": "rotate",
-          "start": 15.745,
-          "end": 16.045
-        },
-        {
-          "word": "hundreds",
-          "start": 16.045,
-          "end": 16.445
-        },
-        {
-          "word": "of",
-          "start": 16.445,
-          "end": 16.825
-        },
-        {
-          "word": "times",
-          "start": 16.825,
-          "end": 17.105
-        },
-        {
-          "word": "every",
-          "start": 17.105,
-          "end": 17.425
-        },
-        {
-          "word": "second.",
-          "start": 17.425,
-          "end": 17.845
-        }
-      ]
-    },
-    {
-      "id": "remnant",
-      "text": "It's what remains after a giant star explodes.",
-      "file": "public/voice/tiny-stars-long/remnant.4b79d44b45a3.wav",
-      "start": 18.58,
-      "duration": 3.034,
-      "speed": 1,
-      "words": [
-        {
-          "word": "It's",
-          "start": 18.58,
-          "end": 18.76
-        },
-        {
-          "word": "what",
-          "start": 18.76,
-          "end": 18.88
-        },
-        {
-          "word": "remains",
-          "start": 18.88,
-          "end": 19.18
-        },
-        {
-          "word": "after",
-          "start": 19.18,
-          "end": 19.84
-        },
-        {
-          "word": "a",
-          "start": 19.84,
-          "end": 20.02
-        },
-        {
-          "word": "giant",
-          "start": 20.02,
-          "end": 20.28
-        },
-        {
-          "word": "star",
-          "start": 20.28,
-          "end": 20.64
-        },
-        {
-          "word": "explodes.",
-          "start": 20.64,
-          "end": 21.24
-        }
-      ]
-    },
-    {
-      "id": "dwarf",
-      "text": "Sirius B, a white dwarf, is far bigger, but still smaller than Earth.",
-      "file": "public/voice/tiny-stars-long/dwarf.ce1b30677d0f.wav",
-      "start": 22.014,
-      "duration": 4.398,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Sirius",
-          "start": 22.014,
-          "end": 22.334
-        },
-        {
-          "word": "B,",
-          "start": 22.334,
-          "end": 22.754
-        },
-        {
-          "word": "a",
-          "start": 23.114,
-          "end": 23.214
-        },
-        {
-          "word": "white",
-          "start": 23.214,
-          "end": 23.414
-        },
-        {
-          "word": "dwarf,",
-          "start": 23.414,
-          "end": 23.714
+          "start": 3.766,
+          "end": 3.906
         },
         {
           "word": "is",
-          "start": 24.054,
-          "end": 24.214
+          "start": 3.906,
+          "end": 4.006
         },
         {
-          "word": "far",
-          "start": 24.214,
-          "end": 24.414
+          "word": "about",
+          "start": 4.006,
+          "end": 4.186
         },
         {
-          "word": "bigger,",
-          "start": 24.414,
-          "end": 24.754
+          "word": "four",
+          "start": 4.186,
+          "end": 4.236
         },
         {
-          "word": "but",
-          "start": 24.754,
-          "end": 25.094
+          "word": "and",
+          "start": 4.186,
+          "end": 4.236
         },
         {
-          "word": "still",
-          "start": 25.094,
-          "end": 25.334
+          "word": "a",
+          "start": 4.186,
+          "end": 4.566
         },
         {
-          "word": "smaller",
-          "start": 25.334,
-          "end": 25.714
+          "word": "half",
+          "start": 4.566,
+          "end": 4.946
+        },
+        {
+          "word": "billion",
+          "start": 4.946,
+          "end": 5.306
+        },
+        {
+          "word": "years",
+          "start": 5.306,
+          "end": 5.566
+        },
+        {
+          "word": "old,",
+          "start": 5.566,
+          "end": 5.966
+        },
+        {
+          "word": "roughly",
+          "start": 6.226,
+          "end": 6.586
+        },
+        {
+          "word": "halfway",
+          "start": 6.586,
+          "end": 6.846
+        },
+        {
+          "word": "through",
+          "start": 6.846,
+          "end": 7.306
+        },
+        {
+          "word": "its",
+          "start": 7.306,
+          "end": 7.486
+        },
+        {
+          "word": "life.",
+          "start": 7.486,
+          "end": 7.786
+        }
+      ]
+    },
+    {
+      "id": "fuel",
+      "text": "In about five billion years, it will run out of hydrogen in its core.",
+      "file": "public/voice/tiny-stars-long/fuel.0bbaeafe7e28.wav",
+      "start": 8.33,
+      "duration": 4.114,
+      "speed": 1,
+      "words": [
+        {
+          "word": "In",
+          "start": 8.33,
+          "end": 8.43
+        },
+        {
+          "word": "about",
+          "start": 8.43,
+          "end": 8.59
+        },
+        {
+          "word": "five",
+          "start": 8.59,
+          "end": 8.99
+        },
+        {
+          "word": "billion",
+          "start": 8.99,
+          "end": 9.27
+        },
+        {
+          "word": "years,",
+          "start": 9.27,
+          "end": 9.75
+        },
+        {
+          "word": "it",
+          "start": 10.15,
+          "end": 10.25
+        },
+        {
+          "word": "will",
+          "start": 10.25,
+          "end": 10.37
+        },
+        {
+          "word": "run",
+          "start": 10.37,
+          "end": 10.59
+        },
+        {
+          "word": "out",
+          "start": 10.59,
+          "end": 10.75
+        },
+        {
+          "word": "of",
+          "start": 10.75,
+          "end": 10.87
+        },
+        {
+          "word": "hydrogen",
+          "start": 10.87,
+          "end": 11.23
+        },
+        {
+          "word": "in",
+          "start": 11.23,
+          "end": 11.57
+        },
+        {
+          "word": "its",
+          "start": 11.57,
+          "end": 11.75
+        },
+        {
+          "word": "core.",
+          "start": 11.75,
+          "end": 12.07
+        }
+      ]
+    },
+    {
+      "id": "swell",
+      "text": "Then it will swell into a red giant, about two hundred and fifty times wider than today.",
+      "file": "public/voice/tiny-stars-long/swell.fc7ffc316212.wav",
+      "start": 12.844,
+      "duration": 5.034,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Then",
+          "start": 12.844,
+          "end": 13.104
+        },
+        {
+          "word": "it",
+          "start": 13.104,
+          "end": 13.284
+        },
+        {
+          "word": "will",
+          "start": 13.284,
+          "end": 13.424
+        },
+        {
+          "word": "swell",
+          "start": 13.424,
+          "end": 13.604
+        },
+        {
+          "word": "into",
+          "start": 13.604,
+          "end": 13.984
+        },
+        {
+          "word": "a",
+          "start": 13.984,
+          "end": 14.144
+        },
+        {
+          "word": "red",
+          "start": 14.144,
+          "end": 14.304
+        },
+        {
+          "word": "giant,",
+          "start": 14.304,
+          "end": 14.624
+        },
+        {
+          "word": "about",
+          "start": 15.224,
+          "end": 15.424
+        },
+        {
+          "word": "two",
+          "start": 15.424,
+          "end": 15.474
+        },
+        {
+          "word": "hundred",
+          "start": 15.424,
+          "end": 15.474
+        },
+        {
+          "word": "and",
+          "start": 15.424,
+          "end": 15.474
+        },
+        {
+          "word": "fifty",
+          "start": 15.424,
+          "end": 15.744
+        },
+        {
+          "word": "times",
+          "start": 15.744,
+          "end": 16.624
+        },
+        {
+          "word": "wider",
+          "start": 16.624,
+          "end": 16.904
         },
         {
           "word": "than",
-          "start": 25.714,
-          "end": 25.974
+          "start": 16.904,
+          "end": 17.244
         },
         {
-          "word": "Earth.",
-          "start": 25.974,
-          "end": 26.274
+          "word": "today.",
+          "start": 17.244,
+          "end": 17.604
+        }
+      ]
+    },
+    {
+      "id": "swallow",
+      "text": "It will swallow Mercury and Venus, and probably Earth as well.",
+      "file": "public/voice/tiny-stars-long/swallow.fa1d8b9351dc.wav",
+      "start": 18.278,
+      "duration": 3.341,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 18.278,
+          "end": 18.358
+        },
+        {
+          "word": "will",
+          "start": 18.358,
+          "end": 18.478
+        },
+        {
+          "word": "swallow",
+          "start": 18.478,
+          "end": 18.678
+        },
+        {
+          "word": "Mercury",
+          "start": 18.678,
+          "end": 19.078
+        },
+        {
+          "word": "and",
+          "start": 19.078,
+          "end": 19.558
+        },
+        {
+          "word": "Venus,",
+          "start": 19.558,
+          "end": 20.018
+        },
+        {
+          "word": "and",
+          "start": 20.018,
+          "end": 20.398
+        },
+        {
+          "word": "probably",
+          "start": 20.398,
+          "end": 20.678
+        },
+        {
+          "word": "Earth",
+          "start": 20.678,
+          "end": 20.998
+        },
+        {
+          "word": "as",
+          "start": 20.998,
+          "end": 21.238
+        },
+        {
+          "word": "well.",
+          "start": 21.238,
+          "end": 21.438
+        }
+      ]
+    },
+    {
+      "id": "bright",
+      "text": "It will shine thousands of times brighter than it does now.",
+      "file": "public/voice/tiny-stars-long/bright.7ed49ba0c46e.wav",
+      "start": 22.019,
+      "duration": 3.5,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 22.019,
+          "end": 22.139
+        },
+        {
+          "word": "will",
+          "start": 22.139,
+          "end": 22.279
+        },
+        {
+          "word": "shine",
+          "start": 22.279,
+          "end": 22.539
+        },
+        {
+          "word": "thousands",
+          "start": 22.539,
+          "end": 23.119
+        },
+        {
+          "word": "of",
+          "start": 23.119,
+          "end": 23.419
+        },
+        {
+          "word": "times",
+          "start": 23.419,
+          "end": 23.659
+        },
+        {
+          "word": "brighter",
+          "start": 23.659,
+          "end": 24.079
+        },
+        {
+          "word": "than",
+          "start": 24.079,
+          "end": 24.619
+        },
+        {
+          "word": "it",
+          "start": 24.619,
+          "end": 24.739
+        },
+        {
+          "word": "does",
+          "start": 24.739,
+          "end": 24.919
+        },
+        {
+          "word": "now.",
+          "start": 24.919,
+          "end": 25.299
+        }
+      ]
+    },
+    {
+      "id": "shed",
+      "text": "And it will blow nearly half of its own mass out into space.",
+      "file": "public/voice/tiny-stars-long/shed.ea345c129e3e.wav",
+      "start": 25.919,
+      "duration": 3.83,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 25.919,
+          "end": 26.299
+        },
+        {
+          "word": "it",
+          "start": 26.299,
+          "end": 26.519
+        },
+        {
+          "word": "will",
+          "start": 26.519,
+          "end": 26.699
+        },
+        {
+          "word": "blow",
+          "start": 26.699,
+          "end": 26.939
+        },
+        {
+          "word": "nearly",
+          "start": 26.939,
+          "end": 27.159
+        },
+        {
+          "word": "half",
+          "start": 27.159,
+          "end": 27.599
+        },
+        {
+          "word": "of",
+          "start": 27.599,
+          "end": 27.799
+        },
+        {
+          "word": "its",
+          "start": 27.799,
+          "end": 28.039
+        },
+        {
+          "word": "own",
+          "start": 28.039,
+          "end": 28.179
+        },
+        {
+          "word": "mass",
+          "start": 28.179,
+          "end": 28.459
+        },
+        {
+          "word": "out",
+          "start": 28.459,
+          "end": 28.799
+        },
+        {
+          "word": "into",
+          "start": 28.799,
+          "end": 28.959
+        },
+        {
+          "word": "space.",
+          "start": 28.959,
+          "end": 29.379
         }
       ]
     },
     {
       "id": "core",
-      "text": "It's the leftover core of a dead star.",
-      "file": "public/voice/tiny-stars-long/core.ee66d25240b1.wav",
-      "start": 26.811,
-      "duration": 2.352,
+      "text": "What remains is a white dwarf, the hot, bare core of the dead star.",
+      "file": "public/voice/tiny-stars-long/core.f785daefa8a8.wav",
+      "start": 30.148,
+      "duration": 4.17,
       "speed": 1,
       "words": [
         {
-          "word": "It's",
-          "start": 26.811,
-          "end": 26.971
+          "word": "What",
+          "start": 30.148,
+          "end": 30.288
         },
         {
-          "word": "the",
-          "start": 26.971,
-          "end": 27.091
+          "word": "remains",
+          "start": 30.288,
+          "end": 30.708
         },
         {
-          "word": "leftover",
-          "start": 27.091,
-          "end": 27.411
-        },
-        {
-          "word": "core",
-          "start": 27.411,
-          "end": 27.831
-        },
-        {
-          "word": "of",
-          "start": 27.831,
-          "end": 28.211
+          "word": "is",
+          "start": 30.708,
+          "end": 31.008
         },
         {
           "word": "a",
-          "start": 28.211,
-          "end": 28.291
+          "start": 31.008,
+          "end": 31.128
+        },
+        {
+          "word": "white",
+          "start": 31.128,
+          "end": 31.288
+        },
+        {
+          "word": "dwarf,",
+          "start": 31.288,
+          "end": 31.648
+        },
+        {
+          "word": "the",
+          "start": 32.168,
+          "end": 32.228
+        },
+        {
+          "word": "hot,",
+          "start": 32.228,
+          "end": 32.428
+        },
+        {
+          "word": "bare",
+          "start": 32.428,
+          "end": 32.848
+        },
+        {
+          "word": "core",
+          "start": 32.848,
+          "end": 33.208
+        },
+        {
+          "word": "of",
+          "start": 33.208,
+          "end": 33.508
+        },
+        {
+          "word": "the",
+          "start": 33.508,
+          "end": 33.608
         },
         {
           "word": "dead",
-          "start": 28.291,
-          "end": 28.431
+          "start": 33.608,
+          "end": 33.748
         },
         {
           "word": "star.",
-          "start": 28.431,
-          "end": 28.891
+          "start": 33.748,
+          "end": 34.108
+        }
+      ]
+    },
+    {
+      "id": "wdsize",
+      "text": "It will be barely bigger than Earth.",
+      "file": "public/voice/tiny-stars-long/wdsize.64eceb9ca846.wav",
+      "start": 34.719,
+      "duration": 2.102,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 34.719,
+          "end": 34.839
+        },
+        {
+          "word": "will",
+          "start": 34.839,
+          "end": 35.039
+        },
+        {
+          "word": "be",
+          "start": 35.039,
+          "end": 35.239
+        },
+        {
+          "word": "barely",
+          "start": 35.239,
+          "end": 35.539
+        },
+        {
+          "word": "bigger",
+          "start": 35.539,
+          "end": 35.919
+        },
+        {
+          "word": "than",
+          "start": 35.919,
+          "end": 36.159
+        },
+        {
+          "word": "Earth.",
+          "start": 36.159,
+          "end": 36.439
+        }
+      ]
+    },
+    {
+      "id": "wdmass",
+      "text": "Yet it will still hold about half the mass of the Sun.",
+      "file": "public/voice/tiny-stars-long/wdmass.3a32e805a785.wav",
+      "start": 37.221,
+      "duration": 3.295,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Yet",
+          "start": 37.221,
+          "end": 37.441
+        },
+        {
+          "word": "it",
+          "start": 37.441,
+          "end": 37.601
+        },
+        {
+          "word": "will",
+          "start": 37.601,
+          "end": 37.781
+        },
+        {
+          "word": "still",
+          "start": 37.781,
+          "end": 38.061
+        },
+        {
+          "word": "hold",
+          "start": 38.061,
+          "end": 38.421
+        },
+        {
+          "word": "about",
+          "start": 38.421,
+          "end": 38.801
+        },
+        {
+          "word": "half",
+          "start": 38.801,
+          "end": 39.101
+        },
+        {
+          "word": "the",
+          "start": 39.101,
+          "end": 39.341
+        },
+        {
+          "word": "mass",
+          "start": 39.341,
+          "end": 39.561
+        },
+        {
+          "word": "of",
+          "start": 39.561,
+          "end": 39.781
+        },
+        {
+          "word": "the",
+          "start": 39.781,
+          "end": 39.901
+        },
+        {
+          "word": "Sun.",
+          "start": 39.901,
+          "end": 40.161
+        }
+      ]
+    },
+    {
+      "id": "spoon",
+      "text": "A single teaspoon of it would weigh several tonnes.",
+      "file": "public/voice/tiny-stars-long/spoon.0be41ae911ad.wav",
+      "start": 40.916,
+      "duration": 2.568,
+      "speed": 1,
+      "words": [
+        {
+          "word": "A",
+          "start": 40.916,
+          "end": 40.996
+        },
+        {
+          "word": "single",
+          "start": 40.996,
+          "end": 41.236
+        },
+        {
+          "word": "teaspoon",
+          "start": 41.236,
+          "end": 41.496
+        },
+        {
+          "word": "of",
+          "start": 41.496,
+          "end": 41.956
+        },
+        {
+          "word": "it",
+          "start": 41.956,
+          "end": 42.076
+        },
+        {
+          "word": "would",
+          "start": 42.076,
+          "end": 42.216
+        },
+        {
+          "word": "weigh",
+          "start": 42.216,
+          "end": 42.376
+        },
+        {
+          "word": "several",
+          "start": 42.376,
+          "end": 42.736
+        },
+        {
+          "word": "tonnes.",
+          "start": 42.736,
+          "end": 43.116
+        }
+      ]
+    },
+    {
+      "id": "glow",
+      "text": "It will not burn anything. It will only glow with leftover heat.",
+      "file": "public/voice/tiny-stars-long/glow.d1d23c89031f.wav",
+      "start": 43.885,
+      "duration": 4.307,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 43.885,
+          "end": 44.025
+        },
+        {
+          "word": "will",
+          "start": 44.025,
+          "end": 44.225
+        },
+        {
+          "word": "not",
+          "start": 44.225,
+          "end": 44.405
+        },
+        {
+          "word": "burn",
+          "start": 44.405,
+          "end": 44.705
+        },
+        {
+          "word": "anything.",
+          "start": 44.705,
+          "end": 45.125
+        },
+        {
+          "word": "It",
+          "start": 46.005,
+          "end": 46.055
+        },
+        {
+          "word": "will",
+          "start": 46.045,
+          "end": 46.245
+        },
+        {
+          "word": "only",
+          "start": 46.245,
+          "end": 46.505
+        },
+        {
+          "word": "glow",
+          "start": 46.505,
+          "end": 46.805
+        },
+        {
+          "word": "with",
+          "start": 46.805,
+          "end": 47.145
+        },
+        {
+          "word": "leftover",
+          "start": 47.145,
+          "end": 47.445
+        },
+        {
+          "word": "heat.",
+          "start": 47.445,
+          "end": 47.925
+        }
+      ]
+    },
+    {
+      "id": "sirius",
+      "text": "We can already see a star like this. Sirius B is less than nine light-years away.",
+      "file": "public/voice/tiny-stars-long/sirius.82ff1926206b.wav",
+      "start": 48.591,
+      "duration": 5.068,
+      "speed": 1,
+      "words": [
+        {
+          "word": "We",
+          "start": 48.591,
+          "end": 48.691
+        },
+        {
+          "word": "can",
+          "start": 48.691,
+          "end": 48.831
+        },
+        {
+          "word": "already",
+          "start": 48.831,
+          "end": 49.151
+        },
+        {
+          "word": "see",
+          "start": 49.151,
+          "end": 49.471
+        },
+        {
+          "word": "a",
+          "start": 49.471,
+          "end": 49.591
+        },
+        {
+          "word": "star",
+          "start": 49.591,
+          "end": 49.831
+        },
+        {
+          "word": "like",
+          "start": 49.831,
+          "end": 50.091
+        },
+        {
+          "word": "this.",
+          "start": 50.091,
+          "end": 50.411
+        },
+        {
+          "word": "Sirius",
+          "start": 51.271,
+          "end": 51.321
+        },
+        {
+          "word": "B",
+          "start": 51.271,
+          "end": 51.571
+        },
+        {
+          "word": "is",
+          "start": 51.571,
+          "end": 51.811
+        },
+        {
+          "word": "less",
+          "start": 51.811,
+          "end": 52.031
+        },
+        {
+          "word": "than",
+          "start": 52.031,
+          "end": 52.271
+        },
+        {
+          "word": "nine",
+          "start": 52.571,
+          "end": 52.791
+        },
+        {
+          "word": "light-years",
+          "start": 52.791,
+          "end": 52.991
+        },
+        {
+          "word": "away.",
+          "start": 52.991,
+          "end": 53.371
         }
       ]
     },
     {
       "id": "packed",
-      "text": "It packs the mass of the Sun into the size of a planet.",
-      "file": "public/voice/tiny-stars-long/packed.ea1d316b405f.wav",
-      "start": 29.564,
-      "duration": 3.409,
-      "speed": 1,
-      "words": [
-        {
-          "word": "It",
-          "start": 29.584,
-          "end": 29.904
-        },
-        {
-          "word": "packs",
-          "start": 29.904,
-          "end": 30.124
-        },
-        {
-          "word": "the",
-          "start": 30.124,
-          "end": 30.404
-        },
-        {
-          "word": "mass",
-          "start": 30.404,
-          "end": 30.624
-        },
-        {
-          "word": "of",
-          "start": 30.624,
-          "end": 30.864
-        },
-        {
-          "word": "the",
-          "start": 30.864,
-          "end": 30.984
-        },
-        {
-          "word": "Sun",
-          "start": 30.984,
-          "end": 31.244
-        },
-        {
-          "word": "into",
-          "start": 31.244,
-          "end": 31.504
-        },
-        {
-          "word": "the",
-          "start": 31.504,
-          "end": 31.724
-        },
-        {
-          "word": "size",
-          "start": 31.724,
-          "end": 31.984
-        },
-        {
-          "word": "of",
-          "start": 31.984,
-          "end": 32.164
-        },
-        {
-          "word": "a",
-          "start": 32.164,
-          "end": 32.244
-        },
-        {
-          "word": "planet.",
-          "start": 32.244,
-          "end": 32.604
-        }
-      ]
-    },
-    {
-      "id": "future",
-      "text": "One day, our own Sun will end up just like this.",
-      "file": "public/voice/tiny-stars-long/future.3b934909b872.wav",
-      "start": 33.373,
-      "duration": 3.102,
-      "speed": 1,
-      "words": [
-        {
-          "word": "One",
-          "start": 33.373,
-          "end": 33.553
-        },
-        {
-          "word": "day,",
-          "start": 33.553,
-          "end": 33.813
-        },
-        {
-          "word": "our",
-          "start": 34.033,
-          "end": 34.333
-        },
-        {
-          "word": "own",
-          "start": 34.333,
-          "end": 34.513
-        },
-        {
-          "word": "Sun",
-          "start": 34.513,
-          "end": 34.733
-        },
-        {
-          "word": "will",
-          "start": 34.733,
-          "end": 35.013
-        },
-        {
-          "word": "end",
-          "start": 35.013,
-          "end": 35.233
-        },
-        {
-          "word": "up",
-          "start": 35.233,
-          "end": 35.413
-        },
-        {
-          "word": "just",
-          "start": 35.413,
-          "end": 35.633
-        },
-        {
-          "word": "like",
-          "start": 35.633,
-          "end": 35.833
-        },
-        {
-          "word": "this.",
-          "start": 35.833,
-          "end": 36.153
-        }
-      ]
-    },
-    {
-      "id": "smallest",
-      "text": "The smallest star we know of is only about as wide as Saturn.",
-      "file": "public/voice/tiny-stars-long/smallest.c139406b2129.wav",
-      "start": 36.875,
+      "text": "It packs the mass of the Sun into a ball smaller than Earth.",
+      "file": "public/voice/tiny-stars-long/packed.43f0fc6dabc2.wav",
+      "start": 54.06,
       "duration": 3.557,
       "speed": 1,
       "words": [
         {
-          "word": "The",
-          "start": 36.875,
-          "end": 37.015
-        },
-        {
-          "word": "smallest",
-          "start": 37.015,
-          "end": 37.355
-        },
-        {
-          "word": "star",
-          "start": 37.355,
-          "end": 37.815
-        },
-        {
-          "word": "we",
-          "start": 37.815,
-          "end": 38.035
-        },
-        {
-          "word": "know",
-          "start": 38.035,
-          "end": 38.215
-        },
-        {
-          "word": "of",
-          "start": 38.215,
-          "end": 38.435
-        },
-        {
-          "word": "is",
-          "start": 38.435,
-          "end": 38.595
-        },
-        {
-          "word": "only",
-          "start": 38.595,
-          "end": 38.895
-        },
-        {
-          "word": "about",
-          "start": 38.895,
-          "end": 39.155
-        },
-        {
-          "word": "as",
-          "start": 39.155,
-          "end": 39.375
-        },
-        {
-          "word": "wide",
-          "start": 39.375,
-          "end": 39.595
-        },
-        {
-          "word": "as",
-          "start": 39.595,
-          "end": 39.755
-        },
-        {
-          "word": "Saturn.",
-          "start": 39.755,
-          "end": 40.115
-        }
-      ]
-    },
-    {
-      "id": "limit",
-      "text": "With any less mass, it could not shine at all.",
-      "file": "public/voice/tiny-stars-long/limit.92645876399e.wav",
-      "start": 40.832,
-      "duration": 2.727,
-      "speed": 1,
-      "words": [
-        {
-          "word": "With",
-          "start": 40.832,
-          "end": 40.992
-        },
-        {
-          "word": "any",
-          "start": 40.992,
-          "end": 41.152
-        },
-        {
-          "word": "less",
-          "start": 41.152,
-          "end": 41.412
-        },
-        {
-          "word": "mass,",
-          "start": 41.412,
-          "end": 41.692
-        },
-        {
-          "word": "it",
-          "start": 42.152,
-          "end": 42.272
-        },
-        {
-          "word": "could",
-          "start": 42.272,
-          "end": 42.412
-        },
-        {
-          "word": "not",
-          "start": 42.412,
-          "end": 42.592
-        },
-        {
-          "word": "shine",
-          "start": 42.592,
-          "end": 42.812
-        },
-        {
-          "word": "at",
-          "start": 42.812,
-          "end": 43.192
-        },
-        {
-          "word": "all.",
-          "start": 43.192,
-          "end": 43.352
-        }
-      ]
-    },
-    {
-      "id": "proxima",
-      "text": "Proxima Centauri, the nearest star to the Sun, is only one and a half times as wide as Jupiter.",
-      "file": "public/voice/tiny-stars-long/proxima.58d7bd788e17.wav",
-      "start": 43.959,
-      "duration": 6.148,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Proxima",
-          "start": 43.959,
-          "end": 44.419
-        },
-        {
-          "word": "Centauri,",
-          "start": 44.419,
-          "end": 44.739
-        },
-        {
-          "word": "the",
-          "start": 45.399,
-          "end": 45.559
-        },
-        {
-          "word": "nearest",
-          "start": 45.559,
-          "end": 45.799
-        },
-        {
-          "word": "star",
-          "start": 45.799,
-          "end": 46.099
-        },
-        {
-          "word": "to",
-          "start": 46.099,
-          "end": 46.239
-        },
-        {
-          "word": "the",
-          "start": 46.239,
-          "end": 46.359
-        },
-        {
-          "word": "Sun,",
-          "start": 46.359,
-          "end": 46.639
-        },
-        {
-          "word": "is",
-          "start": 47.099,
-          "end": 47.419
-        },
-        {
-          "word": "only",
-          "start": 47.419,
-          "end": 47.679
-        },
-        {
-          "word": "one",
-          "start": 47.679,
-          "end": 48.019
-        },
-        {
-          "word": "and",
-          "start": 48.019,
-          "end": 48.159
-        },
-        {
-          "word": "a",
-          "start": 48.159,
-          "end": 48.239
-        },
-        {
-          "word": "half",
-          "start": 48.239,
-          "end": 48.459
-        },
-        {
-          "word": "times",
-          "start": 48.459,
-          "end": 48.839
-        },
-        {
-          "word": "as",
-          "start": 48.839,
-          "end": 48.999
-        },
-        {
-          "word": "wide",
-          "start": 48.999,
-          "end": 49.219
-        },
-        {
-          "word": "as",
-          "start": 49.219,
-          "end": 49.419
-        },
-        {
-          "word": "Jupiter.",
-          "start": 49.419,
-          "end": 49.659
-        }
-      ]
-    },
-    {
-      "id": "dim",
-      "text": "It's so dim that you can't see it without a telescope.",
-      "file": "public/voice/tiny-stars-long/dim.0341ff43c574.wav",
-      "start": 50.507,
-      "duration": 2.648,
-      "speed": 1,
-      "words": [
-        {
-          "word": "It's",
-          "start": 50.507,
-          "end": 50.667
-        },
-        {
-          "word": "so",
-          "start": 50.667,
-          "end": 50.807
-        },
-        {
-          "word": "dim",
-          "start": 50.807,
-          "end": 51.067
-        },
-        {
-          "word": "that",
-          "start": 51.067,
-          "end": 51.267
-        },
-        {
-          "word": "you",
-          "start": 51.267,
-          "end": 51.367
-        },
-        {
-          "word": "can't",
-          "start": 51.367,
-          "end": 51.687
-        },
-        {
-          "word": "see",
-          "start": 51.687,
-          "end": 51.887
-        },
-        {
-          "word": "it",
-          "start": 51.887,
-          "end": 52.027
-        },
-        {
-          "word": "without",
-          "start": 52.027,
-          "end": 52.227
-        },
-        {
-          "word": "a",
-          "start": 52.227,
-          "end": 52.367
-        },
-        {
-          "word": "telescope.",
-          "start": 52.367,
-          "end": 52.827
-        }
-      ]
-    },
-    {
-      "id": "planet",
-      "text": "It still has at least one planet of its own.",
-      "file": "public/voice/tiny-stars-long/planet.8996631df257.wav",
-      "start": 53.555,
-      "duration": 2.841,
-      "speed": 1,
-      "words": [
-        {
           "word": "It",
-          "start": 53.555,
-          "end": 53.655
+          "start": 54.06,
+          "end": 54.16
         },
         {
-          "word": "still",
-          "start": 53.655,
-          "end": 53.935
+          "word": "packs",
+          "start": 54.16,
+          "end": 54.34
         },
         {
-          "word": "has",
-          "start": 53.935,
-          "end": 54.235
+          "word": "the",
+          "start": 54.34,
+          "end": 54.62
         },
         {
-          "word": "at",
-          "start": 54.235,
-          "end": 54.475
-        },
-        {
-          "word": "least",
-          "start": 54.475,
-          "end": 54.635
-        },
-        {
-          "word": "one",
-          "start": 54.635,
-          "end": 54.955
-        },
-        {
-          "word": "planet",
-          "start": 54.955,
-          "end": 55.355
+          "word": "mass",
+          "start": 54.62,
+          "end": 54.78
         },
         {
           "word": "of",
-          "start": 55.355,
-          "end": 55.675
+          "start": 54.78,
+          "end": 55
         },
         {
-          "word": "its",
-          "start": 55.675,
-          "end": 55.855
-        },
-        {
-          "word": "own.",
-          "start": 55.855,
-          "end": 56.155
-        }
-      ]
-    },
-    {
-      "id": "trillions",
-      "text": "But it will keep burning for trillions of years.",
-      "file": "public/voice/tiny-stars-long/trillions.e20aa5fab99b.wav",
-      "start": 56.795,
-      "duration": 2.75,
-      "speed": 1,
-      "words": [
-        {
-          "word": "But",
-          "start": 56.795,
-          "end": 57.115
-        },
-        {
-          "word": "it",
-          "start": 57.115,
-          "end": 57.335
-        },
-        {
-          "word": "will",
-          "start": 57.335,
-          "end": 57.515
-        },
-        {
-          "word": "keep",
-          "start": 57.515,
-          "end": 57.695
-        },
-        {
-          "word": "burning",
-          "start": 57.695,
-          "end": 58.015
-        },
-        {
-          "word": "for",
-          "start": 58.015,
-          "end": 58.295
-        },
-        {
-          "word": "trillions",
-          "start": 58.295,
-          "end": 58.635
-        },
-        {
-          "word": "of",
-          "start": 58.635,
-          "end": 58.975
-        },
-        {
-          "word": "years.",
-          "start": 58.975,
-          "end": 59.255
-        }
-      ]
-    },
-    {
-      "id": "sun",
-      "text": "Next to all of them, our Sun is a giant.",
-      "file": "public/voice/tiny-stars-long/sun.886ef1bd29af.wav",
-      "start": 59.945,
-      "duration": 3.205,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Next",
-          "start": 59.945,
-          "end": 60.165
-        },
-        {
-          "word": "to",
-          "start": 60.165,
-          "end": 60.265
-        },
-        {
-          "word": "all",
-          "start": 60.265,
-          "end": 60.505
-        },
-        {
-          "word": "of",
-          "start": 60.505,
-          "end": 60.665
-        },
-        {
-          "word": "them,",
-          "start": 60.665,
-          "end": 60.905
-        },
-        {
-          "word": "our",
-          "start": 61.205,
-          "end": 61.405
+          "word": "the",
+          "start": 55,
+          "end": 55.12
         },
         {
           "word": "Sun",
-          "start": 61.405,
-          "end": 61.745
+          "start": 55.12,
+          "end": 55.34
         },
         {
-          "word": "is",
-          "start": 61.745,
-          "end": 62.325
+          "word": "into",
+          "start": 55.34,
+          "end": 55.72
         },
         {
           "word": "a",
-          "start": 62.325,
-          "end": 62.445
+          "start": 55.72,
+          "end": 55.92
         },
         {
-          "word": "giant.",
-          "start": 62.445,
-          "end": 62.725
+          "word": "ball",
+          "start": 55.92,
+          "end": 56.12
+        },
+        {
+          "word": "smaller",
+          "start": 56.12,
+          "end": 56.7
+        },
+        {
+          "word": "than",
+          "start": 56.7,
+          "end": 57.02
+        },
+        {
+          "word": "Earth.",
+          "start": 57.02,
+          "end": 57.32
         }
       ]
     },
     {
-      "id": "sunlife",
-      "text": "But it will only shine for about ten billion years.",
-      "file": "public/voice/tiny-stars-long/sunlife.d6c789457d08.wav",
-      "start": 63.55,
-      "duration": 3.023,
+      "id": "fade",
+      "text": "Over trillions of years, a white dwarf cools and fades to black.",
+      "file": "public/voice/tiny-stars-long/fade.051c9d4dd19a.wav",
+      "start": 58.016,
+      "duration": 3.807,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Over",
+          "start": 58.016,
+          "end": 58.216
+        },
+        {
+          "word": "trillions",
+          "start": 58.216,
+          "end": 58.556
+        },
+        {
+          "word": "of",
+          "start": 58.556,
+          "end": 58.856
+        },
+        {
+          "word": "years,",
+          "start": 58.856,
+          "end": 59.076
+        },
+        {
+          "word": "a",
+          "start": 59.496,
+          "end": 59.556
+        },
+        {
+          "word": "white",
+          "start": 59.556,
+          "end": 59.736
+        },
+        {
+          "word": "dwarf",
+          "start": 59.736,
+          "end": 60.016
+        },
+        {
+          "word": "cools",
+          "start": 60.016,
+          "end": 60.596
+        },
+        {
+          "word": "and",
+          "start": 60.596,
+          "end": 60.716
+        },
+        {
+          "word": "fades",
+          "start": 60.716,
+          "end": 60.916
+        },
+        {
+          "word": "to",
+          "start": 60.916,
+          "end": 61.236
+        },
+        {
+          "word": "black.",
+          "start": 61.236,
+          "end": 61.476
+        }
+      ]
+    },
+    {
+      "id": "none",
+      "text": "The universe is not yet old enough for that to have happened even once.",
+      "file": "public/voice/tiny-stars-long/none.4ac7fb71c4fc.wav",
+      "start": 62.223,
+      "duration": 3.602,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 62.223,
+          "end": 62.303
+        },
+        {
+          "word": "universe",
+          "start": 62.303,
+          "end": 62.623
+        },
+        {
+          "word": "is",
+          "start": 62.623,
+          "end": 63.023
+        },
+        {
+          "word": "not",
+          "start": 63.023,
+          "end": 63.243
+        },
+        {
+          "word": "yet",
+          "start": 63.243,
+          "end": 63.443
+        },
+        {
+          "word": "old",
+          "start": 63.443,
+          "end": 63.643
+        },
+        {
+          "word": "enough",
+          "start": 63.643,
+          "end": 63.903
+        },
+        {
+          "word": "for",
+          "start": 63.903,
+          "end": 64.143
+        },
+        {
+          "word": "that",
+          "start": 64.143,
+          "end": 64.283
+        },
+        {
+          "word": "to",
+          "start": 64.283,
+          "end": 64.443
+        },
+        {
+          "word": "have",
+          "start": 64.443,
+          "end": 64.543
+        },
+        {
+          "word": "happened",
+          "start": 64.543,
+          "end": 64.883
+        },
+        {
+          "word": "even",
+          "start": 64.883,
+          "end": 65.143
+        },
+        {
+          "word": "once.",
+          "start": 65.143,
+          "end": 65.523
+        }
+      ]
+    },
+    {
+      "id": "smaller",
+      "text": "And a white dwarf is not even the smallest kind of dead star. A neutron star is only twenty kilometres wide.",
+      "file": "public/voice/tiny-stars-long/smaller.c0c873443c87.wav",
+      "start": 66.225,
+      "duration": 6.307,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 66.225,
+          "end": 66.345
+        },
+        {
+          "word": "a",
+          "start": 66.345,
+          "end": 66.405
+        },
+        {
+          "word": "white",
+          "start": 66.405,
+          "end": 66.585
+        },
+        {
+          "word": "dwarf",
+          "start": 66.585,
+          "end": 66.865
+        },
+        {
+          "word": "is",
+          "start": 66.865,
+          "end": 67.185
+        },
+        {
+          "word": "not",
+          "start": 67.185,
+          "end": 67.365
+        },
+        {
+          "word": "even",
+          "start": 67.365,
+          "end": 67.645
+        },
+        {
+          "word": "the",
+          "start": 67.645,
+          "end": 67.805
+        },
+        {
+          "word": "smallest",
+          "start": 67.805,
+          "end": 68.165
+        },
+        {
+          "word": "kind",
+          "start": 68.165,
+          "end": 68.525
+        },
+        {
+          "word": "of",
+          "start": 68.525,
+          "end": 68.725
+        },
+        {
+          "word": "dead",
+          "start": 68.725,
+          "end": 68.865
+        },
+        {
+          "word": "star.",
+          "start": 68.865,
+          "end": 69.285
+        },
+        {
+          "word": "A",
+          "start": 69.785,
+          "end": 69.835
+        },
+        {
+          "word": "neutron",
+          "start": 69.785,
+          "end": 69.965
+        },
+        {
+          "word": "star",
+          "start": 69.965,
+          "end": 70.485
+        },
+        {
+          "word": "is",
+          "start": 70.485,
+          "end": 70.745
+        },
+        {
+          "word": "only",
+          "start": 70.745,
+          "end": 70.925
+        },
+        {
+          "word": "twenty",
+          "start": 70.925,
+          "end": 71.265
+        },
+        {
+          "word": "kilometres",
+          "start": 71.265,
+          "end": 71.505
+        },
+        {
+          "word": "wide.",
+          "start": 71.505,
+          "end": 72.285
+        }
+      ]
+    },
+    {
+      "id": "end-l",
+      "text": "But our Sun is too small to become one. Its future is that quiet white dot.",
+      "file": "public/voice/tiny-stars-long/end-l.672407259f58.wav",
+      "start": 72.932,
+      "duration": 4.989,
       "speed": 1,
       "words": [
         {
           "word": "But",
-          "start": 63.55,
-          "end": 63.63
-        },
-        {
-          "word": "it",
-          "start": 63.63,
-          "end": 63.69
-        },
-        {
-          "word": "will",
-          "start": 63.69,
-          "end": 63.81
-        },
-        {
-          "word": "only",
-          "start": 63.81,
-          "end": 64.13
-        },
-        {
-          "word": "shine",
-          "start": 64.13,
-          "end": 64.35
-        },
-        {
-          "word": "for",
-          "start": 64.35,
-          "end": 64.71
-        },
-        {
-          "word": "about",
-          "start": 64.71,
-          "end": 64.89
-        },
-        {
-          "word": "ten",
-          "start": 64.89,
-          "end": 65.31
-        },
-        {
-          "word": "billion",
-          "start": 65.31,
-          "end": 65.67
-        },
-        {
-          "word": "years.",
-          "start": 65.67,
-          "end": 66.13
-        }
-      ]
-    },
-    {
-      "id": "end",
-      "text": "In fact, most of the stars in our galaxy are smaller than the Sun.",
-      "file": "public/voice/tiny-stars-long/end.fd1260ae3bd2.wav",
-      "start": 66.973,
-      "duration": 4.045,
-      "speed": 1,
-      "words": [
-        {
-          "word": "In",
-          "start": 66.973,
-          "end": 67.073
-        },
-        {
-          "word": "fact,",
-          "start": 67.073,
-          "end": 67.313
-        },
-        {
-          "word": "most",
-          "start": 67.693,
-          "end": 68.073
-        },
-        {
-          "word": "of",
-          "start": 68.073,
-          "end": 68.193
-        },
-        {
-          "word": "the",
-          "start": 68.193,
-          "end": 68.313
-        },
-        {
-          "word": "stars",
-          "start": 68.313,
-          "end": 68.473
-        },
-        {
-          "word": "in",
-          "start": 68.473,
-          "end": 68.753
+          "start": 72.932,
+          "end": 73.112
         },
         {
           "word": "our",
-          "start": 68.753,
-          "end": 68.853
+          "start": 73.112,
+          "end": 73.332
         },
         {
-          "word": "galaxy",
-          "start": 68.853,
-          "end": 69.193
+          "word": "Sun",
+          "start": 73.332,
+          "end": 73.552
         },
         {
-          "word": "are",
-          "start": 69.193,
-          "end": 69.653
+          "word": "is",
+          "start": 73.552,
+          "end": 73.772
         },
         {
-          "word": "smaller",
-          "start": 69.653,
-          "end": 69.973
+          "word": "too",
+          "start": 73.772,
+          "end": 73.952
         },
         {
-          "word": "than",
-          "start": 69.973,
-          "end": 70.313
+          "word": "small",
+          "start": 73.952,
+          "end": 74.292
         },
         {
-          "word": "the",
-          "start": 70.313,
-          "end": 70.453
+          "word": "to",
+          "start": 74.292,
+          "end": 74.492
         },
         {
-          "word": "Sun.",
-          "start": 70.453,
-          "end": 70.693
+          "word": "become",
+          "start": 74.492,
+          "end": 74.692
+        },
+        {
+          "word": "one.",
+          "start": 74.692,
+          "end": 75.072
+        },
+        {
+          "word": "Its",
+          "start": 75.592,
+          "end": 75.692
+        },
+        {
+          "word": "future",
+          "start": 75.692,
+          "end": 75.932
+        },
+        {
+          "word": "is",
+          "start": 75.932,
+          "end": 76.392
+        },
+        {
+          "word": "that",
+          "start": 76.392,
+          "end": 76.572
+        },
+        {
+          "word": "quiet",
+          "start": 76.572,
+          "end": 76.912
+        },
+        {
+          "word": "white",
+          "start": 76.912,
+          "end": 77.232
+        },
+        {
+          "word": "dot.",
+          "start": 77.232,
+          "end": 77.612
         }
       ]
     },
@@ -1257,34 +1382,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/tiny-stars-long/cta.f8498ab25592.wav",
-      "start": 71.418,
+      "start": 78.321,
       "duration": 2.08,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 71.418,
-          "end": 71.718
+          "start": 78.321,
+          "end": 78.621
         },
         {
           "word": "for",
-          "start": 71.718,
-          "end": 72.038
+          "start": 78.621,
+          "end": 78.941
         },
         {
           "word": "more",
-          "start": 72.038,
-          "end": 72.278
+          "start": 78.941,
+          "end": 79.181
         },
         {
           "word": "cosmic",
-          "start": 72.278,
-          "end": 72.738
+          "start": 79.181,
+          "end": 79.641
         },
         {
           "word": "scale.",
-          "start": 72.738,
-          "end": 73.298
+          "start": 79.641,
+          "end": 80.201
         }
       ]
     }
