@@ -49,7 +49,7 @@ export const BLACK_HOLES: EpisodeSpec = {
     { id: "sgrmass", only: "long", say: "It holds the mass of more than four million Suns.", visual: { type: "body", body: sgrA, fact: "4.3 million Suns of mass" } },
     { id: "stellar", only: "long", say: "Black holes made by dying stars are tiny next to it.", visual: { type: "compare", from: cygnus, to: sgrA, big: true } },
     { id: "far", only: "long", say: "It sits twenty-six thousand light-years from Earth.", visual: { type: "body", body: sgrA, fact: "26,000 light-years away" } },
-    { id: "dust", only: "long", say: "From here, it is hidden behind thick clouds of dust.", visual: { type: "body", body: sgrA, fact: "hidden behind dust" } },
+    { id: "dust", only: "long", say: "From here, it is hidden behind dense clouds of dust.", visual: { type: "body", body: sgrA, fact: "hidden behind dust" } },
     { id: "dark", only: "long", say: "For decades, nobody could see it. They could only watch the stars around it.", visual: { type: "body", body: sgrA, fact: "found by its pull on nearby stars" } },
     { id: "s2", only: "long", say: "One of those stars circles it every sixteen years.", visual: { type: "body", body: sgrA, fact: "star S2: one orbit in 16 years" } },
     { id: "speed", only: "long", say: "At its closest, that star moves at almost three percent of the speed of light.", visual: { type: "body", body: sgrA, fact: "up to 7,650 km every second" } },

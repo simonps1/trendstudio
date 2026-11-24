@@ -182,59 +182,59 @@
       "id": "sgrmass",
       "text": "It holds the mass of more than four million Suns.",
       "file": "public/voice/black-holes-long/sgrmass.407670e3f23f.wav",
-      "start": 11.104,
+      "start": 11.105,
       "duration": 2.977,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 11.104,
-          "end": 11.204
+          "start": 11.105,
+          "end": 11.205
         },
         {
           "word": "holds",
-          "start": 11.204,
-          "end": 11.424
+          "start": 11.205,
+          "end": 11.425
         },
         {
           "word": "the",
-          "start": 11.424,
-          "end": 11.684
+          "start": 11.425,
+          "end": 11.685
         },
         {
           "word": "mass",
-          "start": 11.684,
-          "end": 11.884
+          "start": 11.685,
+          "end": 11.885
         },
         {
           "word": "of",
-          "start": 11.884,
-          "end": 12.124
+          "start": 11.885,
+          "end": 12.125
         },
         {
           "word": "more",
-          "start": 12.124,
-          "end": 12.384
+          "start": 12.125,
+          "end": 12.385
         },
         {
           "word": "than",
-          "start": 12.384,
-          "end": 12.544
+          "start": 12.385,
+          "end": 12.545
         },
         {
           "word": "four",
-          "start": 12.544,
-          "end": 12.844
+          "start": 12.545,
+          "end": 12.845
         },
         {
           "word": "million",
-          "start": 12.844,
-          "end": 13.184
+          "start": 12.845,
+          "end": 13.185
         },
         {
           "word": "Suns.",
-          "start": 13.184,
-          "end": 13.984
+          "start": 13.185,
+          "end": 13.985
         }
       ]
     },
@@ -350,61 +350,61 @@
     },
     {
       "id": "dust",
-      "text": "From here, it is hidden behind thick clouds of dust.",
-      "file": "public/voice/black-holes-long/dust.200f8d9b7925.wav",
-      "start": 21.77,
-      "duration": 3.193,
+      "text": "From here, it is hidden behind dense clouds of dust.",
+      "file": "public/voice/black-holes-long/dust.57197f6ee89b.wav",
+      "start": 21.771,
+      "duration": 3.17,
       "speed": 1,
       "words": [
         {
           "word": "From",
-          "start": 21.77,
-          "end": 21.91
+          "start": 21.771,
+          "end": 21.931
         },
         {
           "word": "here,",
-          "start": 21.91,
-          "end": 22.21
+          "start": 21.931,
+          "end": 22.291
         },
         {
           "word": "it",
-          "start": 22.47,
-          "end": 22.65
+          "start": 22.391,
+          "end": 22.571
         },
         {
           "word": "is",
-          "start": 22.65,
-          "end": 22.79
+          "start": 22.571,
+          "end": 22.691
         },
         {
           "word": "hidden",
-          "start": 22.79,
-          "end": 22.97
+          "start": 22.691,
+          "end": 22.931
         },
         {
           "word": "behind",
-          "start": 22.97,
-          "end": 23.49
+          "start": 22.931,
+          "end": 23.431
         },
         {
-          "word": "thick",
-          "start": 23.49,
-          "end": 23.75
+          "word": "dense",
+          "start": 23.431,
+          "end": 23.711
         },
         {
           "word": "clouds",
-          "start": 23.75,
-          "end": 24.03
+          "start": 23.711,
+          "end": 24.031
         },
         {
           "word": "of",
-          "start": 24.03,
-          "end": 24.39
+          "start": 24.031,
+          "end": 24.371
         },
         {
           "word": "dust.",
-          "start": 24.39,
-          "end": 24.59
+          "start": 24.371,
+          "end": 24.611
         }
       ]
     },
@@ -412,79 +412,79 @@
       "id": "dark",
       "text": "For decades, nobody could see it. They could only watch the stars around it.",
       "file": "public/voice/black-holes-long/dark.a5c2fe663f75.wav",
-      "start": 25.363,
+      "start": 25.341,
       "duration": 4.148,
       "speed": 1,
       "words": [
         {
           "word": "For",
-          "start": 25.363,
-          "end": 25.463
+          "start": 25.341,
+          "end": 25.441
         },
         {
           "word": "decades,",
-          "start": 25.463,
-          "end": 25.703
+          "start": 25.441,
+          "end": 25.681
         },
         {
           "word": "nobody",
-          "start": 26.183,
-          "end": 26.483
+          "start": 26.161,
+          "end": 26.461
         },
         {
           "word": "could",
-          "start": 26.483,
-          "end": 26.683
+          "start": 26.461,
+          "end": 26.661
         },
         {
           "word": "see",
-          "start": 26.683,
-          "end": 26.903
+          "start": 26.661,
+          "end": 26.881
         },
         {
           "word": "it.",
-          "start": 26.903,
-          "end": 27.123
+          "start": 26.881,
+          "end": 27.101
         },
         {
           "word": "They",
-          "start": 27.503,
-          "end": 27.603
+          "start": 27.481,
+          "end": 27.581
         },
         {
           "word": "could",
-          "start": 27.603,
-          "end": 27.723
+          "start": 27.581,
+          "end": 27.701
         },
         {
           "word": "only",
-          "start": 27.723,
-          "end": 27.843
+          "start": 27.701,
+          "end": 27.821
         },
         {
           "word": "watch",
-          "start": 27.843,
-          "end": 28.143
+          "start": 27.821,
+          "end": 28.121
         },
         {
           "word": "the",
-          "start": 28.143,
-          "end": 28.323
+          "start": 28.121,
+          "end": 28.301
         },
         {
           "word": "stars",
-          "start": 28.323,
-          "end": 28.603
+          "start": 28.301,
+          "end": 28.581
         },
         {
           "word": "around",
-          "start": 28.603,
-          "end": 28.963
+          "start": 28.581,
+          "end": 28.941
         },
         {
           "word": "it.",
-          "start": 28.963,
-          "end": 29.263
+          "start": 28.941,
+          "end": 29.241
         }
       ]
     },
@@ -492,54 +492,54 @@
       "id": "s2",
       "text": "One of those stars circles it every sixteen years.",
       "file": "public/voice/black-holes-long/s2.0525f50f0157.wav",
-      "start": 29.911,
+      "start": 29.889,
       "duration": 2.818,
       "speed": 1,
       "words": [
         {
           "word": "One",
-          "start": 29.911,
-          "end": 30.091
+          "start": 29.889,
+          "end": 30.069
         },
         {
           "word": "of",
-          "start": 30.091,
-          "end": 30.231
+          "start": 30.069,
+          "end": 30.209
         },
         {
           "word": "those",
-          "start": 30.231,
-          "end": 30.391
+          "start": 30.209,
+          "end": 30.369
         },
         {
           "word": "stars",
-          "start": 30.391,
-          "end": 30.691
+          "start": 30.369,
+          "end": 30.669
         },
         {
           "word": "circles",
-          "start": 30.691,
-          "end": 31.191
+          "start": 30.669,
+          "end": 31.169
         },
         {
           "word": "it",
-          "start": 31.191,
-          "end": 31.411
+          "start": 31.169,
+          "end": 31.389
         },
         {
           "word": "every",
-          "start": 31.411,
-          "end": 31.671
+          "start": 31.389,
+          "end": 31.649
         },
         {
           "word": "sixteen",
-          "start": 31.671,
-          "end": 32.031
+          "start": 31.649,
+          "end": 32.009
         },
         {
           "word": "years.",
-          "start": 32.031,
-          "end": 32.411
+          "start": 32.009,
+          "end": 32.389
         }
       ]
     },
@@ -547,84 +547,84 @@
       "id": "speed",
       "text": "At its closest, that star moves at almost three percent of the speed of light.",
       "file": "public/voice/black-holes-long/speed.6bde4aa78335.wav",
-      "start": 33.129,
+      "start": 33.107,
       "duration": 4.42,
       "speed": 1,
       "words": [
         {
           "word": "At",
-          "start": 33.129,
-          "end": 33.229
+          "start": 33.107,
+          "end": 33.207
         },
         {
           "word": "its",
-          "start": 33.229,
-          "end": 33.309
+          "start": 33.207,
+          "end": 33.287
         },
         {
           "word": "closest,",
-          "start": 33.309,
-          "end": 33.669
+          "start": 33.287,
+          "end": 33.647
         },
         {
           "word": "that",
-          "start": 34.329,
-          "end": 34.549
+          "start": 34.307,
+          "end": 34.527
         },
         {
           "word": "star",
-          "start": 34.549,
-          "end": 34.809
+          "start": 34.527,
+          "end": 34.787
         },
         {
           "word": "moves",
-          "start": 34.809,
-          "end": 35.169
+          "start": 34.787,
+          "end": 35.147
         },
         {
           "word": "at",
-          "start": 35.169,
-          "end": 35.389
+          "start": 35.147,
+          "end": 35.367
         },
         {
           "word": "almost",
-          "start": 35.389,
-          "end": 35.589
+          "start": 35.367,
+          "end": 35.567
         },
         {
           "word": "three",
-          "start": 35.589,
-          "end": 35.949
+          "start": 35.567,
+          "end": 35.927
         },
         {
           "word": "percent",
-          "start": 35.949,
-          "end": 35.999
+          "start": 35.927,
+          "end": 35.977
         },
         {
           "word": "of",
-          "start": 36.349,
-          "end": 36.529
+          "start": 36.327,
+          "end": 36.507
         },
         {
           "word": "the",
-          "start": 36.529,
-          "end": 36.629
+          "start": 36.507,
+          "end": 36.607
         },
         {
           "word": "speed",
-          "start": 36.629,
-          "end": 36.809
+          "start": 36.607,
+          "end": 36.787
         },
         {
           "word": "of",
-          "start": 36.809,
-          "end": 36.949
+          "start": 36.787,
+          "end": 36.927
         },
         {
           "word": "light.",
-          "start": 36.949,
-          "end": 37.209
+          "start": 36.927,
+          "end": 37.187
         }
       ]
     },
@@ -632,89 +632,89 @@
       "id": "nobel",
       "text": "Tracking it proved the black hole was real, and won a Nobel Prize in twenty twenty.",
       "file": "public/voice/black-holes-long/nobel.a8862c9cec17.wav",
-      "start": 37.95,
+      "start": 37.927,
       "duration": 5.534,
       "speed": 1,
       "words": [
         {
           "word": "Tracking",
-          "start": 37.95,
-          "end": 38.27
+          "start": 37.927,
+          "end": 38.247
         },
         {
           "word": "it",
-          "start": 38.27,
-          "end": 38.53
+          "start": 38.247,
+          "end": 38.507
         },
         {
           "word": "proved",
-          "start": 38.53,
-          "end": 38.87
+          "start": 38.507,
+          "end": 38.847
         },
         {
           "word": "the",
-          "start": 38.87,
-          "end": 39.25
+          "start": 38.847,
+          "end": 39.227
         },
         {
           "word": "black",
-          "start": 39.25,
-          "end": 39.47
+          "start": 39.227,
+          "end": 39.447
         },
         {
           "word": "hole",
-          "start": 39.47,
-          "end": 39.69
+          "start": 39.447,
+          "end": 39.667
         },
         {
           "word": "was",
-          "start": 39.69,
-          "end": 39.89
+          "start": 39.667,
+          "end": 39.867
         },
         {
           "word": "real,",
-          "start": 39.89,
-          "end": 40.19
+          "start": 39.867,
+          "end": 40.167
         },
         {
           "word": "and",
-          "start": 40.19,
-          "end": 40.77
+          "start": 40.167,
+          "end": 40.747
         },
         {
           "word": "won",
-          "start": 40.77,
-          "end": 40.97
+          "start": 40.747,
+          "end": 40.947
         },
         {
           "word": "a",
-          "start": 40.97,
-          "end": 41.11
+          "start": 40.947,
+          "end": 41.087
         },
         {
           "word": "Nobel",
-          "start": 41.11,
-          "end": 41.23
+          "start": 41.087,
+          "end": 41.207
         },
         {
           "word": "Prize",
-          "start": 41.23,
-          "end": 41.91
+          "start": 41.207,
+          "end": 41.887
         },
         {
           "word": "in",
-          "start": 41.91,
-          "end": 42.29
+          "start": 41.887,
+          "end": 42.267
         },
         {
           "word": "twenty",
-          "start": 42.29,
-          "end": 42.34
+          "start": 42.267,
+          "end": 42.317
         },
         {
           "word": "twenty.",
-          "start": 42.29,
-          "end": 43.19
+          "start": 42.267,
+          "end": 43.167
         }
       ]
     },
@@ -722,49 +722,49 @@
       "id": "pic",
       "text": "We finally took its picture in twenty twenty-two.",
       "file": "public/voice/black-holes-long/pic.d2188f5e8b8a.wav",
-      "start": 43.884,
+      "start": 43.861,
       "duration": 2.818,
       "speed": 1,
       "words": [
         {
           "word": "We",
-          "start": 43.884,
-          "end": 43.984
+          "start": 43.861,
+          "end": 43.961
         },
         {
           "word": "finally",
-          "start": 43.984,
-          "end": 44.324
+          "start": 43.961,
+          "end": 44.301
         },
         {
           "word": "took",
-          "start": 44.324,
-          "end": 44.644
+          "start": 44.301,
+          "end": 44.621
         },
         {
           "word": "its",
-          "start": 44.644,
-          "end": 44.864
+          "start": 44.621,
+          "end": 44.841
         },
         {
           "word": "picture",
-          "start": 44.864,
-          "end": 45.264
+          "start": 44.841,
+          "end": 45.241
         },
         {
           "word": "in",
-          "start": 45.264,
-          "end": 45.484
+          "start": 45.241,
+          "end": 45.461
         },
         {
           "word": "twenty",
-          "start": 45.484,
-          "end": 45.534
+          "start": 45.461,
+          "end": 45.511
         },
         {
           "word": "twenty-two.",
-          "start": 45.484,
-          "end": 46.384
+          "start": 45.461,
+          "end": 46.361
         }
       ]
     },
@@ -772,69 +772,69 @@
       "id": "ring",
       "text": "The image shows a ring of glowing gas around a dark shadow.",
       "file": "public/voice/black-holes-long/ring.ff042bb94812.wav",
-      "start": 47.102,
+      "start": 47.079,
       "duration": 3.841,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 47.102,
-          "end": 47.262
+          "start": 47.079,
+          "end": 47.239
         },
         {
           "word": "image",
-          "start": 47.262,
-          "end": 47.502
+          "start": 47.239,
+          "end": 47.479
         },
         {
           "word": "shows",
-          "start": 47.502,
-          "end": 47.822
+          "start": 47.479,
+          "end": 47.799
         },
         {
           "word": "a",
-          "start": 47.822,
-          "end": 47.982
+          "start": 47.799,
+          "end": 47.959
         },
         {
           "word": "ring",
-          "start": 47.982,
-          "end": 48.182
+          "start": 47.959,
+          "end": 48.159
         },
         {
           "word": "of",
-          "start": 48.182,
-          "end": 48.502
+          "start": 48.159,
+          "end": 48.479
         },
         {
           "word": "glowing",
-          "start": 48.502,
-          "end": 48.762
+          "start": 48.479,
+          "end": 48.739
         },
         {
           "word": "gas",
-          "start": 48.762,
-          "end": 49.242
+          "start": 48.739,
+          "end": 49.219
         },
         {
           "word": "around",
-          "start": 49.242,
-          "end": 49.822
+          "start": 49.219,
+          "end": 49.799
         },
         {
           "word": "a",
-          "start": 49.822,
-          "end": 50.002
+          "start": 49.799,
+          "end": 49.979
         },
         {
           "word": "dark",
-          "start": 50.002,
-          "end": 50.182
+          "start": 49.979,
+          "end": 50.159
         },
         {
           "word": "shadow.",
-          "start": 50.182,
-          "end": 50.702
+          "start": 50.159,
+          "end": 50.679
         }
       ]
     },
@@ -842,64 +842,64 @@
       "id": "lap-l",
       "text": "Light needs more than four minutes to travel once around it.",
       "file": "public/voice/black-holes-long/lap-l.b30d996d49f2.wav",
-      "start": 51.343,
+      "start": 51.32,
       "duration": 2.943,
       "speed": 1,
       "words": [
         {
           "word": "Light",
-          "start": 51.343,
-          "end": 51.503
+          "start": 51.32,
+          "end": 51.48
         },
         {
           "word": "needs",
-          "start": 51.503,
-          "end": 51.703
+          "start": 51.48,
+          "end": 51.68
         },
         {
           "word": "more",
-          "start": 51.703,
-          "end": 52.043
+          "start": 51.68,
+          "end": 52.02
         },
         {
           "word": "than",
-          "start": 52.043,
-          "end": 52.223
+          "start": 52.02,
+          "end": 52.2
         },
         {
           "word": "four",
-          "start": 52.223,
-          "end": 52.483
+          "start": 52.2,
+          "end": 52.46
         },
         {
           "word": "minutes",
-          "start": 52.483,
-          "end": 52.743
+          "start": 52.46,
+          "end": 52.72
         },
         {
           "word": "to",
-          "start": 52.743,
-          "end": 53.003
+          "start": 52.72,
+          "end": 52.98
         },
         {
           "word": "travel",
-          "start": 53.003,
-          "end": 53.303
+          "start": 52.98,
+          "end": 53.28
         },
         {
           "word": "once",
-          "start": 53.303,
-          "end": 53.583
+          "start": 53.28,
+          "end": 53.56
         },
         {
           "word": "around",
-          "start": 53.583,
-          "end": 53.983
+          "start": 53.56,
+          "end": 53.96
         },
         {
           "word": "it.",
-          "start": 53.983,
-          "end": 54.183
+          "start": 53.96,
+          "end": 54.16
         }
       ]
     },
@@ -907,69 +907,69 @@
       "id": "quiet",
       "text": "For its size, it is surprisingly quiet. Very little is falling in.",
       "file": "public/voice/black-holes-long/quiet.bd2f01b1f965.wav",
-      "start": 54.686,
+      "start": 54.663,
       "duration": 4.33,
       "speed": 1,
       "words": [
         {
           "word": "For",
-          "start": 54.686,
-          "end": 54.786
+          "start": 54.663,
+          "end": 54.763
         },
         {
           "word": "its",
-          "start": 54.786,
-          "end": 54.886
+          "start": 54.763,
+          "end": 54.863
         },
         {
           "word": "size,",
-          "start": 54.886,
-          "end": 55.266
+          "start": 54.863,
+          "end": 55.243
         },
         {
           "word": "it",
-          "start": 55.606,
-          "end": 55.706
+          "start": 55.583,
+          "end": 55.683
         },
         {
           "word": "is",
-          "start": 55.706,
-          "end": 55.786
+          "start": 55.683,
+          "end": 55.763
         },
         {
           "word": "surprisingly",
-          "start": 55.786,
-          "end": 56.106
+          "start": 55.763,
+          "end": 56.083
         },
         {
           "word": "quiet.",
-          "start": 56.106,
-          "end": 56.706
+          "start": 56.083,
+          "end": 56.683
         },
         {
           "word": "Very",
-          "start": 57.546,
-          "end": 57.726
+          "start": 57.523,
+          "end": 57.703
         },
         {
           "word": "little",
-          "start": 57.726,
-          "end": 57.986
+          "start": 57.703,
+          "end": 57.963
         },
         {
           "word": "is",
-          "start": 57.986,
-          "end": 58.226
+          "start": 57.963,
+          "end": 58.203
         },
         {
           "word": "falling",
-          "start": 58.226,
-          "end": 58.446
+          "start": 58.203,
+          "end": 58.423
         },
         {
           "word": "in.",
-          "start": 58.446,
-          "end": 58.806
+          "start": 58.423,
+          "end": 58.783
         }
       ]
     },
@@ -977,109 +977,109 @@
       "id": "m87-l",
       "text": "And it is small for its kind. The black hole in the galaxy M eighty-seven is fifteen hundred times wider.",
       "file": "public/voice/black-holes-long/m87-l.935448fdf1d2.wav",
-      "start": 59.416,
+      "start": 59.393,
       "duration": 6.898,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 59.416,
-          "end": 59.736
+          "start": 59.393,
+          "end": 59.713
         },
         {
           "word": "it",
-          "start": 59.736,
-          "end": 59.856
+          "start": 59.713,
+          "end": 59.833
         },
         {
           "word": "is",
-          "start": 59.856,
-          "end": 59.936
+          "start": 59.833,
+          "end": 59.913
         },
         {
           "word": "small",
-          "start": 59.936,
-          "end": 60.216
+          "start": 59.913,
+          "end": 60.193
         },
         {
           "word": "for",
-          "start": 60.216,
-          "end": 60.496
+          "start": 60.193,
+          "end": 60.473
         },
         {
           "word": "its",
-          "start": 60.496,
-          "end": 60.636
+          "start": 60.473,
+          "end": 60.613
         },
         {
           "word": "kind.",
-          "start": 60.636,
-          "end": 60.936
+          "start": 60.613,
+          "end": 60.913
         },
         {
           "word": "The",
-          "start": 61.676,
-          "end": 61.726
+          "start": 61.653,
+          "end": 61.703
         },
         {
           "word": "black",
-          "start": 61.676,
-          "end": 61.896
+          "start": 61.653,
+          "end": 61.873
         },
         {
           "word": "hole",
-          "start": 61.896,
-          "end": 62.216
+          "start": 61.873,
+          "end": 62.193
         },
         {
           "word": "in",
-          "start": 62.216,
-          "end": 62.476
+          "start": 62.193,
+          "end": 62.453
         },
         {
           "word": "the",
-          "start": 62.476,
-          "end": 62.556
+          "start": 62.453,
+          "end": 62.533
         },
         {
           "word": "galaxy",
-          "start": 62.556,
-          "end": 62.856
+          "start": 62.533,
+          "end": 62.833
         },
         {
           "word": "M",
-          "start": 62.856,
-          "end": 62.906
+          "start": 62.833,
+          "end": 62.883
         },
         {
           "word": "eighty-seven",
-          "start": 62.856,
-          "end": 63.716
+          "start": 62.833,
+          "end": 63.693
         },
         {
           "word": "is",
-          "start": 63.716,
-          "end": 64.436
+          "start": 63.693,
+          "end": 64.413
         },
         {
           "word": "fifteen",
-          "start": 64.436,
-          "end": 64.486
+          "start": 64.413,
+          "end": 64.463
         },
         {
           "word": "hundred",
-          "start": 64.436,
-          "end": 64.836
+          "start": 64.413,
+          "end": 64.813
         },
         {
           "word": "times",
-          "start": 64.836,
-          "end": 65.596
+          "start": 64.813,
+          "end": 65.573
         },
         {
           "word": "wider.",
-          "start": 65.596,
-          "end": 65.996
+          "start": 65.573,
+          "end": 65.973
         }
       ]
     },
@@ -1087,54 +1087,54 @@
       "id": "m87mass",
       "text": "That one holds six and a half billion Suns.",
       "file": "public/voice/black-holes-long/m87mass.80f35ff505bb.wav",
-      "start": 66.713,
+      "start": 66.691,
       "duration": 2.602,
       "speed": 1,
       "words": [
         {
           "word": "That",
-          "start": 66.713,
-          "end": 66.813
+          "start": 66.691,
+          "end": 66.791
         },
         {
           "word": "one",
-          "start": 66.813,
-          "end": 66.993
+          "start": 66.791,
+          "end": 66.971
         },
         {
           "word": "holds",
-          "start": 66.993,
-          "end": 67.253
+          "start": 66.971,
+          "end": 67.231
         },
         {
           "word": "six",
-          "start": 67.253,
-          "end": 67.303
+          "start": 67.231,
+          "end": 67.281
         },
         {
           "word": "and",
-          "start": 67.253,
-          "end": 67.303
+          "start": 67.231,
+          "end": 67.281
         },
         {
           "word": "a",
-          "start": 67.253,
-          "end": 67.713
+          "start": 67.231,
+          "end": 67.691
         },
         {
           "word": "half",
-          "start": 67.713,
-          "end": 68.033
+          "start": 67.691,
+          "end": 68.011
         },
         {
           "word": "billion",
-          "start": 68.033,
-          "end": 68.413
+          "start": 68.011,
+          "end": 68.391
         },
         {
           "word": "Suns.",
-          "start": 68.413,
-          "end": 69.213
+          "start": 68.391,
+          "end": 69.191
         }
       ]
     },
@@ -1142,79 +1142,79 @@
       "id": "every",
       "text": "Nearly every large galaxy has a giant black hole like this at its heart.",
       "file": "public/voice/black-holes-long/every.496720c31afc.wav",
-      "start": 69.716,
+      "start": 69.693,
       "duration": 4.42,
       "speed": 1,
       "words": [
         {
           "word": "Nearly",
-          "start": 69.716,
-          "end": 69.936
+          "start": 69.693,
+          "end": 69.913
         },
         {
           "word": "every",
-          "start": 69.936,
-          "end": 70.356
+          "start": 69.913,
+          "end": 70.333
         },
         {
           "word": "large",
-          "start": 70.356,
-          "end": 70.636
+          "start": 70.333,
+          "end": 70.613
         },
         {
           "word": "galaxy",
-          "start": 70.636,
-          "end": 71.036
+          "start": 70.613,
+          "end": 71.013
         },
         {
           "word": "has",
-          "start": 71.036,
-          "end": 71.496
+          "start": 71.013,
+          "end": 71.473
         },
         {
           "word": "a",
-          "start": 71.496,
-          "end": 71.636
+          "start": 71.473,
+          "end": 71.613
         },
         {
           "word": "giant",
-          "start": 71.636,
-          "end": 71.876
+          "start": 71.613,
+          "end": 71.853
         },
         {
           "word": "black",
-          "start": 71.876,
-          "end": 72.176
+          "start": 71.853,
+          "end": 72.153
         },
         {
           "word": "hole",
-          "start": 72.176,
-          "end": 72.476
+          "start": 72.153,
+          "end": 72.453
         },
         {
           "word": "like",
-          "start": 72.476,
-          "end": 72.796
+          "start": 72.453,
+          "end": 72.773
         },
         {
           "word": "this",
-          "start": 72.796,
-          "end": 73.056
+          "start": 72.773,
+          "end": 73.033
         },
         {
           "word": "at",
-          "start": 73.056,
-          "end": 73.336
+          "start": 73.033,
+          "end": 73.313
         },
         {
           "word": "its",
-          "start": 73.336,
-          "end": 73.476
+          "start": 73.313,
+          "end": 73.453
         },
         {
           "word": "heart.",
-          "start": 73.476,
-          "end": 73.776
+          "start": 73.453,
+          "end": 73.753
         }
       ]
     },
@@ -1222,49 +1222,49 @@
       "id": "end-l",
       "text": "Ours just happens to be the closest one.",
       "file": "public/voice/black-holes-long/end-l.b34bc8abc249.wav",
-      "start": 74.536,
+      "start": 74.513,
       "duration": 2.341,
       "speed": 1,
       "words": [
         {
           "word": "Ours",
-          "start": 74.536,
-          "end": 74.776
+          "start": 74.513,
+          "end": 74.753
         },
         {
           "word": "just",
-          "start": 74.776,
-          "end": 75.056
+          "start": 74.753,
+          "end": 75.033
         },
         {
           "word": "happens",
-          "start": 75.056,
-          "end": 75.436
+          "start": 75.033,
+          "end": 75.413
         },
         {
           "word": "to",
-          "start": 75.436,
-          "end": 75.696
+          "start": 75.413,
+          "end": 75.673
         },
         {
           "word": "be",
-          "start": 75.696,
-          "end": 75.796
+          "start": 75.673,
+          "end": 75.773
         },
         {
           "word": "the",
-          "start": 75.796,
-          "end": 75.916
+          "start": 75.773,
+          "end": 75.893
         },
         {
           "word": "closest",
-          "start": 75.916,
-          "end": 76.236
+          "start": 75.893,
+          "end": 76.213
         },
         {
           "word": "one.",
-          "start": 76.236,
-          "end": 76.596
+          "start": 76.213,
+          "end": 76.573
         }
       ]
     },
@@ -1272,34 +1272,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/black-holes-long/cta.f8498ab25592.wav",
-      "start": 77.277,
+      "start": 77.254,
       "duration": 2.08,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 77.277,
-          "end": 77.577
+          "start": 77.254,
+          "end": 77.554
         },
         {
           "word": "for",
-          "start": 77.577,
-          "end": 77.897
+          "start": 77.554,
+          "end": 77.874
         },
         {
           "word": "more",
-          "start": 77.897,
-          "end": 78.137
+          "start": 77.874,
+          "end": 78.114
         },
         {
           "word": "cosmic",
-          "start": 78.137,
-          "end": 78.597
+          "start": 78.114,
+          "end": 78.574
         },
         {
           "word": "scale.",
-          "start": 78.597,
-          "end": 79.157
+          "start": 78.574,
+          "end": 79.134
         }
       ]
     }
