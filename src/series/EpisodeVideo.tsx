@@ -30,7 +30,7 @@ const SeriesTag: React.FC<{ spec: EpisodeSpec; variant: Variant; duration: numbe
 };
 
 /** A silent nudge in the last two seconds: the ending stays clean enough to loop, but the ask is on screen. */
-const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean }> = ({ spec, duration, high }) => {
+const FollowTag: React.FC<{ spec: EpisodeSpec; ask?: string; duration: number; high?: boolean }> = ({ ask, duration, high }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const t = frame / fps, u = Math.min(width, height) / 1080;
@@ -38,9 +38,9 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; duration: number; high?: boolean 
   if (a <= 0) return null;
   return (
     <div style={{ position: "absolute", top: height * (high ? 0.268 : 0.36), left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 * u, opacity: a, transform: `translateY(${(1 - a) * 18 * u}px)` }}>
-      {spec.ask ? (
+      {ask ? (
         <div style={{ fontFamily: FONT_DISPLAY, fontSize: 62 * u, lineHeight: 1.1, letterSpacing: 1.5 * u, color: "#fff", textAlign: "center", maxWidth: 860 * u, textTransform: "uppercase", textShadow: `0 ${4 * u}px ${24 * u}px rgba(0,0,0,0.95), 0 0 ${3 * u}px #000` }}>
-          {spec.ask}
+          {ask}
         </div>
       ) : null}
       <div style={{
@@ -66,7 +66,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
       <BodiesGL place={place} />
       <CanvasLayer draw={overlay} />
       <SeriesTag spec={spec} variant={variant} duration={layout.duration} />
-      <FollowTag spec={spec} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
+      <FollowTag spec={spec} ask={variant === "long" ? spec.askLong ?? spec.ask : spec.ask} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
       <KaraokeCaptions words={captionWords} emphasis={spec.emphasis ?? []} y={0.215} oneLine />
       <FilmFinish />
       <Audio src={staticFile(`audio/${videoId}.wav`)} />

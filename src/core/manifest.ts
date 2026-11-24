@@ -17,7 +17,7 @@ const EPISODE_VIDEOS: VideoMeta[] = EPISODES.flatMap((e) =>
     const layout = () => layoutEpisode(e.spec, variant, usable(e.tracks[variant]) as never);
     return {
       id,
-      title: `${e.spec.series} ${episodeNumber(e.spec, variant)}: ${e.spec.title}${variant === "long" ? " (long cut)" : ""}`,
+      title: `${e.spec.series} ${episodeNumber(e.spec, variant)}: ${variant === "long" ? e.spec.titleLong ?? e.spec.title : e.spec.title}`,
       durationSec: layout().duration,
       formats: ["vertical", "vertical4k"], // series scenes are composed for vertical; horizontal needs its own layout
       narrationJson: `${e.dir}/narration.${variant}.json`,

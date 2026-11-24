@@ -78,6 +78,9 @@ export interface EpisodeSpec {
   /** Number shown on the long cut, which is posted as its own video. */
   episodeLong: number;
   title: string;
+  /** The long cut is its own video on a different angle of the topic, so it has its own title and question. */
+  titleLong?: string;
+  askLong?: string;
   voice: string;
   beats: Beat[];
   /** A question shown on screen at the very end, to give viewers something to answer in the comments. */
