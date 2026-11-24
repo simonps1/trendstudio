@@ -542,79 +542,79 @@
       "id": "core",
       "text": "What remains is a white dwarf, the hot, bare core of the dead star.",
       "file": "public/voice/tiny-stars-long/core.f785daefa8a8.wav",
-      "start": 30.148,
+      "start": 30.149,
       "duration": 4.17,
       "speed": 1,
       "words": [
         {
           "word": "What",
-          "start": 30.148,
-          "end": 30.288
+          "start": 30.149,
+          "end": 30.289
         },
         {
           "word": "remains",
-          "start": 30.288,
-          "end": 30.708
+          "start": 30.289,
+          "end": 30.709
         },
         {
           "word": "is",
-          "start": 30.708,
-          "end": 31.008
+          "start": 30.709,
+          "end": 31.009
         },
         {
           "word": "a",
-          "start": 31.008,
-          "end": 31.128
+          "start": 31.009,
+          "end": 31.129
         },
         {
           "word": "white",
-          "start": 31.128,
-          "end": 31.288
+          "start": 31.129,
+          "end": 31.289
         },
         {
           "word": "dwarf,",
-          "start": 31.288,
-          "end": 31.648
+          "start": 31.289,
+          "end": 31.649
         },
         {
           "word": "the",
-          "start": 32.168,
-          "end": 32.228
+          "start": 32.169,
+          "end": 32.229
         },
         {
           "word": "hot,",
-          "start": 32.228,
-          "end": 32.428
+          "start": 32.229,
+          "end": 32.429
         },
         {
           "word": "bare",
-          "start": 32.428,
-          "end": 32.848
+          "start": 32.429,
+          "end": 32.849
         },
         {
           "word": "core",
-          "start": 32.848,
-          "end": 33.208
+          "start": 32.849,
+          "end": 33.209
         },
         {
           "word": "of",
-          "start": 33.208,
-          "end": 33.508
+          "start": 33.209,
+          "end": 33.509
         },
         {
           "word": "the",
-          "start": 33.508,
-          "end": 33.608
+          "start": 33.509,
+          "end": 33.609
         },
         {
           "word": "dead",
-          "start": 33.608,
-          "end": 33.748
+          "start": 33.609,
+          "end": 33.749
         },
         {
           "word": "star.",
-          "start": 33.748,
-          "end": 34.108
+          "start": 33.749,
+          "end": 34.109
         }
       ]
     },
@@ -792,69 +792,69 @@
       "id": "glow",
       "text": "It will not burn anything. It will only glow with leftover heat.",
       "file": "public/voice/tiny-stars-long/glow.d1d23c89031f.wav",
-      "start": 43.885,
+      "start": 43.884,
       "duration": 4.307,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 43.885,
-          "end": 44.025
+          "start": 43.884,
+          "end": 44.024
         },
         {
           "word": "will",
-          "start": 44.025,
-          "end": 44.225
+          "start": 44.024,
+          "end": 44.224
         },
         {
           "word": "not",
-          "start": 44.225,
-          "end": 44.405
+          "start": 44.224,
+          "end": 44.404
         },
         {
           "word": "burn",
-          "start": 44.405,
-          "end": 44.705
+          "start": 44.404,
+          "end": 44.704
         },
         {
           "word": "anything.",
-          "start": 44.705,
-          "end": 45.125
+          "start": 44.704,
+          "end": 45.124
         },
         {
           "word": "It",
-          "start": 46.005,
-          "end": 46.055
+          "start": 46.004,
+          "end": 46.054
         },
         {
           "word": "will",
-          "start": 46.045,
-          "end": 46.245
+          "start": 46.044,
+          "end": 46.244
         },
         {
           "word": "only",
-          "start": 46.245,
-          "end": 46.505
+          "start": 46.244,
+          "end": 46.504
         },
         {
           "word": "glow",
-          "start": 46.505,
-          "end": 46.805
+          "start": 46.504,
+          "end": 46.804
         },
         {
           "word": "with",
-          "start": 46.805,
-          "end": 47.145
+          "start": 46.804,
+          "end": 47.144
         },
         {
           "word": "leftover",
-          "start": 47.145,
-          "end": 47.445
+          "start": 47.144,
+          "end": 47.444
         },
         {
           "word": "heat.",
-          "start": 47.445,
-          "end": 47.925
+          "start": 47.444,
+          "end": 47.924
         }
       ]
     },
@@ -952,74 +952,74 @@
       "id": "packed",
       "text": "It packs the mass of the Sun into a ball smaller than Earth.",
       "file": "public/voice/tiny-stars-long/packed.43f0fc6dabc2.wav",
-      "start": 54.06,
+      "start": 54.059,
       "duration": 3.557,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 54.06,
-          "end": 54.16
+          "start": 54.059,
+          "end": 54.159
         },
         {
           "word": "packs",
-          "start": 54.16,
-          "end": 54.34
+          "start": 54.159,
+          "end": 54.339
         },
         {
           "word": "the",
-          "start": 54.34,
-          "end": 54.62
+          "start": 54.339,
+          "end": 54.619
         },
         {
           "word": "mass",
-          "start": 54.62,
-          "end": 54.78
+          "start": 54.619,
+          "end": 54.779
         },
         {
           "word": "of",
-          "start": 54.78,
-          "end": 55
+          "start": 54.779,
+          "end": 54.999
         },
         {
           "word": "the",
-          "start": 55,
-          "end": 55.12
+          "start": 54.999,
+          "end": 55.119
         },
         {
           "word": "Sun",
-          "start": 55.12,
-          "end": 55.34
+          "start": 55.119,
+          "end": 55.339
         },
         {
           "word": "into",
-          "start": 55.34,
-          "end": 55.72
+          "start": 55.339,
+          "end": 55.719
         },
         {
           "word": "a",
-          "start": 55.72,
-          "end": 55.92
+          "start": 55.719,
+          "end": 55.919
         },
         {
           "word": "ball",
-          "start": 55.92,
-          "end": 56.12
+          "start": 55.919,
+          "end": 56.119
         },
         {
           "word": "smaller",
-          "start": 56.12,
-          "end": 56.7
+          "start": 56.119,
+          "end": 56.699
         },
         {
           "word": "than",
-          "start": 56.7,
-          "end": 57.02
+          "start": 56.699,
+          "end": 57.019
         },
         {
           "word": "Earth.",
-          "start": 57.02,
-          "end": 57.32
+          "start": 57.019,
+          "end": 57.319
         }
       ]
     },
