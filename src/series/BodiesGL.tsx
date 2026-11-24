@@ -1,11 +1,13 @@
 import React, { useLayoutEffect, useRef } from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Body } from "./types";
 
 /** A body placed on screen (pixels). Drawn in array order: later = on top. */
 export interface PlacedBody { body: Body; x: number; y: number; r: number }
 
 const MAX = 10;
+/** Nebulae with a photograph switch from a painted dot to the photo above this radius (design px). */
+const PHOTO_FROM = 22, PHOTO_SCALE = 1.35;
 /** Shaders are built per scene: only the body kinds on screen are compiled in, and the loop runs once per body. */
 type Variant = { n: number; kinds: number[]; rings: boolean };
 
@@ -360,6 +362,7 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
     const kinds = new Set<number>();
     bodies.forEach((b, i) => {
       const kind = b.body.kind === "star" ? 0 : b.body.kind === "hole" ? 6 : b.body.kind === "nebula" ? (b.body.shape === "ring" ? 8 : 7) : KINDS[b.body.surface ?? "plain"];
+      if (b.body.image && b.r >= PHOTO_FROM * u) return; // drawn as a photograph instead (below)
       D.set([b.body.rings ? 1 : 0, ...hexToRgb(b.body.color2 ?? b.body.color ?? "#8899aa")], i * 4);
       kinds.add(Math.min(kind, 7));
       A.set([b.x, b.y, Math.max(b.r, 1.6 * u), kind], i * 4); // never smaller than a visible dot
@@ -387,9 +390,22 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     gl.finish();
   }, [frame, fps, width, height, place]);
+  const t = frame / fps, u = Math.min(width, height) / 1080;
+  const photos = place(t, width, height, u).slice(-MAX).filter((b) => b.body.image && b.r >= PHOTO_FROM * u);
   return (
     <AbsoluteFill>
       <canvas ref={ref} width={width} height={height} style={{ width: "100%", height: "100%" }} />
+      {photos.map((b) => {
+        // the photo's black sky is screened away and its edge feathered, so it sits in our starfield
+        const side = b.r * 2 * PHOTO_SCALE * (1 + 0.025 * Math.sin(t * 0.5 + seedOf(b.body.name)));
+        const fade = "radial-gradient(closest-side, #000 58%, rgba(0,0,0,0.6) 78%, transparent 100%)";
+        return (
+          <Img key={b.body.name} src={staticFile(b.body.image!)} style={{
+            position: "absolute", left: b.x - side / 2, top: b.y - side / 2, width: side, height: side,
+            mixBlendMode: "screen", maskImage: fade, WebkitMaskImage: fade,
+          }} />
+        );
+      })}
     </AbsoluteFill>
   );
 };

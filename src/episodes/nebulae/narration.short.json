@@ -1,1 +1,727 @@
-{"voice":"chatterbox:calm","model":"resemble-ai/chatterbox","alignment":"whisper","lines":[]}
+{
+  "voice": "chatterbox:calm",
+  "model": "resemble-ai/chatterbox",
+  "alignment": "whisper",
+  "lines": [
+    {
+      "id": "hook",
+      "text": "You asked for the biggest nebulae. Our entire solar system is that dot.",
+      "file": "public/voice/nebulae/hook.80f2db8f41bf.wav",
+      "start": 0.25,
+      "duration": 3.399,
+      "speed": 1.12,
+      "words": [
+        {
+          "word": "You",
+          "start": 0.25,
+          "end": 0.37
+        },
+        {
+          "word": "asked",
+          "start": 0.37,
+          "end": 0.53
+        },
+        {
+          "word": "for",
+          "start": 0.53,
+          "end": 0.73
+        },
+        {
+          "word": "the",
+          "start": 0.73,
+          "end": 0.81
+        },
+        {
+          "word": "biggest",
+          "start": 0.81,
+          "end": 0.97
+        },
+        {
+          "word": "nebulae.",
+          "start": 0.97,
+          "end": 1.49
+        },
+        {
+          "word": "Our",
+          "start": 1.87,
+          "end": 1.97
+        },
+        {
+          "word": "entire",
+          "start": 1.97,
+          "end": 2.17
+        },
+        {
+          "word": "solar",
+          "start": 2.17,
+          "end": 2.47
+        },
+        {
+          "word": "system",
+          "start": 2.47,
+          "end": 2.85
+        },
+        {
+          "word": "is",
+          "start": 2.85,
+          "end": 3.01
+        },
+        {
+          "word": "that",
+          "start": 3.01,
+          "end": 3.15
+        },
+        {
+          "word": "dot.",
+          "start": 3.15,
+          "end": 3.39
+        }
+      ]
+    },
+    {
+      "id": "helix",
+      "text": "Start small. The Helix Nebula is what a dying star leaves behind, about three light-years wide.",
+      "file": "public/voice/nebulae/helix.5225f1e41a67.wav",
+      "start": 4.049,
+      "duration": 6.205,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Start",
+          "start": 4.049,
+          "end": 4.229
+        },
+        {
+          "word": "small.",
+          "start": 4.229,
+          "end": 4.529
+        },
+        {
+          "word": "The",
+          "start": 5.409,
+          "end": 5.509
+        },
+        {
+          "word": "Helix",
+          "start": 5.509,
+          "end": 5.849
+        },
+        {
+          "word": "Nebula",
+          "start": 5.849,
+          "end": 6.069
+        },
+        {
+          "word": "is",
+          "start": 6.069,
+          "end": 6.609
+        },
+        {
+          "word": "what",
+          "start": 6.609,
+          "end": 6.809
+        },
+        {
+          "word": "a",
+          "start": 6.809,
+          "end": 6.909
+        },
+        {
+          "word": "dying",
+          "start": 6.909,
+          "end": 7.089
+        },
+        {
+          "word": "star",
+          "start": 7.089,
+          "end": 7.449
+        },
+        {
+          "word": "leaves",
+          "start": 7.449,
+          "end": 7.729
+        },
+        {
+          "word": "behind,",
+          "start": 7.729,
+          "end": 8.169
+        },
+        {
+          "word": "about",
+          "start": 8.689,
+          "end": 8.909
+        },
+        {
+          "word": "three",
+          "start": 8.909,
+          "end": 9.169
+        },
+        {
+          "word": "light-years",
+          "start": 9.389,
+          "end": 9.569
+        },
+        {
+          "word": "wide.",
+          "start": 9.569,
+          "end": 9.989
+        }
+      ]
+    },
+    {
+      "id": "fit",
+      "text": "Our solar system would fit across it three thousand times.",
+      "file": "public/voice/nebulae/fit.b16039a55e6b.wav",
+      "start": 10.653,
+      "duration": 2.852,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Our",
+          "start": 10.653,
+          "end": 10.773
+        },
+        {
+          "word": "solar",
+          "start": 10.773,
+          "end": 10.933
+        },
+        {
+          "word": "system",
+          "start": 10.933,
+          "end": 11.353
+        },
+        {
+          "word": "would",
+          "start": 11.353,
+          "end": 11.553
+        },
+        {
+          "word": "fit",
+          "start": 11.553,
+          "end": 11.693
+        },
+        {
+          "word": "across",
+          "start": 11.693,
+          "end": 12.013
+        },
+        {
+          "word": "it",
+          "start": 12.013,
+          "end": 12.213
+        },
+        {
+          "word": "three",
+          "start": 12.213,
+          "end": 12.473
+        },
+        {
+          "word": "thousand",
+          "start": 12.473,
+          "end": 12.853
+        },
+        {
+          "word": "times.",
+          "start": 12.853,
+          "end": 13.153
+        }
+      ]
+    },
+    {
+      "id": "orion",
+      "text": "The Orion Nebula, where new stars are born, is twenty-four light-years across.",
+      "file": "public/voice/nebulae/orion.b3d0c575840d.wav",
+      "start": 13.906,
+      "duration": 4.557,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 13.906,
+          "end": 14.006
+        },
+        {
+          "word": "Orion",
+          "start": 14.006,
+          "end": 14.286
+        },
+        {
+          "word": "Nebula,",
+          "start": 14.286,
+          "end": 14.626
+        },
+        {
+          "word": "where",
+          "start": 15.086,
+          "end": 15.226
+        },
+        {
+          "word": "new",
+          "start": 15.226,
+          "end": 15.366
+        },
+        {
+          "word": "stars",
+          "start": 15.366,
+          "end": 15.606
+        },
+        {
+          "word": "are",
+          "start": 15.606,
+          "end": 15.886
+        },
+        {
+          "word": "born,",
+          "start": 15.886,
+          "end": 16.146
+        },
+        {
+          "word": "is",
+          "start": 16.526,
+          "end": 16.646
+        },
+        {
+          "word": "twenty-four",
+          "start": 16.946,
+          "end": 17.406
+        },
+        {
+          "word": "light-years",
+          "start": 17.406,
+          "end": 17.626
+        },
+        {
+          "word": "across.",
+          "start": 17.626,
+          "end": 18.086
+        }
+      ]
+    },
+    {
+      "id": "carina",
+      "text": "The Carina Nebula is about three hundred.",
+      "file": "public/voice/nebulae/carina.f62014c5fe2d.wav",
+      "start": 18.863,
+      "duration": 2.477,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 18.863,
+          "end": 18.943
+        },
+        {
+          "word": "Carina",
+          "start": 18.943,
+          "end": 19.243
+        },
+        {
+          "word": "Nebula",
+          "start": 19.243,
+          "end": 19.543
+        },
+        {
+          "word": "is",
+          "start": 19.543,
+          "end": 20.023
+        },
+        {
+          "word": "about",
+          "start": 20.023,
+          "end": 20.303
+        },
+        {
+          "word": "three",
+          "start": 20.303,
+          "end": 20.353
+        },
+        {
+          "word": "hundred.",
+          "start": 20.303,
+          "end": 20.843
+        }
+      ]
+    },
+    {
+      "id": "tarantula",
+      "text": "The Tarantula Nebula, in a neighbouring galaxy, is around a thousand light-years wide.",
+      "file": "public/voice/nebulae/tarantula.e40f63921b8b.wav",
+      "start": 21.74,
+      "duration": 5.136,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 21.74,
+          "end": 21.82
+        },
+        {
+          "word": "Tarantula",
+          "start": 21.82,
+          "end": 22.32
+        },
+        {
+          "word": "Nebula,",
+          "start": 22.32,
+          "end": 22.64
+        },
+        {
+          "word": "in",
+          "start": 22.64,
+          "end": 23.26
+        },
+        {
+          "word": "a",
+          "start": 23.26,
+          "end": 23.38
+        },
+        {
+          "word": "neighbouring",
+          "start": 23.38,
+          "end": 23.66
+        },
+        {
+          "word": "galaxy,",
+          "start": 23.66,
+          "end": 24.14
+        },
+        {
+          "word": "is",
+          "start": 24.14,
+          "end": 24.8
+        },
+        {
+          "word": "around",
+          "start": 24.8,
+          "end": 25.02
+        },
+        {
+          "word": "a",
+          "start": 25.02,
+          "end": 25.26
+        },
+        {
+          "word": "thousand",
+          "start": 25.26,
+          "end": 25.64
+        },
+        {
+          "word": "light-years",
+          "start": 25.9,
+          "end": 26.18
+        },
+        {
+          "word": "wide.",
+          "start": 26.18,
+          "end": 26.62
+        }
+      ]
+    },
+    {
+      "id": "sky",
+      "text": "If it were as close as Orion, it would stretch across sixty full Moons in our sky.",
+      "file": "public/voice/nebulae/sky.8c74a04fc530.wav",
+      "start": 27.276,
+      "duration": 4.432,
+      "speed": 1,
+      "words": [
+        {
+          "word": "If",
+          "start": 27.276,
+          "end": 27.396
+        },
+        {
+          "word": "it",
+          "start": 27.396,
+          "end": 27.456
+        },
+        {
+          "word": "were",
+          "start": 27.456,
+          "end": 27.616
+        },
+        {
+          "word": "as",
+          "start": 27.616,
+          "end": 27.776
+        },
+        {
+          "word": "close",
+          "start": 27.776,
+          "end": 27.976
+        },
+        {
+          "word": "as",
+          "start": 27.976,
+          "end": 28.256
+        },
+        {
+          "word": "Orion,",
+          "start": 28.256,
+          "end": 28.516
+        },
+        {
+          "word": "it",
+          "start": 29.036,
+          "end": 29.096
+        },
+        {
+          "word": "would",
+          "start": 29.096,
+          "end": 29.216
+        },
+        {
+          "word": "stretch",
+          "start": 29.216,
+          "end": 29.416
+        },
+        {
+          "word": "across",
+          "start": 29.416,
+          "end": 29.796
+        },
+        {
+          "word": "sixty",
+          "start": 29.796,
+          "end": 30.256
+        },
+        {
+          "word": "full",
+          "start": 30.256,
+          "end": 30.496
+        },
+        {
+          "word": "Moons",
+          "start": 30.496,
+          "end": 30.756
+        },
+        {
+          "word": "in",
+          "start": 30.756,
+          "end": 31.016
+        },
+        {
+          "word": "our",
+          "start": 31.016,
+          "end": 31.116
+        },
+        {
+          "word": "sky.",
+          "start": 31.116,
+          "end": 31.396
+        }
+      ]
+    },
+    {
+      "id": "ngc",
+      "text": "And N G C six oh four is wider still, at almost fifteen hundred light-years.",
+      "file": "public/voice/nebulae/ngc.07a2cc7c8e29.wav",
+      "start": 32.108,
+      "duration": 5.091,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 32.108,
+          "end": 32.228
+        },
+        {
+          "word": "N",
+          "start": 32.228,
+          "end": 32.278
+        },
+        {
+          "word": "G",
+          "start": 32.228,
+          "end": 32.278
+        },
+        {
+          "word": "C",
+          "start": 32.228,
+          "end": 32.278
+        },
+        {
+          "word": "six",
+          "start": 32.228,
+          "end": 32.278
+        },
+        {
+          "word": "oh",
+          "start": 32.228,
+          "end": 32.648
+        },
+        {
+          "word": "four",
+          "start": 32.648,
+          "end": 33.508
+        },
+        {
+          "word": "is",
+          "start": 33.508,
+          "end": 33.948
+        },
+        {
+          "word": "wider",
+          "start": 33.948,
+          "end": 34.188
+        },
+        {
+          "word": "still,",
+          "start": 34.188,
+          "end": 34.688
+        },
+        {
+          "word": "at",
+          "start": 35.248,
+          "end": 35.298
+        },
+        {
+          "word": "almost",
+          "start": 35.288,
+          "end": 35.528
+        },
+        {
+          "word": "fifteen",
+          "start": 35.528,
+          "end": 35.988
+        },
+        {
+          "word": "hundred",
+          "start": 35.988,
+          "end": 36.548
+        },
+        {
+          "word": "light-years.",
+          "start": 36.548,
+          "end": 36.848
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "text": "Light needs about fifteen hundred years just to cross it.",
+      "file": "public/voice/nebulae/cross.982fd1aebdbf.wav",
+      "start": 37.599,
+      "duration": 2.989,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Light",
+          "start": 37.599,
+          "end": 37.799
+        },
+        {
+          "word": "needs",
+          "start": 37.799,
+          "end": 37.999
+        },
+        {
+          "word": "about",
+          "start": 37.999,
+          "end": 38.299
+        },
+        {
+          "word": "fifteen",
+          "start": 38.299,
+          "end": 38.639
+        },
+        {
+          "word": "hundred",
+          "start": 38.639,
+          "end": 38.819
+        },
+        {
+          "word": "years",
+          "start": 38.819,
+          "end": 39.419
+        },
+        {
+          "word": "just",
+          "start": 39.419,
+          "end": 39.719
+        },
+        {
+          "word": "to",
+          "start": 39.719,
+          "end": 39.769
+        },
+        {
+          "word": "cross",
+          "start": 39.719,
+          "end": 40.059
+        },
+        {
+          "word": "it.",
+          "start": 40.059,
+          "end": 40.379
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "text": "And inside its galaxy, it is still just one small cloud.",
+      "file": "public/voice/nebulae/end.c3c28a82b326.wav",
+      "start": 40.988,
+      "duration": 3.875,
+      "speed": 1,
+      "words": [
+        {
+          "word": "And",
+          "start": 40.988,
+          "end": 41.128
+        },
+        {
+          "word": "inside",
+          "start": 41.128,
+          "end": 41.448
+        },
+        {
+          "word": "its",
+          "start": 41.448,
+          "end": 41.768
+        },
+        {
+          "word": "galaxy,",
+          "start": 41.768,
+          "end": 42.108
+        },
+        {
+          "word": "it",
+          "start": 42.108,
+          "end": 42.668
+        },
+        {
+          "word": "is",
+          "start": 42.668,
+          "end": 42.768
+        },
+        {
+          "word": "still",
+          "start": 42.768,
+          "end": 43.048
+        },
+        {
+          "word": "just",
+          "start": 43.048,
+          "end": 43.468
+        },
+        {
+          "word": "one",
+          "start": 43.468,
+          "end": 43.728
+        },
+        {
+          "word": "small",
+          "start": 43.728,
+          "end": 44.228
+        },
+        {
+          "word": "cloud.",
+          "start": 44.228,
+          "end": 44.528
+        }
+      ]
+    }
+  ]
+}

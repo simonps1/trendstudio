@@ -6,18 +6,19 @@ import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 // Tarantula: about 1,000 ly across, 160,000–180,000 ly away; at Orion's distance it would span about 30° of
 // sky, 60 full Moons (NASA APOD). NGC 604: almost 1,500 ly across, 2.73 million ly away in M33 (NASA Webb 2024).
 // Solar system: Neptune's orbit is 60 AU across = 0.00095 ly (1 ly = 63,241 AU), so the Helix is ≈ 3,000 × wider.
+// Photographs: NASA releases, public domain; credits in public/nebulae/CREDITS.md.
 // Long cut: Pillars of Creation 4–5 ly tall in the Eagle Nebula (NASA); Crab Nebula, supernova seen in 1054,
 // 6–11 ly wide depending on the assumed distance (NASA / Chandra). The Sun formed about 4.6 billion years ago.
-const neb = (name: string, width: number, note: string, color: string, color2: string, shape: Body["shape"] = "cloud"): Body =>
-  ({ name, kind: "nebula", radius: width / 2, color, color2, shape, note });
+const neb = (name: string, width: number, note: string, color: string, color2: string, shape: Body["shape"] = "cloud", image?: string): Body =>
+  ({ name, kind: "nebula", radius: width / 2, color, color2, shape, note, image });
 const solar: Body = { name: "Our solar system", kind: "star", radius: 0.000475, temp: 0.55, note: "out to Neptune's orbit" };
-const helix = neb("Helix Nebula", 3, "≈ 3 light-years wide", "#ff5a3c", "#3fd0c9", "ring");
+const helix = neb("Helix Nebula", 3, "≈ 3 light-years wide", "#ff5a3c", "#3fd0c9", "ring", "nebulae/helix.jpg");
 const crab = neb("Crab Nebula", 8, "≈ 6 to 11 light-years wide · estimate", "#ffb05a", "#5ad0ff");
-const orion = neb("Orion Nebula", 24, "≈ 24 light-years wide", "#ff5f8a", "#7a5cff");
+const orion = neb("Orion Nebula", 24, "≈ 24 light-years wide", "#ff5f8a", "#7a5cff", "cloud", "nebulae/orion.jpg");
 const eagle = neb("Eagle Nebula", 70, "≈ 70 light-years wide", "#e6a04a", "#3fa58a");
-const carina = neb("Carina Nebula", 300, "≈ 300 light-years wide · estimate", "#ff4a3a", "#ffc24a");
-const tarantula = neb("Tarantula Nebula", 1000, "≈ 1,000 light-years wide · estimate", "#ff6a3d", "#4f8cff");
-const ngc604 = neb("NGC 604", 1500, "≈ 1,500 light-years wide · estimate", "#ff3fa0", "#5a6dff");
+const carina = neb("Carina Nebula", 300, "≈ 300 light-years wide · estimate", "#ff4a3a", "#ffc24a", "cloud", "nebulae/carina.jpg");
+const tarantula = neb("Tarantula Nebula", 1000, "≈ 1,000 light-years wide · estimate", "#ff6a3d", "#4f8cff", "cloud", "nebulae/tarantula.jpg");
+const ngc604 = neb("NGC 604", 1500, "≈ 1,500 light-years wide · estimate", "#ff3fa0", "#5a6dff", "cloud", "nebulae/ngc604.jpg");
 const sunBody: Body = { name: "The Sun", kind: "star", radius: 0.0000001, temp: 0.55, note: "born 4.6 billion years ago" };
 
 export const NEBULAE: EpisodeSpec = {

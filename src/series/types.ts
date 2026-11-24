@@ -15,6 +15,8 @@ export interface Body {
   surface?: "plain" | "earth" | "bands" | "rocky" | "mars";
   /** Nebulae: second colour of the gas, and the shape ("ring" = the shell a dying star blows off). */
   color2?: string;
+  /** Nebulae: a photograph (path under public/) drawn instead of the painted cloud. */
+  image?: string;
   shape?: "cloud" | "ring";
   /** Planets: draw a ring system (Saturn). */
   rings?: boolean;
