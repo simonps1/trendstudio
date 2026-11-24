@@ -34,14 +34,14 @@ export const NEBULAE: EpisodeSpec = {
   emphasis: ["nebulae", "nebula", "solar", "dot", "helix", "orion", "carina", "tarantula", "light-years", "thousand", "moons", "wider", "cloud", "eyes", "stars", "born", "dying", "exploded", "pillars", "sun", "atoms", "gas", "dust"],
   beats: [
     { id: "hook", only: "short", say: "You asked for the biggest nebulae. Our entire solar system is that dot.", visual: { type: "compare", from: solar, to: ngc604, big: true, open: true } },
-    { id: "helix", only: "short", say: "Start small. The Helix Nebula is what a dying star leaves behind, about three light-years wide.", visual: { type: "body", body: helix } },
+    { id: "helix", only: "short", say: "Start small. The Helix Nebula is the glowing shell of a dying star, about three light-years wide.", visual: { type: "body", body: helix } },
     { id: "fit", only: "short", say: "Our solar system would fit across it three thousand times.", visual: { type: "body", body: helix, fact: "≈ 3,000 solar systems wide" } },
     { id: "orion", only: "short", say: "The Orion Nebula, where new stars are born, is twenty-four light-years across.", visual: { type: "compare", from: helix, to: orion } },
     { id: "carina", only: "short", say: "The Carina Nebula is about three hundred.", visual: { type: "compare", from: orion, to: carina } },
     { id: "tarantula", only: "short", say: "The Tarantula Nebula, in a neighbouring galaxy, is around a thousand light-years wide.", visual: { type: "compare", from: carina, to: tarantula, big: true } },
     { id: "sky", only: "short", say: "If it were as close as Orion, it would stretch across sixty full Moons in our sky.", visual: { type: "body", body: tarantula, fact: "at Orion's distance: 60 full Moons wide" } },
     { id: "ngc", only: "short", say: "And N G C six oh four is wider still, at almost fifteen hundred light-years.", visual: { type: "pair", a: { ...tarantula, note: "≈ 1,000 light-years" }, b: { ...ngc604, note: "≈ 1,500 light-years" } } },
-    { id: "cross", only: "short", say: "Light needs about fifteen hundred years just to cross it.", visual: { type: "body", body: ngc604, fact: "≈ 1,500 years to cross at light speed" } },
+    { id: "cross", only: "short", say: "Even light takes about fifteen hundred years to cross it.", visual: { type: "body", body: ngc604, fact: "≈ 1,500 years to cross at light speed" } },
     { id: "end", only: "short", say: "And inside its galaxy, it is still just one small cloud.", visual: { type: "shrink", body: ngc604 } },
 
     { id: "hook-l", only: "long", say: "You can see this cloud with your own eyes. Our whole solar system is that dot.", visual: { type: "compare", from: solar, to: orion, big: true, open: true } },
