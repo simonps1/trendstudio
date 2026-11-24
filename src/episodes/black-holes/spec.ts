@@ -18,7 +18,8 @@ const ton = hole("TON 618", 1.947e11, "≈ 2,600 × the Earth–Sun distance · 
 export const BLACK_HOLES: EpisodeSpec = {
   id: "black-holes",
   series: "Cosmic Scale",
-  episode: 4,
+  episode: 8,
+  episodeLong: 11,
   title: "How big is the biggest black hole?",
   voice: NARRATOR,
   ask: "Which one scares you most?",

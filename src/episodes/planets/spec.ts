@@ -5,7 +5,8 @@ import { earth, jupiter, mars, mercury, neptune, saturn, uranus, venus } from ".
 export const PLANETS: EpisodeSpec = {
   id: "planets",
   series: "Cosmic Scale",
-  episode: 5,
+  episode: 9,
+  episodeLong: 12,
   title: "Every planet, from smallest to largest",
   voice: NARRATOR,
   ask: "Which planet would you visit?",

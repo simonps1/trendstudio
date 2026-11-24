@@ -67,10 +67,16 @@ export interface Beat {
 
 export type Variant = "short" | "long";
 
+/** Every posted video gets its own number, so no two videos show the same "EP". */
+export const episodeNumber = (spec: EpisodeSpec, variant: Variant) => (variant === "long" ? spec.episodeLong : spec.episode);
+
 export interface EpisodeSpec {
   id: string;
   series: string;
+  /** Number shown on screen for the short cut: its place in the posting order. */
   episode: number;
+  /** Number shown on the long cut, which is posted as its own video. */
+  episodeLong: number;
   title: string;
   voice: string;
   beats: Beat[];

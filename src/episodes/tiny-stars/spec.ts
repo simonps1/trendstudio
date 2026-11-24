@@ -13,7 +13,8 @@ const sun: Body = { name: "The Sun", kind: "star", radius: SUN, temp: 0.55, note
 export const TINY_STARS: EpisodeSpec = {
   id: "tiny-stars",
   series: "Cosmic Scale",
-  episode: 3,
+  episode: 5,
+  episodeLong: 7,
   title: "How small can a star get?",
   voice: NARRATOR,
   ask: "Neutron star or white dwarf?",

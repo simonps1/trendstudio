@@ -1,6 +1,6 @@
 import { EPISODES, episodeVideoId } from "../episodes";
 import { layoutEpisode, narrationLines } from "../series/layout";
-import type { Variant } from "../series/types";
+import { episodeNumber, type Variant } from "../series/types";
 import type { VideoMeta } from "./types";
 import { DURATION as STAR_LIFE_DURATION } from "../videos/star-life/timeline";
 
@@ -17,7 +17,7 @@ const EPISODE_VIDEOS: VideoMeta[] = EPISODES.flatMap((e) =>
     const layout = () => layoutEpisode(e.spec, variant, usable(e.tracks[variant]) as never);
     return {
       id,
-      title: `${e.spec.series} ${e.spec.episode}: ${e.spec.title}${variant === "long" ? " (long cut)" : ""}`,
+      title: `${e.spec.series} ${episodeNumber(e.spec, variant)}: ${e.spec.title}${variant === "long" ? " (long cut)" : ""}`,
       durationSec: layout().duration,
       formats: ["vertical", "vertical4k"], // series scenes are composed for vertical; horizontal needs its own layout
       narrationJson: `${e.dir}/narration.${variant}.json`,

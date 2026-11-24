@@ -14,6 +14,7 @@ export const STAR_SIZES: EpisodeSpec = {
   id: "star-sizes",
   series: "Cosmic Scale",
   episode: 1,
+  episodeLong: 3,
   title: "How big is the biggest star?",
   voice: NARRATOR,
   ask: "Which star surprised you most?",

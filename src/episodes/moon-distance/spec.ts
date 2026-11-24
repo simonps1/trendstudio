@@ -9,7 +9,8 @@ const gap = (extra: Partial<Extract<Visual, { type: "gap" }>> = {}): Visual => (
 export const MOON_DISTANCE: EpisodeSpec = {
   id: "moon-distance",
   series: "Cosmic Scale",
-  episode: 6,
+  episode: 10,
+  episodeLong: 13,
   title: "How far away is the Moon, really?",
   voice: NARRATOR,
   ask: "Would you make the 3-day trip?",

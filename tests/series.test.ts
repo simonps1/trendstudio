@@ -46,3 +46,10 @@ describe.each(EPISODES.map((e) => [e.spec.id, e] as const))("episode %s", (_id, 
     }
   });
 });
+
+describe("episode numbers", () => {
+  it("gives every posted video its own number", () => {
+    const shown = EPISODES.flatMap((e) => [e.spec.episode, e.spec.episodeLong]);
+    expect(new Set(shown).size).toBe(shown.length);
+  });
+});
