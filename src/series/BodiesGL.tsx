@@ -20,8 +20,8 @@ ${v.rings ? "#define RINGS" : ""}
 #define N ${v.n}
 precision highp float;
 uniform vec2 uRes; uniform float uTime; uniform float uU;
-uniform vec4 uA[N]; // x, y, radius, kind (0 star, 1 earth, 2 bands, 3 plain, 4 rocky, 5 mars, 6 black hole, <0 none)
-uniform vec4 uD[N]; // x: 1 = ring system
+uniform vec4 uA[N]; // x, y, radius, kind (0 star, 1 earth, 2 bands, 3 plain, 4 rocky, 5 mars, 6 black hole, 7 nebula, 8 ring nebula, <0 none)
+uniform vec4 uD[N]; // x: 1 = ring system; yzw: second colour (nebulae)
 uniform vec4 uC[N]; // star: temp, seed, 0, 0   planet: r, g, b, seed
 float hash(vec3 p){ p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float noise(vec3 x){
@@ -49,7 +49,7 @@ void main(){
   vec2 frag = vec2(gl_FragCoord.x / uScale, uRes.y - gl_FragCoord.y / uScale);
   vec3 col = vec3(0.0);
   for (int i = 0; i < N; i++){
-    float kind = uA[i].w; if (kind < -0.5) continue;
+    float kind = uA[i].w; if (kind < -0.5 || kind > 6.5) continue; // nebulae have no solid surface
     vec2 d2 = frag - uA[i].xy; float r = uA[i].z;
     if (length(d2) > r + 4.0) continue; // slightly past the edge so edge pixels sample valid colour
     vec2 p = d2 / r; float pl = length(p); if (pl > 1.0) p /= pl;
@@ -218,6 +218,38 @@ void main(){
       col += vec3(0.35, 0.6, 1.0) * atm * lit; alpha = max(alpha, atm * lit);
     }
 #endif
+#ifdef K7
+    if (kind > 6.5) {
+      // nebula: a ragged cloud of glowing gas with dark dust lanes (7), or the shell around a dying star (8)
+      float rn = r * 1.45; // the glow fades out well before the edge, so draw it larger than a solid body
+      float x = dist / rn;
+      if (x < 1.3) {
+        vec2 q = d2 / rn; float seed = uC[i].a, tt = uTime * 0.03;
+        vec2 qq = q + (vec2(noise(vec3(q * 1.5, seed + tt)), noise(vec3(q * 1.5 + 5.2, seed - tt))) - 0.5) * 0.8;
+        float n1 = fbm(vec3(qq * 2.4, seed * 1.3 + tt));
+        float n2 = noise(vec3(qq * 6.0 + 3.0, seed + 9.0)) * 0.65 + noise(vec3(qq * 13.0, seed + 2.0)) * 0.35;
+        float ang = atan(q.y, q.x);
+        float rim = 0.80 + 0.36 * (noise(vec3(cos(ang) * 1.7, sin(ang) * 1.7, seed)) - 0.5);
+        float fall = 1.0 - smoothstep(rim * 0.30, rim * 1.15, x);
+        float dens;
+        if (kind > 7.5) {
+          float ring = exp(-pow((x - 0.62 - 0.10 * (n1 - 0.5)) / 0.19, 2.0));
+          dens = ring * (0.5 + 0.95 * n1) + 0.16 * fall;
+        } else {
+          dens = fall * (0.22 + 1.55 * smoothstep(0.28, 0.70, n1));
+          dens *= 1.0 - 0.62 * smoothstep(0.50, 0.70, n2);
+        }
+        dens = clamp(dens, 0.0, 1.0);
+        vec3 c = mix(uD[i].yzw, uC[i].rgb, kind > 7.5 ? smoothstep(0.25, 0.8, x) : smoothstep(0.38, 0.60, n1 + 0.3 * (0.6 - x)));
+        c = c * (0.55 + 0.8 * dens) + vec3(1.0, 0.95, 0.9) * pow(dens, 3.0) * 0.45;
+        float sp = smoothstep(0.95, 0.985, noise(vec3(q * 64.0, seed))) * fall * smoothstep(40.0 * uU, 160.0 * uU, r); // young stars inside
+        c += vec3(0.85, 0.92, 1.0) * sp; dens = max(dens, sp);
+        dens = max(dens, exp(-x * x * 5.0) * (1.0 - smoothstep(6.0 * uU, 30.0 * uU, r))); // still a visible dot when tiny
+        col = mix(col, c, dens); alpha = max(alpha, dens);
+      }
+      continue;
+    }
+#endif
     bool ringed = uD[i].x > 0.5, hole = kind > 5.5;
     // nothing of a planet or hole reaches past its rings or disc: skip the rest for far pixels
     if (kind > 0.5 && dist > r * (ringed || hole ? 2.5 : 1.0) + r * 0.3 + 4.0 && !hole) continue;
@@ -327,9 +359,9 @@ export const BodiesGL: React.FC<{ place: (t: number, w: number, h: number, u: nu
     const A = new Float32Array(n * 4).fill(-1), C = new Float32Array(n * 4), D = new Float32Array(n * 4);
     const kinds = new Set<number>();
     bodies.forEach((b, i) => {
-      const kind = b.body.kind === "star" ? 0 : b.body.kind === "hole" ? 6 : KINDS[b.body.surface ?? "plain"];
-      D.set([b.body.rings ? 1 : 0, 0, 0, 0], i * 4);
-      kinds.add(kind);
+      const kind = b.body.kind === "star" ? 0 : b.body.kind === "hole" ? 6 : b.body.kind === "nebula" ? (b.body.shape === "ring" ? 8 : 7) : KINDS[b.body.surface ?? "plain"];
+      D.set([b.body.rings ? 1 : 0, ...hexToRgb(b.body.color2 ?? b.body.color ?? "#8899aa")], i * 4);
+      kinds.add(Math.min(kind, 7));
       A.set([b.x, b.y, Math.max(b.r, 1.6 * u), kind], i * 4); // never smaller than a visible dot
       if (kind === 6) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), b.body.disc ?? 0.2, b.body.jet ?? 0], i * 4);
       else if (kind === 0) C.set([b.body.temp ?? 0.5, seedOf(b.body.name), 0, 0], i * 4);

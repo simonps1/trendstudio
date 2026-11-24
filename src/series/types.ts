@@ -5,7 +5,7 @@
  */
 export interface Body {
   name: string;
-  kind: "star" | "planet" | "hole";
+  kind: "star" | "planet" | "hole" | "nebula";
   /** Relative radius; only ratios between bodies matter (e.g. Earth = 1). */
   radius: number;
   /** Stars: 0 = red … 1 = blue-white. */
@@ -13,6 +13,9 @@ export interface Body {
   /** Planets: base colour and surface style. */
   color?: string;
   surface?: "plain" | "earth" | "bands" | "rocky" | "mars";
+  /** Nebulae: second colour of the gas, and the shape ("ring" = the shell a dying star blows off). */
+  color2?: string;
+  shape?: "cloud" | "ring";
   /** Planets: draw a ring system (Saturn). */
   rings?: boolean;
   /** Black holes: tilt of the accretion disc (0 = no disc, a bare hole; default 0.2 = nearly edge-on). */

@@ -9,6 +9,8 @@ const WRITTEN: [spoken: string, shown: string][] = [
   ["stephenson two eighteen", "Stephenson 2-18"],
   ["m eighty-seven", "M87"],
   ["twenty twenty-two", "2022"],
+  ["n g c six oh four", "NGC 604"],
+  ["ten fifty-four", "1054"],
 ];
 
 const clean = (w: string) => w.toLowerCase().replace(/[^a-z0-9]/g, "");
