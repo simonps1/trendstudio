@@ -187,9 +187,24 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
       });
       return out;
     }
+    case "photo": {
+      // the body lands on the photo as the first words name it
+      const pop = ease.outBack(progress(lt, 0.45, 0.85)), k = photoZoom(lt);
+      return pop > 0 ? [{ body: v.body, x: v.at[0] * w, y: v.at[1] * h, r: v.r * w * k * pop }] : [];
+    }
     case "stars":
       return [];
   }
+}
+
+/** Slow pull-back on a photo beat, shared by the photo layer and the body drawn on it. */
+export const photoZoom = (lt: number) => lerp(1.14, 1, 1 - Math.pow(1 - progress(lt, 0, 2.2), 3));
+/** The photo beat on screen at time t, if any, with its local time and fade. */
+export function activePhoto(layout: EpisodeLayout, t: number) {
+  const b = active(layout, t), v = b.beat.visual;
+  if (v.type !== "photo") return null;
+  const lt = t - b.start;
+  return { v, lt, zoom: photoZoom(lt), alpha: 1 - progress(lt, b.end - b.start - 0.3, b.end - b.start) };
 }
 
 // ------------------------------------------------------------ overlay (2D)
@@ -242,6 +257,16 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
     ctx.fillStyle = band; ctx.beginPath(); ctx.arc(0, 0, rx, 0, Math.PI * 2); ctx.fill(); ctx.restore();
   }
   if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25) * closing, progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
+
+  if (v.type === "photo") {
+    // the measuring ring is there from the first frame; the name and size ride just under it
+    const k = photoZoom(lt), x = v.at[0] * w, y = v.at[1] * h, r = v.r * w * k, a = 1 - progress(lt, dur - 0.3, dur);
+    ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = "rgba(255,210,63,0.95)"; ctx.lineWidth = 5 * u; ctx.setLineDash([22 * u, 14 * u]);
+    ctx.lineDashOffset = -t * 40 * u; ctx.beginPath(); ctx.arc(x, y, r + 8 * u, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
+    // one line, between the spoken words above and the ring below
+    const tag = [progress(lt, 0.5, 0.8) > 0.5 ? v.body.name : null, v.ring ?? v.body.note].filter(Boolean).join(" · ");
+    label(ctx, tag.toUpperCase(), x, y - r - 58 * u, 46 * u, a, "Anton", "#ffd23f");
+  }
 
   if (v.type === "compare") {
     const Z = zoomTime(v);

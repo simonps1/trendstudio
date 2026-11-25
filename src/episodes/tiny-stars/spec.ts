@@ -27,8 +27,10 @@ export const TINY_STARS: EpisodeSpec = {
   askLong: "Would you want to see the Sun as a red giant?",
   emphasis: ["shrink", "red", "hydrogen", "white", "mercury", "venus", "tonnes", "sirius", "black", "core", "brighter", "star", "earth", "neutron", "kilometres", "teaspoon", "dwarf", "saturn", "jupiter", "proxima", "giant", "trillions", "smaller", "sun"],
   beats: [
-    { id: "hook", only: "short", say: "That dot next to Earth is a real star, and it is smaller than a city.", visual: { type: "compare", from: neutron, to: earth, big: true, open: true } },
-    { id: "neutron", only: "short", say: "It's a neutron star, only about twenty kilometres wide.", visual: { type: "body", body: neutron } },
+    // cold open on a real photograph: New York at night from the Space Station, with a neutron star drawn on it to
+    // scale (Central Park, 4 km long, sets the scale; see public/photos/CREDITS.md). Manhattan is 21.6 km long.
+    { id: "hook", only: "short", say: "A real star could fit inside New York City.", visual: { type: "photo", image: "photos/new-york-night.jpg", body: neutron, at: [0.548, 0.62], r: 0.385, ring: "≈ 20 km wide, to scale", lift: 0.06 } },
+    { id: "neutron", only: "short", say: "It's a neutron star, only about twenty kilometres wide, the length of Manhattan.", visual: { type: "body", body: neutron } },
     { id: "mass", only: "short", say: "Yet it holds more mass than our entire Sun.", visual: { type: "body", body: neutron, fact: "more mass than the Sun" } },
     { id: "dwarf", only: "short", say: "Sirius B, a white dwarf, is far bigger, but still smaller than Earth.", visual: { type: "compare", from: neutron, to: siriusB } },
     { id: "smallest", only: "short", say: "The smallest star we know of is only about as wide as Saturn.", visual: { type: "compare", from: siriusB, to: smallest } },

@@ -26,6 +26,7 @@ function minDuration(v: Visual) {
     case "orbits": return 6 * BEAT;
     case "lap": return 7 * BEAT;
     case "shrink": return 6 * BEAT;
+    case "photo": return 6 * BEAT;
     case "stars": return 3 * BEAT;
   }
 }

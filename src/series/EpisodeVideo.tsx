@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from "react";
-import { AbsoluteFill, Audio, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { progress } from "../core/anim";
 import { CanvasLayer, type DrawContext } from "../core/components/CanvasLayer";
 import { FilmFinish } from "../core/components/FilmFinish";
@@ -9,7 +9,7 @@ import { ensureFonts, FONT_BODY, FONT_DISPLAY } from "../core/fonts";
 import type { NarrationTrack } from "../voice/types";
 import { layoutEpisode } from "./layout";
 import { BodiesGL } from "./BodiesGL";
-import { drawBackground, drawOverlay, placeBodies } from "./scenes";
+import { activePhoto, drawBackground, drawOverlay, placeBodies } from "./scenes";
 import { episodeNumber, type EpisodeSpec, type Variant } from "./types";
 
 ensureFonts();
@@ -53,6 +53,26 @@ const FollowTag: React.FC<{ spec: EpisodeSpec; ask?: string; duration: number; h
   );
 };
 
+/** A real photograph behind a "photo" beat: fills the frame, pulls back slowly, and is dimmed a little so words stay readable. */
+const PhotoLayer: React.FC<{ layout: ReturnType<typeof layoutEpisode> }> = ({ layout }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = activePhoto(layout, frame / fps);
+  if (!p) return null;
+  const lift = p.v.lift ?? 0;
+  return (
+    <AbsoluteFill style={{ opacity: p.alpha, overflow: "hidden" }}>
+      <AbsoluteFill style={{ transform: `scale(${p.zoom})`, transformOrigin: `${p.v.at[0] * 100}% ${p.v.at[1] * 100}%` }}>
+        <Img src={staticFile(p.v.image)} style={{
+          position: "absolute", left: 0, top: `${-lift * 100}%`, width: "100%", height: "100%", objectFit: "cover",
+          filter: "brightness(0.85) saturate(1.1)",
+        }} />
+      </AbsoluteFill>
+      <AbsoluteFill style={{ background: `linear-gradient(180deg, rgba(3,4,11,0.78) 0%, rgba(3,4,11,0.2) 28%, rgba(3,4,11,0) 50%, rgba(3,4,11,0) ${(1 - lift - 0.16) * 100}%, #03040b ${(1 - lift - 0.015) * 100}%)` }} />
+    </AbsoluteFill>
+  );
+};
+
 /** Generic player for any series episode. */
 export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track: NarrationTrack | null; videoId: string }> = ({ spec, variant, track, videoId }) => {
   const layout = useMemo(() => layoutEpisode(spec, variant, track), [spec, variant, track]);
@@ -63,6 +83,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
   return (
     <AbsoluteFill style={{ backgroundColor: "#03040b" }}>
       <CanvasLayer draw={background} />
+      <PhotoLayer layout={layout} />
       <BodiesGL place={place} />
       <CanvasLayer draw={overlay} />
       {spec.hideTag?.includes(variant) ? null : <SeriesTag spec={spec} variant={variant} duration={layout.duration} />}
