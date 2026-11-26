@@ -60,11 +60,23 @@ const PhotoLayer: React.FC<{ layout: ReturnType<typeof layoutEpisode> }> = ({ la
   const { fps } = useVideoConfig();
   const p = activePhoto(layout, frame / fps);
   if (!p) return null;
-  const lift = p.v.lift ?? 0;
+  const lift = p.v.lift ?? 0, src = staticFile(p.v.image);
+  if (p.v.fit === "contain") {
+    // the whole picture across the frame, over a blurred copy of itself; zoomed about the frame centre
+    return (
+      <AbsoluteFill style={{ opacity: p.alpha, overflow: "hidden" }}>
+        <Img src={src} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transform: "scale(1.25)", filter: "blur(38px) brightness(0.42) saturate(1.15)" }} />
+        <AbsoluteFill style={{ transform: `scale(${0.94 * p.zoom})` }}>
+          <Img src={src} style={{ position: "absolute", left: 0, top: "53%", width: "100%", transform: "translateY(-50%)", borderRadius: 18, boxShadow: "0 30px 90px rgba(0,0,0,0.75)" }} />
+        </AbsoluteFill>
+        <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(3,4,11,0.7) 0%, rgba(3,4,11,0.1) 26%, rgba(3,4,11,0) 45%, rgba(3,4,11,0) 80%, rgba(3,4,11,0.75) 100%)" }} />
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{ opacity: p.alpha, overflow: "hidden" }}>
-      <AbsoluteFill style={{ transform: `scale(${p.zoom})`, transformOrigin: `${p.v.at[0] * 100}% ${p.v.at[1] * 100}%` }}>
-        <Img src={staticFile(p.v.image)} style={{
+      <AbsoluteFill style={{ transform: `scale(${p.zoom})`, transformOrigin: p.v.body ? `${(p.v.at?.[0] ?? 0.5) * 100}% ${(p.v.at?.[1] ?? 0.5) * 100}%` : "50% 50%" }}>
+        <Img src={src} style={{
           position: "absolute", left: 0, top: `${-lift * 100}%`, width: "100%", height: "100%", objectFit: "cover",
           filter: "brightness(0.85) saturate(1.1)",
         }} />

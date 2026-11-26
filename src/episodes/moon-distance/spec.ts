@@ -32,15 +32,16 @@ export const MOON_DISTANCE: EpisodeSpec = {
     { id: "drift", only: "short", say: "And every year, the Moon drifts almost four centimetres farther away.", visual: { type: "body", body: moon, fact: "3.8 cm farther every year" } },
     // ---- long cut: its own story, sharing no lines or pictures with the short
 
-    { id: "hook-l", only: "long", say: "The Moon is that tiny dot. So how can it cover the entire Sun?", visual: { type: "compare", from: moon, to: sun, big: true, open: true } },
-    { id: "wider", only: "long", say: "The Sun is four hundred times wider than the Moon.", visual: { type: "body", body: sun, fact: "400 × wider than the Moon" } },
+    // cold open on a real photograph of totality (NASA, 8 April 2024; see public/photos/CREDITS.md)
+    { id: "hook-l", only: "long", say: "This is a real photo. The Moon is covering the entire Sun. So how can something so small do that?", visual: { type: "photo", image: "photos/eclipse-totality.jpg", ring: "Total solar eclipse · 8 April 2024" } },
+    { id: "wider", only: "long", say: "The Sun is four hundred times wider than the Moon.", visual: { type: "compare", from: moon, to: sun, big: true } },
     { id: "near", only: "long", say: "But the Moon is far closer to us. This is the real gap, drawn to scale.", visual: gap({ note: "384,400 km" }) },
     { id: "sunfar", only: "long", say: "The Sun is almost four hundred times farther away.", visual: { type: "gap", a: earth, b: sun, distance: AU, note: "150 million km" } },
     { id: "sunlight", only: "long", say: "Its light needs more than eight minutes to reach us.", visual: { type: "gap", a: earth, b: sun, distance: AU, trip: { label: "8 min 19 s" } } },
     { id: "same", only: "long", say: "Four hundred times wider, and four hundred times farther. So in our sky, they look the same size.", visual: { type: "body", body: sun, fact: "400 × wider, 400 × farther" } },
     { id: "cover", only: "long", say: "That is why the Moon can slide in front of the Sun and cover it exactly.", visual: { type: "body", body: moon, fact: "a perfect fit for an eclipse" } },
-    { id: "night", only: "long", say: "For a few minutes, day turns to night.", visual: { type: "body", body: moon, fact: "totality: 7.5 minutes at most" } },
-    { id: "corona", only: "long", say: "And the Sun's faint outer atmosphere appears around the black disc of the Moon.", visual: { type: "body", body: sun, fact: "the corona: over a million degrees" } },
+    { id: "night", only: "long", say: "For a few minutes, day turns to night.", visual: { type: "photo", image: "photos/eclipse-diamond-ring.jpg", ring: "totality: 7.5 minutes at most" } },
+    { id: "corona", only: "long", say: "And the Sun's faint outer atmosphere appears around the black disc of the Moon.", visual: { type: "photo", image: "photos/eclipse-totality.jpg", ring: "the corona: over a million degrees" } },
     { id: "rare", only: "long", say: "From any one place on Earth, that happens only about once every four centuries.", visual: { type: "body", body: earth, fact: "one place: about once in 375 years" } },
     { id: "luck", only: "long", say: "It is a coincidence. Nothing requires the two to match.", visual: { type: "pair", a: moon, b: earth } },
     { id: "orbit", only: "long", say: "And the match is not perfect, because the Moon's distance changes as it orbits.", visual: gap({ distance: FAR, note: "405,500 km at its farthest" }) },

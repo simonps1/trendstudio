@@ -189,6 +189,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
     }
     case "photo": {
       // the body lands on the photo as the first words name it
+      if (!v.body || !v.at || !v.r) return []; // a photograph on its own
       const pop = ease.outBack(progress(lt, 0.45, 0.85)), k = photoZoom(lt);
       return pop > 0 ? [{ body: v.body, x: v.at[0] * w, y: v.at[1] * h, r: v.r * w * k * pop }] : [];
     }
@@ -198,7 +199,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
 }
 
 /** Slow pull-back on a photo beat, shared by the photo layer and the body drawn on it. */
-export const photoZoom = (lt: number) => lerp(1.14, 1, 1 - Math.pow(1 - progress(lt, 0, 2.2), 3));
+export const photoZoom = (lt: number) => lerp(1.14, 1, 1 - Math.pow(1 - progress(lt, 0, 2.2), 3)) + 0.006 * lt; // pulls back, then keeps drifting in
 /** The photo beat on screen at time t, if any, with its local time and fade. */
 export function activePhoto(layout: EpisodeLayout, t: number) {
   const b = active(layout, t), v = b.beat.visual;
@@ -258,7 +259,16 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   }
   if (v.type === "body") nameplate(d, v.body, cx, cy - (v.fact ? 14 * u : 0), progress(lt, 0.05, 0.25) * closing, progress(lt, 0.05, 0.4), v.fact ?? v.body.note, !!v.fact);
 
-  if (v.type === "photo") {
+  if (v.type === "photo" && !v.body) {
+    // a photograph on its own: one caption line under it, and optionally a ring around a detail
+    const a = 1 - progress(lt, dur - 0.3, dur);
+    if (v.at && v.r) {
+      const k = photoZoom(lt), x = cx + (v.at[0] * w - cx) * k, y = h / 2 + (v.at[1] * h - h / 2) * k, r = v.r * w;
+      ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = "rgba(255,210,63,0.95)"; ctx.lineWidth = 5 * u; ctx.setLineDash([22 * u, 14 * u]);
+      ctx.lineDashOffset = -t * 40 * u; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
+    }
+    if (v.ring) label(ctx, v.ring.toUpperCase(), cx, h * 0.85, 46 * u, progress(lt, 0.3, 0.6) * a, "Anton", "#ffd23f");
+  } else if (v.type === "photo" && v.body && v.at && v.r) {
     // the measuring ring is there from the first frame; the name and size ride just under it
     const k = photoZoom(lt), x = v.at[0] * w, y = v.at[1] * h, r = v.r * w * k, a = 1 - progress(lt, dur - 0.3, dur);
     ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = "rgba(255,210,63,0.95)"; ctx.lineWidth = 5 * u; ctx.setLineDash([22 * u, 14 * u]);

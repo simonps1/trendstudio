@@ -56,11 +56,13 @@ export type Visual =
   /** The body shrinks to a point among the stars (endings). */
   | { type: "shrink"; body: Body }
   /**
+   * Without `body` the photograph stands on its own: `ring` is its caption, and `at` + `r` (optional) circle a detail.
+   * `fit: "contain"` shows the whole picture across the frame's width over a blurred copy of itself.
    * A real photograph filling the frame, with `body` drawn on top of it to scale: centre `at` (fractions of the
    * frame) and radius `r` (fraction of the frame width). `ring` labels the circle (e.g. "≈ 20 km"). `lift` slides the photo
    * up by that fraction of the frame height (its bottom edge fades into the sky), to bring the subject to mid-frame.
    */
-  | { type: "photo"; image: string; body: Body; at: [number, number]; r: number; ring?: string; lift?: number }
+  | { type: "photo"; image: string; body?: Body; at?: [number, number]; r?: number; ring?: string; lift?: number; fit?: "cover" | "contain" }
   /** Just the starfield (calls to action, pauses). */
   | { type: "stars" };
 
