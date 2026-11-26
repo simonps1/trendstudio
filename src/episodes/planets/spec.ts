@@ -30,7 +30,7 @@ export const PLANETS: EpisodeSpec = {
     { id: "uranus", only: "short", say: "Uranus beats it, but only just.", visual: { type: "pair", a: neptune, b: uranus } },
     { id: "saturn", only: "short", say: "Saturn is more than twice as wide, even without its rings.", visual: { type: "compare", from: uranus, to: saturn } },
     { id: "jupiter", only: "short", say: "And Jupiter is the biggest of them all.", visual: { type: "pair", a: saturn, b: jupiter } },
-    { id: "heavy", only: "short", say: "It outweighs every other planet combined, twice over.", visual: { type: "body", body: jupiter, fact: "2.5 × all other planets combined" } },
+    { id: "heavy", only: "short", say: "It outweighs every other planet combined, twice over.", visual: { type: "body", body: jupiter, fact: "2.5 × the mass of all other planets" } },
     { id: "end", only: "short", say: "And next to the Sun, even Jupiter is tiny.", visual: { type: "shrink", body: jupiter } },
     // ---- long cut: its own story, sharing no lines or pictures with the short
 

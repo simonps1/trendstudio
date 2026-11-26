@@ -10,11 +10,12 @@ import type { NarrationTrack } from "../voice/types";
 import { layoutEpisode } from "./layout";
 import { BodiesGL } from "./BodiesGL";
 import { activePhoto, drawBackground, drawOverlay, placeBodies } from "./scenes";
-import { episodeNumber, type EpisodeSpec, type Variant } from "./types";
+import type { EpisodeSpec, Variant } from "./types";
 
 ensureFonts();
 
-const SeriesTag: React.FC<{ spec: EpisodeSpec; variant: Variant; duration: number }> = ({ spec, variant, duration }) => {
+/** The series name at the top. No episode number: videos are posted in whatever order suits the channel. */
+const SeriesTag: React.FC<{ spec: EpisodeSpec; duration: number }> = ({ spec, duration }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const t = frame / fps, u = Math.min(width, height) / 1080;
@@ -24,7 +25,7 @@ const SeriesTag: React.FC<{ spec: EpisodeSpec; variant: Variant; duration: numbe
       position: "absolute", top: (height > width ? 250 : 44) * u, left: 0, right: 0, textAlign: "center", opacity: a * 0.85,
       fontFamily: FONT_BODY, fontWeight: 800, fontSize: 24 * u, letterSpacing: 7 * u, color: "#cfe0ff",
     }}>
-      {spec.series.toUpperCase()} · EP {episodeNumber(spec, variant)}
+      {spec.series.toUpperCase()}
     </div>
   );
 };
@@ -86,7 +87,7 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
       <PhotoLayer layout={layout} />
       <BodiesGL place={place} />
       <CanvasLayer draw={overlay} />
-      {spec.hideTag?.includes(variant) ? null : <SeriesTag spec={spec} variant={variant} duration={layout.duration} />}
+      {spec.hideTag?.includes(variant) ? null : <SeriesTag spec={spec} duration={layout.duration} />}
       <FollowTag spec={spec} ask={variant === "long" ? spec.askLong ?? spec.ask : spec.ask} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
       <KaraokeCaptions words={captionWords} emphasis={spec.emphasis ?? []} y={0.215} oneLine />
       <FilmFinish />

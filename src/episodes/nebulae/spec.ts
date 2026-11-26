@@ -11,7 +11,7 @@ import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
 // 6–11 ly wide depending on the assumed distance (NASA / Chandra). The Sun formed about 4.6 billion years ago.
 const neb = (name: string, width: number, note: string, color: string, color2: string, shape: Body["shape"] = "cloud", image?: string): Body =>
   ({ name, kind: "nebula", radius: width / 2, color, color2, shape, note, image });
-const solar: Body = { name: "Our solar system", kind: "star", radius: 0.000475, temp: 0.55, note: "out to Neptune's orbit" };
+const solar: Body = { name: "Our solar system, out to Neptune", kind: "star", radius: 0.000475, temp: 0.55, note: "out to Neptune's orbit" };
 const helix = neb("Helix Nebula", 3, "≈ 3 light-years wide", "#ff5a3c", "#3fd0c9", "ring", "nebulae/helix.jpg");
 const crab = neb("Crab Nebula", 8, "≈ 6 to 11 light-years wide · estimate", "#ffb05a", "#5ad0ff");
 const orion = neb("Orion Nebula", 24, "≈ 24 light-years wide", "#ff5f8a", "#7a5cff", "cloud", "nebulae/orion.jpg");

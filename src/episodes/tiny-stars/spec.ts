@@ -41,7 +41,7 @@ export const TINY_STARS: EpisodeSpec = {
 
     { id: "hook-l", only: "long", say: "One day, our Sun will shrink into that tiny dot.", visual: { type: "compare", from: sunDwarf, to: sun, big: true, open: true } },
     { id: "age", only: "long", say: "Right now it is about four and a half billion years old, roughly halfway through its life.", visual: { type: "body", body: sun, fact: "4.6 billion years old" } },
-    { id: "fuel", only: "long", say: "In about five billion years, it will run out of hydrogen in its core.", visual: { type: "body", body: sun, fact: "fuel runs out in ≈ 5 billion years" } },
+    { id: "fuel", only: "long", say: "In about five billion years, it will run out of hydrogen in its core.", visual: { type: "body", body: sun, fact: "fuel runs out in ≈ 5 billion years · estimate" } },
     { id: "swell", only: "long", say: "Then it will swell into a red giant, about two hundred and fifty times wider than today.", visual: { type: "compare", from: sun, to: redGiant, big: true } },
     {
       id: "swallow", only: "long", say: "It will swallow Mercury and Venus, and probably Earth as well.",
