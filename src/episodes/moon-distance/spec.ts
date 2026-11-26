@@ -15,6 +15,7 @@ export const MOON_DISTANCE: EpisodeSpec = {
   series: "Cosmic Scale",
   episode: 10,
   episodeLong: 13,
+  hideTag: ["short", "long"],
   title: "How far away is the Moon, really?",
   titleLong: "Why the Sun and Moon look the same size",
   voice: NARRATOR,
