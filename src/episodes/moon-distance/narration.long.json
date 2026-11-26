@@ -5,81 +5,111 @@
   "lines": [
     {
       "id": "hook-l",
-      "text": "The Moon is that tiny dot. So how can it cover the entire Sun?",
-      "file": "public/voice/moon-distance-long/hook-l.88d3cf61e9a8.wav",
+      "text": "This is a real photo. The Moon is covering the entire Sun. So how can something so small do that?",
+      "file": "public/voice/moon-distance-long/hook-l.edf4490e6189.wav",
       "start": 0.25,
-      "duration": 4.089,
+      "duration": 5.783,
       "speed": 1.12,
       "words": [
         {
-          "word": "The",
+          "word": "This",
           "start": 0.25,
-          "end": 0.39
-        },
-        {
-          "word": "Moon",
-          "start": 0.39,
-          "end": 0.57
+          "end": 0.43
         },
         {
           "word": "is",
+          "start": 0.43,
+          "end": 0.57
+        },
+        {
+          "word": "a",
           "start": 0.57,
-          "end": 0.93
+          "end": 0.69
         },
         {
-          "word": "that",
-          "start": 0.93,
-          "end": 1.15
+          "word": "real",
+          "start": 0.69,
+          "end": 0.83
         },
         {
-          "word": "tiny",
-          "start": 1.15,
-          "end": 1.45
+          "word": "photo.",
+          "start": 0.83,
+          "end": 1.09
         },
         {
-          "word": "dot.",
-          "start": 1.45,
-          "end": 1.77
+          "word": "The",
+          "start": 1.87,
+          "end": 1.93
         },
         {
-          "word": "So",
-          "start": 2.51,
-          "end": 2.59
+          "word": "Moon",
+          "start": 1.93,
+          "end": 2.09
         },
         {
-          "word": "how",
-          "start": 2.59,
-          "end": 2.75
+          "word": "is",
+          "start": 2.09,
+          "end": 2.35
         },
         {
-          "word": "can",
-          "start": 2.75,
-          "end": 2.93
-        },
-        {
-          "word": "it",
-          "start": 2.93,
-          "end": 2.99
-        },
-        {
-          "word": "cover",
-          "start": 2.99,
-          "end": 3.21
+          "word": "covering",
+          "start": 2.35,
+          "end": 2.65
         },
         {
           "word": "the",
-          "start": 3.21,
-          "end": 3.39
+          "start": 2.65,
+          "end": 2.85
         },
         {
           "word": "entire",
-          "start": 3.39,
-          "end": 3.59
+          "start": 2.85,
+          "end": 2.99
         },
         {
-          "word": "Sun?",
-          "start": 3.59,
-          "end": 4.09
+          "word": "Sun.",
+          "start": 2.99,
+          "end": 3.45
+        },
+        {
+          "word": "So",
+          "start": 4.05,
+          "end": 4.21
+        },
+        {
+          "word": "how",
+          "start": 4.21,
+          "end": 4.37
+        },
+        {
+          "word": "can",
+          "start": 4.37,
+          "end": 4.53
+        },
+        {
+          "word": "something",
+          "start": 4.53,
+          "end": 4.73
+        },
+        {
+          "word": "so",
+          "start": 4.73,
+          "end": 5.07
+        },
+        {
+          "word": "small",
+          "start": 5.07,
+          "end": 5.37
+        },
+        {
+          "word": "do",
+          "start": 5.37,
+          "end": 5.53
+        },
+        {
+          "word": "that?",
+          "start": 5.53,
+          "end": 5.79
         }
       ]
     },
@@ -87,59 +117,59 @@
       "id": "wider",
       "text": "The Sun is four hundred times wider than the Moon.",
       "file": "public/voice/moon-distance-long/wider.227f1f301da5.wav",
-      "start": 4.739,
+      "start": 6.433,
       "duration": 3.08,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 4.739,
-          "end": 4.879
+          "start": 6.433,
+          "end": 6.573
         },
         {
           "word": "Sun",
-          "start": 4.879,
-          "end": 5.139
+          "start": 6.573,
+          "end": 6.833
         },
         {
           "word": "is",
-          "start": 5.139,
-          "end": 5.519
+          "start": 6.833,
+          "end": 7.213
         },
         {
           "word": "four",
-          "start": 5.519,
-          "end": 5.569
+          "start": 7.213,
+          "end": 7.263
         },
         {
           "word": "hundred",
-          "start": 5.519,
-          "end": 5.939
+          "start": 7.213,
+          "end": 7.633
         },
         {
           "word": "times",
-          "start": 5.939,
-          "end": 6.479
+          "start": 7.633,
+          "end": 8.173
         },
         {
           "word": "wider",
-          "start": 6.479,
-          "end": 6.839
+          "start": 8.173,
+          "end": 8.533
         },
         {
           "word": "than",
-          "start": 6.839,
-          "end": 7.219
+          "start": 8.533,
+          "end": 8.913
         },
         {
           "word": "the",
-          "start": 7.219,
-          "end": 7.319
+          "start": 8.913,
+          "end": 9.013
         },
         {
           "word": "Moon.",
-          "start": 7.319,
-          "end": 7.539
+          "start": 9.013,
+          "end": 9.233
         }
       ]
     },
@@ -147,89 +177,89 @@
       "id": "near",
       "text": "But the Moon is far closer to us. This is the real gap, drawn to scale.",
       "file": "public/voice/moon-distance-long/near.192070137328.wav",
-      "start": 8.218,
+      "start": 9.913,
       "duration": 5.08,
       "speed": 1,
       "words": [
         {
           "word": "But",
-          "start": 8.218,
-          "end": 8.358
+          "start": 9.913,
+          "end": 10.053
         },
         {
           "word": "the",
-          "start": 8.358,
-          "end": 8.478
+          "start": 10.053,
+          "end": 10.173
         },
         {
           "word": "Moon",
-          "start": 8.478,
-          "end": 8.698
+          "start": 10.173,
+          "end": 10.393
         },
         {
           "word": "is",
-          "start": 8.698,
-          "end": 8.938
+          "start": 10.393,
+          "end": 10.633
         },
         {
           "word": "far",
-          "start": 8.938,
-          "end": 9.138
+          "start": 10.633,
+          "end": 10.833
         },
         {
           "word": "closer",
-          "start": 9.138,
-          "end": 9.578
+          "start": 10.833,
+          "end": 11.273
         },
         {
           "word": "to",
-          "start": 9.578,
-          "end": 9.798
+          "start": 11.273,
+          "end": 11.493
         },
         {
           "word": "us.",
-          "start": 9.798,
-          "end": 10.098
+          "start": 11.493,
+          "end": 11.793
         },
         {
           "word": "This",
-          "start": 10.698,
-          "end": 11.018
+          "start": 12.393,
+          "end": 12.713
         },
         {
           "word": "is",
-          "start": 11.018,
-          "end": 11.258
+          "start": 12.713,
+          "end": 12.953
         },
         {
           "word": "the",
-          "start": 11.258,
-          "end": 11.418
+          "start": 12.953,
+          "end": 13.113
         },
         {
           "word": "real",
-          "start": 11.418,
-          "end": 11.578
+          "start": 13.113,
+          "end": 13.273
         },
         {
           "word": "gap,",
-          "start": 11.578,
-          "end": 11.978
+          "start": 13.273,
+          "end": 13.673
         },
         {
           "word": "drawn",
-          "start": 12.238,
-          "end": 12.438
+          "start": 13.933,
+          "end": 14.133
         },
         {
           "word": "to",
-          "start": 12.438,
-          "end": 12.678
+          "start": 14.133,
+          "end": 14.373
         },
         {
           "word": "scale.",
-          "start": 12.678,
-          "end": 12.958
+          "start": 14.373,
+          "end": 14.653
         }
       ]
     },
@@ -237,54 +267,54 @@
       "id": "sunfar",
       "text": "The Sun is almost four hundred times farther away.",
       "file": "public/voice/moon-distance-long/sunfar.7ab6b4bff85a.wav",
-      "start": 13.698,
+      "start": 15.393,
       "duration": 3.239,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 13.698,
-          "end": 13.858
+          "start": 15.393,
+          "end": 15.553
         },
         {
           "word": "Sun",
-          "start": 13.858,
-          "end": 14.078
+          "start": 15.553,
+          "end": 15.773
         },
         {
           "word": "is",
-          "start": 14.078,
-          "end": 14.358
+          "start": 15.773,
+          "end": 16.053
         },
         {
           "word": "almost",
-          "start": 14.358,
-          "end": 14.738
+          "start": 16.053,
+          "end": 16.433
         },
         {
           "word": "four",
-          "start": 14.738,
-          "end": 14.788
+          "start": 16.433,
+          "end": 16.483
         },
         {
           "word": "hundred",
-          "start": 14.738,
-          "end": 15.218
+          "start": 16.433,
+          "end": 16.913
         },
         {
           "word": "times",
-          "start": 15.218,
-          "end": 15.838
+          "start": 16.913,
+          "end": 17.533
         },
         {
           "word": "farther",
-          "start": 15.838,
-          "end": 16.338
+          "start": 17.533,
+          "end": 18.033
         },
         {
           "word": "away.",
-          "start": 16.338,
-          "end": 16.718
+          "start": 18.033,
+          "end": 18.413
         }
       ]
     },
@@ -292,59 +322,59 @@
       "id": "sunlight",
       "text": "Its light needs more than eight minutes to reach us.",
       "file": "public/voice/moon-distance-long/sunlight.bf098f0e8b96.wav",
-      "start": 17.337,
+      "start": 19.032,
       "duration": 2.591,
       "speed": 1,
       "words": [
         {
           "word": "Its",
-          "start": 17.337,
-          "end": 17.517
+          "start": 19.032,
+          "end": 19.212
         },
         {
           "word": "light",
-          "start": 17.517,
-          "end": 17.617
+          "start": 19.212,
+          "end": 19.312
         },
         {
           "word": "needs",
-          "start": 17.617,
-          "end": 17.857
+          "start": 19.312,
+          "end": 19.552
         },
         {
           "word": "more",
-          "start": 17.857,
-          "end": 18.137
+          "start": 19.552,
+          "end": 19.832
         },
         {
           "word": "than",
-          "start": 18.137,
-          "end": 18.317
+          "start": 19.832,
+          "end": 20.012
         },
         {
           "word": "eight",
-          "start": 18.317,
-          "end": 18.537
+          "start": 20.012,
+          "end": 20.232
         },
         {
           "word": "minutes",
-          "start": 18.537,
-          "end": 18.857
+          "start": 20.232,
+          "end": 20.552
         },
         {
           "word": "to",
-          "start": 18.857,
-          "end": 19.137
+          "start": 20.552,
+          "end": 20.832
         },
         {
           "word": "reach",
-          "start": 19.137,
-          "end": 19.377
+          "start": 20.832,
+          "end": 21.072
         },
         {
           "word": "us.",
-          "start": 19.377,
-          "end": 19.617
+          "start": 21.072,
+          "end": 21.312
         }
       ]
     },
@@ -352,99 +382,99 @@
       "id": "same",
       "text": "Four hundred times wider, and four hundred times farther. So in our sky, they look the same size.",
       "file": "public/voice/moon-distance-long/same.b9612be026bf.wav",
-      "start": 20.328,
+      "start": 22.023,
       "duration": 6.318,
       "speed": 1,
       "words": [
         {
           "word": "Four",
-          "start": 20.368,
-          "end": 20.418
+          "start": 22.063,
+          "end": 22.113
         },
         {
           "word": "hundred",
-          "start": 20.328,
-          "end": 20.588
+          "start": 22.023,
+          "end": 22.283
         },
         {
           "word": "times",
-          "start": 20.588,
-          "end": 20.988
+          "start": 22.283,
+          "end": 22.683
         },
         {
           "word": "wider,",
-          "start": 20.988,
-          "end": 21.248
+          "start": 22.683,
+          "end": 22.943
         },
         {
           "word": "and",
-          "start": 21.248,
-          "end": 22.008
+          "start": 22.943,
+          "end": 23.703
         },
         {
           "word": "four",
-          "start": 22.008,
-          "end": 22.058
+          "start": 23.703,
+          "end": 23.753
         },
         {
           "word": "hundred",
-          "start": 22.008,
-          "end": 22.228
+          "start": 23.703,
+          "end": 23.923
         },
         {
           "word": "times",
-          "start": 22.228,
-          "end": 22.748
+          "start": 23.923,
+          "end": 24.443
         },
         {
           "word": "farther.",
-          "start": 22.748,
-          "end": 23.048
+          "start": 24.443,
+          "end": 24.743
         },
         {
           "word": "So",
-          "start": 23.868,
-          "end": 24.028
+          "start": 25.563,
+          "end": 25.723
         },
         {
           "word": "in",
-          "start": 24.028,
-          "end": 24.288
+          "start": 25.723,
+          "end": 25.983
         },
         {
           "word": "our",
-          "start": 24.288,
-          "end": 24.428
+          "start": 25.983,
+          "end": 26.123
         },
         {
           "word": "sky,",
-          "start": 24.428,
-          "end": 24.688
+          "start": 26.123,
+          "end": 26.383
         },
         {
           "word": "they",
-          "start": 25.208,
-          "end": 25.348
+          "start": 26.903,
+          "end": 27.043
         },
         {
           "word": "look",
-          "start": 25.348,
-          "end": 25.508
+          "start": 27.043,
+          "end": 27.203
         },
         {
           "word": "the",
-          "start": 25.508,
-          "end": 25.668
+          "start": 27.203,
+          "end": 27.363
         },
         {
           "word": "same",
-          "start": 25.668,
-          "end": 25.848
+          "start": 27.363,
+          "end": 27.543
         },
         {
           "word": "size.",
-          "start": 25.848,
-          "end": 26.228
+          "start": 27.543,
+          "end": 27.923
         }
       ]
     },
@@ -452,89 +482,89 @@
       "id": "cover",
       "text": "That is why the Moon can slide in front of the Sun and cover it exactly.",
       "file": "public/voice/moon-distance-long/cover.552aacd7525a.wav",
-      "start": 27.046,
+      "start": 28.741,
       "duration": 4.534,
       "speed": 1,
       "words": [
         {
           "word": "That",
-          "start": 27.046,
-          "end": 27.266
+          "start": 28.741,
+          "end": 28.961
         },
         {
           "word": "is",
-          "start": 27.266,
-          "end": 27.426
+          "start": 28.961,
+          "end": 29.121
         },
         {
           "word": "why",
-          "start": 27.426,
-          "end": 27.646
+          "start": 29.121,
+          "end": 29.341
         },
         {
           "word": "the",
-          "start": 27.646,
-          "end": 27.846
+          "start": 29.341,
+          "end": 29.541
         },
         {
           "word": "Moon",
-          "start": 27.846,
-          "end": 28.066
+          "start": 29.541,
+          "end": 29.761
         },
         {
           "word": "can",
-          "start": 28.066,
-          "end": 28.306
+          "start": 29.761,
+          "end": 30.001
         },
         {
           "word": "slide",
-          "start": 28.306,
-          "end": 28.626
+          "start": 30.001,
+          "end": 30.321
         },
         {
           "word": "in",
-          "start": 28.626,
-          "end": 28.846
+          "start": 30.321,
+          "end": 30.541
         },
         {
           "word": "front",
-          "start": 28.846,
-          "end": 29.006
+          "start": 30.541,
+          "end": 30.701
         },
         {
           "word": "of",
-          "start": 29.006,
-          "end": 29.186
+          "start": 30.701,
+          "end": 30.881
         },
         {
           "word": "the",
-          "start": 29.186,
-          "end": 29.306
+          "start": 30.881,
+          "end": 31.001
         },
         {
           "word": "Sun",
-          "start": 29.306,
-          "end": 29.546
+          "start": 31.001,
+          "end": 31.241
         },
         {
           "word": "and",
-          "start": 29.546,
-          "end": 30.046
+          "start": 31.241,
+          "end": 31.741
         },
         {
           "word": "cover",
-          "start": 30.046,
-          "end": 30.406
+          "start": 31.741,
+          "end": 32.101
         },
         {
           "word": "it",
-          "start": 30.406,
-          "end": 30.626
+          "start": 32.101,
+          "end": 32.321
         },
         {
           "word": "exactly.",
-          "start": 30.626,
-          "end": 31.086
+          "start": 32.321,
+          "end": 32.781
         }
       ]
     },
@@ -542,49 +572,49 @@
       "id": "night",
       "text": "For a few minutes, day turns to night.",
       "file": "public/voice/moon-distance-long/night.7b5aac085f90.wav",
-      "start": 31.98,
+      "start": 33.675,
       "duration": 2.807,
       "speed": 1,
       "words": [
         {
           "word": "For",
-          "start": 31.98,
-          "end": 32.12
+          "start": 33.675,
+          "end": 33.815
         },
         {
           "word": "a",
-          "start": 32.12,
-          "end": 32.26
+          "start": 33.815,
+          "end": 33.955
         },
         {
           "word": "few",
-          "start": 32.26,
-          "end": 32.44
+          "start": 33.955,
+          "end": 34.135
         },
         {
           "word": "minutes,",
-          "start": 32.44,
-          "end": 32.94
+          "start": 34.135,
+          "end": 34.635
         },
         {
           "word": "day",
-          "start": 33.42,
-          "end": 33.6
+          "start": 35.115,
+          "end": 35.295
         },
         {
           "word": "turns",
-          "start": 33.6,
-          "end": 33.9
+          "start": 35.295,
+          "end": 35.595
         },
         {
           "word": "to",
-          "start": 33.9,
-          "end": 33.95
+          "start": 35.595,
+          "end": 35.645
         },
         {
           "word": "night.",
-          "start": 33.9,
-          "end": 34.38
+          "start": 35.595,
+          "end": 36.075
         }
       ]
     },
@@ -592,79 +622,79 @@
       "id": "corona",
       "text": "And the Sun's faint outer atmosphere appears around the black disc of the Moon.",
       "file": "public/voice/moon-distance-long/corona.30c52cbfc4c9.wav",
-      "start": 35.187,
+      "start": 36.882,
       "duration": 4.966,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 35.187,
-          "end": 35.507
+          "start": 36.882,
+          "end": 37.202
         },
         {
           "word": "the",
-          "start": 35.507,
-          "end": 35.667
+          "start": 37.202,
+          "end": 37.362
         },
         {
           "word": "Sun's",
-          "start": 35.667,
-          "end": 36.067
+          "start": 37.362,
+          "end": 37.762
         },
         {
           "word": "faint",
-          "start": 36.067,
-          "end": 36.267
+          "start": 37.762,
+          "end": 37.962
         },
         {
           "word": "outer",
-          "start": 36.267,
-          "end": 36.567
+          "start": 37.962,
+          "end": 38.262
         },
         {
           "word": "atmosphere",
-          "start": 36.567,
-          "end": 37.247
+          "start": 38.262,
+          "end": 38.942
         },
         {
           "word": "appears",
-          "start": 37.247,
-          "end": 37.727
+          "start": 38.942,
+          "end": 39.422
         },
         {
           "word": "around",
-          "start": 37.727,
-          "end": 38.347
+          "start": 39.422,
+          "end": 40.042
         },
         {
           "word": "the",
-          "start": 38.347,
-          "end": 38.627
+          "start": 40.042,
+          "end": 40.322
         },
         {
           "word": "black",
-          "start": 38.627,
-          "end": 38.867
+          "start": 40.322,
+          "end": 40.562
         },
         {
           "word": "disc",
-          "start": 38.867,
-          "end": 39.187
+          "start": 40.562,
+          "end": 40.882
         },
         {
           "word": "of",
-          "start": 39.187,
-          "end": 39.507
+          "start": 40.882,
+          "end": 41.202
         },
         {
           "word": "the",
-          "start": 39.507,
-          "end": 39.627
+          "start": 41.202,
+          "end": 41.322
         },
         {
           "word": "Moon.",
-          "start": 39.627,
-          "end": 39.887
+          "start": 41.322,
+          "end": 41.582
         }
       ]
     },
@@ -672,79 +702,79 @@
       "id": "rare",
       "text": "From any one place on Earth, that happens only about once every four centuries.",
       "file": "public/voice/moon-distance-long/rare.d10a01b4a485.wav",
-      "start": 40.553,
+      "start": 42.248,
       "duration": 4.307,
       "speed": 1,
       "words": [
         {
           "word": "From",
-          "start": 40.553,
-          "end": 40.693
+          "start": 42.248,
+          "end": 42.388
         },
         {
           "word": "any",
-          "start": 40.693,
-          "end": 40.913
+          "start": 42.388,
+          "end": 42.608
         },
         {
           "word": "one",
-          "start": 40.913,
-          "end": 41.133
+          "start": 42.608,
+          "end": 42.828
         },
         {
           "word": "place",
-          "start": 41.133,
-          "end": 41.393
+          "start": 42.828,
+          "end": 43.088
         },
         {
           "word": "on",
-          "start": 41.393,
-          "end": 41.613
+          "start": 43.088,
+          "end": 43.308
         },
         {
           "word": "Earth,",
-          "start": 41.613,
-          "end": 41.853
+          "start": 43.308,
+          "end": 43.548
         },
         {
           "word": "that",
-          "start": 41.853,
-          "end": 42.313
+          "start": 43.548,
+          "end": 44.008
         },
         {
           "word": "happens",
-          "start": 42.313,
-          "end": 42.593
+          "start": 44.008,
+          "end": 44.288
         },
         {
           "word": "only",
-          "start": 42.593,
-          "end": 42.993
+          "start": 44.288,
+          "end": 44.688
         },
         {
           "word": "about",
-          "start": 42.993,
-          "end": 43.233
+          "start": 44.688,
+          "end": 44.928
         },
         {
           "word": "once",
-          "start": 43.233,
-          "end": 43.453
+          "start": 44.928,
+          "end": 45.148
         },
         {
           "word": "every",
-          "start": 43.453,
-          "end": 43.773
+          "start": 45.148,
+          "end": 45.468
         },
         {
           "word": "four",
-          "start": 43.773,
-          "end": 43.993
+          "start": 45.468,
+          "end": 45.688
         },
         {
           "word": "centuries.",
-          "start": 43.993,
-          "end": 44.433
+          "start": 45.688,
+          "end": 46.128
         }
       ]
     },
@@ -752,59 +782,59 @@
       "id": "luck",
       "text": "It is a coincidence. Nothing requires the two to match.",
       "file": "public/voice/moon-distance-long/luck.582bcfd42543.wav",
-      "start": 45.259,
+      "start": 46.955,
       "duration": 3.75,
       "speed": 1,
       "words": [
         {
           "word": "It",
-          "start": 45.259,
-          "end": 45.379
+          "start": 46.955,
+          "end": 47.075
         },
         {
           "word": "is",
-          "start": 45.379,
-          "end": 45.619
+          "start": 47.075,
+          "end": 47.315
         },
         {
           "word": "a",
-          "start": 45.619,
-          "end": 45.799
+          "start": 47.315,
+          "end": 47.495
         },
         {
           "word": "coincidence.",
-          "start": 45.799,
-          "end": 46.139
+          "start": 47.495,
+          "end": 47.835
         },
         {
           "word": "Nothing",
-          "start": 47.039,
-          "end": 47.339
+          "start": 48.735,
+          "end": 49.035
         },
         {
           "word": "requires",
-          "start": 47.339,
-          "end": 47.739
+          "start": 49.035,
+          "end": 49.435
         },
         {
           "word": "the",
-          "start": 47.739,
-          "end": 48.119
+          "start": 49.435,
+          "end": 49.815
         },
         {
           "word": "two",
-          "start": 48.119,
-          "end": 48.239
+          "start": 49.815,
+          "end": 49.935
         },
         {
           "word": "to",
-          "start": 48.239,
-          "end": 48.419
+          "start": 49.935,
+          "end": 50.115
         },
         {
           "word": "match.",
-          "start": 48.419,
-          "end": 48.639
+          "start": 50.115,
+          "end": 50.335
         }
       ]
     },
@@ -812,79 +842,79 @@
       "id": "orbit",
       "text": "And the match is not perfect, because the Moon's distance changes as it orbits.",
       "file": "public/voice/moon-distance-long/orbit.d8639d86f82b.wav",
-      "start": 49.409,
+      "start": 51.105,
       "duration": 4.807,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 49.409,
-          "end": 49.509
+          "start": 51.105,
+          "end": 51.205
         },
         {
           "word": "the",
-          "start": 49.509,
-          "end": 49.609
+          "start": 51.205,
+          "end": 51.305
         },
         {
           "word": "match",
-          "start": 49.609,
-          "end": 49.889
+          "start": 51.305,
+          "end": 51.585
         },
         {
           "word": "is",
-          "start": 49.889,
-          "end": 50.189
+          "start": 51.585,
+          "end": 51.885
         },
         {
           "word": "not",
-          "start": 50.189,
-          "end": 50.409
+          "start": 51.885,
+          "end": 52.105
         },
         {
           "word": "perfect,",
-          "start": 50.409,
-          "end": 50.849
+          "start": 52.105,
+          "end": 52.545
         },
         {
           "word": "because",
-          "start": 50.849,
-          "end": 51.489
+          "start": 52.545,
+          "end": 53.185
         },
         {
           "word": "the",
-          "start": 51.489,
-          "end": 51.669
+          "start": 53.185,
+          "end": 53.365
         },
         {
           "word": "Moon's",
-          "start": 51.669,
-          "end": 52.009
+          "start": 53.365,
+          "end": 53.705
         },
         {
           "word": "distance",
-          "start": 52.009,
-          "end": 52.389
+          "start": 53.705,
+          "end": 54.085
         },
         {
           "word": "changes",
-          "start": 52.389,
-          "end": 52.849
+          "start": 54.085,
+          "end": 54.545
         },
         {
           "word": "as",
-          "start": 52.849,
-          "end": 53.329
+          "start": 54.545,
+          "end": 55.025
         },
         {
           "word": "it",
-          "start": 53.329,
-          "end": 53.429
+          "start": 55.025,
+          "end": 55.125
         },
         {
           "word": "orbits.",
-          "start": 53.429,
-          "end": 53.749
+          "start": 55.125,
+          "end": 55.445
         }
       ]
     },
@@ -892,99 +922,99 @@
       "id": "annular",
       "text": "When it is far away, it looks too small, and leaves a ring of sunlight around its edge.",
       "file": "public/voice/moon-distance-long/annular.a8d0a36dcb74.wav",
-      "start": 54.616,
+      "start": 56.312,
       "duration": 4.852,
       "speed": 1,
       "words": [
         {
           "word": "When",
-          "start": 54.616,
-          "end": 54.716
+          "start": 56.312,
+          "end": 56.412
         },
         {
           "word": "it",
-          "start": 54.716,
-          "end": 54.816
+          "start": 56.412,
+          "end": 56.512
         },
         {
           "word": "is",
-          "start": 54.816,
-          "end": 54.976
+          "start": 56.512,
+          "end": 56.672
         },
         {
           "word": "far",
-          "start": 54.976,
-          "end": 55.156
+          "start": 56.672,
+          "end": 56.852
         },
         {
           "word": "away,",
-          "start": 55.156,
-          "end": 55.516
+          "start": 56.852,
+          "end": 57.212
         },
         {
           "word": "it",
-          "start": 56.016,
-          "end": 56.136
+          "start": 57.712,
+          "end": 57.832
         },
         {
           "word": "looks",
-          "start": 56.136,
-          "end": 56.276
+          "start": 57.832,
+          "end": 57.972
         },
         {
           "word": "too",
-          "start": 56.276,
-          "end": 56.556
+          "start": 57.972,
+          "end": 58.252
         },
         {
           "word": "small,",
-          "start": 56.556,
-          "end": 56.916
+          "start": 58.252,
+          "end": 58.612
         },
         {
           "word": "and",
-          "start": 56.916,
-          "end": 57.336
+          "start": 58.612,
+          "end": 59.032
         },
         {
           "word": "leaves",
-          "start": 57.336,
-          "end": 57.536
+          "start": 59.032,
+          "end": 59.232
         },
         {
           "word": "a",
-          "start": 57.536,
-          "end": 57.676
+          "start": 59.232,
+          "end": 59.372
         },
         {
           "word": "ring",
-          "start": 57.676,
-          "end": 57.816
+          "start": 59.372,
+          "end": 59.512
         },
         {
           "word": "of",
-          "start": 57.816,
-          "end": 57.976
+          "start": 59.512,
+          "end": 59.672
         },
         {
           "word": "sunlight",
-          "start": 57.976,
-          "end": 58.256
+          "start": 59.672,
+          "end": 59.952
         },
         {
           "word": "around",
-          "start": 58.256,
-          "end": 58.636
+          "start": 59.952,
+          "end": 60.332
         },
         {
           "word": "its",
-          "start": 58.636,
-          "end": 58.896
+          "start": 60.332,
+          "end": 60.592
         },
         {
           "word": "edge.",
-          "start": 58.896,
-          "end": 59.276
+          "start": 60.592,
+          "end": 60.972
         }
       ]
     },
@@ -992,74 +1022,74 @@
       "id": "leaving",
       "text": "The Moon is also slowly leaving us, by almost four centimetres every year.",
       "file": "public/voice/moon-distance-long/leaving.1b1f68300b93.wav",
-      "start": 59.868,
+      "start": 61.564,
       "duration": 4.932,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 59.868,
-          "end": 59.948
+          "start": 61.564,
+          "end": 61.644
         },
         {
           "word": "Moon",
-          "start": 59.948,
-          "end": 60.168
+          "start": 61.644,
+          "end": 61.864
         },
         {
           "word": "is",
-          "start": 60.168,
-          "end": 60.508
+          "start": 61.864,
+          "end": 62.204
         },
         {
           "word": "also",
-          "start": 60.508,
-          "end": 61.008
+          "start": 62.204,
+          "end": 62.704
         },
         {
           "word": "slowly",
-          "start": 61.008,
-          "end": 61.368
+          "start": 62.704,
+          "end": 63.064
         },
         {
           "word": "leaving",
-          "start": 61.368,
-          "end": 61.868
+          "start": 63.064,
+          "end": 63.564
         },
         {
           "word": "us,",
-          "start": 61.868,
-          "end": 62.148
+          "start": 63.564,
+          "end": 63.844
         },
         {
           "word": "by",
-          "start": 62.148,
-          "end": 62.488
+          "start": 63.844,
+          "end": 64.184
         },
         {
           "word": "almost",
-          "start": 62.488,
-          "end": 62.788
+          "start": 64.184,
+          "end": 64.484
         },
         {
           "word": "four",
-          "start": 62.788,
-          "end": 63.148
+          "start": 64.484,
+          "end": 64.844
         },
         {
           "word": "centimetres",
-          "start": 63.148,
-          "end": 63.548
+          "start": 64.844,
+          "end": 65.244
         },
         {
           "word": "every",
-          "start": 63.548,
-          "end": 64.228
+          "start": 65.244,
+          "end": 65.924
         },
         {
           "word": "year.",
-          "start": 64.228,
-          "end": 64.568
+          "start": 65.924,
+          "end": 66.264
         }
       ]
     },
@@ -1067,74 +1097,74 @@
       "id": "past",
       "text": "Long ago it was much closer, and looked far bigger in the sky.",
       "file": "public/voice/moon-distance-long/past.1dccb2497f70.wav",
-      "start": 65.2,
+      "start": 66.896,
       "duration": 3.716,
       "speed": 1,
       "words": [
         {
           "word": "Long",
-          "start": 65.2,
-          "end": 65.36
+          "start": 66.896,
+          "end": 67.056
         },
         {
           "word": "ago",
-          "start": 65.36,
-          "end": 65.62
+          "start": 67.056,
+          "end": 67.316
         },
         {
           "word": "it",
-          "start": 65.62,
-          "end": 65.96
+          "start": 67.316,
+          "end": 67.656
         },
         {
           "word": "was",
-          "start": 65.96,
-          "end": 66.1
+          "start": 67.656,
+          "end": 67.796
         },
         {
           "word": "much",
-          "start": 66.1,
-          "end": 66.32
+          "start": 67.796,
+          "end": 68.016
         },
         {
           "word": "closer,",
-          "start": 66.32,
-          "end": 66.7
+          "start": 68.016,
+          "end": 68.396
         },
         {
           "word": "and",
-          "start": 66.7,
-          "end": 67.28
+          "start": 68.396,
+          "end": 68.976
         },
         {
           "word": "looked",
-          "start": 67.28,
-          "end": 67.46
+          "start": 68.976,
+          "end": 69.156
         },
         {
           "word": "far",
-          "start": 67.46,
-          "end": 67.74
+          "start": 69.156,
+          "end": 69.436
         },
         {
           "word": "bigger",
-          "start": 67.74,
-          "end": 68.1
+          "start": 69.436,
+          "end": 69.796
         },
         {
           "word": "in",
-          "start": 68.1,
-          "end": 68.26
+          "start": 69.796,
+          "end": 69.956
         },
         {
           "word": "the",
-          "start": 68.26,
-          "end": 68.36
+          "start": 69.956,
+          "end": 70.056
         },
         {
           "word": "sky.",
-          "start": 68.36,
-          "end": 68.62
+          "start": 70.056,
+          "end": 70.316
         }
       ]
     },
@@ -1142,94 +1172,94 @@
       "id": "last",
       "text": "In about six hundred million years, it will be too small to cover the Sun at all.",
       "file": "public/voice/moon-distance-long/last.be467a99bb16.wav",
-      "start": 69.316,
+      "start": 71.012,
       "duration": 5.057,
       "speed": 1,
       "words": [
         {
           "word": "In",
-          "start": 69.316,
-          "end": 69.416
+          "start": 71.012,
+          "end": 71.112
         },
         {
           "word": "about",
-          "start": 69.416,
-          "end": 69.576
+          "start": 71.112,
+          "end": 71.272
         },
         {
           "word": "six",
-          "start": 69.576,
-          "end": 69.626
+          "start": 71.272,
+          "end": 71.322
         },
         {
           "word": "hundred",
-          "start": 69.576,
-          "end": 70.056
+          "start": 71.272,
+          "end": 71.752
         },
         {
           "word": "million",
-          "start": 70.056,
-          "end": 70.716
+          "start": 71.752,
+          "end": 72.412
         },
         {
           "word": "years,",
-          "start": 70.716,
-          "end": 71.236
+          "start": 72.412,
+          "end": 72.932
         },
         {
           "word": "it",
-          "start": 71.636,
-          "end": 71.686
+          "start": 73.332,
+          "end": 73.382
         },
         {
           "word": "will",
-          "start": 71.676,
-          "end": 71.816
+          "start": 73.372,
+          "end": 73.512
         },
         {
           "word": "be",
-          "start": 71.816,
-          "end": 71.996
+          "start": 73.512,
+          "end": 73.692
         },
         {
           "word": "too",
-          "start": 71.996,
-          "end": 72.216
+          "start": 73.692,
+          "end": 73.912
         },
         {
           "word": "small",
-          "start": 72.216,
-          "end": 72.596
+          "start": 73.912,
+          "end": 74.292
         },
         {
           "word": "to",
-          "start": 72.596,
-          "end": 72.896
+          "start": 74.292,
+          "end": 74.592
         },
         {
           "word": "cover",
-          "start": 72.896,
-          "end": 73.156
+          "start": 74.592,
+          "end": 74.852
         },
         {
           "word": "the",
-          "start": 73.156,
-          "end": 73.316
+          "start": 74.852,
+          "end": 75.012
         },
         {
           "word": "Sun",
-          "start": 73.316,
-          "end": 73.576
+          "start": 75.012,
+          "end": 75.272
         },
         {
           "word": "at",
-          "start": 73.576,
-          "end": 73.856
+          "start": 75.272,
+          "end": 75.552
         },
         {
           "word": "all.",
-          "start": 73.856,
-          "end": 74.116
+          "start": 75.552,
+          "end": 75.812
         }
       ]
     },
@@ -1237,49 +1267,49 @@
       "id": "ringonly",
       "text": "After that, every eclipse will leave a ring.",
       "file": "public/voice/moon-distance-long/ringonly.b16b6cd78cae.wav",
-      "start": 74.773,
+      "start": 76.469,
       "duration": 2.466,
       "speed": 1,
       "words": [
         {
           "word": "After",
-          "start": 74.773,
-          "end": 75.053
+          "start": 76.469,
+          "end": 76.749
         },
         {
           "word": "that,",
-          "start": 75.053,
-          "end": 75.373
+          "start": 76.749,
+          "end": 77.069
         },
         {
           "word": "every",
-          "start": 75.573,
-          "end": 75.753
+          "start": 77.269,
+          "end": 77.449
         },
         {
           "word": "eclipse",
-          "start": 75.753,
-          "end": 76.033
+          "start": 77.449,
+          "end": 77.729
         },
         {
           "word": "will",
-          "start": 76.033,
-          "end": 76.373
+          "start": 77.729,
+          "end": 78.069
         },
         {
           "word": "leave",
-          "start": 76.373,
-          "end": 76.553
+          "start": 78.069,
+          "end": 78.249
         },
         {
           "word": "a",
-          "start": 76.553,
-          "end": 76.693
+          "start": 78.249,
+          "end": 78.389
         },
         {
           "word": "ring.",
-          "start": 76.693,
-          "end": 76.913
+          "start": 78.389,
+          "end": 78.609
         }
       ]
     },
@@ -1287,64 +1317,64 @@
       "id": "end-l",
       "text": "We just happen to live in the window when they match.",
       "file": "public/voice/moon-distance-long/end-l.066c8ab39c55.wav",
-      "start": 77.639,
+      "start": 79.335,
       "duration": 2.636,
       "speed": 1,
       "words": [
         {
           "word": "We",
-          "start": 77.639,
-          "end": 77.799
+          "start": 79.335,
+          "end": 79.495
         },
         {
           "word": "just",
-          "start": 77.799,
-          "end": 77.959
+          "start": 79.495,
+          "end": 79.655
         },
         {
           "word": "happen",
-          "start": 77.959,
-          "end": 78.199
+          "start": 79.655,
+          "end": 79.895
         },
         {
           "word": "to",
-          "start": 78.199,
-          "end": 78.459
+          "start": 79.895,
+          "end": 80.155
         },
         {
           "word": "live",
-          "start": 78.459,
-          "end": 78.639
+          "start": 80.155,
+          "end": 80.335
         },
         {
           "word": "in",
-          "start": 78.639,
-          "end": 78.799
+          "start": 80.335,
+          "end": 80.495
         },
         {
           "word": "the",
-          "start": 78.799,
-          "end": 78.879
+          "start": 80.495,
+          "end": 80.575
         },
         {
           "word": "window",
-          "start": 78.879,
-          "end": 79.139
+          "start": 80.575,
+          "end": 80.835
         },
         {
           "word": "when",
-          "start": 79.139,
-          "end": 79.459
+          "start": 80.835,
+          "end": 81.155
         },
         {
           "word": "they",
-          "start": 79.459,
-          "end": 79.619
+          "start": 81.155,
+          "end": 81.315
         },
         {
           "word": "match.",
-          "start": 79.619,
-          "end": 79.939
+          "start": 81.315,
+          "end": 81.635
         }
       ]
     },
@@ -1352,34 +1382,34 @@
       "id": "cta",
       "text": "Follow for more cosmic scale.",
       "file": "public/voice/moon-distance-long/cta.f8498ab25592.wav",
-      "start": 80.675,
+      "start": 82.371,
       "duration": 2.08,
       "speed": 1,
       "words": [
         {
           "word": "Follow",
-          "start": 80.675,
-          "end": 80.975
+          "start": 82.371,
+          "end": 82.671
         },
         {
           "word": "for",
-          "start": 80.975,
-          "end": 81.295
+          "start": 82.671,
+          "end": 82.991
         },
         {
           "word": "more",
-          "start": 81.295,
-          "end": 81.535
+          "start": 82.991,
+          "end": 83.231
         },
         {
           "word": "cosmic",
-          "start": 81.535,
-          "end": 81.995
+          "start": 83.231,
+          "end": 83.691
         },
         {
           "word": "scale.",
-          "start": 81.995,
-          "end": 82.555
+          "start": 83.691,
+          "end": 84.251
         }
       ]
     }
