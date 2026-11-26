@@ -1,1 +1,732 @@
-{"voice":"chatterbox:calm","model":"resemble-ai/chatterbox","alignment":"whisper","lines":[]}
+{
+  "voice": "chatterbox:calm",
+  "model": "resemble-ai/chatterbox",
+  "alignment": "whisper",
+  "lines": [
+    {
+      "id": "hook",
+      "text": "That dot is Earth. This is a real photo, taken from six billion kilometres away.",
+      "file": "public/voice/voyager/hook.fd260ce53d43.wav",
+      "start": 0.25,
+      "duration": 5.469,
+      "speed": 1.12,
+      "words": [
+        {
+          "word": "That",
+          "start": 0.25,
+          "end": 0.49
+        },
+        {
+          "word": "dot",
+          "start": 0.49,
+          "end": 0.77
+        },
+        {
+          "word": "is",
+          "start": 0.77,
+          "end": 1.15
+        },
+        {
+          "word": "Earth.",
+          "start": 1.15,
+          "end": 1.45
+        },
+        {
+          "word": "This",
+          "start": 2.09,
+          "end": 2.27
+        },
+        {
+          "word": "is",
+          "start": 2.27,
+          "end": 2.43
+        },
+        {
+          "word": "a",
+          "start": 2.43,
+          "end": 2.55
+        },
+        {
+          "word": "real",
+          "start": 2.55,
+          "end": 2.69
+        },
+        {
+          "word": "photo,",
+          "start": 2.69,
+          "end": 3.03
+        },
+        {
+          "word": "taken",
+          "start": 3.03,
+          "end": 3.57
+        },
+        {
+          "word": "from",
+          "start": 3.57,
+          "end": 3.87
+        },
+        {
+          "word": "six",
+          "start": 3.87,
+          "end": 4.15
+        },
+        {
+          "word": "billion",
+          "start": 4.15,
+          "end": 4.51
+        },
+        {
+          "word": "kilometres",
+          "start": 4.51,
+          "end": 4.77
+        },
+        {
+          "word": "away.",
+          "start": 4.77,
+          "end": 5.49
+        }
+      ]
+    },
+    {
+      "id": "who",
+      "text": "The camera belonged to Voyager 1, the farthest thing humans have ever built.",
+      "file": "public/voice/voyager/who.c4a54171d9ea.wav",
+      "start": 6.119,
+      "duration": 4.273,
+      "speed": 1,
+      "words": [
+        {
+          "word": "The",
+          "start": 6.119,
+          "end": 6.199
+        },
+        {
+          "word": "camera",
+          "start": 6.199,
+          "end": 6.459
+        },
+        {
+          "word": "belonged",
+          "start": 6.459,
+          "end": 6.799
+        },
+        {
+          "word": "to",
+          "start": 6.799,
+          "end": 7.139
+        },
+        {
+          "word": "Voyager",
+          "start": 7.139,
+          "end": 7.299
+        },
+        {
+          "word": "1,",
+          "start": 7.299,
+          "end": 7.899
+        },
+        {
+          "word": "the",
+          "start": 8.159,
+          "end": 8.279
+        },
+        {
+          "word": "farthest",
+          "start": 8.279,
+          "end": 8.639
+        },
+        {
+          "word": "thing",
+          "start": 8.639,
+          "end": 8.879
+        },
+        {
+          "word": "humans",
+          "start": 8.879,
+          "end": 9.279
+        },
+        {
+          "word": "have",
+          "start": 9.279,
+          "end": 9.559
+        },
+        {
+          "word": "ever",
+          "start": 9.559,
+          "end": 9.779
+        },
+        {
+          "word": "built.",
+          "start": 9.779,
+          "end": 10.079
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "text": "It left Earth in nineteen seventy-seven.",
+      "file": "public/voice/voyager/launch.5549a99a9858.wav",
+      "start": 10.791,
+      "duration": 2.227,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 10.791,
+          "end": 10.891
+        },
+        {
+          "word": "left",
+          "start": 10.891,
+          "end": 11.051
+        },
+        {
+          "word": "Earth",
+          "start": 11.051,
+          "end": 11.371
+        },
+        {
+          "word": "in",
+          "start": 11.371,
+          "end": 11.531
+        },
+        {
+          "word": "nineteen",
+          "start": 11.531,
+          "end": 11.581
+        },
+        {
+          "word": "seventy-seven.",
+          "start": 11.531,
+          "end": 12.711
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "text": "In nineteen seventy-nine it reached Jupiter, and sent back this.",
+      "file": "public/voice/voyager/jupiter.83e3abae1159.wav",
+      "start": 13.419,
+      "duration": 3.693,
+      "speed": 1,
+      "words": [
+        {
+          "word": "In",
+          "start": 14.459,
+          "end": 14.509
+        },
+        {
+          "word": "nineteen",
+          "start": 14.459,
+          "end": 14.509
+        },
+        {
+          "word": "seventy-nine",
+          "start": 14.459,
+          "end": 14.509
+        },
+        {
+          "word": "it",
+          "start": 14.459,
+          "end": 14.879
+        },
+        {
+          "word": "reached",
+          "start": 14.879,
+          "end": 15.099
+        },
+        {
+          "word": "Jupiter,",
+          "start": 15.099,
+          "end": 15.359
+        },
+        {
+          "word": "and",
+          "start": 15.359,
+          "end": 15.939
+        },
+        {
+          "word": "sent",
+          "start": 15.939,
+          "end": 16.119
+        },
+        {
+          "word": "back",
+          "start": 16.119,
+          "end": 16.379
+        },
+        {
+          "word": "this.",
+          "start": 16.379,
+          "end": 16.719
+        }
+      ]
+    },
+    {
+      "id": "saturn",
+      "text": "Then came Saturn, in nineteen eighty.",
+      "file": "public/voice/voyager/saturn.e21f2daf3276.wav",
+      "start": 17.512,
+      "duration": 2.409,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Then",
+          "start": 17.512,
+          "end": 17.732
+        },
+        {
+          "word": "came",
+          "start": 17.732,
+          "end": 17.972
+        },
+        {
+          "word": "Saturn,",
+          "start": 17.972,
+          "end": 18.412
+        },
+        {
+          "word": "in",
+          "start": 18.412,
+          "end": 18.892
+        },
+        {
+          "word": "nineteen",
+          "start": 18.892,
+          "end": 18.942
+        },
+        {
+          "word": "eighty.",
+          "start": 18.892,
+          "end": 19.672
+        }
+      ]
+    },
+    {
+      "id": "turn",
+      "text": "After that, there was nothing left to visit. So in nineteen ninety, it turned around for one last look at home.",
+      "file": "public/voice/voyager/turn.91232b475c1c.wav",
+      "start": 20.321,
+      "duration": 6.227,
+      "speed": 1,
+      "words": [
+        {
+          "word": "After",
+          "start": 20.321,
+          "end": 20.541
+        },
+        {
+          "word": "that,",
+          "start": 20.541,
+          "end": 20.841
+        },
+        {
+          "word": "there",
+          "start": 20.901,
+          "end": 21.021
+        },
+        {
+          "word": "was",
+          "start": 21.021,
+          "end": 21.141
+        },
+        {
+          "word": "nothing",
+          "start": 21.141,
+          "end": 21.381
+        },
+        {
+          "word": "left",
+          "start": 21.381,
+          "end": 21.581
+        },
+        {
+          "word": "to",
+          "start": 21.581,
+          "end": 21.821
+        },
+        {
+          "word": "visit.",
+          "start": 21.821,
+          "end": 22.021
+        },
+        {
+          "word": "So",
+          "start": 22.621,
+          "end": 22.721
+        },
+        {
+          "word": "in",
+          "start": 22.721,
+          "end": 22.861
+        },
+        {
+          "word": "nineteen",
+          "start": 22.861,
+          "end": 22.911
+        },
+        {
+          "word": "ninety,",
+          "start": 22.861,
+          "end": 23.481
+        },
+        {
+          "word": "it",
+          "start": 23.481,
+          "end": 23.981
+        },
+        {
+          "word": "turned",
+          "start": 23.981,
+          "end": 24.181
+        },
+        {
+          "word": "around",
+          "start": 24.181,
+          "end": 24.461
+        },
+        {
+          "word": "for",
+          "start": 24.461,
+          "end": 24.801
+        },
+        {
+          "word": "one",
+          "start": 24.801,
+          "end": 25.061
+        },
+        {
+          "word": "last",
+          "start": 25.061,
+          "end": 25.341
+        },
+        {
+          "word": "look",
+          "start": 25.341,
+          "end": 25.761
+        },
+        {
+          "word": "at",
+          "start": 25.761,
+          "end": 25.901
+        },
+        {
+          "word": "home.",
+          "start": 25.901,
+          "end": 26.221
+        }
+      ]
+    },
+    {
+      "id": "far",
+      "text": "Today it is about twenty-six billion kilometres from Earth.",
+      "file": "public/voice/voyager/far.2b2028d164a3.wav",
+      "start": 26.948,
+      "duration": 4.33,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Today",
+          "start": 26.948,
+          "end": 27.288
+        },
+        {
+          "word": "it",
+          "start": 27.288,
+          "end": 27.568
+        },
+        {
+          "word": "is",
+          "start": 27.568,
+          "end": 27.708
+        },
+        {
+          "word": "about",
+          "start": 27.708,
+          "end": 27.968
+        },
+        {
+          "word": "twenty-six",
+          "start": 27.968,
+          "end": 28.628
+        },
+        {
+          "word": "billion",
+          "start": 28.628,
+          "end": 29.448
+        },
+        {
+          "word": "kilometres",
+          "start": 29.448,
+          "end": 29.808
+        },
+        {
+          "word": "from",
+          "start": 29.808,
+          "end": 30.648
+        },
+        {
+          "word": "Earth.",
+          "start": 30.648,
+          "end": 30.948
+        }
+      ]
+    },
+    {
+      "id": "light",
+      "text": "Even its radio signal, moving at the speed of light, needs a whole day to reach us.",
+      "file": "public/voice/voyager/light.8e41371026c0.wav",
+      "start": 31.678,
+      "duration": 4.932,
+      "speed": 1,
+      "words": [
+        {
+          "word": "Even",
+          "start": 31.678,
+          "end": 31.898
+        },
+        {
+          "word": "its",
+          "start": 31.898,
+          "end": 32.078
+        },
+        {
+          "word": "radio",
+          "start": 32.078,
+          "end": 32.298
+        },
+        {
+          "word": "signal,",
+          "start": 32.298,
+          "end": 32.858
+        },
+        {
+          "word": "moving",
+          "start": 33.258,
+          "end": 33.558
+        },
+        {
+          "word": "at",
+          "start": 33.558,
+          "end": 33.738
+        },
+        {
+          "word": "the",
+          "start": 33.738,
+          "end": 33.818
+        },
+        {
+          "word": "speed",
+          "start": 33.818,
+          "end": 34.038
+        },
+        {
+          "word": "of",
+          "start": 34.038,
+          "end": 34.198
+        },
+        {
+          "word": "light,",
+          "start": 34.198,
+          "end": 34.458
+        },
+        {
+          "word": "needs",
+          "start": 34.858,
+          "end": 34.998
+        },
+        {
+          "word": "a",
+          "start": 34.998,
+          "end": 35.158
+        },
+        {
+          "word": "whole",
+          "start": 35.158,
+          "end": 35.338
+        },
+        {
+          "word": "day",
+          "start": 35.338,
+          "end": 35.578
+        },
+        {
+          "word": "to",
+          "start": 35.578,
+          "end": 35.778
+        },
+        {
+          "word": "reach",
+          "start": 35.778,
+          "end": 35.998
+        },
+        {
+          "word": "us.",
+          "start": 35.998,
+          "end": 36.258
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "text": "It carries a golden record, with music, greetings and sounds from Earth.",
+      "file": "public/voice/voyager/record.93e8d11e7b36.wav",
+      "start": 37.01,
+      "duration": 4.761,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 37.01,
+          "end": 37.11
+        },
+        {
+          "word": "carries",
+          "start": 37.11,
+          "end": 37.43
+        },
+        {
+          "word": "a",
+          "start": 37.43,
+          "end": 37.65
+        },
+        {
+          "word": "golden",
+          "start": 37.65,
+          "end": 37.85
+        },
+        {
+          "word": "record,",
+          "start": 37.85,
+          "end": 38.23
+        },
+        {
+          "word": "with",
+          "start": 38.23,
+          "end": 38.87
+        },
+        {
+          "word": "music,",
+          "start": 38.87,
+          "end": 39.37
+        },
+        {
+          "word": "greetings",
+          "start": 39.67,
+          "end": 40.25
+        },
+        {
+          "word": "and",
+          "start": 40.25,
+          "end": 40.53
+        },
+        {
+          "word": "sounds",
+          "start": 40.53,
+          "end": 40.75
+        },
+        {
+          "word": "from",
+          "start": 40.75,
+          "end": 41.17
+        },
+        {
+          "word": "Earth.",
+          "start": 41.17,
+          "end": 41.47
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "text": "It will never come back. And everything we have ever known is still on that dot.",
+      "file": "public/voice/voyager/end.5b78de336575.wav",
+      "start": 42.171,
+      "duration": 4.795,
+      "speed": 1,
+      "words": [
+        {
+          "word": "It",
+          "start": 42.171,
+          "end": 42.291
+        },
+        {
+          "word": "will",
+          "start": 42.291,
+          "end": 42.471
+        },
+        {
+          "word": "never",
+          "start": 42.471,
+          "end": 42.851
+        },
+        {
+          "word": "come",
+          "start": 42.851,
+          "end": 43.151
+        },
+        {
+          "word": "back.",
+          "start": 43.151,
+          "end": 43.471
+        },
+        {
+          "word": "And",
+          "start": 43.891,
+          "end": 43.991
+        },
+        {
+          "word": "everything",
+          "start": 43.991,
+          "end": 44.351
+        },
+        {
+          "word": "we",
+          "start": 44.351,
+          "end": 44.691
+        },
+        {
+          "word": "have",
+          "start": 44.691,
+          "end": 44.851
+        },
+        {
+          "word": "ever",
+          "start": 44.851,
+          "end": 45.131
+        },
+        {
+          "word": "known",
+          "start": 45.131,
+          "end": 45.451
+        },
+        {
+          "word": "is",
+          "start": 45.451,
+          "end": 45.711
+        },
+        {
+          "word": "still",
+          "start": 45.711,
+          "end": 45.991
+        },
+        {
+          "word": "on",
+          "start": 45.991,
+          "end": 46.231
+        },
+        {
+          "word": "that",
+          "start": 46.231,
+          "end": 46.391
+        },
+        {
+          "word": "dot.",
+          "start": 46.391,
+          "end": 46.711
+        }
+      ]
+    }
+  ]
+}

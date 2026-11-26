@@ -447,7 +447,10 @@ export function drawOverlay(d: DrawContext, layout: EpisodeLayout) {
   let excite = 0;
   if (v.type === "compare") { const since = lt - zoomTime(v); if (since >= 0) excite = Math.exp(-since * (v.big ? 1.6 : 3)); }
   const leaving = 1 - progress(t, layout.duration - 0.5, layout.duration - 0.15);
-  drawHost(ctx, spot.x + fx.shake[0], spot.y + fx.shake[1], spot.size, t, { talk: talkLevel(layout.words, t), excite, appear: hostAppear(t) * leaving });
+  // he steps aside while a photograph stands on its own, so he never covers it
+  const bi = layout.beats.findIndex((x) => t >= x.start && t < x.end), solo = (k: number) => { const pv = layout.beats[k]?.beat.visual; return !!pv && pv.type === "photo" && !pv.body; };
+  const aside = solo(bi) ? (solo(bi - 1) ? 1 : progress(lt, 0, 0.25)) : solo(bi - 1) ? 1 - progress(lt, 0, 0.25) : 0;
+  drawHost(ctx, spot.x + fx.shake[0], spot.y + fx.shake[1], spot.size, t, { talk: talkLevel(layout.words, t), excite, appear: hostAppear(t) * leaving * (1 - aside) });
 
   if (fx.flash > 0.004) { ctx.fillStyle = `rgba(255,244,225,${fx.flash})`; ctx.fillRect(0, 0, w, h); }
   // loop: fade to the bare starfield in the last moments
