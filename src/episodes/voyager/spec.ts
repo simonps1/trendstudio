@@ -29,6 +29,8 @@ export const VOYAGER: EpisodeSpec = {
   beats: [
     // cold open on the real photograph, with the dot ringed
     { id: "hook", say: "That dot is Earth. This is a real photo, taken from six billion kilometres away.", visual: photo("pale-blue-dot", "Earth · real photo, 1990", DOT) },
+    // YouTube retention on the short fell from ~110% to ~66% between 0:06 and 0:11, right after the hook resolved: keep a question open
+    { id: "last", only: "long", say: "It was one of the last pictures this camera ever took. Minutes later, it was switched off for good.", visual: photo("pale-blue-dot-full", "Voyager 1 · 14 February 1990", { fit: "contain" }) },
     { id: "who", say: "The camera belonged to Voyager 1, the farthest thing humans have ever built.", visual: photo("voyager-art", "Voyager 1 · artist's concept", { fit: "contain" }) },
     { id: "launch", say: "It left Earth in nineteen seventy-seven.", visual: photo("launch", "Launch · 5 September 1977") },
     { id: "pair", only: "long", say: "Two weeks later it looked back, and took the first picture of Earth and the Moon together.", visual: photo("earth-moon", "Earth and Moon · 18 September 1977", { fit: "contain" }) },
@@ -37,7 +39,7 @@ export const VOYAGER: EpisodeSpec = {
     { id: "saturn", say: "Then came Saturn, in nineteen eighty.", visual: photo("saturn", "Saturn and two moons · Voyager 1, 1980", { fit: "contain" }) },
     { id: "titan", only: "long", say: "A close pass by its moon Titan flung Voyager up and out of the plane of the planets.", visual: { type: "body", body: saturn, fact: "Titan flyby: no more planets ahead" } },
     { id: "turn", say: "After that, there was nothing left to visit. So in nineteen ninety, it turned around for one last look at home.", visual: photo("pale-blue-dot-full", "From its final photos · 14 February 1990", { fit: "contain" }) },
-    { id: "pixel", only: "long", say: "Earth filled less than a single pixel. Then the cameras were switched off for good.", visual: photo("pale-blue-dot", "Cameras off since 1990", DOT) },
+    { id: "pixel", only: "long", say: "From out there, Earth filled less than a single pixel.", visual: photo("pale-blue-dot", "Earth: less than one pixel wide", DOT) },
     { id: "far", say: "Today it is about twenty-six billion kilometres from Earth.", visual: { type: "gap", a: earth, b: probe, distance: DAY, note: "≈ 26 billion km · 2026" } },
     { id: "light", say: "Even its radio signal, moving at the speed of light, needs a whole day to reach us.", visual: { type: "gap", a: earth, b: probe, distance: DAY, trip: { label: "≈ 1 day at light speed" } } },
     { id: "dish", only: "long", say: "We catch that signal with dishes seventy metres wide.", visual: photo("antenna", "Deep Space Network · Goldstone, California") },
