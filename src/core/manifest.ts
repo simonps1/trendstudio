@@ -3,6 +3,7 @@ import { layoutEpisode, narrationLines } from "../series/layout";
 import { episodeNumber, type Variant } from "../series/types";
 import type { VideoMeta } from "./types";
 import { DURATION as STAR_LIFE_DURATION } from "../videos/star-life/timeline";
+import { DURATION as ZOOM_OUT_DURATION } from "../videos/zoom-out/timeline";
 
 /**
  * Every video project. Node-safe: scripts import this; Root.tsx pairs each
@@ -40,6 +41,14 @@ export const MANIFEST: VideoMeta[] = [
       const m = await import("../videos/star-life/narration");
       return { voice: m.VOICE, lines: m.NARRATION };
     },
+  },
+  {
+    // no narration: words on screen and music only
+    id: "zoom-out",
+    title: "How small are we, really? One zoom from Earth to the edge of the universe",
+    durationSec: ZOOM_OUT_DURATION,
+    formats: ["vertical", "vertical4k"],
+    soundtrack: async (ctx) => (await import("../videos/zoom-out/soundtrack")).buildSoundtrack(ctx),
   },
   ...EPISODE_VIDEOS,
 ];

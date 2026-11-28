@@ -21,3 +21,7 @@ JPL images: used under the JPL image use policy (free to use, credit "Courtesy N
 Scale check for the 20 km ring: Central Park (4.0 km long) spans about 130 px of the 1500 px wide original,
 so 1 km ≈ 32.5 px and 20 km ≈ 650 px, a little less than the length of Manhattan (21.6 km). The view is slightly
 oblique, so the ring is approximate.
+| zoom/earth.jpg | "The Blue Marble", Apollo 17, 7 December 1972 (AS17-148-22727) | NASA | images.nasa.gov, as17-148-22727 |
+| zoom/milky-way.jpg | "Our Milky Way Gets a Makeover", artist's concept (PIA10748); labelled as an artist's concept on screen | NASA / JPL-Caltech | images.nasa.gov, PIA10748 |
+| zoom/andromeda.jpg | Andromeda Galaxy in ultraviolet, GALEX (PIA04921) | NASA / JPL-Caltech | images.nasa.gov, PIA04921 |
+| zoom/deep-field.jpg | Hubble eXtreme Deep Field (cropped) | NASA / ESA | images.nasa.gov, GSFC_20171208_Archive_e001651 |
