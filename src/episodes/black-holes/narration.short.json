@@ -99,252 +99,77 @@
       ]
     },
     {
-      "id": "marble",
-      "text": "Crush the whole Earth into a black hole, and it would be the size of a marble.",
-      "file": "public/voice/black-holes/marble.e9d1f27c305a.wav",
-      "start": 5.723,
-      "duration": 4.534,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Crush",
-          "start": 5.723,
-          "end": 6.003
-        },
-        {
-          "word": "the",
-          "start": 6.003,
-          "end": 6.243
-        },
-        {
-          "word": "whole",
-          "start": 6.243,
-          "end": 6.463
-        },
-        {
-          "word": "Earth",
-          "start": 6.463,
-          "end": 6.823
-        },
-        {
-          "word": "into",
-          "start": 6.823,
-          "end": 7.203
-        },
-        {
-          "word": "a",
-          "start": 7.203,
-          "end": 7.323
-        },
-        {
-          "word": "black",
-          "start": 7.323,
-          "end": 7.523
-        },
-        {
-          "word": "hole,",
-          "start": 7.523,
-          "end": 7.863
-        },
-        {
-          "word": "and",
-          "start": 8.263,
-          "end": 8.463
-        },
-        {
-          "word": "it",
-          "start": 8.463,
-          "end": 8.583
-        },
-        {
-          "word": "would",
-          "start": 8.583,
-          "end": 8.683
-        },
-        {
-          "word": "be",
-          "start": 8.683,
-          "end": 8.843
-        },
-        {
-          "word": "the",
-          "start": 8.843,
-          "end": 8.983
-        },
-        {
-          "word": "size",
-          "start": 8.983,
-          "end": 9.283
-        },
-        {
-          "word": "of",
-          "start": 9.283,
-          "end": 9.543
-        },
-        {
-          "word": "a",
-          "start": 9.543,
-          "end": 9.603
-        },
-        {
-          "word": "marble.",
-          "start": 9.603,
-          "end": 9.903
-        }
-      ]
-    },
-    {
-      "id": "sunhole",
-      "text": "Do the same to the Sun, and it would be just six kilometres wide.",
-      "file": "public/voice/black-holes/sunhole.3f031cfea39f.wav",
-      "start": 10.657,
-      "duration": 4.25,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Do",
-          "start": 10.657,
-          "end": 10.817
-        },
-        {
-          "word": "the",
-          "start": 10.817,
-          "end": 10.917
-        },
-        {
-          "word": "same",
-          "start": 10.917,
-          "end": 11.117
-        },
-        {
-          "word": "to",
-          "start": 11.117,
-          "end": 11.297
-        },
-        {
-          "word": "the",
-          "start": 11.297,
-          "end": 11.397
-        },
-        {
-          "word": "Sun,",
-          "start": 11.397,
-          "end": 11.657
-        },
-        {
-          "word": "and",
-          "start": 12.237,
-          "end": 12.637
-        },
-        {
-          "word": "it",
-          "start": 12.637,
-          "end": 12.797
-        },
-        {
-          "word": "would",
-          "start": 12.797,
-          "end": 12.937
-        },
-        {
-          "word": "be",
-          "start": 12.937,
-          "end": 13.117
-        },
-        {
-          "word": "just",
-          "start": 13.117,
-          "end": 13.357
-        },
-        {
-          "word": "six",
-          "start": 13.357,
-          "end": 13.697
-        },
-        {
-          "word": "kilometres",
-          "start": 13.697,
-          "end": 14.037
-        },
-        {
-          "word": "wide.",
-          "start": 14.037,
-          "end": 14.677
-        }
-      ]
-    },
-    {
       "id": "sgr",
       "text": "The black hole at the centre of our galaxy is eighteen Suns wide.",
       "file": "public/voice/black-holes/sgr.33de03293422.wav",
-      "start": 15.307,
+      "start": 5.723,
       "duration": 4.08,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 15.307,
-          "end": 15.387
+          "start": 5.723,
+          "end": 5.803
         },
         {
           "word": "black",
-          "start": 15.387,
-          "end": 15.627
+          "start": 5.803,
+          "end": 6.043
         },
         {
           "word": "hole",
-          "start": 15.627,
-          "end": 15.907
+          "start": 6.043,
+          "end": 6.323
         },
         {
           "word": "at",
-          "start": 15.907,
-          "end": 16.127
+          "start": 6.323,
+          "end": 6.543
         },
         {
           "word": "the",
-          "start": 16.127,
-          "end": 16.227
+          "start": 6.543,
+          "end": 6.643
         },
         {
           "word": "centre",
-          "start": 16.227,
-          "end": 16.447
+          "start": 6.643,
+          "end": 6.863
         },
         {
           "word": "of",
-          "start": 16.447,
-          "end": 16.747
+          "start": 6.863,
+          "end": 7.163
         },
         {
           "word": "our",
-          "start": 16.747,
-          "end": 16.887
+          "start": 7.163,
+          "end": 7.303
         },
         {
           "word": "galaxy",
-          "start": 16.887,
-          "end": 17.287
+          "start": 7.303,
+          "end": 7.703
         },
         {
           "word": "is",
-          "start": 17.287,
-          "end": 17.807
+          "start": 7.703,
+          "end": 8.223
         },
         {
           "word": "eighteen",
-          "start": 17.807,
-          "end": 18.147
+          "start": 8.223,
+          "end": 8.563
         },
         {
           "word": "Suns",
-          "start": 18.147,
-          "end": 18.787
+          "start": 8.563,
+          "end": 9.203
         },
         {
           "word": "wide.",
-          "start": 18.787,
-          "end": 19.067
+          "start": 9.203,
+          "end": 9.483
         }
       ]
     },
@@ -352,79 +177,79 @@
       "id": "m87",
       "text": "The one in the galaxy M eighty-seven is wider than our entire solar system.",
       "file": "public/voice/black-holes/m87.d0c00d8d5168.wav",
-      "start": 19.787,
+      "start": 10.203,
       "duration": 4.761,
       "speed": 1,
       "words": [
         {
           "word": "The",
-          "start": 19.787,
-          "end": 19.887
+          "start": 10.203,
+          "end": 10.303
         },
         {
           "word": "one",
-          "start": 19.887,
-          "end": 20.047
+          "start": 10.303,
+          "end": 10.463
         },
         {
           "word": "in",
-          "start": 20.047,
-          "end": 20.187
+          "start": 10.463,
+          "end": 10.603
         },
         {
           "word": "the",
-          "start": 20.187,
-          "end": 20.267
+          "start": 10.603,
+          "end": 10.683
         },
         {
           "word": "galaxy",
-          "start": 20.267,
-          "end": 20.587
+          "start": 10.683,
+          "end": 11.003
         },
         {
           "word": "M",
-          "start": 20.587,
-          "end": 20.637
+          "start": 11.003,
+          "end": 11.053
         },
         {
           "word": "eighty-seven",
-          "start": 20.587,
-          "end": 21.387
+          "start": 11.003,
+          "end": 11.803
         },
         {
           "word": "is",
-          "start": 21.387,
-          "end": 22.287
+          "start": 11.803,
+          "end": 12.703
         },
         {
           "word": "wider",
-          "start": 22.287,
-          "end": 22.587
+          "start": 12.703,
+          "end": 13.003
         },
         {
           "word": "than",
-          "start": 22.587,
-          "end": 22.887
+          "start": 13.003,
+          "end": 13.303
         },
         {
           "word": "our",
-          "start": 22.887,
-          "end": 23.027
+          "start": 13.303,
+          "end": 13.443
         },
         {
           "word": "entire",
-          "start": 23.027,
-          "end": 23.307
+          "start": 13.443,
+          "end": 13.723
         },
         {
           "word": "solar",
-          "start": 23.307,
-          "end": 23.707
+          "start": 13.723,
+          "end": 14.123
         },
         {
           "word": "system.",
-          "start": 23.707,
-          "end": 24.287
+          "start": 14.123,
+          "end": 14.703
         }
       ]
     },
@@ -432,89 +257,89 @@
       "id": "orbits",
       "text": "Put it where our Sun is, and it would swallow every planet with room to spare.",
       "file": "public/voice/black-holes/orbits.520e76afb941.wav",
-      "start": 24.948,
+      "start": 15.364,
       "duration": 3.955,
       "speed": 1,
       "words": [
         {
           "word": "Put",
-          "start": 24.948,
-          "end": 25.088
+          "start": 15.364,
+          "end": 15.504
         },
         {
           "word": "it",
-          "start": 25.088,
-          "end": 25.208
+          "start": 15.504,
+          "end": 15.624
         },
         {
           "word": "where",
-          "start": 25.208,
-          "end": 25.408
+          "start": 15.624,
+          "end": 15.824
         },
         {
           "word": "our",
-          "start": 25.408,
-          "end": 25.608
+          "start": 15.824,
+          "end": 16.024
         },
         {
           "word": "Sun",
-          "start": 25.608,
-          "end": 25.828
+          "start": 16.024,
+          "end": 16.244
         },
         {
           "word": "is,",
-          "start": 25.828,
-          "end": 26.108
+          "start": 16.244,
+          "end": 16.524
         },
         {
           "word": "and",
-          "start": 26.448,
-          "end": 26.608
+          "start": 16.864,
+          "end": 17.024
         },
         {
           "word": "it",
-          "start": 26.608,
-          "end": 26.708
+          "start": 17.024,
+          "end": 17.124
         },
         {
           "word": "would",
-          "start": 26.708,
-          "end": 26.788
+          "start": 17.124,
+          "end": 17.204
         },
         {
           "word": "swallow",
-          "start": 26.788,
-          "end": 26.988
+          "start": 17.204,
+          "end": 17.404
         },
         {
           "word": "every",
-          "start": 26.988,
-          "end": 27.388
+          "start": 17.404,
+          "end": 17.804
         },
         {
           "word": "planet",
-          "start": 27.388,
-          "end": 27.768
+          "start": 17.804,
+          "end": 18.184
         },
         {
           "word": "with",
-          "start": 27.768,
-          "end": 27.928
+          "start": 18.184,
+          "end": 18.344
         },
         {
           "word": "room",
-          "start": 27.928,
-          "end": 28.148
+          "start": 18.344,
+          "end": 18.564
         },
         {
           "word": "to",
-          "start": 28.148,
-          "end": 28.288
+          "start": 18.564,
+          "end": 18.704
         },
         {
           "word": "spare.",
-          "start": 28.288,
-          "end": 28.548
+          "start": 18.704,
+          "end": 18.964
         }
       ]
     },
@@ -522,124 +347,64 @@
       "id": "ton",
       "text": "And Ton six one eight is ten times wider than that.",
       "file": "public/voice/black-holes/ton.e22fcc522af9.wav",
-      "start": 29.303,
+      "start": 19.719,
       "duration": 3.432,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 29.303,
-          "end": 29.643
+          "start": 19.719,
+          "end": 20.059
         },
         {
           "word": "Ton",
-          "start": 29.643,
-          "end": 30.003
+          "start": 20.059,
+          "end": 20.419
         },
         {
           "word": "six",
-          "start": 30.003,
-          "end": 30.053
+          "start": 20.419,
+          "end": 20.469
         },
         {
           "word": "one",
-          "start": 30.003,
-          "end": 30.053
+          "start": 20.419,
+          "end": 20.469
         },
         {
           "word": "eight",
-          "start": 30.003,
-          "end": 30.803
+          "start": 20.419,
+          "end": 21.219
         },
         {
           "word": "is",
-          "start": 30.803,
-          "end": 31.303
+          "start": 21.219,
+          "end": 21.719
         },
         {
           "word": "ten",
-          "start": 31.303,
-          "end": 31.543
+          "start": 21.719,
+          "end": 21.959
         },
         {
           "word": "times",
-          "start": 31.543,
-          "end": 31.803
+          "start": 21.959,
+          "end": 22.219
         },
         {
           "word": "wider",
-          "start": 31.803,
-          "end": 32.143
+          "start": 22.219,
+          "end": 22.559
         },
         {
           "word": "than",
-          "start": 32.143,
-          "end": 32.443
+          "start": 22.559,
+          "end": 22.859
         },
         {
           "word": "that.",
-          "start": 32.443,
-          "end": 32.683
-        }
-      ]
-    },
-    {
-      "id": "lap",
-      "text": "Even light would need forty-seven days to travel around it.",
-      "file": "public/voice/black-holes/lap.4ed8d5db0f8d.wav",
-      "start": 33.135,
-      "duration": 3.432,
-      "speed": 1,
-      "words": [
-        {
-          "word": "Even",
-          "start": 33.135,
-          "end": 33.355
-        },
-        {
-          "word": "light",
-          "start": 33.355,
-          "end": 33.655
-        },
-        {
-          "word": "would",
-          "start": 33.655,
-          "end": 33.935
-        },
-        {
-          "word": "need",
-          "start": 33.935,
-          "end": 34.115
-        },
-        {
-          "word": "forty-seven",
-          "start": 34.115,
-          "end": 34.455
-        },
-        {
-          "word": "days",
-          "start": 34.455,
-          "end": 34.955
-        },
-        {
-          "word": "to",
-          "start": 34.955,
-          "end": 35.375
-        },
-        {
-          "word": "travel",
-          "start": 35.375,
-          "end": 35.575
-        },
-        {
-          "word": "around",
-          "start": 35.575,
-          "end": 36.055
-        },
-        {
-          "word": "it.",
-          "start": 36.055,
-          "end": 36.295
+          "start": 22.859,
+          "end": 23.099
         }
       ]
     },
@@ -647,74 +412,74 @@
       "id": "end",
       "text": "And nearly every large galaxy has a supermassive black hole at its centre.",
       "file": "public/voice/black-holes/end.e73cd1278d70.wav",
-      "start": 36.967,
+      "start": 23.551,
       "duration": 5.034,
       "speed": 1,
       "words": [
         {
           "word": "And",
-          "start": 36.967,
-          "end": 37.167
+          "start": 23.551,
+          "end": 23.751
         },
         {
           "word": "nearly",
-          "start": 37.167,
-          "end": 37.487
+          "start": 23.751,
+          "end": 24.071
         },
         {
           "word": "every",
-          "start": 37.487,
-          "end": 37.967
+          "start": 24.071,
+          "end": 24.551
         },
         {
           "word": "large",
-          "start": 37.967,
-          "end": 38.307
+          "start": 24.551,
+          "end": 24.891
         },
         {
           "word": "galaxy",
-          "start": 38.307,
-          "end": 38.787
+          "start": 24.891,
+          "end": 25.371
         },
         {
           "word": "has",
-          "start": 38.787,
-          "end": 39.287
+          "start": 25.371,
+          "end": 25.871
         },
         {
           "word": "a",
-          "start": 39.287,
-          "end": 39.407
+          "start": 25.871,
+          "end": 25.991
         },
         {
           "word": "supermassive",
-          "start": 39.407,
-          "end": 40.007
+          "start": 25.991,
+          "end": 26.591
         },
         {
           "word": "black",
-          "start": 40.007,
-          "end": 40.387
+          "start": 26.591,
+          "end": 26.971
         },
         {
           "word": "hole",
-          "start": 40.387,
-          "end": 40.747
+          "start": 26.971,
+          "end": 27.331
         },
         {
           "word": "at",
-          "start": 40.747,
-          "end": 41.087
+          "start": 27.331,
+          "end": 27.671
         },
         {
           "word": "its",
-          "start": 41.087,
-          "end": 41.207
+          "start": 27.671,
+          "end": 27.791
         },
         {
           "word": "centre.",
-          "start": 41.207,
-          "end": 41.687
+          "start": 27.791,
+          "end": 28.271
         }
       ]
     }

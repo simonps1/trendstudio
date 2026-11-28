@@ -1,5 +1,5 @@
 import { NARRATOR, type Body, type EpisodeSpec } from "../../series/types";
-import { earth, jupiter, mars, mercury, neptune, saturn, uranus, venus } from "../bodies";
+import { earth, jupiter, mars, mercury, neptune, saturn, venus } from "../bodies";
 
 // Sizes: NASA planetary fact sheets. Other facts: NASA Solar System Exploration pages for each planet.
 // Long cut: Saturn. Main rings ≈ 280,000 km across and ≈ 10 m thick, ring rain (gone in ≈ 100–300 million years,
@@ -22,13 +22,10 @@ export const PLANETS: EpisodeSpec = {
   emphasis: ["titan", "ice", "float", "hydrogen", "helium", "winds", "storm", "moons", "telescope", "metres", "raining", "mercury", "mars", "venus", "earth", "neptune", "uranus", "saturn", "jupiter", "smallest", "biggest", "rings", "tiny", "float", "hottest"],
   beats: [
     { id: "hook", only: "short", say: "That dot is the smallest planet in our solar system. This is the biggest.", visual: { type: "compare", from: mercury, to: jupiter, big: true, open: true } },
-    { id: "mercury", only: "short", say: "Mercury is the smallest, not much bigger than our Moon.", visual: { type: "body", body: mercury } },
     { id: "mars", only: "short", say: "Mars comes next, about half as wide as Earth.", visual: { type: "compare", from: mercury, to: mars } },
     { id: "venus", only: "short", say: "Then Venus, which is almost exactly Earth's size.", visual: { type: "compare", from: mars, to: venus } },
-    { id: "twins", only: "short", say: "Side by side, you can hardly tell the difference.", visual: { type: "pair", a: venus, b: earth } },
     { id: "neptune", only: "short", say: "Neptune is nearly four times wider than Earth.", visual: { type: "compare", from: earth, to: neptune } },
-    { id: "uranus", only: "short", say: "Uranus beats it, but only just.", visual: { type: "pair", a: neptune, b: uranus } },
-    { id: "saturn", only: "short", say: "Saturn is more than twice as wide, even without its rings.", visual: { type: "compare", from: uranus, to: saturn } },
+    { id: "saturn", only: "short", say: "Saturn is more than twice as wide, even without its rings.", visual: { type: "compare", from: neptune, to: saturn } },
     { id: "jupiter", only: "short", say: "And Jupiter is the biggest of them all.", visual: { type: "pair", a: saturn, b: jupiter } },
     { id: "heavy", only: "short", say: "It outweighs every other planet combined, twice over.", visual: { type: "body", body: jupiter, fact: "2.5 × the mass of all other planets" } },
     { id: "end", only: "short", say: "And next to the Sun, even Jupiter is tiny.", visual: { type: "shrink", body: jupiter } },
