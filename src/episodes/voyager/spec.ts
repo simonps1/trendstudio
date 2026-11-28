@@ -44,9 +44,9 @@ export const VOYAGER: EpisodeSpec = {
     { id: "light", say: "Even its radio signal, moving at the speed of light, needs a whole day to reach us.", visual: { type: "gap", a: earth, b: probe, distance: DAY, trip: { label: "≈ 1 day at light speed" } } },
     { id: "dish", only: "long", say: "We catch that signal with dishes seventy metres wide.", visual: photo("antenna", "Deep Space Network · Goldstone, California") },
     { id: "bulb", only: "long", say: "Its transmitter uses about as much power as the light bulb in a fridge.", visual: photo("voyager-art", "Transmitter: about 23 watts", { fit: "contain" }) },
-    { id: "out", only: "long", say: "In twenty twelve, it became the first spacecraft to enter interstellar space, the space between the stars.", visual: { type: "stars" } },
+    { id: "out", only: "long", say: "In twenty twelve, it became the first spacecraft to enter interstellar space, the space between the stars.", visual: photo("interstellar", "Interstellar space · artist's concept", { fit: "contain" }) },
     { id: "record", say: "It carries a golden record, with music, greetings and sounds from Earth.", visual: photo("golden-record", "The Golden Record", { fit: "contain" }) },
-    { id: "star", only: "long", say: "In about forty thousand years, it will drift past another star.", visual: { type: "stars" } },
+    { id: "star", only: "long", say: "In about forty thousand years, it will drift past another star.", visual: photo("speeding", "Next star: ≈ 40,000 years · artist's concept", { fit: "contain" }) },
     // the last picture is the first one again, so the video loops into its own opening
     { id: "end", say: "It will never come back. And everything we have ever known is still on that dot.", visual: photo("pale-blue-dot", "Earth", DOT) },
     { id: "cta", only: "long", say: "Follow for more cosmic scale.", visual: { type: "stars" } },

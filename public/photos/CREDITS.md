@@ -15,6 +15,8 @@ NASA releases, free of copyright (public domain). Use must not imply NASA endors
 | voyager/voyager-art.jpg | "Voyager the Explorer", artist's concept (PIA17036); labelled as an artist's concept on screen | NASA / JPL-Caltech | images.nasa.gov, PIA17036 |
 | voyager/golden-record.jpg | The Golden Record and its cover, with the spacecraft (PIA14113) | NASA / JPL-Caltech | images.nasa.gov, PIA14113 |
 | voyager/antenna.jpg | Goldstone's 70-metre antenna under the stars (PIA26716), cropped | NASA / JPL-Caltech | images.nasa.gov, PIA26716 |
+| voyager/interstellar.jpg | "Voyager 1 Entering Interstellar Space", artist's concept (PIA17462); labelled as an artist's concept on screen | NASA / JPL-Caltech | images.nasa.gov, PIA17462 |
+| voyager/speeding.jpg | "NASA's Voyager Probe Speeds Through Space", artist's concept (PIA26353); labelled as an artist's concept on screen | NASA / JPL-Caltech | images.nasa.gov, PIA26353 |
 | zoom/earth.jpg | "The Blue Marble", Apollo 17, 7 December 1972 (AS17-148-22727) | NASA | images.nasa.gov, as17-148-22727 |
 | zoom/milky-way.jpg | "Our Milky Way Gets a Makeover", artist's concept (PIA10748); labelled as an artist's concept on screen | NASA / JPL-Caltech | images.nasa.gov, PIA10748 |
 | zoom/andromeda.jpg | Andromeda Galaxy in ultraviolet, GALEX (PIA04921) | NASA / JPL-Caltech | images.nasa.gov, PIA04921 |
