@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from "react";
 import { AbsoluteFill, Audio, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { progress } from "../core/anim";
+import { clamp, ease, progress } from "../core/anim";
 import { CanvasLayer, type DrawContext } from "../core/components/CanvasLayer";
 import { FilmFinish } from "../core/components/FilmFinish";
 import { writtenCaptions } from "./captions";
@@ -93,12 +93,21 @@ export const EpisodeVideo: React.FC<{ spec: EpisodeSpec; variant: Variant; track
   const background = useCallback((d: DrawContext) => drawBackground(d, layout), [layout]);
   const overlay = useCallback((d: DrawContext) => drawOverlay(d, layout), [layout]);
   const place = useCallback((t: number, w: number, h: number, u: number) => placeBodies(layout, t, w, h, u), [layout]);
+  const t = useCurrentFrame() / useVideoConfig().fps;
+  // seconds since the latest cut (the opening frame is not one)
+  const since = Math.min(...layout.beats.filter((b) => b.start > 0.05 && b.start <= t + 1e-6).map((b) => t - b.start), 9);
+  const hit = 1 - ease.outExpo(clamp(since / 0.4));
   return (
-    <AbsoluteFill style={{ backgroundColor: "#03040b" }}>
-      <CanvasLayer draw={background} />
-      <PhotoLayer layout={layout} />
-      <BodiesGL place={place} />
-      <CanvasLayer draw={overlay} />
+    <AbsoluteFill style={{ backgroundColor: "#03040b", overflow: "hidden" }}>
+      <AbsoluteFill style={{ transform: `scale(${1 + 0.05 * hit})`, transformOrigin: "50% 45%" }}>
+        <CanvasLayer draw={background} />
+        <PhotoLayer layout={layout} />
+        <BodiesGL place={place} />
+        <CanvasLayer draw={overlay} />
+      </AbsoluteFill>
+      {/* every cut is a hit: a short punch-in with a lens streak and a breath of flash */}
+      <AbsoluteFill style={{ opacity: hit * 0.7, mixBlendMode: "screen", background: "radial-gradient(ellipse 75% 1.4% at 50% 45%, rgba(170,225,255,0.9) 0%, rgba(90,160,255,0.3) 45%, transparent 100%)" }} />
+      <AbsoluteFill style={{ opacity: hit * hit * 0.16, background: "#dff1ff", mixBlendMode: "screen" }} />
       {spec.hideTag?.includes(variant) ? null : <SeriesTag spec={spec} duration={layout.duration} />}
       <FollowTag spec={spec} ask={variant === "long" ? spec.askLong ?? spec.ask : spec.ask} duration={layout.duration} high={layout.beats[layout.beats.length - 1].beat.visual.type === "body"} />
       <KaraokeCaptions words={captionWords} emphasis={spec.emphasis ?? []} y={0.215} oneLine />

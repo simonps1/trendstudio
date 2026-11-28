@@ -199,7 +199,7 @@ export function placeBodies(layout: EpisodeLayout, t: number, w: number, h: numb
 }
 
 /** Slow pull-back on a photo beat, shared by the photo layer and the body drawn on it. */
-export const photoZoom = (lt: number) => lerp(1.14, 1, 1 - Math.pow(1 - progress(lt, 0, 2.2), 3)) + 0.006 * lt; // pulls back, then keeps drifting in
+export const photoZoom = (lt: number) => lerp(1.14, 1, 1 - Math.pow(1 - progress(lt, 0, 2.2), 3)) + 0.016 * lt; // pulls back, then keeps pushing in (a still photo must never sit still)
 /** The photo beat on screen at time t, if any, with its local time and fade. */
 export function activePhoto(layout: EpisodeLayout, t: number) {
   const b = active(layout, t), v = b.beat.visual;
